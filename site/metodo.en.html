@@ -1,0 +1,78 @@
+<section class="hero"><p class="kicker">Method and limits</p>
+<h1 style="font-size:clamp(1.6rem,4.6vw,2.4rem)">How the indicator is computed, and what it cannot tell you</h1>
+<p class="lead">Everything on this site comes from public data and a program anyone can re-run with a single command. This page explains every decision.</p></section>
+
+<h2>The idea</h2>
+<p>Spain's Public Sector Contracts Act (Ley 9/2017, article 118) allows <strong>minor contracts</strong> to be awarded directly, with no tender: those with an estimated value below €15,000 for services and supplies and below €40,000 for works, excluding VAT. The same Act forbids splitting a contract to stay under those limits (article 99.2).</p>
+<p>If the limit had no effect on prices, amounts would be spread smoothly: there would be about as many €14,500 contracts as €13,500 ones. When amounts pile up just under a threshold, economists call it <em>bunching</em> and read it as a sign that the threshold shapes how prices are set or how contracts are defined. It is a well-known indicator, used by audit bodies and in academic research. <strong>It is not proof of contract splitting or of any wrongdoing.</strong></p>
+
+<h2>The data</h2>
+<ul>
+<li><strong>Source:</strong> Plataforma de Contratación del Sector Público (Spanish Ministry of Finance), open data, dataset “Minor contracts published in buyer profiles hosted on the Platform”. Reused under Spain's Act 37/2007; the Platform's legal notice allows reproduction of its content provided the source is cited.</li>
+<li><strong>What we downloaded:</strong> the yearly files for 2023, 2024, 2025 and 2026 (the last one only to pick up late corrections and cancellations). In total {{leidas}} entries, corresponding to {{distintos}} distinct contracts: a contract can appear several times and we keep its latest version.</li>
+<li><strong>What we analysed:</strong> contracts awarded between {{periodo}}, not cancelled and with an amount: {{n_ss}} for services and supplies and {{n_obras}} for works, from {{n_org}} contracting bodies. The {{n_otros}} contracts of other types (private, special administrative, property…) are left out because the limit that applies to them is less clear-cut.</li>
+<li><strong>Amount:</strong> the award amount excluding taxes; if missing, the budget excluding taxes.</li>
+<li><strong>Coverage:</strong> only bodies that host their buyer profile on the national platform: central government, many local entities and some regional governments. Bodies that publish on their own regional platforms are not in this dataset.</li>
+</ul>
+<div class="tablewrap"><table><thead><tr><th>File</th><th class="n">Bytes</th><th>SHA-256</th><th>Downloaded</th></tr></thead><tbody>{{fuentes}}</tbody></table></div>
+
+<h2>The calculation</h2>
+<p>For services and supplies we compare two bands of amounts:</p>
+<ul>
+<li><strong>Just under the limit:</strong> above €14,000 and up to €15,000 (the last thousand euros).</li>
+<li><strong>Reference:</strong> above €9,000 and up to €14,000 (five times as wide).</li>
+</ul>
+<p>The <strong>expected</strong> number just under the limit is one fifth of the contracts in the reference band. The <strong>ratio</strong> is the observed number divided by the expected one: 1 means “as usual”; 3 means three times as many. For works the bands are €37,500–€40,000 and €25,000–€37,500. Charts use €200 bins (€500 for works) that include their upper edge, so a contract of exactly €15,000.00 counts as just under the limit.</p>
+<p>The reference is <strong>cautious</strong>: expensive contracts are normally rarer than cheap ones, so assuming there should be as many just under the limit as in each earlier bin tends to overstate what is expected and to lower the ratio.</p>
+
+<h3>Uncertainty</h3>
+<p>With few contracts, a high ratio can be chance. We treat the counts as Poisson variables; conditional on the total of the two bands, the number just under the limit is binomial, which gives an <strong>exact 95% confidence interval</strong> (Clopper-Pearson) for the ratio and a test of the hypothesis “the ratio is 1”. Because we assess thousands of bodies at once, p-values are corrected with the Benjamini-Hochberg method (false discovery rate).</p>
+
+<h3>Levels</h3>
+<ul>
+<li><strong>Sample too small:</strong> fewer than {{min_ventana}} contracts across the two bands. Not assessed.</li>
+<li><strong>Bunching signal:</strong> at least {{min_cerca}} contracts just under the limit, q-value below {{q_max}} and a lower bound of the interval of {{ic_inf_min}} or more (so even on the most cautious reading there are twice as many as expected).</li>
+<li><strong>Weak hint:</strong> q below 0.05 and lower bound above 1.</li>
+<li><strong>No signal:</strong> everything else.</li>
+</ul>
+<p>Under these criteria {{senal_org_ss}} bodies and {{senal_ent_ss}} entities show a signal for services and supplies; for works, {{senal_org_ob}} and {{senal_ent_ob}}. The ranking is sorted by the lower bound of the interval, not by the ratio, so that a body with four contracts cannot top the list.</p>
+
+<h3>Bodies and entities</h3>
+<p>The basic unit is the <strong>contracting body</strong> (órgano de contratación), which is who decides the contract. When several bodies share a tax ID (the departments of a town council, the ministries of a regional government) we also offer a page for the <strong>entity</strong> with all their contracts added together.</p>
+
+<h2>Checks</h2>
+<ul>
+<li><strong>Fake thresholds.</strong> We repeat the calculation with an invented “limit” every €500 between €7,000 and €18,000. If the effect came from a taste for round numbers, it would also show at €10,000 or €12,000. The chart on the home page shows what happens.</li>
+<li><strong>December.</strong> Overall, {{dic_todos}}% of services and supplies contracts are awarded in December; among those just under the limit, {{dic_cerca}}%. Each page compares the two distributions month by month.</li>
+<li><strong>Repeat awardees.</strong> Each page lists awardees with three or more contracts just under the limit, under a pseudonym.</li>
+<li><strong>Automated tests.</strong> The statistics code has tests for bin edges, for the real coverage of the interval on simulated data and for the false-positive rate.</li>
+</ul>
+
+<h2>What we use AI for, and what we do not</h2>
+<p>No AI computes the numbers. We use it for one thing: <strong>explaining each case in plain language</strong>, in Spanish and English, to people who do not know statistics.</p>
+<ul>
+<li><strong>Open, local model.</strong> {{ia_modelo}}, Apache 2.0 licence, run on a laptop. No paid services and no data sent to third parties.</li>
+<li><strong>Strict template.</strong> The model receives a list of pre-computed facts and must write three sections: what the data shows, what it cannot show and what can be checked. It never receives names of people or companies, so it cannot repeat them.</li>
+<li><strong>Automatic verification.</strong> A program reads each draft and rejects it if it contains a figure that is not among the facts, if a key figure is missing, if quantities are spelled out in words, if it cites a contract that does not exist, if it uses accusatory language or if it leaves out the caveat. After three rejections a fixed text is used, labelled as such.</li>
+<li><strong>Outcome:</strong> {{ia_fichas}} of the {{ia_senal}} pages with a signal have an explanation; {{ia_modelo_n}} texts come from the model and {{ia_plantilla}} from the template; the verifier rejected {{ia_rech}} drafts along the way.</li>
+</ul>
+<p>Limits of this use: the verifier checks figures, structure and tone, but cannot guarantee that every sentence is the best possible explanation. That is why each page always shows the data and charts next to the text, and the text is labelled as AI-generated.</p>
+
+<h2>What this indicator cannot tell you</h2>
+<ul>
+<li><strong>It does not identify split contracts.</strong> That takes reading the files: whether several contracts meet the same need, whether they were foreseeable, who proposed them. Open data does not say.</li>
+<li><strong>There are legitimate reasons</strong> for an amount close to the limit: market prices, maximum budgets set in advance, or a body sizing a job to what it can process quickly.</li>
+<li><strong>The legal limit refers to estimated value,</strong> and here we use the award amount, which is what is published most reliably.</li>
+<li><strong>Not everyone has the same limit.</strong> Public research bodies (universities, research institutes) can treat contracts of up to €50,000 as minor in some cases (54th additional provision). For them a wall at €15,000 is less expected.</li>
+<li><strong>Data quality.</strong> Each body records its own contracts. There are VAT-inclusive amounts in the VAT-exclusive field, impossible dates and {{ss_sobre}} services and supplies contracts above €15,000. Only {{cpv_pct}}% state a CPV code. Contracts under €5,000 paid from petty-cash advances need not be published, so the low end of the distribution is incomplete (this does not affect the bands we compare).</li>
+<li><strong>We name no one.</strong> Pages show awardees as a letter. The names are public and appear in the linked official publication, but a statistical indicator is no reason to single out a person or a company.</li>
+</ul>
+
+<h2>Reproducing it</h2>
+<p>The repository contains the code, the tests and the results. One command redoes everything from the download: <code>python -m allimite todo</code>. Data generated on {{generado}}.</p>
+<h3>References</h3>
+<ul>
+<li>Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, articles 99.2, 101 and 118, and 54th additional provision.</li>
+<li>Palguta, J. and Pertold, F. (2017). “Manipulation of Procurement Contracts: Evidence from the Introduction of Discretionary Thresholds”. <em>American Economic Journal: Economic Policy</em>, 9(2), 293-315.</li>
+<li>Oficina Independiente de Regulación y Supervisión de la Contratación (OIReScon), Instruction 1/2019 on minor contracts.</li>
+</ul>

@@ -1,0 +1,78 @@
+<section class="hero"><p class="kicker">Método y límites</p>
+<h1 style="font-size:clamp(1.6rem,4.6vw,2.4rem)">Cómo se calcula el indicador y qué no puede decir</h1>
+<p class="lead">Todo lo que ves en esta web sale de datos públicos y de un programa que cualquiera puede volver a ejecutar con una sola orden. Aquí explicamos cada decisión.</p></section>
+
+<h2>La idea</h2>
+<p>La Ley 9/2017, de Contratos del Sector Público (artículo 118), permite adjudicar directamente, sin licitación, los <strong>contratos menores</strong>: los de valor estimado inferior a 15.000 € en servicios y suministros y a 40.000 € en obras, sin IVA. La misma ley prohíbe trocear un contrato para quedarse por debajo de esos límites (artículo 99.2).</p>
+<p>Si el límite no influyera en el precio, los importes se repartirían de forma suave: habría más o menos los mismos contratos de 14.500 € que de 13.500 €. Cuando los importes se amontonan justo debajo del límite, la literatura económica habla de <em>bunching</em> (acumulación) y lo trata como una señal de que el umbral condiciona cómo se fijan los precios o cómo se definen los contratos. Es un indicador conocido, usado por órganos de control y por estudios académicos. <strong>No es una prueba de fraccionamiento ni de ninguna irregularidad.</strong></p>
+
+<h2>Los datos</h2>
+<ul>
+<li><strong>Fuente:</strong> Plataforma de Contratación del Sector Público (Ministerio de Hacienda), datos abiertos, conjunto «Contratos menores publicados en los perfiles del contratante ubicados en la Plataforma». Reutilización al amparo de la Ley 37/2007; el aviso legal de la Plataforma autoriza reproducir sus contenidos citando el origen.</li>
+<li><strong>Qué descargamos:</strong> los ficheros anuales de 2023, 2024, 2025 y 2026 (este último solo para recoger correcciones y anulaciones tardías). En total, {{leidas}} entradas, que corresponden a {{distintos}} contratos distintos: cada contrato puede aparecer varias veces y nos quedamos con su última versión.</li>
+<li><strong>Qué analizamos:</strong> contratos adjudicados entre el {{periodo}}, no anulados y con importe: {{n_ss}} de servicios y suministros y {{n_obras}} de obras, de {{n_org}} órganos de contratación. Los {{n_otros}} contratos de otros tipos (privados, administrativos especiales, patrimoniales…) quedan fuera porque el límite que se les aplica no es tan claro.</li>
+<li><strong>Importe:</strong> el de adjudicación sin impuestos; si falta, el presupuesto sin impuestos.</li>
+<li><strong>Cobertura:</strong> solo están los organismos que alojan su perfil del contratante en la Plataforma estatal: la Administración General del Estado, muchas entidades locales y parte de las comunidades autónomas. Los que publican en plataformas autonómicas propias no aparecen en este conjunto.</li>
+</ul>
+<div class="tablewrap"><table><thead><tr><th>Fichero</th><th class="n">Bytes</th><th>SHA-256</th><th>Descargado</th></tr></thead><tbody>{{fuentes}}</tbody></table></div>
+
+<h2>El cálculo</h2>
+<p>Para servicios y suministros comparamos dos franjas de importes:</p>
+<ul>
+<li><strong>Junto al límite:</strong> de más de 14.000 € a 15.000 € (los últimos mil euros).</li>
+<li><strong>Referencia:</strong> de más de 9.000 € a 14.000 € (cinco veces más ancha).</li>
+</ul>
+<p>Lo <strong>esperable</strong> junto al límite es la quinta parte de los contratos de la franja de referencia. La <strong>razón</strong> es el número observado dividido por el esperable: 1 significa «lo normal»; 3, el triple. En obras las franjas son de 37.500 € a 40.000 € y de 25.000 € a 37.500 €. Los gráficos usan tramos de 200 € (500 € en obras) que incluyen su borde superior, de modo que un contrato de 15.000,00 € exactos cuenta junto al límite.</p>
+<p>La referencia es <strong>prudente</strong>: los contratos caros son normalmente menos frecuentes que los baratos, así que suponer que debería haber tantos junto al límite como en cada tramo anterior tiende a sobrestimar lo esperable y a rebajar la razón.</p>
+
+<h3>Incertidumbre</h3>
+<p>Con pocos contratos, una razón alta puede ser casualidad. Tratamos los recuentos como variables de Poisson; condicionando al total de las dos franjas, el número de contratos junto al límite sigue una binomial, y de ahí sale un <strong>intervalo de confianza exacto del 95 %</strong> (Clopper-Pearson) para la razón y un contraste de la hipótesis «la razón es 1». Como evaluamos miles de organismos a la vez, corregimos los p-valores con el método de Benjamini-Hochberg (tasa de falsos descubrimientos).</p>
+
+<h3>Niveles</h3>
+<ul>
+<li><strong>Muestra insuficiente:</strong> menos de {{min_ventana}} contratos entre las dos franjas. No se evalúa.</li>
+<li><strong>Señal de acumulación:</strong> al menos {{min_cerca}} contratos junto al límite, valor q inferior a {{q_max}} y cota inferior del intervalo de {{ic_inf_min}} o más (es decir, incluso en la lectura más prudente hay el doble de lo esperable).</li>
+<li><strong>Indicio débil:</strong> q inferior a 0,05 y cota inferior por encima de 1.</li>
+<li><strong>Sin señal:</strong> el resto.</li>
+</ul>
+<p>Con estos criterios tienen señal en servicios y suministros {{senal_org_ss}} órganos y {{senal_ent_ss}} entidades; en obras, {{senal_org_ob}} y {{senal_ent_ob}}. El ranking se ordena por la cota inferior del intervalo, no por la razón, para que un organismo con cuatro contratos no encabece la lista.</p>
+
+<h3>Órganos y entidades</h3>
+<p>La unidad básica es el <strong>órgano de contratación</strong>, que es quien decide el contrato. Cuando varios órganos comparten NIF (las concejalías de un ayuntamiento, las consejerías de una comunidad), ofrecemos además una ficha de la <strong>entidad</strong> con todos sus contratos sumados.</p>
+
+<h2>Comprobaciones</h2>
+<ul>
+<li><strong>Umbrales ficticios.</strong> Repetimos la cuenta con un «límite» inventado cada 500 € entre 7.000 y 18.000 €. Si el efecto se debiera a la preferencia por los números redondos, aparecería también en 10.000 o 12.000 €. El gráfico de la portada muestra qué ocurre.</li>
+<li><strong>Diciembre.</strong> En el conjunto, el {{dic_todos}} % de los contratos de servicios y suministros se adjudica en diciembre; entre los que están junto al límite, el {{dic_cerca}} %. Cada ficha compara los dos repartos mes a mes.</li>
+<li><strong>Adjudicatarios que se repiten.</strong> Cada ficha lista los adjudicatarios con tres o más contratos junto al límite, con un seudónimo.</li>
+<li><strong>Pruebas automáticas.</strong> El código de estadística tiene tests que comprueban los bordes de los tramos, la cobertura real del intervalo con datos simulados y la tasa de falsos positivos.</li>
+</ul>
+
+<h2>Para qué usamos la inteligencia artificial, y para qué no</h2>
+<p>Los números no los calcula ninguna IA. La usamos para una sola cosa: <strong>explicar cada caso en lenguaje claro</strong>, en español y en inglés, a quien no sabe estadística.</p>
+<ul>
+<li><strong>Modelo abierto y local.</strong> {{ia_modelo}}, con licencia Apache 2.0, ejecutado en un portátil. Sin servicios de pago ni envío de datos a terceros.</li>
+<li><strong>Plantilla estricta.</strong> El modelo recibe una lista de hechos ya calculados y debe escribir tres apartados: qué muestran los datos, qué no pueden demostrar y qué se puede revisar. No recibe nombres de personas ni de empresas, así que no puede repetirlos.</li>
+<li><strong>Verificación automática.</strong> Un programa lee cada borrador y lo rechaza si contiene una cifra que no está entre los hechos, si falta alguna de las cifras clave, si escribe cantidades con letra, si cita un contrato que no existe, si usa lenguaje acusatorio o si omite la cautela. Tras tres rechazos se usa un texto fijo, marcado como tal.</li>
+<li><strong>Resultado:</strong> {{ia_fichas}} de las {{ia_senal}} fichas con señal tienen explicación; {{ia_modelo_n}} textos son del modelo y {{ia_plantilla}} de plantilla; el verificador rechazó {{ia_rech}} borradores por el camino.</li>
+</ul>
+<p>Límites de este uso: el verificador comprueba cifras, estructura y tono, pero no puede garantizar que cada frase sea la mejor explicación posible. Por eso cada ficha muestra siempre los datos y los gráficos junto al texto, y el texto va identificado como generado por IA.</p>
+
+<h2>Lo que este indicador no puede decir</h2>
+<ul>
+<li><strong>No identifica fraccionamientos.</strong> Para eso hay que leer los expedientes: si varios contratos responden a una misma necesidad, si eran previsibles, quién los propuso. Los datos abiertos no lo dicen.</li>
+<li><strong>Hay razones legítimas</strong> para un importe cercano al límite: precios de mercado, presupuestos máximos fijados de antemano, o un órgano que ajusta el encargo a lo que puede tramitar con agilidad.</li>
+<li><strong>El límite legal se refiere al valor estimado,</strong> y aquí usamos el importe de adjudicación, que es lo que se publica de forma más fiable.</li>
+<li><strong>No todos tienen el mismo límite.</strong> Los agentes públicos del sistema de ciencia (universidades, organismos de investigación) pueden tramitar como menores contratos de hasta 50.000 € en ciertos casos (disposición adicional 54.ª). En ellos el muro de los 15.000 € es menos esperable.</li>
+<li><strong>Calidad del dato.</strong> Cada órgano graba sus contratos. Hay importes con IVA en el campo sin IVA, fechas imposibles y {{ss_sobre}} contratos de servicios y suministros por encima de 15.000 €. Solo el {{cpv_pct}} % indica el código CPV. Los contratos de menos de 5.000 € pagados por anticipo de caja fija no tienen que publicarse, así que la parte baja de la distribución está incompleta (no afecta a las franjas que comparamos).</li>
+<li><strong>No nombramos a nadie.</strong> Las fichas muestran a los adjudicatarios con una letra. Los nombres son públicos y están en la publicación oficial enlazada, pero un indicador estadístico no es motivo para señalar a una persona o a una empresa.</li>
+</ul>
+
+<h2>Reproducirlo</h2>
+<p>El repositorio incluye el código, los tests y los resultados. Una orden lo rehace todo desde la descarga: <code>python -m allimite todo</code>. Datos generados el {{generado}}.</p>
+<h3>Referencias</h3>
+<ul>
+<li>Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, artículos 99.2, 101 y 118, y disposición adicional 54.ª.</li>
+<li>Palguta, J. y Pertold, F. (2017). «Manipulation of Procurement Contracts: Evidence from the Introduction of Discretionary Thresholds». <em>American Economic Journal: Economic Policy</em>, 9(2), 293-315.</li>
+<li>Oficina Independiente de Regulación y Supervisión de la Contratación (OIReScon), Instrucción 1/2019 sobre contratos menores.</li>
+</ul>
