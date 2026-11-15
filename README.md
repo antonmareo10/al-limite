@@ -144,6 +144,18 @@ No JavaScript dependencies and no build step. Python: numpy, pandas, scipy, lxml
 - **Code:** MIT, © 2026 Antonio González Fernández.
 - **Model:** Qwen3-4B, Apache 2.0 (Alibaba Cloud). **Runtime:** llama.cpp, MIT.
 
+## How and when this was built
+
+- **Built from scratch on 15–16 November 2026** (see the git history; first commit 15 Nov 2026, 17:28 CET) for
+  the SLAY HACKS hackathon on Devpost. All code in this repository was written during that window.
+- **Prior work it builds on (ideas, not code):** the question comes from my earlier data-journalism pieces for
+  the Open Data Bizkaia data-journalism challenge (November 2026), one of which looked at minor contracts in
+  Bizkaia. That pipeline was not reused: this is a new national analysis, written from scratch, with the
+  confidence intervals, the fake-threshold check and the verified AI explanations added here.
+- **AI assistance:** the code was written with the help of an AI coding assistant (Claude, Anthropic); every
+  figure on the site is computed by the code and re-checked by an independent recount (`check.py`).
+- If this project is entered in more than one hackathon, each entry says so.
+
 ## Responsible use
 
 The ranking is a list of where to look, not a list of offenders. A high ratio can come from market prices, fixed
