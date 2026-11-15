@@ -1,0 +1,1775 @@
+{
+ "embudo": {
+  "entradas_leidas": 2062794,
+  "ficheros_atom": 4196,
+  "contratos_distintos": 1994466,
+  "tras_quitar_anulados": 1989646,
+  "adjudicados": 1982257,
+  "adjudicados_en_periodo": 1509284,
+  "con_importe": 1508434,
+  "sin_duplicados": 1508415,
+  "servicios_suministros": 1374964,
+  "obras": 95831,
+  "otros_tipos_excluidos": 37620
+ },
+ "periodo": [
+  "2023-01-01",
+  "2025-12-31"
+ ],
+ "n_organos": 7663,
+ "n_entidades": 963,
+ "reglas": {
+  "ss": {
+   "n": 1374964,
+   "n_cerca": 68251,
+   "n_ref": 95043,
+   "esperado": 19008.6,
+   "razon": 3.59,
+   "ic_inf": 3.56,
+   "ic_sup": 3.63,
+   "p": 0.0,
+   "hist": [
+    244558,
+    156749,
+    113082,
+    76667,
+    66122,
+    48648,
+    41042,
+    40368,
+    31700,
+    31602,
+    22351,
+    21299,
+    23727,
+    17134,
+    25821,
+    11947,
+    13255,
+    13595,
+    10924,
+    14064,
+    12017,
+    8355,
+    10602,
+    9314,
+    16781,
+    6354,
+    7105,
+    7722,
+    7168,
+    10545,
+    5364,
+    5547,
+    6630,
+    5808,
+    7212,
+    4963,
+    4764,
+    6769,
+    4256,
+    6723,
+    3963,
+    5458,
+    4335,
+    3733,
+    5671,
+    3454,
+    3250,
+    4185,
+    3411,
+    7480,
+    2737,
+    2871,
+    3490,
+    3235,
+    3836,
+    2776,
+    2741,
+    3635,
+    2848,
+    6403,
+    2685,
+    5064,
+    3456,
+    2626,
+    4001,
+    2693,
+    2816,
+    4090,
+    3680,
+    7580,
+    4415,
+    5178,
+    9099,
+    11124,
+    38435,
+    204,
+    155,
+    166,
+    123,
+    193,
+    148,
+    135,
+    162,
+    114,
+    149,
+    105,
+    106,
+    138,
+    150,
+    289,
+    347,
+    78
+   ],
+   "sobre_umbral": 9856,
+   "importe_total": 4695780533.98,
+   "importe_cerca": 1006497261.52,
+   "pct_cerca": 4.96,
+   "importes_frecuentes": [
+    {
+     "importe": 14900.0,
+     "n": 4861
+    },
+    {
+     "importe": 14500.0,
+     "n": 3334
+    },
+    {
+     "importe": 14950.0,
+     "n": 3023
+    },
+    {
+     "importe": 14999.0,
+     "n": 2885
+    },
+    {
+     "importe": 14990.0,
+     "n": 2728
+    },
+    {
+     "importe": 14800.0,
+     "n": 2509
+    },
+    {
+     "importe": 14850.0,
+     "n": 1596
+    },
+    {
+     "importe": 14995.0,
+     "n": 1365
+    }
+   ],
+   "anios": {
+    "2023": {
+     "n": 435223,
+     "n_cerca": 20957,
+     "n_ref": 29249,
+     "esperado": 5849.8,
+     "razon": 3.58,
+     "ic_inf": 3.52,
+     "ic_sup": 3.65,
+     "p": 0.0
+    },
+    "2024": {
+     "n": 460084,
+     "n_cerca": 22685,
+     "n_ref": 31682,
+     "esperado": 6336.4,
+     "razon": 3.58,
+     "ic_inf": 3.52,
+     "ic_sup": 3.64,
+     "p": 0.0
+    },
+    "2025": {
+     "n": 479657,
+     "n_cerca": 24609,
+     "n_ref": 34112,
+     "esperado": 6822.4,
+     "razon": 3.61,
+     "ic_inf": 3.55,
+     "ic_sup": 3.67,
+     "p": 0.0
+    }
+   },
+   "meses": [
+    {
+     "mes": 1,
+     "n": 80806,
+     "n_cerca": 3678,
+     "razon": 3.64,
+     "ic_inf": 3.49,
+     "ic_sup": 3.8
+    },
+    {
+     "mes": 2,
+     "n": 114721,
+     "n_cerca": 5187,
+     "razon": 3.64,
+     "ic_inf": 3.51,
+     "ic_sup": 3.77
+    },
+    {
+     "mes": 3,
+     "n": 126310,
+     "n_cerca": 5880,
+     "razon": 3.73,
+     "ic_inf": 3.61,
+     "ic_sup": 3.86
+    },
+    {
+     "mes": 4,
+     "n": 112138,
+     "n_cerca": 5391,
+     "razon": 3.62,
+     "ic_inf": 3.5,
+     "ic_sup": 3.75
+    },
+    {
+     "mes": 5,
+     "n": 127150,
+     "n_cerca": 5800,
+     "razon": 3.46,
+     "ic_inf": 3.34,
+     "ic_sup": 3.58
+    },
+    {
+     "mes": 6,
+     "n": 119183,
+     "n_cerca": 5695,
+     "razon": 3.37,
+     "ic_inf": 3.26,
+     "ic_sup": 3.49
+    },
+    {
+     "mes": 7,
+     "n": 117979,
+     "n_cerca": 5527,
+     "razon": 3.46,
+     "ic_inf": 3.34,
+     "ic_sup": 3.58
+    },
+    {
+     "mes": 8,
+     "n": 70768,
+     "n_cerca": 4081,
+     "razon": 3.46,
+     "ic_inf": 3.32,
+     "ic_sup": 3.6
+    },
+    {
+     "mes": 9,
+     "n": 103352,
+     "n_cerca": 5092,
+     "razon": 3.56,
+     "ic_inf": 3.43,
+     "ic_sup": 3.69
+    },
+    {
+     "mes": 10,
+     "n": 135778,
+     "n_cerca": 6765,
+     "razon": 3.58,
+     "ic_inf": 3.47,
+     "ic_sup": 3.69
+    },
+    {
+     "mes": 11,
+     "n": 136693,
+     "n_cerca": 7894,
+     "razon": 3.75,
+     "ic_inf": 3.64,
+     "ic_sup": 3.86
+    },
+    {
+     "mes": 12,
+     "n": 130086,
+     "n_cerca": 7261,
+     "razon": 3.74,
+     "ic_inf": 3.63,
+     "ic_sup": 3.86
+    }
+   ],
+   "pct_dic_todos": 9.5,
+   "pct_dic_cerca": 10.6,
+   "ambitos": {
+    "autonomico": {
+     "n": 216637,
+     "n_cerca": 13051,
+     "n_ref": 15440,
+     "esperado": 3088.0,
+     "razon": 4.23,
+     "ic_inf": 4.13,
+     "ic_sup": 4.33,
+     "p": 0.0
+    },
+    "estado": {
+     "n": 122512,
+     "n_cerca": 13834,
+     "n_ref": 18592,
+     "esperado": 3718.4,
+     "razon": 3.72,
+     "ic_inf": 3.64,
+     "ic_sup": 3.8,
+     "p": 0.0
+    },
+    "local": {
+     "n": 716670,
+     "n_cerca": 31432,
+     "n_ref": 45781,
+     "esperado": 9156.2,
+     "razon": 3.43,
+     "ic_inf": 3.38,
+     "ic_sup": 3.48,
+     "p": 0.0
+    },
+    "otras": {
+     "n": 319145,
+     "n_cerca": 9934,
+     "n_ref": 15230,
+     "esperado": 3046.0,
+     "razon": 3.26,
+     "ic_inf": 3.18,
+     "ic_sup": 3.35,
+     "p": 0.0
+    }
+   },
+   "niveles_organo": {
+    "insuficiente": 5680,
+    "senal": 684,
+    "indicio": 406,
+    "sin_senal": 153
+   },
+   "niveles_entidad": {
+    "insuficiente": 619,
+    "senal": 158,
+    "indicio": 90,
+    "sin_senal": 28
+   }
+  },
+  "obras": {
+   "n": 95831,
+   "n_cerca": 13484,
+   "n_ref": 15857,
+   "esperado": 3171.4,
+   "razon": 4.25,
+   "ic_inf": 4.15,
+   "ic_sup": 4.35,
+   "p": 0.0,
+   "hist": [
+    3108,
+    3355,
+    2907,
+    2812,
+    2546,
+    2519,
+    1886,
+    1938,
+    1868,
+    2127,
+    1623,
+    1960,
+    1459,
+    1602,
+    1508,
+    1422,
+    1561,
+    1290,
+    1183,
+    1407,
+    1019,
+    1055,
+    1003,
+    1134,
+    1342,
+    1027,
+    978,
+    1042,
+    1039,
+    2023,
+    717,
+    777,
+    845,
+    919,
+    721,
+    760,
+    709,
+    764,
+    649,
+    862,
+    587,
+    862,
+    606,
+    607,
+    605,
+    623,
+    592,
+    645,
+    601,
+    936,
+    510,
+    550,
+    540,
+    553,
+    525,
+    555,
+    543,
+    729,
+    573,
+    718,
+    501,
+    564,
+    535,
+    609,
+    624,
+    841,
+    751,
+    597,
+    509,
+    745,
+    600,
+    740,
+    672,
+    828,
+    945,
+    1080,
+    1130,
+    1797,
+    2578,
+    6899,
+    12,
+    21,
+    34,
+    42,
+    64,
+    37,
+    8,
+    5,
+    1,
+    0,
+    3,
+    5,
+    3,
+    3,
+    7,
+    12,
+    8,
+    1
+   ],
+   "sobre_umbral": 360,
+   "importe_total": 1745285287.28,
+   "importe_cerca": 529767465.65,
+   "pct_cerca": 14.07,
+   "importes_frecuentes": [
+    {
+     "importe": 39669.42,
+     "n": 267
+    },
+    {
+     "importe": 39900.0,
+     "n": 184
+    },
+    {
+     "importe": 39500.0,
+     "n": 165
+    },
+    {
+     "importe": 39000.0,
+     "n": 121
+    },
+    {
+     "importe": 39800.0,
+     "n": 120
+    },
+    {
+     "importe": 39990.0,
+     "n": 89
+    },
+    {
+     "importe": 39600.0,
+     "n": 86
+    },
+    {
+     "importe": 39700.0,
+     "n": 83
+    }
+   ],
+   "anios": {
+    "2023": {
+     "n": 30706,
+     "n_cerca": 4659,
+     "n_ref": 4990,
+     "esperado": 998.0,
+     "razon": 4.67,
+     "ic_inf": 4.48,
+     "ic_sup": 4.86,
+     "p": 0.0
+    },
+    "2024": {
+     "n": 32192,
+     "n_cerca": 4256,
+     "n_ref": 5201,
+     "esperado": 1040.2,
+     "razon": 4.09,
+     "ic_inf": 3.93,
+     "ic_sup": 4.26,
+     "p": 0.0
+    },
+    "2025": {
+     "n": 32933,
+     "n_cerca": 4569,
+     "n_ref": 5666,
+     "esperado": 1133.2,
+     "razon": 4.03,
+     "ic_inf": 3.88,
+     "ic_sup": 4.19,
+     "p": 0.0
+    }
+   },
+   "meses": [
+    {
+     "mes": 1,
+     "n": 3074,
+     "n_cerca": 319,
+     "razon": 3.71,
+     "ic_inf": 3.2,
+     "ic_sup": 4.3
+    },
+    {
+     "mes": 2,
+     "n": 5579,
+     "n_cerca": 658,
+     "razon": 3.99,
+     "ic_inf": 3.59,
+     "ic_sup": 4.42
+    },
+    {
+     "mes": 3,
+     "n": 7454,
+     "n_cerca": 939,
+     "razon": 4.3,
+     "ic_inf": 3.93,
+     "ic_sup": 4.69
+    },
+    {
+     "mes": 4,
+     "n": 7277,
+     "n_cerca": 1005,
+     "razon": 4.43,
+     "ic_inf": 4.07,
+     "ic_sup": 4.83
+    },
+    {
+     "mes": 5,
+     "n": 9067,
+     "n_cerca": 1259,
+     "razon": 4.34,
+     "ic_inf": 4.03,
+     "ic_sup": 4.69
+    },
+    {
+     "mes": 6,
+     "n": 8180,
+     "n_cerca": 1122,
+     "razon": 4.11,
+     "ic_inf": 3.79,
+     "ic_sup": 4.45
+    },
+    {
+     "mes": 7,
+     "n": 8890,
+     "n_cerca": 1358,
+     "razon": 4.26,
+     "ic_inf": 3.96,
+     "ic_sup": 4.58
+    },
+    {
+     "mes": 8,
+     "n": 6147,
+     "n_cerca": 913,
+     "razon": 4.23,
+     "ic_inf": 3.87,
+     "ic_sup": 4.62
+    },
+    {
+     "mes": 9,
+     "n": 8038,
+     "n_cerca": 1118,
+     "razon": 3.97,
+     "ic_inf": 3.67,
+     "ic_sup": 4.3
+    },
+    {
+     "mes": 10,
+     "n": 11213,
+     "n_cerca": 1504,
+     "razon": 3.73,
+     "ic_inf": 3.49,
+     "ic_sup": 3.99
+    },
+    {
+     "mes": 11,
+     "n": 11542,
+     "n_cerca": 1989,
+     "razon": 5.14,
+     "ic_inf": 4.83,
+     "ic_sup": 5.48
+    },
+    {
+     "mes": 12,
+     "n": 9370,
+     "n_cerca": 1300,
+     "razon": 4.25,
+     "ic_inf": 3.95,
+     "ic_sup": 4.58
+    }
+   ],
+   "pct_dic_todos": 9.8,
+   "pct_dic_cerca": 9.6,
+   "ambitos": {
+    "autonomico": {
+     "n": 17268,
+     "n_cerca": 3132,
+     "n_ref": 3022,
+     "esperado": 604.4,
+     "razon": 5.18,
+     "ic_inf": 4.93,
+     "ic_sup": 5.45,
+     "p": 0.0
+    },
+    "estado": {
+     "n": 15755,
+     "n_cerca": 3471,
+     "n_ref": 3261,
+     "esperado": 652.2,
+     "razon": 5.32,
+     "ic_inf": 5.07,
+     "ic_sup": 5.58,
+     "p": 0.0
+    },
+    "local": {
+     "n": 52550,
+     "n_cerca": 5842,
+     "n_ref": 8264,
+     "esperado": 1652.8,
+     "razon": 3.53,
+     "ic_inf": 3.42,
+     "ic_sup": 3.66,
+     "p": 0.0
+    },
+    "otras": {
+     "n": 10258,
+     "n_cerca": 1039,
+     "n_ref": 1310,
+     "esperado": 262.0,
+     "razon": 3.97,
+     "ic_inf": 3.65,
+     "ic_sup": 4.31,
+     "p": 2.7164635450066232e-214
+    }
+   },
+   "niveles_organo": {
+    "insuficiente": 5252,
+    "senal": 121,
+    "indicio": 35,
+    "sin_senal": 18
+   },
+   "niveles_entidad": {
+    "insuficiente": 857,
+    "senal": 33,
+    "indicio": 9,
+    "sin_senal": 4
+   }
+  }
+ },
+ "placebo_ss": [
+  {
+   "umbral": 7000,
+   "n_cerca": 30561,
+   "razon": 0.33,
+   "ic_inf": 0.33,
+   "ic_sup": 0.33
+  },
+  {
+   "umbral": 7500,
+   "n_cerca": 30285,
+   "razon": 0.42,
+   "ic_inf": 0.41,
+   "ic_sup": 0.42
+  },
+  {
+   "umbral": 8000,
+   "n_cerca": 27475,
+   "razon": 0.46,
+   "ic_inf": 0.45,
+   "ic_sup": 0.46
+  },
+  {
+   "umbral": 8500,
+   "n_cerca": 25097,
+   "razon": 0.49,
+   "ic_inf": 0.48,
+   "ic_sup": 0.5
+  },
+  {
+   "umbral": 9000,
+   "n_cerca": 23160,
+   "razon": 0.53,
+   "ic_inf": 0.52,
+   "ic_sup": 0.54
+  },
+  {
+   "umbral": 9500,
+   "n_cerca": 20087,
+   "razon": 0.51,
+   "ic_inf": 0.5,
+   "ic_sup": 0.52
+  },
+  {
+   "umbral": 10000,
+   "n_cerca": 21780,
+   "razon": 0.61,
+   "ic_inf": 0.61,
+   "ic_sup": 0.62
+  },
+  {
+   "umbral": 10500,
+   "n_cerca": 20507,
+   "razon": 0.64,
+   "ic_inf": 0.63,
+   "ic_sup": 0.65
+  },
+  {
+   "umbral": 11000,
+   "n_cerca": 16169,
+   "razon": 0.57,
+   "ic_inf": 0.56,
+   "ic_sup": 0.58
+  },
+  {
+   "umbral": 11500,
+   "n_cerca": 15814,
+   "razon": 0.6,
+   "ic_inf": 0.59,
+   "ic_sup": 0.61
+  },
+  {
+   "umbral": 12000,
+   "n_cerca": 18403,
+   "razon": 0.77,
+   "ic_inf": 0.76,
+   "ic_sup": 0.78
+  },
+  {
+   "umbral": 12500,
+   "n_cerca": 20913,
+   "razon": 0.94,
+   "ic_inf": 0.92,
+   "ic_sup": 0.95
+  },
+  {
+   "umbral": 13000,
+   "n_cerca": 17832,
+   "razon": 0.83,
+   "ic_inf": 0.82,
+   "ic_sup": 0.85
+  },
+  {
+   "umbral": 13500,
+   "n_cerca": 16052,
+   "razon": 0.78,
+   "ic_inf": 0.77,
+   "ic_sup": 0.8
+  },
+  {
+   "umbral": 14000,
+   "n_cerca": 20859,
+   "razon": 1.07,
+   "ic_inf": 1.06,
+   "ic_sup": 1.09
+  },
+  {
+   "umbral": 14500,
+   "n_cerca": 28177,
+   "razon": 1.51,
+   "ic_inf": 1.49,
+   "ic_sup": 1.53
+  },
+  {
+   "umbral": 15000,
+   "n_cerca": 68251,
+   "razon": 3.59,
+   "ic_inf": 3.56,
+   "ic_sup": 3.63
+  },
+  {
+   "umbral": 15500,
+   "n_cerca": 53272,
+   "razon": 2.63,
+   "ic_inf": 2.6,
+   "ic_sup": 2.65
+  },
+  {
+   "umbral": 16000,
+   "n_cerca": 841,
+   "razon": 0.03,
+   "ic_inf": 0.03,
+   "ic_sup": 0.03
+  },
+  {
+   "umbral": 16500,
+   "n_cerca": 784,
+   "razon": 0.03,
+   "ic_inf": 0.03,
+   "ic_sup": 0.03
+  },
+  {
+   "umbral": 17000,
+   "n_cerca": 708,
+   "razon": 0.03,
+   "ic_inf": 0.03,
+   "ic_sup": 0.03
+  },
+  {
+   "umbral": 17500,
+   "n_cerca": 614,
+   "razon": 0.03,
+   "ic_inf": 0.02,
+   "ic_sup": 0.03
+  },
+  {
+   "umbral": 18000,
+   "n_cerca": 788,
+   "razon": 0.04,
+   "ic_inf": 0.03,
+   "ic_sup": 0.04
+  }
+ ],
+ "cpv_cobertura_pct": 48.5,
+ "cpv_nombres": [
+  [
+   "03",
+   "Productos de la agricultura, ganadería, pesca y silvicultura",
+   "Agricultural, farming, fishing and forestry products"
+  ],
+  [
+   "09",
+   "Derivados del petróleo, combustibles, electricidad y otras fuentes de energía",
+   "Petroleum products, fuel, electricity and other sources of energy"
+  ],
+  [
+   "14",
+   "Productos de la minería, metales de base y productos afines",
+   "Mining, basic metals and related products"
+  ],
+  [
+   "15",
+   "Alimentos, bebidas, tabaco y productos afines",
+   "Food, beverages, tobacco and related products"
+  ],
+  [
+   "16",
+   "Maquinaria agrícola",
+   "Agricultural machinery"
+  ],
+  [
+   "18",
+   "Prendas de vestir, calzado, artículos de viaje y accesorios",
+   "Clothing, footwear, luggage articles and accessories"
+  ],
+  [
+   "19",
+   "Piel y textiles, materiales de plástico y caucho",
+   "Leather and textile fabrics, plastic and rubber materials"
+  ],
+  [
+   "22",
+   "Impresos y productos relacionados",
+   "Printed matter and related products"
+  ],
+  [
+   "24",
+   "Productos químicos",
+   "Chemical products"
+  ],
+  [
+   "30",
+   "Máquinas, equipo y artículos de oficina y de informática",
+   "Office and computing machinery, equipment and supplies"
+  ],
+  [
+   "31",
+   "Máquinas, aparatos, equipo y productos consumibles eléctricos; iluminación",
+   "Electrical machinery, apparatus, equipment and consumables; lighting"
+  ],
+  [
+   "32",
+   "Equipos de radio, televisión, comunicaciones y telecomunicaciones",
+   "Radio, television, communication and telecommunication equipment"
+  ],
+  [
+   "33",
+   "Equipamiento y artículos médicos, farmacéuticos y de higiene personal",
+   "Medical equipment, pharmaceuticals and personal care products"
+  ],
+  [
+   "34",
+   "Equipos de transporte y productos auxiliares",
+   "Transport equipment and auxiliary products"
+  ],
+  [
+   "35",
+   "Equipo de seguridad, extinción de incendios, policía y defensa",
+   "Security, fire-fighting, police and defence equipment"
+  ],
+  [
+   "37",
+   "Instrumentos musicales, artículos deportivos, juegos, juguetes y material artístico",
+   "Musical instruments, sporting goods, games, toys and art materials"
+  ],
+  [
+   "38",
+   "Equipo de laboratorio, óptico y de precisión",
+   "Laboratory, optical and precision equipment"
+  ],
+  [
+   "39",
+   "Mobiliario, complementos, electrodomésticos y productos de limpieza",
+   "Furniture, furnishings, domestic appliances and cleaning products"
+  ],
+  [
+   "41",
+   "Agua recogida y depurada",
+   "Collected and purified water"
+  ],
+  [
+   "42",
+   "Maquinaria industrial",
+   "Industrial machinery"
+  ],
+  [
+   "43",
+   "Maquinaria para la minería y la construcción",
+   "Machinery for mining and construction"
+  ],
+  [
+   "44",
+   "Estructuras y materiales de construcción; productos auxiliares",
+   "Construction structures and materials; auxiliary products"
+  ],
+  [
+   "45",
+   "Trabajos de construcción",
+   "Construction work"
+  ],
+  [
+   "48",
+   "Paquetes de software y sistemas de información",
+   "Software packages and information systems"
+  ],
+  [
+   "50",
+   "Servicios de reparación y mantenimiento",
+   "Repair and maintenance services"
+  ],
+  [
+   "51",
+   "Servicios de instalación",
+   "Installation services"
+  ],
+  [
+   "55",
+   "Servicios de hostelería, restauración y comercio al por menor",
+   "Hotel, restaurant and retail trade services"
+  ],
+  [
+   "60",
+   "Servicios de transporte",
+   "Transport services"
+  ],
+  [
+   "63",
+   "Servicios de transporte complementarios y auxiliares; agencias de viajes",
+   "Supporting and auxiliary transport services; travel agencies"
+  ],
+  [
+   "64",
+   "Servicios de correos y telecomunicaciones",
+   "Postal and telecommunications services"
+  ],
+  [
+   "65",
+   "Servicios públicos (agua, energía)",
+   "Public utilities"
+  ],
+  [
+   "66",
+   "Servicios financieros y de seguros",
+   "Financial and insurance services"
+  ],
+  [
+   "70",
+   "Servicios inmobiliarios",
+   "Real estate services"
+  ],
+  [
+   "71",
+   "Servicios de arquitectura, construcción, ingeniería e inspección",
+   "Architectural, construction, engineering and inspection services"
+  ],
+  [
+   "72",
+   "Servicios de tecnologías de la información",
+   "IT services"
+  ],
+  [
+   "73",
+   "Servicios de investigación y desarrollo",
+   "Research and development services"
+  ],
+  [
+   "75",
+   "Servicios de administración pública, defensa y seguridad social",
+   "Administration, defence and social security services"
+  ],
+  [
+   "76",
+   "Servicios relacionados con la industria del gas y del petróleo",
+   "Services related to the oil and gas industry"
+  ],
+  [
+   "77",
+   "Servicios agrícolas, forestales, hortícolas, acuícolas y apícolas",
+   "Agricultural, forestry, horticultural, aquacultural and apicultural services"
+  ],
+  [
+   "79",
+   "Servicios a empresas: jurídicos, mercadotecnia, consultoría, selección de personal, imprenta y seguridad",
+   "Business services: law, marketing, consulting, recruitment, printing and security"
+  ],
+  [
+   "80",
+   "Servicios de enseñanza y formación",
+   "Education and training services"
+  ],
+  [
+   "85",
+   "Servicios de salud y asistencia social",
+   "Health and social work services"
+  ],
+  [
+   "90",
+   "Servicios de alcantarillado, basura, limpieza y medio ambiente",
+   "Sewage, refuse, cleaning and environmental services"
+  ],
+  [
+   "92",
+   "Servicios de esparcimiento, culturales y deportivos",
+   "Recreational, cultural and sporting services"
+  ],
+  [
+   "98",
+   "Otros servicios comunitarios, sociales o personales",
+   "Other community, social and personal services"
+  ]
+ ],
+ "cpv": [
+  {
+   "cpv": "72",
+   "nombre": "Servicios de tecnologías de la información",
+   "nombre_en": "IT services",
+   "n": 12509,
+   "n_cerca": 1878,
+   "n_ref": 1709,
+   "esperado": 341.8,
+   "razon": 5.49,
+   "ic_inf": 5.14,
+   "ic_sup": 5.87,
+   "q": 0.0,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "71",
+   "nombre": "Servicios de arquitectura, construcción, ingeniería e inspección",
+   "nombre_en": "Architectural, construction, engineering and inspection services",
+   "n": 38501,
+   "n_cerca": 4757,
+   "n_ref": 5333,
+   "esperado": 1066.6,
+   "razon": 4.46,
+   "ic_inf": 4.29,
+   "ic_sup": 4.64,
+   "q": 0.0,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "79",
+   "nombre": "Servicios a empresas: jurídicos, mercadotecnia, consultoría, selección de personal, imprenta y seguridad",
+   "nombre_en": "Business services: law, marketing, consulting, recruitment, printing and security",
+   "n": 84823,
+   "n_cerca": 5820,
+   "n_ref": 6683,
+   "esperado": 1336.6,
+   "razon": 4.35,
+   "ic_inf": 4.2,
+   "ic_sup": 4.51,
+   "q": 0.0,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "98",
+   "nombre": "Otros servicios comunitarios, sociales o personales",
+   "nombre_en": "Other community, social and personal services",
+   "n": 11524,
+   "n_cerca": 793,
+   "n_ref": 855,
+   "esperado": 171.0,
+   "razon": 4.64,
+   "ic_inf": 4.2,
+   "ic_sup": 5.11,
+   "q": 8.04e-191,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "85",
+   "nombre": "Servicios de salud y asistencia social",
+   "nombre_en": "Health and social work services",
+   "n": 11307,
+   "n_cerca": 1015,
+   "n_ref": 1114,
+   "esperado": 222.8,
+   "razon": 4.56,
+   "ic_inf": 4.18,
+   "ic_sup": 4.96,
+   "q": 1.01e-239,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "60",
+   "nombre": "Servicios de transporte",
+   "nombre_en": "Transport services",
+   "n": 15254,
+   "n_cerca": 1065,
+   "n_ref": 1196,
+   "esperado": 239.2,
+   "razon": 4.45,
+   "ic_inf": 4.1,
+   "ic_sup": 4.84,
+   "q": 5.61e-246,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "73",
+   "nombre": "Servicios de investigación y desarrollo",
+   "nombre_en": "Research and development services",
+   "n": 3174,
+   "n_cerca": 473,
+   "n_ref": 554,
+   "esperado": 110.8,
+   "razon": 4.27,
+   "ic_inf": 3.77,
+   "ic_sup": 4.84,
+   "q": 6.16e-106,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "90",
+   "nombre": "Servicios de alcantarillado, basura, limpieza y medio ambiente",
+   "nombre_en": "Sewage, refuse, cleaning and environmental services",
+   "n": 13196,
+   "n_cerca": 1015,
+   "n_ref": 1320,
+   "esperado": 264.0,
+   "razon": 3.84,
+   "ic_inf": 3.54,
+   "ic_sup": 4.18,
+   "q": 9.53e-202,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "15",
+   "nombre": "Alimentos, bebidas, tabaco y productos afines",
+   "nombre_en": "Food, beverages, tobacco and related products",
+   "n": 17709,
+   "n_cerca": 554,
+   "n_ref": 700,
+   "esperado": 140.0,
+   "razon": 3.96,
+   "ic_inf": 3.53,
+   "ic_sup": 4.43,
+   "q": 1.65e-114,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "77",
+   "nombre": "Servicios agrícolas, forestales, hortícolas, acuícolas y apícolas",
+   "nombre_en": "Agricultural, forestry, horticultural, aquacultural and apicultural services",
+   "n": 4944,
+   "n_cerca": 484,
+   "n_ref": 612,
+   "esperado": 122.4,
+   "razon": 3.95,
+   "ic_inf": 3.5,
+   "ic_sup": 4.46,
+   "q": 2.93e-100,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "35",
+   "nombre": "Equipo de seguridad, extinción de incendios, policía y defensa",
+   "nombre_en": "Security, fire-fighting, police and defence equipment",
+   "n": 6758,
+   "n_cerca": 492,
+   "n_ref": 642,
+   "esperado": 128.4,
+   "razon": 3.83,
+   "ic_inf": 3.4,
+   "ic_sup": 4.32,
+   "q": 1.64e-98,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "33",
+   "nombre": "Equipamiento y artículos médicos, farmacéuticos y de higiene personal",
+   "nombre_en": "Medical equipment, pharmaceuticals and personal care products",
+   "n": 32374,
+   "n_cerca": 962,
+   "n_ref": 1368,
+   "esperado": 273.6,
+   "razon": 3.52,
+   "ic_inf": 3.23,
+   "ic_sup": 3.82,
+   "q": 1.07e-172,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "32",
+   "nombre": "Equipos de radio, televisión, comunicaciones y telecomunicaciones",
+   "nombre_en": "Radio, television, communication and telecommunication equipment",
+   "n": 7645,
+   "n_cerca": 526,
+   "n_ref": 739,
+   "esperado": 147.8,
+   "razon": 3.56,
+   "ic_inf": 3.18,
+   "ic_sup": 3.99,
+   "q": 9.47e-97,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "80",
+   "nombre": "Servicios de enseñanza y formación",
+   "nombre_en": "Education and training services",
+   "n": 19827,
+   "n_cerca": 975,
+   "n_ref": 1417,
+   "esperado": 283.4,
+   "razon": 3.44,
+   "ic_inf": 3.17,
+   "ic_sup": 3.74,
+   "q": 1.83e-170,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "09",
+   "nombre": "Derivados del petróleo, combustibles, electricidad y otras fuentes de energía",
+   "nombre_en": "Petroleum products, fuel, electricity and other sources of energy",
+   "n": 7386,
+   "n_cerca": 223,
+   "n_ref": 301,
+   "esperado": 60.2,
+   "razon": 3.7,
+   "ic_inf": 3.1,
+   "ic_sup": 4.42,
+   "q": 5.14e-44,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "63",
+   "nombre": "Servicios de transporte complementarios y auxiliares; agencias de viajes",
+   "nombre_en": "Supporting and auxiliary transport services; travel agencies",
+   "n": 9452,
+   "n_cerca": 270,
+   "n_ref": 377,
+   "esperado": 75.4,
+   "razon": 3.58,
+   "ic_inf": 3.05,
+   "ic_sup": 4.2,
+   "q": 6.97e-51,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "75",
+   "nombre": "Servicios de administración pública, defensa y seguridad social",
+   "nombre_en": "Administration, defence and social security services",
+   "n": 1295,
+   "n_cerca": 115,
+   "n_ref": 148,
+   "esperado": 29.6,
+   "razon": 3.89,
+   "ic_inf": 3.02,
+   "ic_sup": 4.99,
+   "q": 1.02e-24,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "03",
+   "nombre": "Productos de la agricultura, ganadería, pesca y silvicultura",
+   "nombre_en": "Agricultural, farming, fishing and forestry products",
+   "n": 7691,
+   "n_cerca": 249,
+   "n_ref": 352,
+   "esperado": 70.4,
+   "razon": 3.54,
+   "ic_inf": 2.99,
+   "ic_sup": 4.17,
+   "q": 2.04e-46,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "34",
+   "nombre": "Equipos de transporte y productos auxiliares",
+   "nombre_en": "Transport equipment and auxiliary products",
+   "n": 13444,
+   "n_cerca": 840,
+   "n_ref": 1301,
+   "esperado": 260.2,
+   "razon": 3.23,
+   "ic_inf": 2.96,
+   "ic_sup": 3.52,
+   "q": 1.06e-135,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "51",
+   "nombre": "Servicios de instalación",
+   "nombre_en": "Installation services",
+   "n": 4419,
+   "n_cerca": 249,
+   "n_ref": 357,
+   "esperado": 71.4,
+   "razon": 3.49,
+   "ic_inf": 2.95,
+   "ic_sup": 4.11,
+   "q": 1.13e-45,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "92",
+   "nombre": "Servicios de esparcimiento, culturales y deportivos",
+   "nombre_en": "Recreational, cultural and sporting services",
+   "n": 69460,
+   "n_cerca": 3173,
+   "n_ref": 5257,
+   "esperado": 1051.4,
+   "razon": 3.02,
+   "ic_inf": 2.89,
+   "ic_sup": 3.15,
+   "q": 0.0,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "55",
+   "nombre": "Servicios de hostelería, restauración y comercio al por menor",
+   "nombre_en": "Hotel, restaurant and retail trade services",
+   "n": 14502,
+   "n_cerca": 423,
+   "n_ref": 670,
+   "esperado": 134.0,
+   "razon": 3.16,
+   "ic_inf": 2.79,
+   "ic_sup": 3.57,
+   "q": 2.7e-67,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "44",
+   "nombre": "Estructuras y materiales de construcción; productos auxiliares",
+   "nombre_en": "Construction structures and materials; auxiliary products",
+   "n": 35957,
+   "n_cerca": 1135,
+   "n_ref": 1903,
+   "esperado": 380.6,
+   "razon": 2.98,
+   "ic_inf": 2.77,
+   "ic_sup": 3.21,
+   "q": 8.08e-164,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "48",
+   "nombre": "Paquetes de software y sistemas de información",
+   "nombre_en": "Software packages and information systems",
+   "n": 5606,
+   "n_cerca": 488,
+   "n_ref": 795,
+   "esperado": 159.0,
+   "razon": 3.07,
+   "ic_inf": 2.74,
+   "ic_sup": 3.44,
+   "q": 1.82e-74,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "31",
+   "nombre": "Máquinas, aparatos, equipo y productos consumibles eléctricos; iluminación",
+   "nombre_en": "Electrical machinery, apparatus, equipment and consumables; lighting",
+   "n": 15482,
+   "n_cerca": 715,
+   "n_ref": 1191,
+   "esperado": 238.2,
+   "razon": 3.0,
+   "ic_inf": 2.73,
+   "ic_sup": 3.3,
+   "q": 7.17e-105,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "50",
+   "nombre": "Servicios de reparación y mantenimiento",
+   "nombre_en": "Repair and maintenance services",
+   "n": 57510,
+   "n_cerca": 1901,
+   "n_ref": 3341,
+   "esperado": 668.2,
+   "razon": 2.84,
+   "ic_inf": 2.69,
+   "ic_sup": 3.01,
+   "q": 2.34e-254,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "64",
+   "nombre": "Servicios de correos y telecomunicaciones",
+   "nombre_en": "Postal and telecommunications services",
+   "n": 3812,
+   "n_cerca": 118,
+   "n_ref": 173,
+   "esperado": 34.6,
+   "razon": 3.41,
+   "ic_inf": 2.68,
+   "ic_sup": 4.33,
+   "q": 5.58e-22,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "30",
+   "nombre": "Máquinas, equipo y artículos de oficina y de informática",
+   "nombre_en": "Office and computing machinery, equipment and supplies",
+   "n": 27725,
+   "n_cerca": 721,
+   "n_ref": 1236,
+   "esperado": 247.2,
+   "razon": 2.92,
+   "ic_inf": 2.66,
+   "ic_sup": 3.2,
+   "q": 1.84e-101,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "24",
+   "nombre": "Productos químicos",
+   "nombre_en": "Chemical products",
+   "n": 5612,
+   "n_cerca": 149,
+   "n_ref": 227,
+   "esperado": 45.4,
+   "razon": 3.28,
+   "ic_inf": 2.65,
+   "ic_sup": 4.05,
+   "q": 4.44e-26,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "37",
+   "nombre": "Instrumentos musicales, artículos deportivos, juegos, juguetes y material artístico",
+   "nombre_en": "Musical instruments, sporting goods, games, toys and art materials",
+   "n": 7121,
+   "n_cerca": 369,
+   "n_ref": 628,
+   "esperado": 125.6,
+   "razon": 2.94,
+   "ic_inf": 2.58,
+   "ic_sup": 3.35,
+   "q": 2.21e-53,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "18",
+   "nombre": "Prendas de vestir, calzado, artículos de viaje y accesorios",
+   "nombre_en": "Clothing, footwear, luggage articles and accessories",
+   "n": 12089,
+   "n_cerca": 345,
+   "n_ref": 587,
+   "esperado": 117.4,
+   "razon": 2.94,
+   "ic_inf": 2.57,
+   "ic_sup": 3.36,
+   "q": 4.53e-50,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "39",
+   "nombre": "Mobiliario, complementos, electrodomésticos y productos de limpieza",
+   "nombre_en": "Furniture, furnishings, domestic appliances and cleaning products",
+   "n": 36687,
+   "n_cerca": 1404,
+   "n_ref": 2588,
+   "esperado": 517.6,
+   "razon": 2.71,
+   "ic_inf": 2.54,
+   "ic_sup": 2.9,
+   "q": 6.55e-175,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "43",
+   "nombre": "Maquinaria para la minería y la construcción",
+   "nombre_en": "Machinery for mining and construction",
+   "n": 1389,
+   "n_cerca": 81,
+   "n_ref": 129,
+   "esperado": 25.8,
+   "razon": 3.14,
+   "ic_inf": 2.35,
+   "ic_sup": 4.18,
+   "q": 3.61e-14,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "65",
+   "nombre": "Servicios públicos (agua, energía)",
+   "nombre_en": "Public utilities",
+   "n": 698,
+   "n_cerca": 36,
+   "n_ref": 50,
+   "esperado": 10.0,
+   "razon": 3.6,
+   "ic_inf": 2.28,
+   "ic_sup": 5.64,
+   "q": 3.42e-08,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "22",
+   "nombre": "Impresos y productos relacionados",
+   "nombre_en": "Printed matter and related products",
+   "n": 18811,
+   "n_cerca": 318,
+   "n_ref": 636,
+   "esperado": 127.2,
+   "razon": 2.5,
+   "ic_inf": 2.18,
+   "ic_sup": 2.86,
+   "q": 5.21e-36,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "66",
+   "nombre": "Servicios financieros y de seguros",
+   "nombre_en": "Financial and insurance services",
+   "n": 4106,
+   "n_cerca": 144,
+   "n_ref": 275,
+   "esperado": 55.0,
+   "razon": 2.62,
+   "ic_inf": 2.13,
+   "ic_sup": 3.21,
+   "q": 1.5e-18,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "16",
+   "nombre": "Maquinaria agrícola",
+   "nombre_en": "Agricultural machinery",
+   "n": 1926,
+   "n_cerca": 73,
+   "n_ref": 132,
+   "esperado": 26.4,
+   "razon": 2.77,
+   "ic_inf": 2.05,
+   "ic_sup": 3.71,
+   "q": 5.38e-11,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "41",
+   "nombre": "Agua recogida y depurada",
+   "nombre_en": "Collected and purified water",
+   "n": 1737,
+   "n_cerca": 17,
+   "n_ref": 21,
+   "esperado": 4.2,
+   "razon": 4.05,
+   "ic_inf": 2.01,
+   "ic_sup": 8.06,
+   "q": 4.78e-05,
+   "nivel": "senal"
+  },
+  {
+   "cpv": "42",
+   "nombre": "Maquinaria industrial",
+   "nombre_en": "Industrial machinery",
+   "n": 9746,
+   "n_cerca": 477,
+   "n_ref": 1074,
+   "esperado": 214.8,
+   "razon": 2.22,
+   "ic_inf": 1.99,
+   "ic_sup": 2.48,
+   "q": 1.71e-42,
+   "nivel": "indicio"
+  },
+  {
+   "cpv": "14",
+   "nombre": "Productos de la minería, metales de base y productos afines",
+   "nombre_en": "Mining, basic metals and related products",
+   "n": 1817,
+   "n_cerca": 58,
+   "n_ref": 106,
+   "esperado": 21.2,
+   "razon": 2.74,
+   "ic_inf": 1.95,
+   "ic_sup": 3.8,
+   "q": 6.35e-09,
+   "nivel": "indicio"
+  },
+  {
+   "cpv": "70",
+   "nombre": "Servicios inmobiliarios",
+   "nombre_en": "Real estate services",
+   "n": 703,
+   "n_cerca": 29,
+   "n_ref": 46,
+   "esperado": 9.2,
+   "razon": 3.15,
+   "ic_inf": 1.91,
+   "ic_sup": 5.13,
+   "q": 4.72e-06,
+   "nivel": "indicio"
+  },
+  {
+   "cpv": "19",
+   "nombre": "Piel y textiles, materiales de plástico y caucho",
+   "nombre_en": "Leather and textile fabrics, plastic and rubber materials",
+   "n": 1893,
+   "n_cerca": 53,
+   "n_ref": 102,
+   "esperado": 20.4,
+   "razon": 2.6,
+   "ic_inf": 1.83,
+   "ic_sup": 3.66,
+   "q": 9.56e-08,
+   "nivel": "indicio"
+  },
+  {
+   "cpv": "45",
+   "nombre": "Trabajos de construcción",
+   "nombre_en": "Construction work",
+   "n": 377,
+   "n_cerca": 29,
+   "n_ref": 54,
+   "esperado": 10.8,
+   "razon": 2.69,
+   "ic_inf": 1.65,
+   "ic_sup": 4.29,
+   "q": 4.38e-05,
+   "nivel": "indicio"
+  },
+  {
+   "cpv": "38",
+   "nombre": "Equipo de laboratorio, óptico y de precisión",
+   "nombre_en": "Laboratory, optical and precision equipment",
+   "n": 8690,
+   "n_cerca": 250,
+   "n_ref": 663,
+   "esperado": 132.6,
+   "razon": 1.89,
+   "ic_inf": 1.62,
+   "ic_sup": 2.18,
+   "q": 4.06e-16,
+   "nivel": "indicio"
+  },
+  {
+   "cpv": "76",
+   "nombre": "Servicios relacionados con la industria del gas y del petróleo",
+   "nombre_en": "Services related to the oil and gas industry",
+   "n": 158,
+   "n_cerca": 7,
+   "n_ref": 12,
+   "esperado": 2.4,
+   "razon": 2.92,
+   "ic_inf": 0.97,
+   "ic_sup": 8.04,
+   "q": null,
+   "nivel": "insuficiente"
+  }
+ ],
+ "fuente": [
+  {
+   "periodo": "2023",
+   "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1143/contratosMenoresPerfilesContratantes_2023.zip",
+   "bytes": 251245910,
+   "sha256": "43b2a3238bb3bddffd3e28478b31622de9054cb397175ad050251e1166904464",
+   "last_modified": "Mon, 01 Jan 2024 05:00:46 GMT",
+   "descargado": "2026-11-15T15:45:43+00:00"
+  },
+  {
+   "periodo": "2024",
+   "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1143/contratosMenoresPerfilesContratantes_2024.zip",
+   "bytes": 268657466,
+   "sha256": "1e3ba0fc70c72800d8529cc55f8f181200934b6e698069f22b1b3f8876cae444",
+   "last_modified": "Wed, 01 Jan 2025 05:00:47 GMT",
+   "descargado": "2026-11-15T15:46:09+00:00"
+  },
+  {
+   "periodo": "2025",
+   "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1143/contratosMenoresPerfilesContratantes_2025.zip",
+   "bytes": 297068701,
+   "sha256": "586ed8b448f20273454b24edfcd723e8099d49e9d4630757494790111f1dec34",
+   "last_modified": "Thu, 01 Jan 2026 05:01:32 GMT",
+   "descargado": "2026-11-15T15:46:33+00:00"
+  },
+  {
+   "periodo": "2026",
+   "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1143/contratosMenoresPerfilesContratantes_2026.zip",
+   "bytes": 263236977,
+   "sha256": "8c63ffcc4c861a3f278f674cdba052cacbd527ac2b26c77e843cc0381e2852c3",
+   "last_modified": "Sun, 15 Nov 2026 05:00:51 GMT",
+   "descargado": "2026-11-15T15:47:01+00:00"
+  }
+ ],
+ "criterios": {
+  "min_ventana": 30,
+  "min_cerca": 10,
+  "q_max": 0.01,
+  "ic_inf_min": 2.0,
+  "reglas": {
+   "ss": {
+    "umbral": 15000.0,
+    "cerca_desde": 14000.0,
+    "ref_desde": 9000.0,
+    "ancho_tramo": 200.0,
+    "max_grafico": 18400.0
+   },
+   "obras": {
+    "umbral": 40000.0,
+    "cerca_desde": 37500.0,
+    "ref_desde": 25000.0,
+    "ancho_tramo": 500.0,
+    "max_grafico": 49000.0
+   }
+  }
+ },
+ "generado": "2026-11-15",
+ "n_fichas": 8626,
+ "n_con_senal": 893,
+ "ia": {
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "fichas_con_senal": 893,
+  "fichas_con_explicacion": 16,
+  "textos_del_modelo": 29,
+  "textos_de_plantilla": 3,
+  "borradores_rechazados": 22
+ }
+}

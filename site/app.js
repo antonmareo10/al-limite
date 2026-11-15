@@ -67,6 +67,7 @@
       ai_h: "Explicación en lenguaje claro",
       ai_prov: (m, o) => `${o === "modelo" ? `Un modelo de IA abierto (${m}), ejecutado en un portátil y sin servicios de pago, eligió qué datos destacar y escribió los dos últimos apartados` : "Texto de plantilla: el borrador del modelo de IA no superó la verificación"}. Las frases con cifras las redacta el programa y se comprueban una a una; si algo no cuadra, el texto se descarta. Los números entre corchetes enlazan con el contrato en la Plataforma.`,
       ai_none: "Solo generamos explicación para los organismos con señal de acumulación.",
+      ai_pending: "La explicación en lenguaje claro de este organismo todavía no se ha generado.",
       caveat_h: "Cómo leer esta ficha",
       caveat: "Que muchos importes queden junto al límite es una señal para mirar los expedientes, no una prueba. Puede deberse a precios de mercado, a presupuestos cerrados o a necesidades distintas. Esta página no nombra a personas ni a empresas: cada contrato enlaza con su publicación oficial.",
       mon_title: "¿Se concentran a final de año?", mon_sub: "Porcentaje de contratos adjudicados cada mes: junto al límite (barras) y todos los del organismo de este tipo (marca).",
@@ -133,6 +134,7 @@
       ai_h: "Plain-language explanation",
       ai_prov: (m, o) => `${o === "modelo" ? `An open AI model (${m}), run on a laptop with no paid services, chose which facts to highlight and wrote the last two sections` : "Template text: the AI model's draft failed verification"}. Sentences with figures are written by the program and checked one by one; if anything does not match, the text is discarded. Bracketed numbers link to the contract on the official platform.`,
       ai_none: "We only generate an explanation for bodies with a bunching signal.",
+      ai_pending: "The plain-language explanation for this body has not been generated yet.",
       caveat_h: "How to read this page",
       caveat: "Many amounts sitting just under the limit is a reason to look at the files, not proof of anything. It may reflect market prices, fixed budgets or separate needs. This page names no people or companies: each contract links to its official publication.",
       mon_title: "Do they cluster at year end?", mon_sub: "Share of contracts awarded each month: just under the limit (bars) and all the body's contracts of this type (mark).",
@@ -460,6 +462,7 @@
     h += wallChart(d, rule);
     if (d.sobre_umbral) h += `<p class="hint" style="font-size:.85rem;color:var(--ink3)">${esc(t().over(fmt(d.sobre_umbral), fmt(R.umbral)))}</p>`;
     if (u.ia && u.ia.regla === rule) h += aiBlock(u);
+    else if (!u.ia && d.nivel === "senal") h += `<p class="hint" style="font-size:.85rem;color:var(--ink3)">${esc(t().ai_pending)}</p>`;
     h += `<div class="note"><strong>${esc(t().caveat_h)}</strong><p>${esc(t().caveat)}</p></div>`;
     if (!d.n_cerca) return h;
     h += `<div class="cols"><div>${monthChart(d)}</div><div><h3>${esc(t().years_h)}</h3><div class="tablewrap"><table><thead><tr><th>${esc(t().th_year)}</th><th class="n">${esc(t().th_n)}</th><th class="n">${esc(t().th_near)}</th><th class="n">${esc(t().th_ref)}</th></tr></thead><tbody>

@@ -1,0 +1,277 @@
+id,nombre,ruta,contratos,junto_al_limite,referencia,esperado,razon,ic95_inf,ic95_sup,q,nivel
+ES2801453H,Secretaría de Estado de Vivienda y Agenda Urbana,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Vivienda y Agenda Urbana > Secretaría de Estado de Vivienda y Agenda Urbana,89,47,16,3.2,14.69,8.18,27.75,2.9e-23,senal
+ES6100007A,Ciudad Autónoma de Ceuta,COMUNIDADES Y CIUDADES AUTÓNOMAS > Ciudad Autónoma de Ceuta,4891,467,268,53.6,8.71,7.48,10.16,1.18e-175,senal
+EA14338776,"Empresa Provincial de Residuos y Medio Ambiente, S.A.","OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS ENTIDADES LOCALES > Andalucía > Diputación Provincial de Córdoba > Empresa Provincial de Residuos y Medio Ambiente, S.A.",110,23,7,1.4,16.43,6.82,45.33,2.34e-12,senal
+ES2801502B,Ministerio para la Transformación Digital y de la Función Pública,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio para la Transformación Digital y de la Función Pública,362,78,41,8.2,9.51,6.44,14.24,1.29e-31,senal
+ES2800556I,"Ministerio de Agricultura, Pesca y Alimentación","ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Agricultura, Pesca y Alimentación",902,291,198,39.6,7.35,6.11,8.85,1.77e-99,senal
+EQ4500384E,Instituto de la Mujer de Castilla-La Mancha,COMUNIDADES Y CIUDADES AUTÓNOMAS > Castilla - La Mancha > Presidencia > Consejería de Igualdad > Instituto de la Mujer de Castilla-La Mancha,1097,85,51,10.2,8.33,5.82,12.03,4.43e-32,senal
+EP3800002B,Cabildo Insular de la Palma,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Cabildo Insular de la Palma,542,264,190,38.0,6.95,5.74,8.42,3.7e-87,senal
+EP0704600F,Ayuntamiento de Sant Antoni de Portmany,ENTIDADES LOCALES > Baleares > Ayuntamientos > Sant Antoni de Portmany,351,81,50,10.0,8.1,5.62,11.77,3.68e-30,senal
+EP2104100I,Huelva,ENTIDADES LOCALES > Andalucía > Huelva,2082,185,132,26.4,7.01,5.57,8.83,9.31e-62,senal
+EA38279972,Canarias,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS COMUNIDADES AUTÓNOMAS > Canarias",1558,552,437,87.4,6.32,5.56,7.18,6.48e-170,senal
+EQ3800402D,Instituto Insular de Atención Social y Sociosanitaria,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Cabildo Insular de Tenerife > Instituto Insular de Atención Social y Sociosanitaria,555,113,79,15.8,7.15,5.32,9.66,1.28e-38,senal
+ES2816003D,D.G. de la Guardia Civil,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio del Interior > Secretaría de Estado de Seguridad > D.G. de la Guardia Civil,806,271,216,43.2,6.27,5.23,7.54,1.7e-83,senal
+ES2801506C,Ministerio de Vivienda y Agenda Urbana,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Vivienda y Agenda Urbana,136,45,26,5.2,8.65,5.23,14.61,6.98e-18,senal
+EP2801500F,Ayuntamiento de Arroyomolinos,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Arroyomolinos,758,112,80,16.0,7.0,5.21,9.45,8.21e-38,senal
+ES3511001D,Comunidad Autónoma de Canarias,COMUNIDADES Y CIUDADES AUTÓNOMAS > Comunidad Autónoma de Canarias,11159,1997,1842,368.4,5.42,5.09,5.78,0,senal
+EP2101000D,Ayuntamiento de Ayamonte,ENTIDADES LOCALES > Andalucía > Huelva > Ayuntamientos > Ayamonte,1029,28,15,3.0,9.33,4.82,18.8,5.18e-12,senal
+EA09977083,"Empresa Pública de Promoción del Turismo y la Artesanía de Castilla-La Mancha (ETURIA), S.A.","OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS COMUNIDADES AUTÓNOMAS > Castilla La Mancha > Empresa Pública de Promoción del Turismo y la Artesanía de Castilla-La Mancha (ETURIA), S.A.",2636,88,67,13.4,6.57,4.73,9.16,8.43e-29,senal
+EP2803200A,Ayuntamiento de Camarma de Esteruelas,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Camarma de Esteruelas,569,54,37,7.4,7.3,4.72,11.41,2.41e-19,senal
+ES2833002E,Secretaría de Estado de Función Pública y otros órganos del mismo NIF,ADMINISTRACIÓN GENERAL DEL ESTADO,454,128,104,20.8,6.15,4.71,8.05,1.85e-39,senal
+EQ0700448D,Institut Mallorquí d'Afers Socials,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS ENTIDADES LOCALES > Baleares > Consell Insular de Mallorca > Institut Mallorquí d'Afers Socials",1836,31,18,3.6,8.61,4.67,16.35,1.2e-12,senal
+ES2801401G,Ministerio para la Transición Ecológica y el Reto Demográfico,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio para la Transición Ecológica y el Reto Demográfico,440,127,107,21.4,5.93,4.55,7.75,3.41e-38,senal
+EP3803800F,Ayuntamiento de Santa Cruz de Tenerife,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Ayuntamientos > Santa Cruz de Tenerife,1879,193,180,36.0,5.36,4.35,6.61,3.42e-53,senal
+ES2801446B,Ministerio de Igualdad,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Igualdad,171,49,36,7.2,6.81,4.34,10.77,6.08e-17,senal
+EP3500300C,Ayuntamiento de Antigua,ENTIDADES LOCALES > Canarias > Las Palmas > Ayuntamientos > Antigua,223,98,85,17.0,5.76,4.27,7.8,3.54e-29,senal
+EP3500005H,Consorcio de Abastecimiento de Aguas a Fuerteventura,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS ENTIDADES LOCALES > Canarias > Cabildo de Fuerteventura > Consorcio de Abastecimiento de Aguas a Fuerteventura",292,70,57,11.4,6.14,4.27,8.87,3.77e-22,senal
+EP3800001D,Cabildo Insular de Tenerife,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Cabildo Insular de Tenerife,2242,315,316,63.2,4.98,4.25,5.84,5.06e-81,senal
+EP3501500G,Ayuntamiento de La Oliva,ENTIDADES LOCALES > Canarias > Las Palmas > Ayuntamientos > La Oliva,4392,455,471,94.2,4.83,4.24,5.51,2.22e-113,senal
+EP3901600A,Ayuntamiento de Camargo,ENTIDADES LOCALES > Cantabria > Ayuntamientos > Camargo,139,35,24,4.8,7.29,4.22,12.81,6.06e-13,senal
+EP1102700J,Ayuntamiento de El Puerto de Santa María,ENTIDADES LOCALES > Andalucía > Cádiz > Ayuntamientos > El Puerto de Santa María,2118,154,145,29.0,5.31,4.21,6.71,2.8e-42,senal
+EQ8555011I,Comunidad Autónoma de Canarias,COMUNIDADES Y CIUDADES AUTÓNOMAS > Comunidad Autónoma de Canarias,4062,449,467,93.4,4.81,4.21,5.48,1.83e-111,senal
+ES1911001D,Consejería de Desarrollo Sostenible de la Junta de Comunidades de Castilla-La Mancha y otros órganos del mismo NIF,COMUNIDADES Y CIUDADES AUTÓNOMAS,27850,1082,1229,245.8,4.4,4.05,4.78,3.52e-246,senal
+EP3500001G,Cabildo Insular de Gran Canaria,ENTIDADES LOCALES > Canarias > Las Palmas > Cabildo Insular de Gran Canaria,3839,256,267,53.4,4.79,4.02,5.71,8.33e-64,senal
+EP0312100A,Ayuntamiento de Santa Pola,ENTIDADES LOCALES > Comunidad Valenciana > Alicante > Ayuntamientos > Santa Pola,2723,125,120,24.0,5.21,4.02,6.75,4.27e-34,senal
+EP2900000G,Diputación Provincial de Málaga,ENTIDADES LOCALES > Andalucía > Málaga > Diputación Provincial de Málaga,777,150,148,29.6,5.07,4.01,6.4,1.12e-39,senal
+ES2813001A,Subdirección General de Planificación y Gestión de Transformación Digital y otros órganos del mismo NIF,ADMINISTRACIÓN GENERAL DEL ESTADO,329,76,68,13.6,5.59,3.98,7.87,2.16e-22,senal
+EQ3567002E,Autoridad Portuaria de Las Palmas,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Transportes y Movilidad Sostenible > Secretaría de Estado de Transportes y Movilidad Sostenible > Puertos del Estado > Autoridad Portuaria de Las Palmas,479,75,67,13.4,5.6,3.97,7.9,3.77e-22,senal
+EP2805000C,Ayuntamiento de Cubas de la Sagra,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Cubas de la Sagra,38,19,11,2.2,8.64,3.91,20.09,2.99e-08,senal
+ES4611001A,Comunidad Valenciana,COMUNIDADES Y CIUDADES AUTÓNOMAS > Comunidad Valenciana,13493,1310,1557,311.4,4.21,3.91,4.53,1.05e-284,senal
+ES4711001J,Castilla y León,COMUNIDADES Y CIUDADES AUTÓNOMAS > Castilla y León,42927,1718,2081,416.2,4.13,3.87,4.4,0,senal
+EP4619500D,Ayuntamiento de Picanya,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Picanya,348,50,42,8.4,5.95,3.87,9.2,7.69e-16,senal
+ES0611001I,Junta de Extremadura,COMUNIDADES Y CIUDADES AUTÓNOMAS > Junta de Extremadura,5132,706,851,170.2,4.15,3.75,4.59,9.42e-152,senal
+EP4624600E,Ayuntamiento de Torrent,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Torrent,472,94,93,18.6,5.05,3.75,6.81,2.46e-25,senal
+EP4618300J,Ayuntamiento de Oliva,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Oliva,379,50,44,8.8,5.68,3.71,8.72,2.39e-15,senal
+EP4109500A,Ayuntamiento de Utrera,ENTIDADES LOCALES > Andalucía > Sevilla > Ayuntamientos > Utrera,756,155,167,33.4,4.64,3.71,5.81,5.01e-38,senal
+EP2910300I,Ayuntamiento de Torremolinos,ENTIDADES LOCALES > Andalucía > Málaga > Ayuntamientos > Torremolinos,2799,114,118,23.6,4.83,3.7,6.3,2.49e-29,senal
+EP4109300F,Ayuntamiento de Tomares,ENTIDADES LOCALES > Andalucía > Sevilla > Ayuntamientos > Tomares,286,90,90,18.0,5.0,3.69,6.77,4.33e-24,senal
+ES2811001C,Secretaría de Estado de Memoria Democrática y otros órganos del mismo NIF,ADMINISTRACIÓN GENERAL DEL ESTADO,698,162,178,35.6,4.55,3.66,5.66,5.87e-39,senal
+EP1500400E,Ayuntamiento de Ares,ENTIDADES LOCALES > Galicia > A Coruña > Ayuntamientos > Ares,112,19,12,2.4,7.92,3.65,17.88,6.25e-08,senal
+EP4100400C,Ayuntamiento de Alcalá de Guadaíra,ENTIDADES LOCALES > Andalucía > Sevilla > Ayuntamientos > Alcalá de Guadaíra,986,133,143,28.6,4.65,3.64,5.93,6.84e-33,senal
+EQ8850002J,Cabildo Insular de Tenerife,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Cabildo Insular de Tenerife,99,24,17,3.4,7.06,3.64,14.0,4e-09,senal
+EP2808000J,Ayuntamiento de Majadahonda,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Majadahonda,1366,110,117,23.4,4.7,3.59,6.15,1.03e-27,senal
+EP3602400H,Ayuntamiento de Lalín,ENTIDADES LOCALES > Galicia > Pontevedra > Ayuntamientos > Lalín,447,35,29,5.8,6.03,3.58,10.23,1.37e-11,senal
+EP3800004H,Cabildo Insular de la Gomera,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Cabildo Insular de la Gomera,769,151,170,34.0,4.44,3.54,5.56,1.17e-35,senal
+ES0711001H,Consejería de Hacienda y Administraciones Públicas y otros órganos del mismo NIF,,867,244,293,58.6,4.16,3.5,4.95,2.33e-53,senal
+ES3011001I,"Consejería de Empresa, Economía Social y Autónomos de la Región de Murcia y otros órganos del mismo NIF",,34040,780,1018,203.6,3.83,3.49,4.21,6.78e-154,senal
+ES2812001B,"Ministerio de Asuntos Exteriores, Unión Europea y Cooperación","ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Asuntos Exteriores, Unión Europea y Cooperación",877,160,185,37.0,4.32,3.48,5.37,9.23e-37,senal
+EA47535414,"Sociedad Provincial de Desarrollo de Valladolid, S.A.","OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS ENTIDADES LOCALES > Castilla y León > Diputación Provincial de Valladolid > Sociedad Provincial de Desarrollo de Valladolid, S.A.",172,47,44,8.8,5.34,3.46,8.25,7.27e-14,senal
+ES2800568D,Secretaría General Técnica y otros órganos del mismo NIF,ADMINISTRACIÓN GENERAL DEL ESTADO,564,95,103,20.6,4.61,3.45,6.15,1.09e-23,senal
+EP2812900E,Ayuntamiento de San Agustín del Guadalix,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > San Agustín del Guadalix,1723,60,60,12.0,5.0,3.44,7.27,1.69e-16,senal
+EP2806500A,Ayuntamiento de Getafe,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Getafe,1192,135,155,31.0,4.35,3.43,5.52,1.94e-31,senal
+EP3802000D,Ayuntamiento de Güímar,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Ayuntamientos > Güímar,222,76,80,16.0,4.75,3.42,6.58,1.06e-19,senal
+EP3500600F,Ayuntamiento de Arucas,ENTIDADES LOCALES > Canarias > Las Palmas > Ayuntamientos > Arucas,3178,184,220,44.0,4.18,3.42,5.11,1.2e-40,senal
+ES8800008H,Canarias,OTRAS ENTIDADES DEL SECTOR PÚBLICO > INSTITUCIONES INDEPENDIENTES > Canarias,470,64,66,13.2,4.85,3.38,6.94,4.47e-17,senal
+EP8500005G,Patronato de Turismo de Fuerteventura,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS ENTIDADES LOCALES > Canarias > Fuerteventura > Patronato de Turismo de Fuerteventura",217,40,37,7.4,5.41,3.37,8.69,4.11e-12,senal
+EQ2818010G,Gerencia de Infraestructuras y Equipamientos de Cultura O.A.,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Cultura > Gerencia de Infraestructuras y Equipamientos de Cultura O.A.,391,58,60,12.0,4.83,3.31,7.05,1.44e-15,senal
+EA38208427,Institución Ferial de Tenerife S.A.,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS ENTIDADES LOCALES > Canarias > Sociedades del Cabildo de Tenerife > Institución Ferial de Tenerife S.A.",105,41,39,7.8,5.26,3.31,8.37,3.92e-12,senal
+EP2808400B,Ayuntamiento de Mejorada del Campo,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Mejorada del Campo,550,43,42,8.4,5.12,3.27,8.03,2.08e-12,senal
+EP3303500G,Ayuntamiento de Llanera,ENTIDADES LOCALES > Asturias > Ayuntamientos > Llanera,142,41,40,8.0,5.12,3.23,8.13,6.32e-12,senal
+EP0400000F,Diputación Provincial de Almería,ENTIDADES LOCALES > Andalucía > Almería > Diputación Provincial de Almería,1104,109,134,26.8,4.07,3.13,5.28,5.33e-24,senal
+EQ5000442C,Servicio Aragonés de Salud (SALUD),COMUNIDADES Y CIUDADES AUTÓNOMAS > Comunidad Autónoma de Aragón > Departamento de Sanidad > Servicio Aragonés de Salud (SALUD),666,180,237,47.4,3.8,3.11,4.63,4.2e-36,senal
+EP4623500H,Ayuntamiento de Sollana,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Sollana,324,21,17,3.4,6.18,3.1,12.47,1.44e-07,senal
+EP3003700F,Ayuntamiento de Torrepacheco,ENTIDADES LOCALES > Región de Murcia > Ayuntamientos > Torrepacheco,818,30,28,5.6,5.36,3.09,9.31,2.35e-09,senal
+EP0906100C,Ayuntamiento de Burgos,ENTIDADES LOCALES > Castilla y León > Burgos > Ayuntamientos > Burgos,1337,97,120,24.0,4.04,3.06,5.33,2.21e-21,senal
+EQ4500146H,Gerencia del Area de Atención Integrada de Valdepeñas y otros órganos del mismo NIF,COMUNIDADES Y CIUDADES AUTÓNOMAS,8004,327,466,93.2,3.51,3.04,4.05,6.14e-59,senal
+EA86212420,"Aena S.M.E., S.A.","OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES y CONSORCIOS ESTATALES > Ministerio de Transportes y Movilidad Sostenible > Aena S.M.E., S.A.",7240,394,571,114.2,3.45,3.03,3.93,2.69e-69,senal
+EP4610700I,Ayuntamiento de Cullera,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Cullera,5649,93,116,23.2,4.01,3.02,5.31,2.23e-20,senal
+ES2801449F,"Ministerio de Inclusión, Seguridad Social y Migraciones","ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Inclusión, Seguridad Social y Migraciones",507,138,183,36.6,3.77,3.0,4.73,8.6e-28,senal
+EP4613300E,Ayuntamiento de Gandía,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Gandía,214,58,67,13.4,4.33,2.99,6.25,3.66e-14,senal
+EP2807900B,Ayuntamiento de Madrid,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Madrid,2601,331,481,96.2,3.44,2.98,3.97,2.83e-58,senal
+EP2805300G,Ayuntamiento de Daganzo de Arriba,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Daganzo de Arriba,115,29,28,5.6,5.18,2.97,9.03,7.09e-09,senal
+EP3801500D,Ayuntamiento de Garachico,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Ayuntamientos > Garachico,59,21,18,3.6,5.83,2.96,11.61,2.6e-07,senal
+ES3933002B,Comunidad Autónoma de Cantabria,COMUNIDADES Y CIUDADES AUTÓNOMAS > Comunidad Autónoma de Cantabria,4066,360,532,106.4,3.38,2.95,3.87,6.09e-62,senal
+EP3802800G,Ayuntamiento de Puerto de la Cruz,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Ayuntamientos > Puerto de la Cruz,530,69,84,16.8,4.11,2.94,5.72,7.85e-16,senal
+EP3501600E,Ayuntamiento de Pájara,ENTIDADES LOCALES > Canarias > Las Palmas > Ayuntamientos > Pájara,705,117,156,31.2,3.75,2.93,4.8,1.28e-23,senal
+ES5011001D,Consejo Económico y Social de Aragón y otros órganos del mismo NIF,,2068,379,573,114.6,3.31,2.9,3.77,2.71e-63,senal
+EA41092032,"Empresa Mancomunada del Aljarafe, S.A. (ALJARAFESA)","OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS ENTIDADES LOCALES > Andalucía > Empresa Mancomunada del Aljarafe, S.A. (ALJARAFESA)",506,54,64,12.8,4.22,2.88,6.16,5.72e-13,senal
+EP0400300J,Ayuntamiento de Adra,ENTIDADES LOCALES > Andalucía > Almería > Ayuntamientos > Adra,151,34,36,7.2,4.72,2.87,7.76,1.69e-09,senal
+EP2907900A,Ayuntamiento de Periana,ENTIDADES LOCALES > Andalucía > Málaga > Ayuntamientos > Periana,78,25,24,4.8,5.21,2.85,9.52,7.2e-08,senal
+EP2810400H,Ayuntamiento de Paracuellos de Jarama,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Paracuellos de Jarama,99,30,31,6.2,4.84,2.83,8.26,1.06e-08,senal
+EP4607200E,Ayuntamiento de Bétera,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Bétera,939,62,78,15.6,3.97,2.8,5.62,6.63e-14,senal
+EP2706500B,Ayuntamiento de Vilalba,ENTIDADES LOCALES > Galicia > Lugo > Ayuntamientos > Vilalba,472,22,21,4.2,5.24,2.75,10.01,4.09e-07,senal
+EP4620400D,Ayuntamiento de La Pobla de Vallbona,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > La Pobla de Vallbona,2110,45,54,10.8,4.17,2.74,6.31,6.19e-11,senal
+EQ2818016D,Universidad Nacional de Educación a Distancia,OTRAS ENTIDADES DEL SECTOR PÚBLICO > UNIVERSIDADES > Universidad Nacional de Educación a Distancia,1238,56,71,14.2,3.94,2.73,5.68,1.34e-12,senal
+EP2601100G,Ayuntamiento de Alfaro,ENTIDADES LOCALES > La Rioja > Ayuntamientos > Alfaro,503,52,65,13.0,4.0,2.72,5.85,5.55e-12,senal
+EQ9750009D,Castilla y León,COMUNIDADES Y CIUDADES AUTÓNOMAS > Castilla y León,3856,225,348,69.6,3.23,2.72,3.83,4.87e-37,senal
+EP1500200I,Ayuntamiento de Ames,ENTIDADES LOCALES > Galicia > A Coruña > Ayuntamientos > Ames,1808,82,114,22.8,3.6,2.67,4.82,3.24e-16,senal
+EP2904500B,Ayuntamiento de Cómpeta,ENTIDADES LOCALES > Andalucía > Málaga > Ayuntamientos > Cómpeta,93,20,19,3.8,5.26,2.67,10.42,1.32e-06,senal
+EP2804900E,Ayuntamiento de Coslada,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Coslada,118,41,50,10.0,4.1,2.65,6.32,6.14e-10,senal
+EG50005321,"Dirección Área Jurídica y Prestación de MAZ, Mutua Colaboradora con la Seguridad Social, Nº 11 y otros órganos del mismo NIF",OTRAS ENTIDADES DEL SECTOR PÚBLICO > MUTUAS DE ACCIDENTES DE TRABAJO COLABORADORAS DE LA SEGURIDAD SOCIAL,2035,114,170,34.0,3.35,2.62,4.28,2.55e-20,senal
+EP3002000B,Ayuntamiento de Fortuna,ENTIDADES LOCALES > Región de Murcia > Ayuntamientos > Fortuna,122,30,34,6.8,4.41,2.61,7.43,4.09e-08,senal
+EP1621200C,Ayuntamiento de Tarancón,ENTIDADES LOCALES > Castilla - La Mancha > Cuenca > Ayuntamientos > Tarancón,1535,42,53,10.6,3.96,2.58,6.05,7.68e-10,senal
+EP3800022J,"Consorcio de Prevención, Extinción de Incendios y Salvamento de la Isla de Tenerife","OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS ENTIDADES LOCALES > Canarias > Consorcio de Prevención, Extinción de Incendios y Salvamento de la Isla de Tenerife",54,20,20,4.0,5.0,2.55,9.79,2.2e-06,senal
+EP4108100A,Ayuntamiento de La Rinconada,ENTIDADES LOCALES > Andalucía > Sevilla > Ayuntamientos > La Rinconada,1113,32,38,7.6,4.21,2.55,6.92,3.04e-08,senal
+EG45418985,Fundación Impulsa Castilla-La Mancha,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS COMUNIDADES AUTÓNOMAS > Castilla La Mancha > Fundación Impulsa Castilla-La Mancha",3124,92,137,27.4,3.36,2.55,4.4,1.1e-16,senal
+EP2401100I,Ayuntamiento de La Bañeza,ENTIDADES LOCALES > Castilla y León > León > Ayuntamientos > La Bañeza,128,26,29,5.8,4.48,2.54,7.89,2.71e-07,senal
+EP1816100J,Ayuntamiento de Pinos Puente,ENTIDADES LOCALES > Andalucía > Granada > Ayuntamientos > Pinos Puente,1660,47,62,12.4,3.79,2.54,5.63,2.1e-10,senal
+EP2805400E,Ayuntamiento de El Escorial,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > El Escorial,1946,42,54,10.8,3.89,2.53,5.93,1.13e-09,senal
+ES2800239B,Dirección General de Derechos Culturales y otros órganos del mismo NIF,ADMINISTRACIÓN GENERAL DEL ESTADO,674,116,182,36.4,3.19,2.5,4.04,2.06e-19,senal
+ES0733001B,Consell Insular d´ Eivissa,ENTIDADES LOCALES > Baleares > Consell Insular d´ Eivissa,1725,83,126,25.2,3.29,2.47,4.38,7.51e-15,senal
+ES2818001F,Unidad de Acción Educativa Exterior y otros órganos del mismo NIF,ADMINISTRACIÓN GENERAL DEL ESTADO,455,57,81,16.2,3.52,2.46,5.0,1.93e-11,senal
+EA14076442,Empresa Provincial de Aguas de Córdoba S.A.,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS ENTIDADES LOCALES > Andalucía > Diputación Provincial de Córdoba > Empresa Provincial de Aguas de Córdoba S.A.",173,40,54,10.8,3.7,2.4,5.68,7.17e-09,senal
+EP0701100J,Ayuntamiento de Calviá,ENTIDADES LOCALES > Baleares > Ayuntamientos > Calviá,187,49,70,14.0,3.5,2.38,5.11,5.86e-10,senal
+EP0312800F,Ayuntamiento de Teulada,ENTIDADES LOCALES > Comunidad Valenciana > Alicante > Ayuntamientos > Teulada,666,24,28,5.6,4.29,2.38,7.67,1.3e-06,senal
+EQ8350064E,Principado de Asturias,COMUNIDADES Y CIUDADES AUTÓNOMAS > Principado de Asturias,481,38,51,10.2,3.73,2.38,5.78,1.54e-08,senal
+EP4621400C,Ayuntamiento de Real,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Real,289,22,25,5.0,4.4,2.37,8.13,2.69e-06,senal
+EP4622200F,Ayuntamiento de Sagunto,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Sagunto,2100,127,214,42.8,2.97,2.36,3.71,2.94e-19,senal
+EP4227700D,Ayuntamiento de Soria,ENTIDADES LOCALES > Castilla y León > Soria > Ayuntamientos > Soria,445,70,108,21.6,3.24,2.36,4.42,1.68e-12,senal
+EP3801700J,Ayuntamiento de Granadilla de Abona,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Ayuntamientos > Granadilla de Abona,501,110,183,36.6,3.01,2.35,3.83,3.92e-17,senal
+EP1307100F,Ayuntamiento de Puertollano,ENTIDADES LOCALES > Castilla La Mancha > Ciudad Real > Ayuntamientos > Puertollano,547,38,52,10.4,3.65,2.34,5.66,2.2e-08,senal
+EP1202700I,Ayuntamiento de Benicarló,ENTIDADES LOCALES > Comunidad Valenciana > Castellón > Ayuntamientos > Benicarló,938,53,79,15.8,3.35,2.32,4.81,3.47e-10,senal
+EP4716600D,Ayuntamiento de Tordesillas,ENTIDADES LOCALES > Castilla y León > Valladolid > Ayuntamientos > Tordesillas,3072,29,37,7.4,3.92,2.32,6.55,3.66e-07,senal
+EQ2827023I,Agencia Española de Medicamentos y Productos Sanitarios,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Sanidad > Secretaría General de Sanidad > Agencia Española de Medicamentos y Productos Sanitarios,181,33,44,8.8,3.75,2.31,6.03,1.2e-07,senal
+ES2819001E,Ministerio de Trabajo y Economía Social,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Trabajo y Economía Social,434,53,80,16.0,3.31,2.3,4.75,4.79e-10,senal
+ES2827001E,Ministerio de Sanidad,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Sanidad,277,74,119,23.8,3.11,2.29,4.19,1.68e-12,senal
+EP8500012C,Instituto de Atención Social y Sociosanitaria,ENTIDADES LOCALES > Canarias > Las Palmas > Cabildo Insular de Gran Canaria > Instituto de Atención Social y Sociosanitaria,623,29,38,7.6,3.82,2.27,6.35,5.31e-07,senal
+EP4102100G,Ayuntamiento de Camas,ENTIDADES LOCALES > Andalucía > Sevilla > Ayuntamientos > Camas,146,37,52,10.4,3.56,2.27,5.53,5.37e-08,senal
+EP3000500C,Ayuntamiento de Alcantarilla,ENTIDADES LOCALES > Región de Murcia > Ayuntamientos > Alcantarilla,2557,49,74,14.8,3.31,2.26,4.81,2.14e-09,senal
+EP0407500H,Ayuntamiento de Pulpí,ENTIDADES LOCALES > Andalucía > Almería > Ayuntamientos > Pulpí,264,49,74,14.8,3.31,2.26,4.81,2.14e-09,senal
+ES2801395A,Dirección General de Planificación de la Investigación y otros órganos del mismo NIF,ADMINISTRACIÓN GENERAL DEL ESTADO,179,36,51,10.2,3.53,2.24,5.51,9.3e-08,senal
+EP4105300J,Ayuntamiento de Lebrija,ENTIDADES LOCALES > Andalucía > Sevilla > Ayuntamientos > Lebrija,675,47,71,14.2,3.31,2.24,4.85,4.57e-09,senal
+EP2807200G,Ayuntamiento de Hoyo de Manzanares,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Hoyo de Manzanares,338,16,17,3.4,4.71,2.23,9.91,3.67e-05,senal
+EP4605100I,Ayuntamiento de Benaguasil,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Benaguasil,129,29,39,7.8,3.72,2.22,6.17,7.68e-07,senal
+EP3604500C,Ayuntamiento de Redondela,ENTIDADES LOCALES > Galicia > Pontevedra > Ayuntamientos > Redondela,972,25,32,6.4,3.91,2.22,6.8,2.43e-06,senal
+EA35092683,Guaguas Municipales S.A.,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS ENTIDADES LOCALES > Canarias > Las Palmas de Gran Canaria > Guaguas Municipales S.A.",1180,84,144,28.8,2.92,2.2,3.84,6.78e-13,senal
+EP4620900C,Valencia,ENTIDADES LOCALES > Comunidad Valenciana > Valencia,1171,42,64,12.8,3.28,2.17,4.92,3.52e-08,senal
+EP4105800I,Ayuntamiento de Mairena del Alcor,ENTIDADES LOCALES > Andalucía > Sevilla > Ayuntamientos > Mairena del Alcor,510,34,49,9.8,3.47,2.17,5.48,2.77e-07,senal
+EP4100067J,Agencia de Régimen Especial Ciclo Integral Aguas del Retortillo,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS ENTIDADES LOCALES > Andalucía > Agencia de Régimen Especial Ciclo Integral Aguas del Retortillo",59,15,16,3.2,4.69,2.16,10.12,6.4e-05,senal
+EP0922400G,Ayuntamiento de Miranda de Ebro,ENTIDADES LOCALES > Castilla y León > Burgos > Ayuntamientos > Miranda de Ebro,183,30,42,8.4,3.57,2.16,5.84,8.92e-07,senal
+EP0305000B,Ayuntamiento de El Campello,ENTIDADES LOCALES > Comunidad Valenciana > Alicante > Ayuntamientos > El Campello,877,44,68,13.6,3.24,2.16,4.8,2.26e-08,senal
+EP0702200G,Ayuntamiento de Felanitx,ENTIDADES LOCALES > Baleares > Ayuntamientos > Felanitx,73,15,16,3.2,4.69,2.16,10.12,6.4e-05,senal
+EP0706400I,Ayuntamiento de Es Castell,ENTIDADES LOCALES > Baleares > Ayuntamientos > Es Castell,99,26,35,7.0,3.71,2.15,6.35,2.87e-06,senal
+EP2102100A,Ayuntamiento de Cartaya,ENTIDADES LOCALES > Andalucía > Huelva > Ayuntamientos > Cartaya,212,18,21,4.2,4.29,2.15,8.45,2.71e-05,senal
+EP1405300C,Ayuntamiento de Posadas,ENTIDADES LOCALES > Andalucía > Córdoba > Ayuntamientos > Posadas,323,22,28,5.6,3.93,2.14,7.12,9.15e-06,senal
+EP2902500D,Ayuntamiento de Benalmádena,ENTIDADES LOCALES > Andalucía > Málaga > Ayuntamientos > Benalmádena,821,56,93,18.6,3.01,2.12,4.24,1.95e-09,senal
+EP3501300B,Ayuntamiento de Mogán,ENTIDADES LOCALES > Canarias > Las Palmas > Ayuntamientos > Mogán,3554,148,284,56.8,2.61,2.12,3.19,2.37e-18,senal
+EP2400000B,Diputación Provincial de León,ENTIDADES LOCALES > Castilla y León > León > Diputación Provincial de León,278,48,78,15.6,3.08,2.1,4.46,1.65e-08,senal
+EP2904100A,Ayuntamiento de Casares,ENTIDADES LOCALES > Andalucía > Málaga > Ayuntamientos > Casares,3151,83,149,29.8,2.79,2.1,3.67,5.17e-12,senal
+EB41632266,Andalucía,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS ENTIDADES LOCALES > Andalucía",246,37,57,11.4,3.25,2.09,5.0,2.76e-07,senal
+EP2800400J,Ayuntamiento de El Álamo,"ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Álamo, El",43,17,20,4.0,4.25,2.09,8.54,4.88e-05,senal
+EP1213800D,Ayuntamiento de Vinarós,ENTIDADES LOCALES > Comunidad Valenciana > Castellón > Ayuntamientos > Vinarós,69,21,27,5.4,3.89,2.09,7.14,1.58e-05,senal
+EP0301500E,Ayuntamiento de Almoradí,ENTIDADES LOCALES > Comunidad Valenciana > Alicante > Ayuntamientos > Almoradí,88,21,27,5.4,3.89,2.09,7.14,1.58e-05,senal
+EQ4601048D,Labora Servicio Valenciano de Empleo y Formación,"COMUNIDADES Y CIUDADES AUTÓNOMAS > Comunidad Valenciana > Conselleria de Educación, Universidades y Empleo > Labora Servicio Valenciano de Empleo y Formación",581,38,60,12.0,3.17,2.05,4.83,2.9e-07,senal
+EP0706100E,Ayuntamiento de Sóller,ENTIDADES LOCALES > Baleares > Ayuntamientos > Sóller,2516,36,56,11.2,3.21,2.05,4.97,4.58e-07,senal
+ES0711002F,Consell Insular de Mallorca,ENTIDADES LOCALES > Baleares > Consell Insular de Mallorca,2219,56,97,19.4,2.89,2.04,4.05,5.76e-09,senal
+EP2905400D,Ayuntamiento de Fuengirola,ENTIDADES LOCALES > Andalucía > Málaga > Ayuntamientos > Fuengirola,1130,73,134,26.8,2.72,2.02,3.65,2.1e-10,senal
+EQ4640001F,Comunidad Valenciana,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS COMUNIDADES AUTÓNOMAS > Comunidad Valenciana",554,21,28,5.6,3.75,2.02,6.85,2.31e-05,senal
+EP4700000E,Diputación Provincial de Valladolid,ENTIDADES LOCALES > Castilla y León > Valladolid > Diputación Provincial de Valladolid,7314,75,139,27.8,2.7,2.01,3.6,1.66e-10,senal
+EP1815200I,Ayuntamiento de Villa de Otura,ENTIDADES LOCALES > Andalucía > Granada > Ayuntamientos > Villa de Otura,173,24,34,6.8,3.53,2.0,6.13,1.23e-05,senal
+EP3801100C,Ayuntamiento de Candelaria,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Ayuntamientos > Candelaria,6500,108,213,42.6,2.54,1.99,3.21,3.51e-13,indicio
+EP3503300J,Ayuntamiento de Vega de San Mateo,ENTIDADES LOCALES > Canarias > Las Palmas > Ayuntamientos > Vega de San Mateo,80,19,25,5.0,3.8,1.98,7.19,4.97e-05,indicio
+EP1305400B,Ayuntamiento de Membrilla,ENTIDADES LOCALES > Castilla La Mancha > Ciudad Real > Ayuntamientos > Membrilla,198,32,51,10.2,3.14,1.95,4.98,2.84e-06,indicio
+EP3408300F,Ayuntamiento de Herrera de Pisuerga,ENTIDADES LOCALES > Castilla y León > Palencia > Ayuntamientos > Herrera de Pisuerga,253,16,20,4.0,4.0,1.94,8.12,0.000123,indicio
+EA38282455,Canarias,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS COMUNIDADES AUTÓNOMAS > Canarias",67,16,20,4.0,4.0,1.94,8.12,0.000123,indicio
+EP3800600C,Ayuntamiento de Arona,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Ayuntamientos > Arona,133,17,22,4.4,3.86,1.93,7.62,0.000103,indicio
+EQ4700622F,Castilla y León,COMUNIDADES Y CIUDADES AUTÓNOMAS > Castilla y León,856,18,24,4.8,3.75,1.92,7.21,8.48e-05,indicio
+EP4601700J,Ayuntamiento de Alzira,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Alzira,233,18,24,4.8,3.75,1.92,7.21,8.48e-05,indicio
+EP0615300A,Ayuntamiento de Villanueva de la Serena,ENTIDADES LOCALES > Extremadura > Badajoz > Ayuntamientos > Villanueva de la Serena,3731,28,44,8.8,3.18,1.91,5.23,9.72e-06,indicio
+EP0306300E,Ayuntamiento de Dénia,ENTIDADES LOCALES > Comunidad Valenciana > Alicante > Ayuntamientos > Dénia,2481,31,50,10.0,3.1,1.91,4.95,4.8e-06,indicio
+ES2801445D,"Subsecretaría de Derechos Sociales, Consumo y Agenda 2030","ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Derechos Sociales, Consumo y Agenda 2030 > Subsecretaría de Derechos Sociales, Consumo y Agenda 2030",179,27,42,8.4,3.21,1.91,5.34,1.21e-05,indicio
+EP3002900C,Ayuntamiento de Mula,ENTIDADES LOCALES > Región de Murcia > Ayuntamientos > Mula,682,42,74,14.8,2.84,1.9,4.2,5.99e-07,indicio
+EP2308800H,Ayuntamiento de Torreperogil,ENTIDADES LOCALES > Andalucía > Jaén > Ayuntamientos > Torreperogil,375,14,17,3.4,4.12,1.88,8.88,0.000266,indicio
+EG06104616,Ayuntamiento de Badajoz,ENTIDADES LOCALES > Extremadura > Badajoz > Ayuntamientos > Badajoz,308,14,17,3.4,4.12,1.88,8.88,0.000266,indicio
+EP3306600B,Ayuntamiento de Siero,ENTIDADES LOCALES > Asturias > Ayuntamientos > Siero,122,20,29,5.8,3.45,1.85,6.31,7.89e-05,indicio
+ES2800653D,Secretaría de Estado de Política Territorial,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Política Territorial y Memoria Democrática > Secretaría de Estado de Política Territorial,187,22,33,6.6,3.33,1.85,5.89,5.13e-05,indicio
+EP4623200E,Ayuntamiento de Silla,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Silla,944,31,52,10.4,2.98,1.85,4.74,8.66e-06,indicio
+ES2800441D,Ministerio de Transportes y Movilidad Sostenible,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Transportes y Movilidad Sostenible,267,35,61,12.2,2.87,1.84,4.42,4.28e-06,indicio
+EP2813000C,Ayuntamiento de San Fernando de Henares,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > San Fernando de Henares,216,36,64,12.8,2.81,1.82,4.3,4.34e-06,indicio
+EP3502500F,Ayuntamiento de Tejeda,ENTIDADES LOCALES > Canarias > Las Palmas > Ayuntamientos > Tejeda,489,21,32,6.4,3.28,1.8,5.87,8.59e-05,indicio
+EP4608700C,Ayuntamiento de Carlet,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Carlet,110,20,30,6.0,3.33,1.79,6.07,0.000107,indicio
+EP2105000J,Huelva,ENTIDADES LOCALES > Andalucía > Huelva,462,16,22,4.4,3.64,1.79,7.25,0.000263,indicio
+EP1214400B,Ayuntamiento de Sant Joan de Moró,ENTIDADES LOCALES > Comunidad Valenciana > Castellón > Ayuntamientos > Sant Joan de Moró,121,15,20,4.0,3.75,1.79,7.71,0.000317,indicio
+EP3003500J,Ayuntamiento de San Javier,ENTIDADES LOCALES > Región de Murcia > Ayuntamientos > San Javier,619,15,20,4.0,3.75,1.79,7.71,0.000317,indicio
+EP1200000F,Diputación Provincial de Castellón,ENTIDADES LOCALES > Comunidad Valenciana > Castellón > Diputación Provincial de Castellón,1252,34,62,12.4,2.74,1.75,4.23,1.18e-05,indicio
+EP0405200G,Ayuntamiento de Huércal de Almería,ENTIDADES LOCALES > Andalucía > Almería > Ayuntamientos > Huércal de Almería,966,34,62,12.4,2.74,1.75,4.23,1.18e-05,indicio
+ES2800214E,Ministerio de Industria y Turismo,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Industria y Turismo,309,32,58,11.6,2.76,1.73,4.32,1.9e-05,indicio
+EP3908500F,Ayuntamiento de Suances,ENTIDADES LOCALES > Cantabria > Ayuntamientos > Suances,81,16,23,4.6,3.48,1.72,6.88,0.000359,indicio
+EP2906800D,Ayuntamiento de Manilva,ENTIDADES LOCALES > Andalucía > Málaga > Ayuntamientos > Manilva,1907,50,102,20.4,2.45,1.71,3.47,1.4e-06,indicio
+EP3602900G,Ayuntamiento de Moaña,ENTIDADES LOCALES > Galicia > Pontevedra > Ayuntamientos > Moaña,186,19,30,6.0,3.17,1.68,5.81,0.000255,indicio
+EP4609600D,Ayuntamiento de Catarroja,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Catarroja,2053,29,53,10.6,2.74,1.68,4.38,5.11e-05,indicio
+EP4504100A,Ayuntamiento de Casarrubios del Monte,ENTIDADES LOCALES > Castilla La Mancha > Toledo > Ayuntamientos > Casarrubios del Monte,1677,20,33,6.6,3.03,1.65,5.44,0.000266,indicio
+EQ0600413I,Servicio Extremeño de Salud  (SES),COMUNIDADES Y CIUDADES AUTÓNOMAS > Junta de Extremadura > Consejería de Salud y Servicios Sociales > Servicio Extremeño de Salud  (SES),242,26,47,9.4,2.77,1.64,4.56,0.000103,indicio
+EP1906500B,Ayuntamiento de Brihuega,ENTIDADES LOCALES > Castilla La Mancha > Guadalajara > Ayuntamientos > Brihuega,92,19,31,6.2,3.06,1.64,5.6,0.000332,indicio
+EP1203200I,Ayuntamiento de Borriana,ENTIDADES LOCALES > Comunidad Valenciana > Castellón > Ayuntamientos > Borriana,3040,71,162,32.4,2.19,1.63,2.91,2.77e-07,indicio
+EQ2820002J,Centro Invest.Energéticas Medioambientales y Tecnologicas,"ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Ciencia, Innovación y Universidades > Secretaría General de Investigación > Centro Invest.Energéticas Medioambientales y Tecnologicas",2897,172,439,87.8,1.96,1.63,2.34,2.86e-12,indicio
+EP4600500E,Ayuntamiento de Alaquàs,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Alaquàs,146,27,50,10.0,2.7,1.63,4.4,0.000103,indicio
+EP2613800H,Ayuntamiento de Santo Domingo de la Calzada,ENTIDADES LOCALES > La Rioja > Ayuntamientos > Santo Domingo de la Calzada,262,30,57,11.4,2.63,1.63,4.16,6.39e-05,indicio
+EP4611300G,Ayuntamiento de Chiva,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Chiva,628,45,95,19.0,2.37,1.62,3.41,9.07e-06,indicio
+EP4614900A,Ayuntamiento de Llíria,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Llíria,1033,43,90,18.0,2.39,1.62,3.47,1.19e-05,indicio
+EP3412000F,Ayuntamiento de Palencia,ENTIDADES LOCALES > Castilla y León > Palencia > Ayuntamientos > Palencia,400,34,68,13.6,2.5,1.61,3.83,4.78e-05,indicio
+EP4617400I,Ayuntamiento de Montserrat,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Montserrat,114,15,23,4.6,3.26,1.58,6.52,0.000886,indicio
+EP3729600A,Ayuntamiento de Santa Marta de Tormes,ENTIDADES LOCALES > Castilla y León > Salamanca > Ayuntamientos > Santa Marta de Tormes,2588,29,57,11.4,2.54,1.57,4.05,0.000125,indicio
+EP4008700I,Ayuntamiento de El Espinar,ENTIDADES LOCALES > Castilla y León > Segovia > Ayuntamientos > El Espinar,883,34,70,14.0,2.43,1.56,3.71,7.09e-05,indicio
+EP2809600F,Ayuntamiento de Navalcarnero,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Navalcarnero,2013,37,78,15.6,2.37,1.56,3.55,5.14e-05,indicio
+EA6100007A,Ciudad Autónoma de Ceuta,COMUNIDADES Y CIUDADES AUTÓNOMAS > Ciudad Autónoma de Ceuta,168,22,40,8.0,2.75,1.56,4.74,0.000353,indicio
+EP1801500H,Ayuntamiento de Alhendín,ENTIDADES LOCALES > Andalucía > Granada > Ayuntamientos > Alhendín,776,24,45,9.0,2.67,1.55,4.47,0.000277,indicio
+EQ2818002D,Agencia Estatal Consejo Superior de Investigaciones Científicas,"ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Ciencia, Innovación y Universidades > Secretaría General de Investigación > Agencia Estatal Consejo Superior de Investigaciones Científicas",19024,711,2148,429.6,1.66,1.52,1.8,3.13e-28,indicio
+EP0901800C,Ayuntamiento de Aranda de Duero,ENTIDADES LOCALES > Castilla y León > Burgos > Ayuntamientos > Aranda de Duero,269,30,62,12.4,2.42,1.51,3.8,0.000189,indicio
+EP1308200C,Ayuntamiento de Tomelloso,ENTIDADES LOCALES > Castilla La Mancha > Ciudad Real > Ayuntamientos > Tomelloso,855,43,98,19.6,2.19,1.5,3.17,5.39e-05,indicio
+EP3002700G,Ayuntamiento de Molina de Segura,ENTIDADES LOCALES > Región de Murcia > Ayuntamientos > Molina de Segura,617,26,53,10.6,2.45,1.47,3.99,0.000409,indicio
+EP4109100J,Ayuntamiento de Sevilla,ENTIDADES LOCALES > Andalucía > Sevilla > Ayuntamientos > Sevilla,598,30,64,12.8,2.34,1.47,3.67,0.000281,indicio
+EP0403200I,Ayuntamiento de Carboneras,ENTIDADES LOCALES > Andalucía > Almería > Ayuntamientos > Carboneras,1754,15,25,5.0,3.0,1.47,5.92,0.00162,indicio
+EP2812500C,Ayuntamiento de Robledo de Chavela,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Robledo de Chavela,250,15,25,5.0,3.0,1.47,5.92,0.00162,indicio
+EP3301200F,Ayuntamiento de Cangas de Onís,ENTIDADES LOCALES > Asturias > Ayuntamientos > Cangas de Onís,2038,12,18,3.6,3.33,1.46,7.31,0.00248,indicio
+EP2806800E,Ayuntamiento de Guadarrama,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Guadarrama,133,23,46,9.2,2.5,1.45,4.21,0.000715,indicio
+EP3501900I,Ayuntamiento de San Bartolomé de Lanzarote,ENTIDADES LOCALES > Canarias > Las Palmas > Ayuntamientos > San Bartolomé de Lanzarote,3638,21,41,8.2,2.56,1.44,4.44,0.000954,indicio
+EP2906700F,Ayuntamiento de Málaga,ENTIDADES LOCALES > Andalucía > Málaga > Ayuntamientos > Málaga,1461,122,344,68.8,1.77,1.43,2.19,2.82e-07,indicio
+EP0311900E,Ayuntamiento de Sant Joan d´Alacant,ENTIDADES LOCALES > Comunidad Valenciana > Alicante > Ayuntamientos > Sant Joan d´Alacant,152,26,55,11.0,2.36,1.42,3.83,0.00063,indicio
+EP4623700D,Ayuntamiento de Sueca,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Sueca,221,12,19,3.8,3.16,1.4,6.85,0.00337,indicio
+EP3303700C,Ayuntamiento de Mieres,ENTIDADES LOCALES > Asturias > Ayuntamientos > Mieres,791,22,45,9.0,2.44,1.4,4.16,0.00116,indicio
+EP4616800A,Ayuntamiento de Meliana,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Meliana,1337,17,32,6.4,2.66,1.38,4.93,0.00212,indicio
+EP0605400A,Ayuntamiento de Fuente del Maestre,ENTIDADES LOCALES > Extremadura > Badajoz > Ayuntamientos > Fuente del Maestre,100,15,27,5.4,2.78,1.37,5.41,0.00271,indicio
+EP1508900F,Ayuntamiento de Val Do Dubra,ENTIDADES LOCALES > Galicia > A Coruña > Ayuntamientos > Val Do Dubra,400,15,27,5.4,2.78,1.37,5.41,0.00271,indicio
+EP7990002C,"Gerencia Municipal de Urbanismo, Obras e Infraestructuras","ENTIDADES LOCALES > Andalucía > Málaga > Ayuntamientos > Málaga > Gerencia Municipal de Urbanismo, Obras e Infraestructuras",80,16,30,6.0,2.67,1.36,5.05,0.00271,indicio
+ES2826002D,D.G. del Patrimonio del Estado,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Hacienda > Subsecretaría de Hacienda > D.G. del Patrimonio del Estado,107,16,30,6.0,2.67,1.36,5.05,0.00271,indicio
+EP0600000D,Diputación Provincial de Badajoz,ENTIDADES LOCALES > Extremadura > Badajoz > Diputación Provincial de Badajoz,924,77,217,43.4,1.77,1.35,2.31,3.86e-05,indicio
+EP4624800A,Ayuntamiento de Tous,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Tous,1784,21,44,8.8,2.39,1.35,4.1,0.00185,indicio
+EP0612700E,Ayuntamiento de Talarrubias,ENTIDADES LOCALES > Extremadura > Badajoz > Ayuntamientos > Talarrubias,471,24,54,10.8,2.22,1.31,3.66,0.00189,indicio
+EP3004300D,Ayuntamiento de Yecla,ENTIDADES LOCALES > Región de Murcia > Ayuntamientos > Yecla,6541,28,67,13.4,2.09,1.29,3.29,0.0017,indicio
+EP2813200I,Ayuntamiento de San Martín de la Vega,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > San Martín de la Vega,2071,23,52,10.4,2.21,1.29,3.68,0.00242,indicio
+EP0307600G,Ayuntamiento de Guardamar del Segura,ENTIDADES LOCALES > Comunidad Valenciana > Alicante > Ayuntamientos > Guardamar del Segura,3472,27,65,13.0,2.08,1.27,3.3,0.00216,indicio
+EP2816900A,Ayuntamiento de Venturada,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Venturada,1136,12,22,4.4,2.73,1.23,5.76,0.00791,indicio
+EP4608500G,Ayuntamiento de Carcaixent,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Carcaixent,183,21,49,9.8,2.14,1.22,3.64,0.00481,indicio
+EP0301800I,Ayuntamiento de Altea,ENTIDADES LOCALES > Comunidad Valenciana > Alicante > Ayuntamientos > Altea,336,13,26,5.2,2.5,1.18,5.04,0.00966,indicio
+EP2105400B,Ayuntamiento de La Palma del Condado,"ENTIDADES LOCALES > Andalucía > Huelva > Ayuntamientos > Palma del Condado, La",1256,16,35,7.0,2.29,1.18,4.24,0.00829,indicio
+EP1400000D,Diputación Provincial de Córdoba,ENTIDADES LOCALES > Andalucía > Córdoba > Diputación Provincial de Córdoba,129,15,32,6.4,2.34,1.18,4.46,0.00876,indicio
+EQ2826000H,Agencia Estatal de Administración Tributaria,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Hacienda > Secretaría de Estado de Hacienda > Agencia Estatal de Administración Tributaria,1215,55,170,34.0,1.62,1.17,2.2,0.00226,indicio
+EP2603600D,Ayuntamiento de Calahorra,ENTIDADES LOCALES > La Rioja > Ayuntamientos > Calahorra,487,17,39,7.8,2.18,1.16,3.94,0.00929,indicio
+EP4601300I,Ayuntamiento de Alboraya,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Alboraya,1312,22,55,11.0,2.0,1.16,3.33,0.00742,indicio
+EQ3800480J,Canarias,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS ENTIDADES LOCALES > Canarias",563,28,76,15.2,1.84,1.15,2.88,0.00667,indicio
+EP2608900C,Ayuntamiento de Logroño,ENTIDADES LOCALES > La Rioja > Ayuntamientos > Logroño,218,18,44,8.8,2.05,1.11,3.61,0.0121,indicio
+EP0312200I,Ayuntamiento de San Vicente Raspeig,ENTIDADES LOCALES > Comunidad Valenciana > Alicante > Ayuntamientos > San Vicente Raspeig,1201,23,61,12.2,1.89,1.11,3.09,0.0105,indicio
+EQ2822001J,ENAIRE. Dirección Región Sur y otros órganos del mismo NIF,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES y CONSORCIOS ESTATALES > Ministerio de Transportes y Movilidad Sostenible > ENAIRE",420,22,58,11.6,1.9,1.11,3.15,0.0115,indicio
+EP0410500C,Ayuntamiento de La Mojonera,"ENTIDADES LOCALES > Andalucía > Almería > Ayuntamientos > Mojonera, La",831,13,28,5.6,2.32,1.1,4.63,0.0148,indicio
+EP1308700B,Ayuntamiento de Valdepeñas,ENTIDADES LOCALES > Castilla La Mancha > Ciudad Real > Ayuntamientos > Valdepeñas,5314,48,156,31.2,1.54,1.09,2.14,0.00852,indicio
+EP4602900E,Ayuntamiento de Algemesí,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Algemesí,148,21,56,11.2,1.88,1.08,3.15,0.0147,indicio
+EP2300300G,Ayuntamiento de Alcaudete,ENTIDADES LOCALES > Andalucía > Jaén > Ayuntamientos > Alcaudete,96,10,20,4.0,2.5,1.05,5.6,0.0221,indicio
+EP1404300D,Ayuntamiento de Montoro,ENTIDADES LOCALES > Andalucía > Córdoba > Ayuntamientos > Montoro,126,11,24,4.8,2.29,1.01,4.86,0.0259,indicio
+EP1809600H,Ayuntamiento de Güéjar Sierra,ENTIDADES LOCALES > Andalucía > Granada > Ayuntamientos > Güéjar Sierra,224,10,21,4.2,2.38,1.0,5.28,0.0277,indicio
+EP0305300F,Ayuntamiento de Castalla,ENTIDADES LOCALES > Comunidad Valenciana > Alicante > Ayuntamientos > Castalla,721,11,25,5.0,2.2,0.98,4.64,0.0316,sin_senal
+EP2805900D,Ayuntamiento de Fuente el Saz de Jarama,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Fuente el Saz de Jarama,159,10,22,4.4,2.27,0.96,5.0,0.0341,sin_senal
+EQ2822003F,Instituto Nacional de Técnica Aeroespacial Esteban Terradas,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Defensa > Secretaría de Estado de Defensa > Instituto Nacional de Técnica Aeroespacial Esteban Terradas,1192,42,152,30.4,1.38,0.96,1.96,0.0461,sin_senal
+EP4601400G,Ayuntamiento de Albuixech,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Albuixech,822,12,30,6.0,2.0,0.93,4.02,0.0414,sin_senal
+EP4618800I,Ayuntamiento de Paiporta,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Paiporta,2777,24,83,16.6,1.45,0.88,2.3,0.0804,sin_senal
+EP1006800E,Ayuntamiento de Coria,ENTIDADES LOCALES > Extremadura > Cáceres > Ayuntamientos > Coria,526,14,41,8.2,1.71,0.86,3.2,0.0692,sin_senal
+EP0405300E,Ayuntamiento de Huércal-Overa,ENTIDADES LOCALES > Andalucía > Almería > Ayuntamientos > Huércal-Overa,54,9,21,4.2,2.14,0.86,4.88,0.0552,sin_senal
+EP0311800G,Ayuntamiento de San Fulgencio,ENTIDADES LOCALES > Comunidad Valenciana > Alicante > Ayuntamientos > San Fulgencio,1958,11,29,5.8,1.9,0.85,3.91,0.0634,sin_senal
+ES2804003H,Senado de España,OTRAS ENTIDADES DEL SECTOR PÚBLICO > INSTITUCIONES INDEPENDIENTES > Senado de España,1442,15,47,9.4,1.6,0.83,2.9,0.088,sin_senal
+EP4517400J,Ayuntamiento de Torrijos,ENTIDADES LOCALES > Castilla La Mancha > Toledo > Ayuntamientos > Torrijos,381,13,39,7.8,1.67,0.82,3.19,0.0877,sin_senal
+ES2826042J,Subsecretaría de Hacienda,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Hacienda > Subsecretaría de Hacienda,277,16,53,10.6,1.51,0.81,2.68,0.108,sin_senal
+EP0401600B,Ayuntamiento de Antas,ENTIDADES LOCALES > Andalucía > Almería > Ayuntamientos > Antas,805,9,24,4.8,1.88,0.77,4.18,0.0917,sin_senal
+EP2901000F,Ayuntamiento de Almargen,ENTIDADES LOCALES > Andalucía > Málaga > Ayuntamientos > Almargen,944,9,26,5.2,1.73,0.71,3.81,0.122,sin_senal
+EP5000037A,Comarca de Cinco Villas,ENTIDADES LOCALES > Aragón > Zaragoza > Comarca de Cinco Villas,769,8,22,4.4,1.82,0.7,4.24,0.12,sin_senal
+EP0403500B,Ayuntamiento de Cuevas del Almanzora,ENTIDADES LOCALES > Andalucía > Almería > Ayuntamientos > Cuevas del Almanzora,652,8,23,4.6,1.74,0.67,4.03,0.139,sin_senal
+EP3908700B,Ayuntamiento de Torrelavega,ENTIDADES LOCALES > Cantabria > Ayuntamientos > Torrelavega,168,11,39,7.8,1.41,0.65,2.81,0.21,sin_senal
+EP3002500A,Ayuntamiento de Lorquí,ENTIDADES LOCALES > Región de Murcia > Ayuntamientos > Lorquí,152,8,25,5.0,1.6,0.62,3.66,0.181,sin_senal
+EP1404200F,Ayuntamiento de Montilla,ENTIDADES LOCALES > Andalucía > Córdoba > Ayuntamientos > Montilla,128,9,38,7.6,1.18,0.5,2.49,0.393,sin_senal
+EP3500700D,Ayuntamiento de Betancuria,ENTIDADES LOCALES > Canarias > Las Palmas > Ayuntamientos > Betancuria,259,8,33,6.6,1.21,0.48,2.68,0.386,sin_senal
+EP3301600G,Ayuntamiento de Castrillón,ENTIDADES LOCALES > Asturias > Ayuntamientos > Castrillón,627,7,28,5.6,1.25,0.46,2.93,0.378,sin_senal
+EP4618600C,Ayuntamiento de Ontinyent,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Ontinyent,168,9,43,8.6,1.05,0.45,2.18,0.515,sin_senal
+EA86171964,Loterías y Apuestas del Estado,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES y CONSORCIOS ESTATALES > Ministerio de Hacienda > Loterías y Apuestas del Estado",207,7,30,6.0,1.17,0.43,2.71,0.432,sin_senal
+ES2826015F,Secretaría de Estado de Presupuestos y Gastos,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Hacienda > Secretaría de Estado de Presupuestos y Gastos,116,7,31,6.2,1.13,0.42,2.61,0.46,sin_senal
+EP1306300D,Ayuntamiento de Piedrabuena,ENTIDADES LOCALES > Castilla La Mancha > Ciudad Real > Ayuntamientos > Piedrabuena,990,6,25,5.0,1.2,0.4,3.0,0.426,sin_senal
+EP1100600D,Ayuntamiento de Arcos de la Frontera,ENTIDADES LOCALES > Andalucía > Cádiz > Ayuntamientos > Arcos de la Frontera,300,7,35,7.0,1.0,0.37,2.28,0.57,sin_senal
+EP1813500D,Ayuntamiento de Monachil,ENTIDADES LOCALES > Andalucía > Granada > Ayuntamientos > Monachil,115,6,30,6.0,1.0,0.34,2.44,0.573,sin_senal
+EA81874984,"Presidencia y Dirección de Administración y Finanzas de la de la Sociedad Mercantil Estatal para la Gestión de la Innovación y las Tecnologías Turísticas, S.A.M.P. (SEGITTUR) y otros órganos del mismo NIF","OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES y CONSORCIOS ESTATALES > Ministerio de Industria y Turismo > SEGITTUR",118,10,70,14.0,0.71,0.33,1.39,0.878,sin_senal
+EQ2802141H,Presidencia de la Comisión Nacional de los Mercados y la Competencia y otros órganos del mismo NIF,ADMINISTRACIÓN GENERAL DEL ESTADO,99,5,35,7.0,0.71,0.22,1.83,0.822,sin_senal

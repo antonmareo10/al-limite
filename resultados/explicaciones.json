@@ -1,0 +1,476 @@
+{
+ "10000170000108": {
+  "citas": [
+   "0zGiinE6Ldt70UvEyYJSGw%3D%3D",
+   "7H%2FFcolyGD%2BS81gZFETWmA%3D%3D",
+   "HQyaeupb58UaF6cS8TCh%2FA%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 64 minor contracts for services and supplies above 14,000 and up to 15,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 1.8 contracts would be expected. The observed-to-expected ratio is 35.6, with a 95% confidence interval of 17.6 to 81.3. December accounts for 0% of the contracts just under the limit, compared with 4% of all its services and supplies contracts. The contracts just under the limit are spread across 57 different awardees. Contract [1], for 14,521.78 euros, was awarded in October 2025.\nWhat it cannot show: The fact that many contracts are just under the limit does not prove that any of them were improperly awarded. It could be due to market prices, budget constraints, or the need for multiple smaller contracts to meet specific requirements. Statistical patterns alone do not indicate wrongdoing.\nWhat can be checked: Check the details of contract [1] to see what services were purchased and the reason for the amount being just under the limit. Also, review the distribution of contracts across different awardees to ensure no single provider was used excessively. Look at the timing of the contracts to see if there's a pattern in when they were awarded.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 64 contratos menores de servicios y suministros de más de 14.000 y hasta 15.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 1,8 contratos. La razón entre observados y esperados es 35,6, con un intervalo de confianza del 95 % de 17,6 a 81,3. El contrato [1], de 14.521,78 euros, se adjudicó en octubre de 2025.\nQué no pueden demostrar: la acumulación de importes junto al límite es un indicador estadístico. No prueba que se haya partido ningún contrato ni que alguien haya actuado mal; puede deberse a precios de mercado, a presupuestos cerrados o a necesidades distintas.\nQué se puede revisar: en los expedientes enlazados, qué se contrató en cada caso y en qué fechas, y si varios contratos atienden una misma necesidad que pudo contratarse de una vez.",
+  "generado": "2026-11-15",
+  "hash": "022f17f6d6c427c0",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "plantilla",
+  "rechazos": [
+   {
+    "intento": 1,
+    "lang": "es",
+    "motivos": [
+     "cifras: hay cifras en el apartado 3"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que se adjudiquen contratos justo por debajo del límite no indica que se haya partido ningún contrato ni que haya actuado mal alguien. Puede ser una decisión basada en razones legítimas, como la necesidad de un servicio o el precio de mercado. Además, el hecho de que algunos contratos se adjudiquen en diciembre no implica que se haya excedido del límite o que haya habido irregularidad.\",\n  \"revisar\": \"Es importante comprobar si los contratos adjudicados junto al límite atienden necesidades similares o distintas. También se puede revisar si hay contratos repetidos con el mismo adjudicatario, ya que se han distribuido entre 57 distintos y ninguno ha alcanzado 3 contratos. Además, se puede analizar si los contratos adjudicados en diciembre siguen una tendencia diferente a los demás meses.\"}"
+   },
+   {
+    "intento": 2,
+    "lang": "es",
+    "motivos": [
+     "longitud: 285 palabras",
+     "cifras: hay cifras en el apartado 3"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que se adjudiquen contratos justo por debajo del límite no indica que haya habido decisiones maliciosas o abusos. Puede ser una elección basada en consideraciones legales o presupuestarias. Además, la distribución entre muchos adjudicatarios no implica que haya sido un proceso desorganizado o irregular. Las razones por las que se eligen ciertos proveedores pueden ser legítimas, como la disponibilidad de recursos o la necesidad de diversidad en los proveedores.\",\n  \"revisar\": \"Se puede revisar si los contratos adjudicados junto al límite se reparten de manera equitativa entre los adjudicatarios y si hay repetición de proveedores en diferentes categorías. También se puede comprobar si los contratos adjudicados en diciembre, que representan un 4 % de los totales, muestran un patrón distinto en términos de tipo de servicio o suministro. Además, se puede analizar si los contratos [1], [2] y [3], que se adjudicaron en los meses de agosto, septiembre y octubre de 2025, atienden necesidades similares o distintas.\"}"
+   },
+   {
+    "intento": 3,
+    "lang": "es",
+    "motivos": [
+     "cautela: el segundo apartado no niega nada"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"La frecuencia de contratos al límite no refleja necesariamente actos ilegales o abusos. Puede deberse a razones como la estabilidad de precios, la necesidad de contratar con empresas que no superan el límite o la distribución de presupuestos en distintas fechas.\",\n  \"revisar\": \"Es importante comprobar si los contratos al límite se reparten entre empresas distintas y si hay repetición de adjudicatarios. También se puede revisar si los contratos se adjudicaron en periodos específicos, como diciembre, y si se han cumplido las normas de transparencia en cada uno de ellos.\"}"
+   }
+  ],
+  "regla": "ss"
+ },
+ "10000170000450": {
+  "citas": [
+   "7Y5xrbI6HpAeIBJRHQiPkQ%3D%3D",
+   "eY1RBzTv8Sp4zIRvjBVCSw%3D%3D",
+   "1%2B6aFEX442AIYE3ZiZ%2BxmQ%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 75 minor contracts for works above 37,500 and up to 40,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 4.0 contracts would be expected. The observed-to-expected ratio is 18.8, with a 95% confidence interval of 11.3 to 32.4. December accounts for 8% of the contracts just under the limit, compared with 8% of all its works contracts. The awardee with the most contracts just under the limit, called awardee A here, has 6. Contract [1], for 38,459.26 euros, was awarded in November 2025.\nWhat it cannot show: The high ratio shows a pattern, but it doesn't prove any breach. Prices might be standard, budgets fixed, or needs separate. Statistical trends don't mean wrongdoing in individual cases.\nWhat can be checked: Check contract details for consistency. Look at awardee A's other contracts to see if they repeat similar purchases. Review contract [1] to see if the amount aligns with market rates for the work described.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 75 contratos menores de obras de más de 37.500 y hasta 40.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 4,0 contratos. La razón entre observados y esperados es 18,8, con un intervalo de confianza del 95 % de 11,3 a 32,4. En diciembre se adjudicó el 8 % de los contratos junto al límite, mientras que diciembre supone el 8 % de todos sus contratos de obras. El adjudicatario con más contratos junto al límite, al que aquí se llama adjudicatario A, tiene 6. El contrato [1], de 38.459,26 euros, se adjudicó en noviembre de 2025.\nQué no pueden demostrar: El hecho de que se adjudiquen contratos al límite no prueba que haya sido un error o que se haya actuado mal. Puede haber razones legítimas, como necesidades específicas o precios de mercado. La concentración de contratos en unos pocos adjudicatarios no implica necesariamente irregularidades.\nQué se puede revisar: Es importante comprobar si los contratos [1], [2] y [3] atienden la misma necesidad. También se puede revisar si el adjudicatario A repite contratos en distintas áreas. Se podría analizar si la frecuencia de contratos al límite se mantiene en otros meses del año.",
+  "generado": "2026-11-15",
+  "hash": "0308455ba9eff1fa",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "modelo",
+  "rechazos": [],
+  "regla": "obras"
+ },
+ "10000170000708": {
+  "citas": [
+   "Vt99t2c2%2BNp4zIRvjBVCSw%3D%3D",
+   "ERmEp3%2BnzbN4zIRvjBVCSw%3D%3D",
+   "s8I37Po7cd2opEMYCmrbmw%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 63 minor contracts for works above 37,500 and up to 40,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 1.6 contracts would be expected. The observed-to-expected ratio is 39.4, with a 95% confidence interval of 18.8 to 95.2. December accounts for 0% of the contracts just under the limit, compared with 5% of all its works contracts. The awardee with the most contracts just under the limit, called awardee A here, has 8. Contract [1], for 39,247.39 euros, was awarded in November 2025.\nWhat it cannot show: The fact that many contracts are just under the limit does not prove that any of them were improperly awarded. It could be due to market pricing, budget constraints, or the need for multiple smaller contracts to meet specific requirements.\nWhat can be checked: Check the details of contract [1] to see what was purchased and the reason for the amount. Also, review the contracts of awardee A to see if they are consistently awarded for similar needs or if there is a pattern in the types of work contracted. Look at the distribution of contracts across different months to see if there is a seasonal trend.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 63 contratos menores de obras de más de 37.500 y hasta 40.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 1,6 contratos. La razón entre observados y esperados es 39,4, con un intervalo de confianza del 95 % de 18,8 a 95,2. En diciembre se adjudicó el 0 % de los contratos junto al límite, mientras que diciembre supone el 5 % de todos sus contratos de obras. Los contratos junto al límite se reparten entre 36 adjudicatarios distintos. El contrato [1], de 39.247,39 euros, se adjudicó en noviembre de 2025.\nQué no pueden demostrar: La cantidad de contratos cerca del límite no indica que haya habido irregularidades o que se hayan violado normas. Puede ser una decisión basada en factores como la disponibilidad de proveedores, el tipo de obra o la necesidad específica del organismo.\nQué se puede revisar: Se puede comprobar si los contratos adjudicados en diciembre fueron los que más se acercaron al límite. También se puede revisar si el adjudicatario A repite la misma actividad en otros contratos y si esos contratos atienden necesidades similares.",
+  "generado": "2026-11-15",
+  "hash": "827b6485b23778cc",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "modelo",
+  "rechazos": [
+   {
+    "intento": 1,
+    "lang": "es",
+    "motivos": [
+     "longitud: 261 palabras"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que se adjudiquen contratos justo por debajo del límite no implica que se haya actuado de forma irregular. Puede haber razones legítimas, como la necesidad de contratación en un momento específico o la conformidad con los precios del mercado. Además, el hecho de que se repartan entre muchos adjudicatarios no significa que haya un patrón de comportamiento problemático.\",\n  \"revisar\": \"Es importante comprobar cuántos contratos se adjudicaron en diciembre, ya que ese mes no hubo contratos junto al límite. También se puede revisar si el adjudicatario A, que tiene más contratos en esta franja, tiene otros contratos en la misma categoría o si se repiten las mismas necesidades en los contratos adjudicados en noviembre. Además, se puede analizar si los contratos [1], [2] y [3] atienden necesidades similares o si se reparten entre diferentes tipos de obras.\"}"
+   },
+   {
+    "intento": 2,
+    "lang": "es",
+    "motivos": [
+     "cifras: hay cifras en el apartado 3"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que se adjudiquen contratos justo por debajo del límite no indica que se haya cometido un error o que se haya actuado de forma irregular. Puede deberse a razones legítimas, como la necesidad de ajustar presupuestos o a precios de mercado. Además, el hecho de que se distribuyan entre varios adjudicatarios no implica que haya una preferencia o una práctica inusual.\",\n  \"revisar\": \"Es importante comprobar si los contratos [1], [2] y [3], adjudicados en noviembre de 2025, atienden necesidades similares o distintas. También se puede revisar si el adjudicatario A, que tiene más contratos junto al límite, tiene un historial de adjudicaciones consistentes o si hay patrones en la distribución de los contratos entre los años 2023-2025.\"}"
+   }
+  ],
+  "regla": "obras"
+ },
+ "10000170000714": {
+  "citas": [
+   "IZFKhhWPmuWcCF8sV%2BqtYA%3D%3D",
+   "19ByZeRFXzTgL1BHd3qjQA%3D%3D",
+   "0T4WGiAZwEu9Hd5zqvq9cg%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 71 minor contracts for works above 37,500 and up to 40,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 4.0 contracts would be expected. The observed-to-expected ratio is 17.8, with a 95% confidence interval of 10.7 to 30.8. December accounts for 1% of the contracts just under the limit, compared with 2% of all its works contracts. The awardee with the most contracts just under the limit, called awardee A here, has 8. Contract [1], for 39,676.03 euros, was awarded in November 2025.\nWhat it cannot show: The concentration of contracts near the legal limit does not prove improper actions. It could reflect market conditions or budget constraints. Statistical indicators alone do not confirm wrongdoing without further investigation.\nWhat can be checked: Check the number of contracts for similar needs to identify patterns. Review awardee A's contracts to see if they repeat the same requests. Contract [1] shows a specific purchase amount and date, which can help assess consistency.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 71 contratos menores de obras de más de 37.500 y hasta 40.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 4,0 contratos. La razón entre observados y esperados es 17,8, con un intervalo de confianza del 95 % de 10,7 a 30,8. En diciembre se adjudicó el 1 % de los contratos junto al límite, mientras que diciembre supone el 2 % de todos sus contratos de obras. Los contratos junto al límite se reparten entre 31 adjudicatarios distintos. El contrato [1], de 39.676,03 euros, se adjudicó en noviembre de 2025.\nQué no pueden demostrar: El hecho de que se adjudiquen contratos al límite no implica que haya sido un error. Puede deberse a razones legítimas, como necesidades específicas o precios de mercado.\nQué se puede revisar: Comprobar si los contratos [1], [2], [3] atienden la misma necesidad. Verificar si el adjudicatario A repite contratos en otros ámbitos. Analizar si los contratos al límite se distribuyen uniformemente entre los adjudicatarios.",
+  "generado": "2026-11-15",
+  "hash": "bacb531734dc1d85",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "modelo",
+  "rechazos": [
+   {
+    "intento": 1,
+    "lang": "en",
+    "motivos": [
+     "cifras: hay cifras en el apartado 3"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 6, 7],\n  \"no_demuestran\": \"The high ratio shows a pattern, but it doesn't prove any breach. Prices near the limit can be due to market rates or budget constraints. Legal limits are set for good reason, and small variations don't always mean wrongdoing.\",\n  \"revisar\": \"Check the dates and amounts of the November 2025 contracts to see if they align with the overall pattern. Look at awardee A's contracts to see if they repeat the same type of work. Review if multiple contracts cover the same need to ensure no overlap or duplication.\"\n}"
+   }
+  ],
+  "regla": "obras"
+ },
+ "10000170000717": {
+  "citas": [
+   "z3U1dsmc76LpxJFXpLZ%2B2A%3D%3D",
+   "3AnUle83rZ3IGlsa0Wad%2Bw%3D%3D",
+   "c1XfQvzHOFX10HRJw8TEnQ%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 37 minor contracts for services and supplies above 14,000 and up to 15,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 0.6 contracts would be expected. The observed-to-expected ratio is 61.7, with a 95% confidence interval of 19.5 to 312.6. December accounts for 0% of the contracts just under the limit, compared with 5% of all its services and supplies contracts. The contracts just under the limit are spread across 25 different awardees. Contract [1], for 14,550 euros, was awarded in November 2025.\nWhat it cannot show: The fact that many contracts are just under the limit does not mean that any of them were improperly awarded. It could reflect normal market pricing or budget constraints. The data alone does not indicate wrongdoing or improper behavior by any party involved.\nWhat can be checked: Check the details of contract [1] to see what services were provided and the reasons for the specific amount. Also, review the distribution of contracts across different awardees to identify any patterns or potential overlaps in service provision. Look for any repeated orders from the same awardee that might suggest a need for further scrutiny.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 37 contratos menores de servicios y suministros de más de 14.000 y hasta 15.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 0,6 contratos. La razón entre observados y esperados es 61,7, con un intervalo de confianza del 95 % de 19,5 a 312,6. El contrato [1], de 14.550 euros, se adjudicó en noviembre de 2025.\nQué no pueden demostrar: la acumulación de importes junto al límite es un indicador estadístico. No prueba que se haya partido ningún contrato ni que alguien haya actuado mal; puede deberse a precios de mercado, a presupuestos cerrados o a necesidades distintas.\nQué se puede revisar: en los expedientes enlazados, qué se contrató en cada caso y en qué fechas, y si varios contratos atienden una misma necesidad que pudo contratarse de una vez.",
+  "generado": "2026-11-15",
+  "hash": "421aedd2c296a354",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "plantilla",
+  "rechazos": [
+   {
+    "intento": 1,
+    "lang": "es",
+    "motivos": [
+     "cifras: hay cifras en el apartado 3"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que se adjudiquen contratos justo por debajo del límite no indica que se haya partido ningún contrato ni que haya actuado mal alguien. Puede deberse a razones legítimas, como precios de mercado o necesidades distintas. Además, el hecho de que algunos contratos se adjudiquen en diciembre no implica que haya sido un momento especial o abusivo.\",\n  \"revisar\": \"Se puede revisar si los contratos [1], [2] y [3], adjudicados en noviembre de 2025, atienden una misma necesidad. También se puede comprobar si el adjudicatario A, que tiene más contratos junto al límite, repite encargas similares. Además, se puede revisar si los contratos adjudicados en diciembre se reparten entre adjudicatarios distintos o si hay una tendencia a concentrar las contrataciones en pocos proveedores.\"}"
+   },
+   {
+    "intento": 2,
+    "lang": "es",
+    "motivos": [
+     "cifras: hay cifras en el apartado 3"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que se adjudiquen contratos justo por debajo del límite no indica que haya habido irregularidades o que se haya actuado de forma incorrecta. Puede deberse a razones legítimas, como la necesidad de contratar en un momento concreto o la disponibilidad de proveedores en ese rango de precios.\",\n  \"revisar\": \"Se puede comprobar si los contratos adjudicados en diciembre (0 %) coinciden con otros contratos en el mismo periodo. También se puede revisar si el adjudicatario A, que tiene más contratos junto al límite, está relacionado con otros contratos de similares características. Además, se puede analizar si varios contratos atienden necesidades similares o si se han contratado en un mismo periodo con objetivos distintos.\"}"
+   },
+   {
+    "intento": 3,
+    "lang": "es",
+    "motivos": [
+     "longitud: 263 palabras",
+     "cifras: hay cifras en el apartado 3"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"La frecuencia de contratos al límite no refleja necesariamente una práctica irregular, ya que puede estar influenciada por factores como la demanda de servicios, la disponibilidad de proveedores o la planificación anual. Además, el hecho de que algunos contratos se adjudiquen al límite no implica que se haya cometido un error o una falta de criterio en la selección del proveedor.\",\n  \"revisar\": \"Es importante comprobar si los contratos adjudicados al límite responden a una necesidad específica y si se reparten entre diferentes proveedores. También se podría revisar si el adjudicatario A, que tiene más contratos al límite, está vinculado a necesidades recurrentes o si hay alguna repetición de servicios que puedan ser optimizados. Además, se podría analizar si los contratos adjudicados en noviembre de 2025, como el contrato [1], están relacionados con otros contratos del mismo período.\"}"
+   }
+  ],
+  "regla": "ss"
+ },
+ "10000170000719": {
+  "citas": [
+   "cc4DgEUyYgtVYjgxA4nMUw%3D%3D",
+   "dHpyfUKKe7YeIBJRHQiPkQ%3D%3D",
+   "PI6G3ElI3IPyoM4us5k4vw%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 31 minor contracts for services and supplies above 14,000 and up to 15,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 0.4 contracts would be expected. The observed-to-expected ratio is 77.5, with a 95% confidence interval of 19.7 to 668.3. December accounts for 3% of the contracts just under the limit, compared with 3% of all its services and supplies contracts. The contracts just under the limit are spread across 17 different awardees. Contract [1], for 14,800 euros, was awarded in November 2025.\nWhat it cannot show: The fact that many contracts are just under the limit does not mean that any of them were improperly awarded. It could reflect normal market pricing, budget constraints, or the need for multiple smaller contracts to meet specific requirements.\nWhat can be checked: Check the details of contract [1] to see what services were provided and the dates of delivery. Also, review the contracts to see if multiple contracts were used for the same purpose, which could indicate a need for separate agreements. Look for patterns in the timing of awards to determine if there's a consistent schedule or random distribution.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 31 contratos menores de servicios y suministros de más de 14.000 y hasta 15.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 0,4 contratos. La razón entre observados y esperados es 77,5, con un intervalo de confianza del 95 % de 19,7 a 668,3. En diciembre se adjudicó el 3 % de los contratos junto al límite, mientras que diciembre supone el 3 % de todos sus contratos de servicios y suministros. Los contratos junto al límite se reparten entre 17 adjudicatarios distintos. El contrato [1], de 14.800 euros, se adjudicó en noviembre de 2025.\nQué no pueden demostrar: La cantidad de contratos cerca del límite no indica que se haya salido de él. Puede haber razones válidas, como necesidades específicas o presupuestos cerrados. Además, el hecho de que se adjudiquen contratos en diciembre no implica que se haya actuado de forma irregular.\nQué se puede revisar: Es necesario comprobar si los contratos adjudicados en diciembre están relacionados con la misma necesidad. También se debe revisar si el adjudicatario A repite contratos por necesidad funcional o por otras razones. Otra comprobación sería analizar si los contratos están distribuidos de forma equilibrada entre los adjudicatarios.",
+  "generado": "2026-11-15",
+  "hash": "9a92139ecb51a889",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "modelo",
+  "rechazos": [
+   {
+    "intento": 1,
+    "lang": "es",
+    "motivos": [
+     "longitud: 273 palabras",
+     "cifras: hay cifras en el apartado 3"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que se adjudiquen contratos cerca del límite no indica que haya habido irregularidades o que se haya actuado de forma maliciosa. Puede ser una decisión basada en criterios de mercado, presupuestos cerrados o necesidades específicas que no se ajustan a una franja más baja. Además, la concentración de contratos en un número limitado de adjudicatarios no implica necesariamente que haya existido una preferencia o favoritismo.\",\n  \"revisar\": \"Se puede comprobar si los contratos adjudicados junto al límite responden a necesidades similares o si se repiten en el mismo área. También es relevante revisar si los adjudicatarios que más veces se han adjudicado contratos junto al límite tienen otros contratos en el mismo sector o si se han adjudicado contratos en periodos distintos. Por ejemplo, el contrato [1] se adjudicó en noviembre de 2025, y el adjudicatario A tiene otros tres contratos en el mismo rango.\"}"
+   },
+   {
+    "intento": 2,
+    "lang": "es",
+    "motivos": [
+     "longitud: 261 palabras"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que se adjudiquen contratos cerca del límite no indica que haya habido errores o decisiones mal informadas. Puede ser una estrategia para adaptarse a cambios en el mercado o a necesidades específicas. Además, la distribución entre varios adjudicatarios no refleja necesariamente una falta de criterio, ya que podría estar relacionada con la diversidad de ofertas o la cobertura de áreas distintas.\",\n  \"revisar\": \"Es importante comprobar si los contratos adjudicados en diciembre están relacionados con la misma necesidad o si se reparten entre diferentes áreas. También se puede revisar si el adjudicatario A, que tiene los más contratos cerca del límite, está encargado de necesidades que requieren un enfoque específico. Además, se podría analizar si los contratos [1], [2] y [3] responden a una misma solicitud o si se ajustan a distintas demandas.\"}"
+   }
+  ],
+  "regla": "ss"
+ },
+ "10000170000720": {
+  "citas": [
+   "BdkdXIHfXcmKeVWTb9Scog%3D%3D",
+   "gR6OkJVxTB4IYE3ZiZ%2BxmQ%3D%3D",
+   "NPSbd9OJDJs%2B1TMyIiZmzw%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 29 minor contracts for works above 37,500 and up to 40,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 0.6 contracts would be expected. The observed-to-expected ratio is 48.3, with a 95% confidence interval of 15.0 to 247.9. December accounts for 0% of the contracts just under the limit, compared with 0% of all its works contracts. The contracts just under the limit are spread across 14 different awardees. Contract [1], for 38,105.79 euros, was awarded in October 2025.\nWhat it cannot show: The fact that many contracts are just under the legal limit does not prove that any of them were improperly awarded. It could be due to market pricing, budget constraints, or the need for multiple smaller contracts to meet specific requirements.\nWhat can be checked: Check the details of contract [1] to see what was purchased and the reason for the amount. Also, review the distribution of contracts across different awardees to ensure no single provider was favored. Look for patterns in the dates of awards to determine if multiple contracts were awarded for the same need.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 29 contratos menores de obras de más de 37.500 y hasta 40.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 0,6 contratos. La razón entre observados y esperados es 48,3, con un intervalo de confianza del 95 % de 15,0 a 247,9. El contrato [1], de 38.105,79 euros, se adjudicó en octubre de 2025.\nQué no pueden demostrar: la acumulación de importes junto al límite es un indicador estadístico. No prueba que se haya partido ningún contrato ni que alguien haya actuado mal; puede deberse a precios de mercado, a presupuestos cerrados o a necesidades distintas.\nQué se puede revisar: en los expedientes enlazados, qué se contrató en cada caso y en qué fechas, y si varios contratos atienden una misma necesidad que pudo contratarse de una vez.",
+  "generado": "2026-11-15",
+  "hash": "221f530f4abd4630",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "plantilla",
+  "rechazos": [
+   {
+    "intento": 1,
+    "lang": "es",
+    "motivos": [
+     "longitud: 289 palabras"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que se adjudiquen contratos justo por debajo del límite no implica que haya existido una decisión mal informada o que se haya actuado de forma irregular. Puede ser una elección basada en consideraciones económicas, presupuestarias o de necesidad específica. Además, el hecho de que algunos contratos se adjudiquen en diciembre no necesariamente refleja una preferencia por esa fecha, ya que no se tiene información sobre las razones por las que se eligen ciertos meses para adjudicar contratos.\",\n  \"revisar\": \"Se puede revisar si los contratos junto al límite se reparten de forma equitativa entre los adjudicatarios o si hay una concentración en unos pocos. También se puede comprobar si los contratos adjudicados en diciembre tienen un valor similar al de los demás contratos o si se ajustan a un patrón específico. Por ejemplo, se puede analizar si el adjudicatario A, que tiene más contratos junto al límite, tiene una relación con otros contratos o si esos contratos se relacionan con una misma necesidad del organismo.\"}"
+   },
+   {
+    "intento": 2,
+    "lang": "es",
+    "motivos": [
+     "longitud: 263 palabras",
+     "cifras: hay cifras en el apartado 3"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que se adjudiquen contratos justo por debajo del límite no indica que se haya cometido un error o que se haya actuado de forma irregular. Puede deberse a razones legítimas, como la necesidad de ajustar presupuestos o a precios de mercado que no permiten superar ciertos valores. Además, la distribución entre varios adjudicatarios no implica que se haya existido una decisión mal informada o que se haya privilegiado a algún proveedor en particular.\",\n  \"revisar\": \"Es importante comprobar si los contratos adjudicados en diciembre, que representan 0 % de los contratos junto al límite, coincidieron con necesidades específicas o si hubo variaciones en las solicitudes de presupuesto. También se puede revisar si el adjudicatario A, que tiene más contratos en esta franja, se encargó de proyectos con objetivos similares o si hubo repetición de encargos en el mismo periodo.\"}"
+   },
+   {
+    "intento": 3,
+    "lang": "es",
+    "motivos": [
+     "cifras: hay cifras en el apartado 3",
+     "cautela: el segundo apartado no niega nada"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"La cantidad de contratos junto al límite no refleja necesariamente que haya existido fraude o que se haya actuado de manera incorrecta. Puede haber razones legítimas, como la necesidad de realizar obras en un momento concreto o la presencia de precios de mercado que limitan la posibilidad de contratación a menor importe.\",\n  \"revisar\": \"Es importante comprobar si los contratos [1], [2] y [3], adjudicados en octubre de 2025, atienden una misma necesidad y si hay otros contratos que se repartan entre los mismos adjudicatarios. También se puede revisar si en diciembre, cuando no se adjudicaron contratos junto al límite, se realizaron otras obras con importes superiores al límite.\"}"
+   }
+  ],
+  "regla": "obras"
+ },
+ "10000420051323": {
+  "citas": [
+   "BEkoGGJNZEO7JOCXkOhcDg%3D%3D",
+   "oN1zCM3Mx9KTylGzYmBF9Q%3D%3D",
+   "uz4F8k6DWcLECtSnloz%2BZQ%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 387 minor contracts for works above 37,500 and up to 40,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 15.8 contracts would be expected. The observed-to-expected ratio is 24.5, with a 95% confidence interval of 19.2 to 31.6. December accounts for 1% of the contracts just under the limit, compared with 1% of all its works contracts. The contracts just under the limit are spread across 111 different awardees. Contract [1], for 39,635 euros, was awarded in December 2025.\nWhat it cannot show: The fact that many contracts are just under the limit does not mean that any of them were improperly awarded. It could reflect standard market pricing, budget constraints, or the need for multiple smaller contracts to meet specific requirements.\nWhat can be checked: Check the details of contract [1] to see what was purchased and the reason for the specific amount. Also, review the distribution of contracts across different awardees to identify if any single awardee has an unusually high number of contracts. Look for patterns in the dates of awards to determine if there's a seasonal trend.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 387 contratos menores de obras de más de 37.500 y hasta 40.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 15,8 contratos. La razón entre observados y esperados es 24,5, con un intervalo de confianza del 95 % de 19,2 a 31,6. En diciembre se adjudicó el 1 % de los contratos junto al límite, mientras que diciembre supone el 1 % de todos sus contratos de obras. Los contratos junto al límite se reparten entre 111 adjudicatarios distintos. El contrato [1], de 39.635 euros, se adjudicó en diciembre de 2025.\nQué no pueden demostrar: Agrupar contratos cerca del límite no implica que se haya actuado de forma incorrecta, ya que puede deberse a razones legítimas como la necesidad de cubrir demandas específicas o a variaciones en los precios de mercado. Además, no se puede inferir que haya existido una intención maliciosa simplemente por estar cerca del límite legal.\nQué se puede revisar: Es importante comprobar qué necesidades se atendieron con los contratos junto al límite, si se repitieron adjudicatarios para cubrir la misma necesidad y qué sucedió con los contratos adjudicados en diciembre, que representan un porcentaje significativo de los contratos de obras. También se puede revisar si los contratos [1], [2] y [3] se relacionan entre sí en términos de objeto y fechas.",
+  "generado": "2026-11-15",
+  "hash": "73da27c2e14a687e",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "modelo",
+  "rechazos": [
+   {
+    "intento": 1,
+    "lang": "es",
+    "motivos": [
+     "longitud: 261 palabras"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que se adjudiquen contratos justo por debajo del límite no implica que haya existido una decisión mal informada o que se haya salido del límite. Puede ser una decisión basada en condiciones del mercado o en necesidades específicas. Además, el hecho de que algunos contratos se adjudiquen en diciembre no demuestra que se haya actuado de forma irregular o que se haya aprovechado una fecha específica para optimizar gastos.\",\n  \"revisar\": \"Se puede revisar si los contratos adjudicados en diciembre están relacionados con la misma necesidad o si se repiten las mismas empresas. También se puede comprobar si el adjudicatario A, que tiene más contratos junto al límite, tiene una frecuencia anormal en la adjudicación. Además, se puede revisar si los contratos [1], [2] y [3] se adjudicaron en el mismo periodo y si atienden necesidades similares.\"}"
+   },
+   {
+    "intento": 2,
+    "lang": "es",
+    "motivos": [
+     "cifras: hay cifras en el apartado 3",
+     "cita: referencia a un contrato que no existe"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que se adjudiquen contratos justo por debajo del límite no indica que se haya cometido un error o que se haya actuado de forma irregular. Puede deberse a razones legítimas, como la necesidad de ajustarse a precios de mercado o a presupuestos cerrados. Además, la concentración de contratos en un pequeño número de adjudicatarios no implica que se haya favoritismo o que se haya actuado de manera maliciosa.\",\n  \"revisar\": \"Es importante comprobar si los contratos adjudicados en diciembre de 2025 ([1]) y en noviembre de 2025 ([2], [3]) están relacionados con la misma necesidad o si se repiten las mismas empresas. También se debe revisar si los adjudicatarios que más contratos tienen ([6]) están cumpliendo con los plazos y las especificaciones de los contratos.\"}"
+   }
+  ],
+  "regla": "obras"
+ },
+ "21058490149609": {
+  "citas": [
+   "w4mGsNR%2BX347%2B9FIQYNjeQ%3D%3D",
+   "XI6s9WMkBP8l5NjlNci%2BtA%3D%3D",
+   "4VOW2CPc9bYtm4eBPtV6eQ%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 35 minor contracts for services and supplies above 14,000 and up to 15,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 1.4 contracts would be expected. The observed-to-expected ratio is 25.0, with a 95% confidence interval of 10.9 to 66.7. December accounts for 20% of the contracts just under the limit, compared with 16% of all its services and supplies contracts. Contract [1], for 14,700 euros, was awarded in December 2025. Contract [2], for 14,550 euros, was awarded in December 2025.\nWhat it cannot show: The concentration of contracts in December does not indicate improper activity. Similar trends could result from seasonal demand or budget cycles. Small amounts near the limit do not prove violations, as prices may vary or budgets may be fixed.\nWhat can be checked: Check the contract dates and values for consistency. Review if multiple contracts address the same need. Verify if the awardees have other contracts that might suggest a pattern.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 35 contratos menores de servicios y suministros de más de 14.000 y hasta 15.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 1,4 contratos. La razón entre observados y esperados es 25,0, con un intervalo de confianza del 95 % de 10,9 a 66,7. En diciembre se adjudicó el 20 % de los contratos junto al límite, mientras que diciembre supone el 16 % de todos sus contratos de servicios y suministros. Los contratos junto al límite se reparten entre 35 adjudicatarios distintos. El contrato [1], de 14.700 euros, se adjudicó en diciembre de 2025.\nQué no pueden demostrar: El hecho de que se adjudiquen contratos al límite no implica que haya sido un error. Puede ser una decisión basada en precios de mercado o necesidades específicas.\nQué se puede revisar: Es importante comprobar si los contratos [1], [2], [3] atienden la misma necesidad. También revisar si en diciembre se repartieron muchos contratos al límite entre distintos proveedores.",
+  "generado": "2026-11-15",
+  "hash": "e450be75448ceb25",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "modelo",
+  "rechazos": [],
+  "regla": "ss"
+ },
+ "21090820152842": {
+  "citas": [
+   "%2BqimZ7I8Lwg4NavIWzMcHA%3D%3D",
+   "Ltdz317Meq4mMOlAXxDEjw%3D%3D",
+   "5ja7QdahzWPLIx6q1oPaMg%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 296 minor contracts for services and supplies above 14,000 and up to 15,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 8.0 contracts would be expected. The observed-to-expected ratio is 37.0, with a 95% confidence interval of 26.5 to 52.9. December accounts for 15% of the contracts just under the limit, compared with 7% of all its services and supplies contracts. The awardee with the most contracts just under the limit, called awardee A here, has 78. Contract [1], for 14,990.04 euros, was awarded in December 2025.\nWhat it cannot show: The fact that many contracts are just under the legal limit does not prove that any of them were improperly awarded. It could be due to market conditions, budget constraints, or the need for multiple smaller contracts to meet specific requirements. The data alone does not indicate wrongdoing or improper behavior by any party involved.\nWhat can be checked: To understand the context, check the details of contract [1] to see what services or supplies were purchased and the reason for the amount being just under the limit. Also, review the distribution of contracts across different awardees to see if any single provider was awarded a disproportionately large number of contracts. Look at the dates of the contracts to identify any patterns or anomalies in the timing of awards.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 296 contratos menores de servicios y suministros de más de 14.000 y hasta 15.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 8,0 contratos. La razón entre observados y esperados es 37,0, con un intervalo de confianza del 95 % de 26,5 a 52,9. En diciembre se adjudicó el 15 % de los contratos junto al límite, mientras que diciembre supone el 7 % de todos sus contratos de servicios y suministros. Los contratos junto al límite se reparten entre 75 adjudicatarios distintos. El contrato [1], de 14.990,04 euros, se adjudicó en diciembre de 2025.\nQué no pueden demostrar: El hecho de que se adjudiquen contratos cerca del límite no indica que haya habido abuso o que se haya salido de los límites. Puede haber razones legítimas, como la necesidad de contratar en un momento específico o por razones de mercado. Además, el hecho de que se repartan entre muchos adjudicatarios no implica que haya habido irregularidad.\nQué se puede revisar: Es importante comprobar si los contratos adjudicados en diciembre están relacionados con la misma necesidad o si se repiten en el mismo periodo. También se puede revisar si el adjudicatario A, que tiene más contratos cerca del límite, está asociado a necesidades recurrentes. Además, se puede analizar si los contratos adjudicados en diciembre coinciden con otros contratos de la misma categoría en el mismo periodo.",
+  "generado": "2026-11-15",
+  "hash": "c64c68a45839fb89",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "modelo",
+  "rechazos": [
+   {
+    "intento": 1,
+    "lang": "es",
+    "motivos": [
+     "longitud: 271 palabras"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que muchos contratos estén muy cerca del límite legal no indica que haya habido irregularidades o que se hayan tomado decisiones maliciosas. Puede deberse a razones como la necesidad de contratar en un momento concreto o a la existencia de ofertas que se ajustan al límite con precisión. Además, no demuestra que se haya evitado contratar con otros proveedores o que se haya priorizado un tipo específico de empresa.\",\n  \"revisar\": \"Es importante comprobar si los contratos adjudicados en diciembre estaban relacionados entre sí y si se trataba de la misma necesidad. También se puede revisar si el adjudicatario A, que tiene más contratos cerca del límite, ha sido el mismo en todos los casos o si ha cambiado en algunos. Además, se puede analizar si los contratos adjudicados en diciembre se repartieron entre diferentes proveedores o si se concentraron en unos pocos.\"}"
+   },
+   {
+    "intento": 1,
+    "lang": "en",
+    "motivos": [
+     "cifras: hay cifras en el apartado 3"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 6, 7],\n  \"no_demuestran\": \"The fact that many contracts are just under the limit does not prove that any of them were improperly awarded. It could reflect normal market pricing, budget constraints, or the need for multiple smaller contracts to meet specific requirements.\",\n  \"revisar\": \"Check the details of contract [1] to see what was purchased and the reason for the small amount. Also, review the contracts awarded in December 2025 to determine if they were part of a pattern or if they addressed a specific need. Look at awardee A's contracts to see if they are all related to the same service or if they cover different areas.\"}"
+   },
+   {
+    "intento": 2,
+    "lang": "en",
+    "motivos": [
+     "tono: lenguaje acusatorio fuera del apartado de cautelas"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 6, 7],\n  \"no_demuestran\": \"The high ratio of contracts just under the limit does not prove that any contracts were improperly awarded or that anyone acted wrongly. It could reflect normal market pricing, budget constraints, or separate needs that require separate contracts. The data is a statistical measure and does not indicate misconduct.\",\n  \"revisar\": \"Check the details of contract [1] to see what was purchased and the dates it was awarded. Also, review the contracts to see if multiple contracts were used for the same need or if the same awardee was repeatedly selected for similar services. This can help determine if the contracts were awarded in a consistent or suspicious manner.\"}"
+   }
+  ],
+  "regla": "ss"
+ },
+ "21556070199367": {
+  "citas": [
+   "0zxLOk0x1fSExvMJXBMHHQ%3D%3D",
+   "XWFIPjYx1na9Hd5zqvq9cg%3D%3D",
+   "cwk3UgOPwlTI8aL3PRS10Q%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 43 minor contracts for works above 37,500 and up to 40,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 1.2 contracts would be expected. The observed-to-expected ratio is 35.8, with a 95% confidence interval of 15.2 to 103.0. December accounts for 5% of the contracts just under the limit, compared with 4% of all its works contracts. The contracts just under the limit are spread across 22 different awardees. Contract [1], for 39,752.22 euros, was awarded in December 2025.\nWhat it cannot show: The fact that many contracts are just under the limit does not mean that any of them were improperly awarded. It could reflect normal market pricing, budget constraints, or the need for multiple smaller contracts to meet specific requirements.\nWhat can be checked: Check the details of contract [1] to see what was purchased and the specific reasons for the amount. Also, review the distribution of contracts across different awardees to identify if any single provider was awarded multiple contracts for similar services. Look for patterns in the timing of awards, especially in December, to understand if there's a seasonal trend.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 43 contratos menores de obras de más de 37.500 y hasta 40.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 1,2 contratos. La razón entre observados y esperados es 35,8, con un intervalo de confianza del 95 % de 15,2 a 103,0. En diciembre se adjudicó el 5 % de los contratos junto al límite, mientras que diciembre supone el 4 % de todos sus contratos de obras. Los contratos junto al límite se reparten entre 22 adjudicatarios distintos. El contrato [1], de 39.752,22 euros, se adjudicó en diciembre de 2025.\nQué no pueden demostrar: La acumulación de contratos cerca del límite no refleja necesariamente un desvío o una mala gestión, ya que puede estar relacionada con factores como la demanda de mercado o la necesidad de cubrir servicios específicos. Además, no se puede asegurar que no haya sido un proceso conforme con las normas aplicables.\nQué se puede revisar: Es importante comprobar si los contratos adjudicados en diciembre se distribuyen de forma equitativa entre los adjudicatarios. También se puede analizar si el adjudicatario A, que tiene la mayor cantidad de contratos cerca del límite, repite la misma tarea o si se trata de diferentes necesidades. Un análisis detallado de los contratos [1] y [2] podría revelar si se han utilizado los mismos proveedores o si se han tenido en cuenta criterios distintos.",
+  "generado": "2026-11-15",
+  "hash": "a213e6fd1cf252c1",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "modelo",
+  "rechazos": [
+   {
+    "intento": 1,
+    "lang": "es",
+    "motivos": [
+     "longitud: 291 palabras"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que se adjudiquen contratos justo por debajo del límite no implica que haya existido una decisión maliciosa o que se haya salido de los límites legales. Puede ser una estrategia para adaptarse a los precios de mercado o a necesidades específicas que no se pueden atender con presupuestos cerrados. Además, el hecho de que se repartan los contratos entre varios adjudicatarios no demuestra que haya habido una preferencia o una falta de competencia en el proceso.\",\n  \"revisar\": \"Se puede revisar si los contratos adjudicados junto al límite están relacionados con la misma necesidad o si se repiten en el mismo periodo. También se puede comprobar si el adjudicatario A, que tiene más contratos en esta franja, ha sido el único en adjudicar en diciembre o si hay otros adjudicatarios con frecuencias similares. Además, se puede analizar si los contratos [1] y [2], adjudicados en diciembre, están relacionados con otros contratos de la misma categoría o si se han distribuido de forma equilibrada entre los diferentes adjudicatarios.\"}"
+   },
+   {
+    "intento": 2,
+    "lang": "es",
+    "motivos": [
+     "longitud: 264 palabras",
+     "cifras: hay cifras en el apartado 3"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que se adjudiquen contratos cerca del límite no implica que haya existido una intención de evitar el límite o que haya habido irregularidad. Puede ser una decisión basada en factores como la disponibilidad de proveedores, la necesidad inmediata o la planificación presupuestaria. La acumulación de importes cerca del límite no refleja necesariamente un comportamiento anormal, ya que puede estar influenciado por circunstancias legítimas.\",\n  \"revisar\": \"Se puede comprobar si los contratos adjudicados en diciembre (4 % de todos los contratos) están relacionados con la misma necesidad o si se reparten entre varios adjudicatarios. También es relevante revisar si el adjudicatario A, que tiene más contratos cerca del límite, tiene una frecuencia anormal en comparación con otros adjudicatarios. Además, se puede analizar si los contratos [1] y [2], adjudicados en diciembre, cumplen con los criterios de elegibilidad según el límite legal.\"}"
+   }
+  ],
+  "regla": "obras"
+ },
+ "21556150199375": {
+  "citas": [
+   "LpGTcD07H23E6P%2FuLemXRw%3D%3D",
+   "H6nJ4wL9kwni0Kd8%2Brcp6w%3D%3D",
+   "%2Bf5ILLsC9FHE6P%2FuLemXRw%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 46 minor contracts for works above 37,500 and up to 40,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 1.8 contracts would be expected. The observed-to-expected ratio is 25.6, with a 95% confidence interval of 12.4 to 59.4. December accounts for 4% of the contracts just under the limit, compared with 13% of all its works contracts. The awardee with the most contracts just under the limit, called awardee A here, has 12. Contract [1], for 39,596.63 euros, was awarded in December 2025.\nWhat it cannot show: The high ratio shows a pattern, but it doesn't prove misconduct. Prices might be near the limit due to market conditions. Budgets or needs could also influence the amounts reported.\nWhat can be checked: Check the awardee A's contracts for repeated purchases. Review contract [1] for its specific purpose and compare it with other contracts from the same awardee. Look at December's contracts to see if they follow a different pattern.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 46 contratos menores de obras de más de 37.500 y hasta 40.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 1,8 contratos. La razón entre observados y esperados es 25,6, con un intervalo de confianza del 95 % de 12,4 a 59,4. En diciembre se adjudicó el 4 % de los contratos junto al límite, mientras que diciembre supone el 13 % de todos sus contratos de obras. Los contratos junto al límite se reparten entre 17 adjudicatarios distintos. El contrato [1], de 39.596,63 euros, se adjudicó en diciembre de 2025.\nQué no pueden demostrar: El hecho de que se adjudiquen contratos al límite no implica que haya sido un error. Puede deberse a razones legítimas, como necesidades específicas o precios de mercado.\nQué se puede revisar: Comprobar si los contratos [1], [2], [3] atienden la misma necesidad. Verificar si el adjudicatario A repite contratos en distintas áreas. Analizar si los contratos al límite se distribuyen uniformemente entre los adjudicatarios.",
+  "generado": "2026-11-15",
+  "hash": "91f67b97a81eb8ba",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "modelo",
+  "rechazos": [],
+  "regla": "obras"
+ },
+ "21557090199469": {
+  "citas": [
+   "IFqkpvvkiTc%2B1TMyIiZmzw%3D%3D",
+   "D9M312%2F47jyGCFcHcNGIlQ%3D%3D",
+   "C1ZvT0aeSVZrhBlEHQFSKA%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 35 minor contracts for works above 37,500 and up to 40,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 0.4 contracts would be expected. The observed-to-expected ratio is 87.5, with a 95% confidence interval of 22.5 to 750.9. December accounts for 9% of the contracts just under the limit, compared with 14% of all its works contracts. Contract [1], for 39,669.42 euros, was awarded in December 2025. Contract [2], for 39,400 euros, was awarded in December 2025.\nWhat it cannot show: The fact that many contracts are just under the limit does not mean that any of them were improperly awarded. It could reflect standard market pricing, budget constraints, or the need for multiple smaller contracts to meet specific requirements.\nWhat can be checked: Check the details of contract [1] to see what was purchased and the specific reason for the amount. Also, review contract [2] to confirm if the same service or product was bought in another contract. Look for patterns in the dates and awardees to determine if multiple contracts were used for the same need.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 35 contratos menores de obras de más de 37.500 y hasta 40.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 0,4 contratos. La razón entre observados y esperados es 87,5, con un intervalo de confianza del 95 % de 22,5 a 750,9. En diciembre se adjudicó el 9 % de los contratos junto al límite, mientras que diciembre supone el 14 % de todos sus contratos de obras. Los contratos junto al límite se reparten entre 16 adjudicatarios distintos. El contrato [1], de 39.669,42 euros, se adjudicó en diciembre de 2025.\nQué no pueden demostrar: El hecho de que se adjudiquen contratos cerca del límite no indica que haya habido abuso o que se haya salido de los límites. Puede haber razones legítimas, como la necesidad de contratar en un momento específico o por consideraciones de mercado.\nQué se puede revisar: Se puede comprobar si los contratos adjudicados en diciembre están relacionados con la misma necesidad o si se repiten adjudicatarios. También se puede revisar si los contratos adjudicados en diciembre coinciden con un período de alta actividad o si se han contratado varias veces los mismos servicios.",
+  "generado": "2026-11-15",
+  "hash": "4e3e9d0abe2ae03d",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "modelo",
+  "rechazos": [
+   {
+    "intento": 1,
+    "lang": "es",
+    "motivos": [
+     "cifras: hay cifras en el apartado 3"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 5, 6],\n  \"no_demuestran\": \"El hecho de que muchos contratos estén muy cerca del límite legal no implica que haya habido irregularidades. Puede deberse a razones como la necesidad de contratar en un momento concreto, a precios de mercado o a presupuestos que no permiten esperar a la siguiente licitación. Además, el hecho de que se adjudiquen contratos en diciembre no necesariamente indica que se haya actuado de forma incorrecta.\",\n  \"revisar\": \"Se puede comprobar si los contratos adjudicados en diciembre están relacionados con la misma necesidad o si se repiten adjudicatarios. También se puede revisar si los contratos junto al límite se distribuyen de forma uniforme entre los adjudicatarios o si hay uno que se repite con frecuencia. Por ejemplo, el contrato [1] se adjudicó en diciembre de 2025, lo que podría ser parte de un patrón de contratación en esa fecha.\"}"
+   }
+  ],
+  "regla": "obras"
+ },
+ "30988950142655": {
+  "citas": [
+   "QOxQNU727O9%2BF6L2uCfUWg%3D%3D",
+   "Z0MhRtFRzpuLAncw3qdZkA%3D%3D",
+   "xfU3LxoPoWseIBJRHQiPkQ%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 38 minor contracts for works above 37,500 and up to 40,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 1.2 contracts would be expected. The observed-to-expected ratio is 31.7, with a 95% confidence interval of 13.3 to 91.7. December accounts for 13% of the contracts just under the limit, compared with 17% of all its works contracts. The awardee with the most contracts just under the limit, called awardee A here, has 5. Contract [1], for 39,984 euros, was awarded in December 2025.\nWhat it cannot show: The fact that many contracts are just under the limit does not mean that any of them were improperly awarded. It could reflect market conditions, budget constraints, or the need for multiple smaller contracts to meet specific requirements.\nWhat can be checked: Check the details of contract [1] to see what was purchased and the dates it was awarded. Also, review the contracts to see if multiple contracts were used for the same need, which could indicate a pattern of procurement decisions. Look for any repeated orders from awardee A to assess if they were consistently used for similar services.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 38 contratos menores de obras de más de 37.500 y hasta 40.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 1,2 contratos. La razón entre observados y esperados es 31,7, con un intervalo de confianza del 95 % de 13,3 a 91,7. En diciembre se adjudicó el 13 % de los contratos junto al límite, mientras que diciembre supone el 17 % de todos sus contratos de obras. Los contratos junto al límite se reparten entre 23 adjudicatarios distintos. El contrato [1], de 39.984 euros, se adjudicó en diciembre de 2025.\nQué no pueden demostrar: El hecho de que muchos contratos estén muy cerca del límite legal no implica que haya habido irregularidades. Puede deberse a razones como la necesidad de contratar en un momento específico o a la fluctuación de los precios en el mercado. Además, no se puede asumir que haya actuado mal alguien simplemente por estar cerca del límite.\nQué se puede revisar: Se puede comprobar si los contratos adjudicados en diciembre están relacionados con la misma necesidad o si se reparten entre diferentes adjudicatarios. También se puede revisar si el adjudicatario A, que tiene más contratos cerca del límite, tiene otros contratos que no se mencionan. Otra comprobación sería ver si los contratos adjudicados en diciembre se distribuyen de forma uniforme entre los meses del año.",
+  "generado": "2026-11-15",
+  "hash": "8e9c61a197a1c356",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "modelo",
+  "rechazos": [],
+  "regla": "obras"
+ },
+ "31082510152011": {
+  "citas": [
+   "6unaWO8j%2Fc4aF6cS8TCh%2FA%3D%3D",
+   "4xQ6sfKY3AP10HRJw8TEnQ%3D%3D",
+   "q%2BuGjan4gth6nTs9LZ9RhQ%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 35 minor contracts for works above 37,500 and up to 40,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 1.4 contracts would be expected. The observed-to-expected ratio is 25.0, with a 95% confidence interval of 10.9 to 66.7. December accounts for 0% of the contracts just under the limit, compared with 0% of all its works contracts. The awardee with the most contracts just under the limit, called awardee A here, has 3. Contract [1], for 39,892.34 euros, was awarded in October 2025.\nWhat it cannot show: The data shows that some contracts are just under the limit, but it doesn't prove any wrongdoing. Prices might be set by market rates or budgets. Legal limits are meant to prevent fraud, but small differences don't always mean issues.\nWhat can be checked: Check the details of contract [1] to see what was purchased and the date. Look at awardee A's contracts to see if they are for similar needs. Review if multiple contracts cover the same service to ensure no duplication.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 35 contratos menores de obras de más de 37.500 y hasta 40.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 1,4 contratos. La razón entre observados y esperados es 25,0, con un intervalo de confianza del 95 % de 10,9 a 66,7. En diciembre se adjudicó el 0 % de los contratos junto al límite, mientras que diciembre supone el 0 % de todos sus contratos de obras. Los contratos junto al límite se reparten entre 28 adjudicatarios distintos. El contrato [1], de 39.892,34 euros, se adjudicó en octubre de 2025.\nQué no pueden demostrar: El hecho de que se adjudiquen contratos junto al límite no indica que se hayan violado normas. Puede deberse a razones legítimas, como necesidades específicas o precios de mercado. No implica que haya actuado mal alguien.\nQué se puede revisar: Comprobar si los contratos [1], [2], [3] atienden la misma necesidad. Verificar si el adjudicatario A repite contratos en otros ámbitos. Revisar si los contratos junto al límite se distribuyen por necesidades distintas.",
+  "generado": "2026-11-15",
+  "hash": "9ec22da23a480807",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "modelo",
+  "rechazos": [],
+  "regla": "obras"
+ },
+ "31262050169965": {
+  "citas": [
+   "sO7ACloIYuw2wEhQbcAqug%3D%3D",
+   "Eq4IuRxyXTGTylGzYmBF9Q%3D%3D",
+   "Ecbgi5zZP%2FCKeVWTb9Scog%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 294 minor contracts for works above 37,500 and up to 40,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 8.6 contracts would be expected. The observed-to-expected ratio is 34.2, with a 95% confidence interval of 24.8 to 48.2. December accounts for 49% of the contracts just under the limit, compared with 38% of all its works contracts. The awardee with the most contracts just under the limit, called awardee A here, has 18. Contract [1], for 39,900 euros, was awarded in December 2025.\nWhat it cannot show: The fact that many contracts are just under the limit does not mean that any of them were improperly awarded. It could reflect market conditions, budget constraints, or the need for multiple smaller contracts to meet specific requirements.\nWhat can be checked: Check the details of contract [1] to see what was purchased and the dates it was awarded. Also, review the contracts of awardee A to see if they are consistently awarded just under the limit and if they are related to the same need. Look for patterns in the December awards to determine if they are part of a broader trend.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 294 contratos menores de obras de más de 37.500 y hasta 40.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 8,6 contratos. La razón entre observados y esperados es 34,2, con un intervalo de confianza del 95 % de 24,8 a 48,2. En diciembre se adjudicó el 49 % de los contratos junto al límite, mientras que diciembre supone el 38 % de todos sus contratos de obras. Los contratos junto al límite se reparten entre 81 adjudicatarios distintos. El contrato [1], de 39.900 euros, se adjudicó en diciembre de 2025.\nQué no pueden demostrar: El hecho de que muchos contratos se adjudiquen cerca del límite no indica que haya habido irregularidades. Puede deberse a razones como la necesidad de cubrir demandas específicas o a la presencia de varios proveedores distintos. Además, el hecho de que se adjudiquen muchos contratos en diciembre no implica que haya habido acciones maliciosas, ya que podría estar relacionado con la planificación anual del organismo.\nQué se puede revisar: Se puede comprobar si los contratos adjudicados en diciembre están relacionados con la misma necesidad o si se reparten entre diferentes proveedores. También se puede revisar si el adjudicatario A, que tiene más contratos cerca del límite, tiene una frecuencia anormal en la adjudicación de contratos. Además, se puede analizar si los contratos [1], [2] y [3], adjudicados en diciembre, están relacionados entre sí o si se tratan de casos distintos.",
+  "generado": "2026-11-15",
+  "hash": "22d3f69025c36c86",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "modelo",
+  "rechazos": [],
+  "regla": "obras"
+ },
+ "40384010072261": {
+  "citas": [
+   "FMA88DPIXffi0Kd8%2Brcp6w%3D%3D",
+   "wRUgSI0SiZokJPJS%2BPS9vg%3D%3D",
+   "tW3nOZrNK3c%2B1TMyIiZmzw%3D%3D"
+  ],
+  "en": "What the data shows: Between 2023 and 2025, this body awarded 58 minor contracts for services and supplies above 14,000 and up to 15,000 euros, just under the legal limit. If those amounts were spread as in the band immediately below, 2.6 contracts would be expected. The observed-to-expected ratio is 22.3, with a 95% confidence interval of 12.1 to 44.4. December accounts for 3% of the contracts just under the limit, compared with 12% of all its services and supplies contracts. The awardee with the most contracts just under the limit, called awardee A here, has 19. Contract [1], for 14,991.88 euros, was awarded in December 2025.\nWhat it cannot show: The concentration of contracts in December and the high number of contracts with one awardee do not prove improper conduct. These patterns could result from market conditions, budget constraints, or operational needs, not wrongdoing.\nWhat can be checked: Check the December contracts for consistency with other contracts and verify if the same awardee was used for similar services. Review the contract details for [1] to ensure it aligns with the body’s stated needs and budget constraints.",
+  "es": "Qué muestran los datos: Entre 2023 y 2025, este organismo adjudicó 58 contratos menores de servicios y suministros de más de 14.000 y hasta 15.000 euros, justo por debajo del límite legal. Si esos importes se repartieran como en la franja inmediatamente inferior, lo esperable serían 2,6 contratos. La razón entre observados y esperados es 22,3, con un intervalo de confianza del 95 % de 12,1 a 44,4. En diciembre se adjudicó el 3 % de los contratos junto al límite, mientras que diciembre supone el 12 % de todos sus contratos de servicios y suministros. Los contratos junto al límite se reparten entre 9 adjudicatarios distintos. El contrato [1], de 14.991,88 euros, se adjudicó en diciembre de 2025.\nQué no pueden demostrar: El hecho de que se adjudiquen contratos cerca del límite no indica que haya habido irregularidades. Puede deberse a razones legítimas como precios de mercado o necesidades específicas. No implica que se haya partido ningún contrato ni que haya actuado mal alguien.\nQué se puede revisar: Es importante comprobar si los contratos [1] y [2] atienden la misma necesidad. También revisar si el adjudicatario A repite contratos por necesidades distintas. Verificar si los contratos de diciembre se distribuyen uniformemente entre los adjudicatarios.",
+  "generado": "2026-11-15",
+  "hash": "0a14ab43b5e04794",
+  "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
+  "origen_en": "modelo",
+  "origen_es": "modelo",
+  "rechazos": [
+   {
+    "intento": 1,
+    "lang": "en",
+    "motivos": [
+     "cifras: hay cifras en el apartado 3"
+    ],
+    "texto": "{\n  \"hechos_elegidos\": [4, 6, 7],\n  \"no_demuestran\": \"The high ratio shows a pattern, but it doesn't prove misconduct. Prices might be close to the limit due to market conditions. Budgets or needs could also explain the numbers.\",\n  \"revisar\": \"Check if multiple contracts cover the same need. Review the December 2025 contracts to see if they relate to the same service. Look at awardee A’s contracts to see if they repeat the same type of service.\"\n}"
+   }
+  ],
+  "regla": "ss"
+ }
+}

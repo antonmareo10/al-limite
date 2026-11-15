@@ -1,0 +1,47 @@
+id,nombre,ruta,contratos,junto_al_limite,referencia,esperado,razon,ic95_inf,ic95_sup,q,nivel
+EQ2818010G,Gerencia de Infraestructuras y Equipamientos de Cultura O.A.,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Cultura > Gerencia de Infraestructuras y Equipamientos de Cultura O.A.,205,94,39,7.8,12.05,8.21,17.98,3.92e-42,senal
+ES4711001J,Castilla y León,COMUNIDADES Y CIUDADES AUTÓNOMAS > Castilla y León,3462,698,443,88.6,7.88,6.98,8.89,7.48e-248,senal
+ES3011001I,"Consejería de Empresa, Economía Social y Autónomos de la Región de Murcia y otros órganos del mismo NIF",,1600,455,302,60.4,7.53,6.5,8.74,1.1e-157,senal
+EP4620900C,Valencia,ENTIDADES LOCALES > Comunidad Valenciana > Valencia,62,23,8,1.6,14.38,6.21,37.17,6.02e-12,senal
+EP3800002B,Cabildo Insular de la Palma,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Cabildo Insular de la Palma,144,65,43,8.6,7.56,5.06,11.38,1.32e-23,senal
+EP2808000J,Ayuntamiento de Majadahonda,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Majadahonda,60,29,15,3.0,9.67,5.02,19.4,1.29e-12,senal
+ES4611001A,Comunidad Valenciana,COMUNIDADES Y CIUDADES AUTÓNOMAS > Comunidad Valenciana,2212,543,483,96.6,5.62,4.96,6.37,9.58e-154,senal
+ES3511001D,Comunidad Autónoma de Canarias,COMUNIDADES Y CIUDADES AUTÓNOMAS > Comunidad Autónoma de Canarias,1006,262,241,48.2,5.44,4.55,6.5,9.31e-73,senal
+ES2813001A,Subdirección General de Planificación y Gestión de Transformación Digital y otros órganos del mismo NIF,ADMINISTRACIÓN GENERAL DEL ESTADO,138,46,33,6.6,6.97,4.36,11.25,3.01e-16,senal
+EP4614900A,Ayuntamiento de Llíria,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Llíria,65,21,12,2.4,8.75,4.11,19.51,3.74e-09,senal
+EA38279972,Canarias,"OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS COMUNIDADES AUTÓNOMAS > Canarias",106,30,21,4.2,7.14,3.96,13.13,2.85e-11,senal
+EQ9750009D,Castilla y León,COMUNIDADES Y CIUDADES AUTÓNOMAS > Castilla y León,376,39,30,6.0,6.5,3.94,10.83,2.15e-13,senal
+ES2801449F,"Ministerio de Inclusión, Seguridad Social y Migraciones","ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Inclusión, Seguridad Social y Migraciones",69,25,17,3.4,7.35,3.82,14.51,8.88e-10,senal
+ES5011001D,Consejo Económico y Social de Aragón y otros órganos del mismo NIF,,375,105,107,21.4,4.91,3.71,6.48,1.51e-27,senal
+EA6100007A,Ciudad Autónoma de Ceuta,COMUNIDADES Y CIUDADES AUTÓNOMAS > Ciudad Autónoma de Ceuta,95,39,34,6.8,5.74,3.53,9.37,2.2e-12,senal
+EP3501500G,Ayuntamiento de La Oliva,ENTIDADES LOCALES > Canarias > Las Palmas > Ayuntamientos > La Oliva,316,58,56,11.2,5.18,3.52,7.61,1.95e-16,senal
+EP2104100I,Huelva,ENTIDADES LOCALES > Andalucía > Huelva,161,23,17,3.4,6.76,3.46,13.49,1e-08,senal
+EP2910300I,Ayuntamiento de Torremolinos,ENTIDADES LOCALES > Andalucía > Málaga > Ayuntamientos > Torremolinos,62,18,12,2.4,7.5,3.42,17.07,1.67e-07,senal
+EQ2820002J,Centro Invest.Energéticas Medioambientales y Tecnologicas,"ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Ciencia, Innovación y Universidades > Secretaría General de Investigación > Centro Invest.Energéticas Medioambientales y Tecnologicas",108,41,39,7.8,5.26,3.31,8.37,3.34e-12,senal
+EA86212420,"Aena S.M.E., S.A.","OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES y CONSORCIOS ESTATALES > Ministerio de Transportes y Movilidad Sostenible > Aena S.M.E., S.A.",731,141,169,33.8,4.17,3.31,5.25,1.6e-31,senal
+EQ2818002D,Agencia Estatal Consejo Superior de Investigaciones Científicas,"ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Ciencia, Innovación y Universidades > Secretaría General de Investigación > Agencia Estatal Consejo Superior de Investigaciones Científicas",405,53,56,11.2,4.73,3.19,7.02,4.14e-14,senal
+ES6100007A,Ciudad Autónoma de Ceuta,COMUNIDADES Y CIUDADES AUTÓNOMAS > Ciudad Autónoma de Ceuta,136,35,34,6.8,5.15,3.12,8.51,1.63e-10,senal
+ES3933002B,Comunidad Autónoma de Cantabria,COMUNIDADES Y CIUDADES AUTÓNOMAS > Comunidad Autónoma de Cantabria,712,214,291,58.2,3.68,3.07,4.4,2.96e-41,senal
+EP4100400C,Ayuntamiento de Alcalá de Guadaíra,ENTIDADES LOCALES > Andalucía > Sevilla > Ayuntamientos > Alcalá de Guadaíra,276,39,40,8.0,4.88,3.05,7.77,4.28e-11,senal
+ES0611001I,Junta de Extremadura,COMUNIDADES Y CIUDADES AUTÓNOMAS > Junta de Extremadura,2126,127,175,35.0,3.63,2.86,4.59,1.08e-24,senal
+ES1911001D,Consejería de Desarrollo Sostenible de la Junta de Comunidades de Castilla-La Mancha y otros órganos del mismo NIF,COMUNIDADES Y CIUDADES AUTÓNOMAS,1797,177,255,51.0,3.47,2.85,4.22,3.99e-32,senal
+EP3500001G,Cabildo Insular de Gran Canaria,ENTIDADES LOCALES > Canarias > Las Palmas > Cabildo Insular de Gran Canaria,169,33,37,7.4,4.46,2.7,7.33,5.56e-09,senal
+ES2800556I,"Ministerio de Agricultura, Pesca y Alimentación","ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Agricultura, Pesca y Alimentación",133,28,30,6.0,4.67,2.69,8.08,4.11e-08,senal
+ES2819001E,Ministerio de Trabajo y Economía Social,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Trabajo y Economía Social,152,26,29,5.8,4.48,2.54,7.89,1.98e-07,senal
+EA41092032,"Empresa Mancomunada del Aljarafe, S.A. (ALJARAFESA)","OTRAS ENTIDADES DEL SECTOR PÚBLICO > SOCIEDADES, FUNDACIONES Y CONSORCIOS ENTIDADES LOCALES > Andalucía > Empresa Mancomunada del Aljarafe, S.A. (ALJARAFESA)",115,30,35,7.0,4.29,2.54,7.19,4.7e-08,senal
+EQ8555011I,Comunidad Autónoma de Canarias,COMUNIDADES Y CIUDADES AUTÓNOMAS > Comunidad Autónoma de Canarias,307,53,72,14.4,3.68,2.53,5.32,2.56e-11,senal
+EP4620400D,Ayuntamiento de La Pobla de Vallbona,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > La Pobla de Vallbona,125,15,16,3.2,4.69,2.16,10.12,5.34e-05,senal
+EQ4500146H,Gerencia del Area de Atención Integrada de Valdepeñas y otros órganos del mismo NIF,COMUNIDADES Y CIUDADES AUTÓNOMAS,231,30,44,8.8,3.41,2.07,5.55,1.39e-06,senal
+EP3500600F,Ayuntamiento de Arucas,ENTIDADES LOCALES > Canarias > Las Palmas > Ayuntamientos > Arucas,70,18,23,4.6,3.91,1.99,7.58,5.02e-05,indicio
+EP3800001D,Cabildo Insular de Tenerife,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Cabildo Insular de Tenerife,133,26,41,8.2,3.17,1.86,5.31,1.73e-05,indicio
+ES2816003D,D.G. de la Guardia Civil,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio del Interior > Secretaría de Estado de Seguridad > D.G. de la Guardia Civil,154,26,41,8.2,3.17,1.86,5.31,1.73e-05,indicio
+ES2812001B,"Ministerio de Asuntos Exteriores, Unión Europea y Cooperación","ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Asuntos Exteriores, Unión Europea y Cooperación",209,42,93,18.6,2.26,1.53,3.28,3.39e-05,indicio
+ES2811001C,Secretaría de Estado de Memoria Democrática y otros órganos del mismo NIF,ADMINISTRACIÓN GENERAL DEL ESTADO,80,17,30,6.0,2.83,1.47,5.31,0.00122,indicio
+EP3729600A,Ayuntamiento de Santa Marta de Tormes,ENTIDADES LOCALES > Castilla y León > Salamanca > Ayuntamientos > Santa Marta de Tormes,173,11,19,3.8,2.89,1.24,6.4,0.00776,indicio
+EP3501300B,Ayuntamiento de Mogán,ENTIDADES LOCALES > Canarias > Las Palmas > Ayuntamientos > Mogán,141,15,31,6.2,2.42,1.21,4.62,0.00715,indicio
+EP4622200F,Ayuntamiento de Sagunto,ENTIDADES LOCALES > Comunidad Valenciana > Valencia > Ayuntamientos > Sagunto,74,12,25,5.0,2.4,1.1,4.96,0.0154,indicio
+EP0400000F,Diputación Provincial de Almería,ENTIDADES LOCALES > Andalucía > Almería > Diputación Provincial de Almería,118,19,48,9.6,1.98,1.1,3.43,0.0129,indicio
+EP2804900E,Ayuntamiento de Coslada,ENTIDADES LOCALES > Comunidad de Madrid > Ayuntamientos > Coslada,67,11,28,5.6,1.96,0.88,4.07,0.053,sin_senal
+EQ2826000H,Agencia Estatal de Administración Tributaria,ADMINISTRACIÓN GENERAL DEL ESTADO > Ministerio de Hacienda > Secretaría de Estado de Hacienda > Agencia Estatal de Administración Tributaria,385,16,56,11.2,1.43,0.76,2.53,0.138,sin_senal
+EP3801100C,Ayuntamiento de Candelaria,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Ayuntamientos > Candelaria,188,9,25,5.0,1.8,0.74,3.99,0.105,sin_senal
+EQ3800402D,Instituto Insular de Atención Social y Sociosanitaria,ENTIDADES LOCALES > Canarias > Santa Cruz de Tenerife > Cabildo Insular de Tenerife > Instituto Insular de Atención Social y Sociosanitaria,81,8,24,4.8,1.67,0.65,3.83,0.152,sin_senal
