@@ -88,6 +88,12 @@ def regla_principal(ficha: dict) -> str:
     return max(con_senal, key=lambda k: ficha["reglas"][k]["ic_inf"])
 
 
+def explicable(ficha: dict) -> bool:
+    """Solo se explica si hay razón e intervalo completos (referencia no vacía)."""
+    r = ficha["reglas"][regla_principal(ficha)]
+    return r["razon"] is not None and r["ic_sup"] is not None
+
+
 def hechos(ficha: dict, lang: str) -> dict:
     """Hechos de una ficha como frases sueltas. Los tres primeros son obligatorios."""
     k = regla_principal(ficha)
@@ -255,7 +261,8 @@ SISTEMA = {
         "fechas, si varios contratos atienden una misma necesidad, qué pasó a final de año o qué se encargó al adjudicatario "
         "que más repite). Puedes señalar un contrato de ejemplo con su referencia, como [1].\n"
         "No nombres a personas ni a empresas. No acuses ni insinúes. No uses listas, negritas ni enlaces. "
-        "No te refieras a los hechos por su número ni escribas ningún número en tus frases. /no_think"
+        "No te refieras a los hechos por su número. En tus frases no repitas cifras, porcentajes, fechas ni años: "
+        "ya están en los hechos. Cada texto tuyo debe tener menos de 70 palabras. /no_think"
     ),
     "en": (
         "You write for a civic project on public procurement in Spain. You explain to a general reader, in short sentences "
@@ -272,7 +279,8 @@ SISTEMA = {
         "which dates, whether several contracts meet a single need, what happened at year end, or what was ordered from the "
         "awardee that repeats most). You may point to an example contract by its reference, such as [1].\n"
         "Do not name people or companies. Do not accuse or insinuate. No lists, bold text or links. "
-        "Do not refer to facts by their number and do not write any number in your sentences. /no_think"
+        "Do not refer to facts by their number. In your sentences do not repeat figures, percentages, dates or years: "
+        "they are already in the facts. Each of your texts must be under 70 words. /no_think"
     ),
 }
 
@@ -397,7 +405,7 @@ def _cache() -> dict:
 def generar(limite: int | None = None) -> None:
     fichas = json.loads((config.WORK / "fichas_senal.json").read_text("utf-8"))
     cache = _cache()
-    pend = [u for u, f in fichas.items() if cache.get(u, {}).get("hash") != f["hash"]]
+    pend = [u for u, f in fichas.items() if explicable(f) and cache.get(u, {}).get("hash") != f["hash"]]
     pend.sort(key=lambda u: -max(v["ic_inf"] for v in fichas[u]["reglas"].values() if v["nivel"] == "senal"))
     if limite:
         pend = pend[:limite]
@@ -430,7 +438,7 @@ def fusionar() -> None:
         e = cache.get(uid)
         d.pop("ia", None)
         # Segunda verificación, independiente de la generación: lo guardado debe seguir cuadrando.
-        if e and e["hash"] == f["hash"] and all(not verificar(e[lang], hechos(f, lang), lang) for lang in ("es", "en")):
+        if e and e["hash"] == f["hash"] and explicable(f) and all(not verificar(e[lang], hechos(f, lang), lang) for lang in ("es", "en")):
             d["ia"] = {k: e[k] for k in ("es", "en", "origen_es", "origen_en", "modelo", "regla", "citas", "generado")}
             n_ok += 1
             for lang in ("es", "en"):

@@ -177,3 +177,10 @@ def test_si_el_modelo_no_elige_ejemplo_se_anade_el_primero():
     texto, errores = ex.montar(resp(hechos_elegidos=[4, 5, 6]), h, "es")
     assert errores == [] and h["frases"][6] in texto and h["frases"][5] not in texto
     assert ex.verificar(texto, h, "es") == []
+
+
+def test_sin_referencia_no_se_explica():
+    f = ficha()
+    assert ex.explicable(f)
+    f["reglas"]["ss"].update(razon=None, ic_sup=None, n_ref=0)
+    assert not ex.explicable(f)
