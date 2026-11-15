@@ -119,3 +119,61 @@ def test_los_hechos_no_llevan_nombres_de_adjudicatarios():
     f["reglas"]["ss"]["contratos"][0]["nombre_secreto"] = "Fulano de Tal SL"
     for lang in ("es", "en"):
         assert "Fulano" not in "\n".join(ex.hechos(f, lang)["frases"])
+
+
+import json
+
+RESPUESTA = {
+    "hechos_elegidos": [6, 7],
+    "no_demuestran": "Que haya muchos importes pegados al límite es un indicador estadístico. No demuestra que se haya "
+                     "partido ningún contrato ni que alguien haya actuado mal, porque puede haber razones legítimas, "
+                     "como los precios de mercado.",
+    "revisar": "Conviene mirar qué se contrató al adjudicatario que más repite y si esos encargos atienden una misma "
+               "necesidad. También ayuda comparar las fechas, empezando por el contrato [1].",
+}
+
+
+def resp(**cambios):
+    return json.dumps({**RESPUESTA, **cambios}, ensure_ascii=False)
+
+
+def test_montar_compone_con_los_hechos_exactos():
+    h = ex.hechos(ficha(), "es")
+    texto, errores = ex.montar(resp(), h, "es")
+    assert errores == []
+    for i in (0, 1, 2, 5, 6):
+        assert h["frases"][i] in texto
+    assert h["frases"][3] not in texto
+    assert ex.verificar(texto, h, "es") == []
+
+
+@pytest.mark.parametrize("respuesta, motivo", [
+    (resp(hechos_elegidos=[6, 12]), "no existe"),
+    (resp(hechos_elegidos=[4, 5, 6, 7]), "entre uno y tres"),
+    (resp(hechos_elegidos=[1, 2]), "entre uno y tres"),
+    ("Hechos elegidos: 6, 7", "estructura"),
+    (json.dumps({"hechos_elegidos": [6, 7]}), "estructura"),
+    (resp(revisar="Qué se puede revisar: mirar los expedientes con calma y comparar las fechas."), "rótulos"),
+])
+def test_montar_rechaza_respuestas_mal_formadas(respuesta, motivo):
+    h = ex.hechos(ficha(), "es")
+    texto, errores = ex.montar(respuesta, h, "es")
+    assert texto is None and any(motivo in e for e in errores), errores
+
+
+def test_cifras_del_modelo_en_sus_apartados_se_rechazan():
+    h = ex.hechos(ficha(), "es")
+    texto, _ = ex.montar(resp(revisar=RESPUESTA["revisar"] + " Hay 96 contratos así."), h, "es")
+    assert any("apartado 3" in e for e in ex.verificar(texto, h, "es"))
+
+
+def test_esquema_limita_la_eleccion():
+    e = ex.esquema(ex.hechos(ficha(), "es"))
+    assert e["properties"]["hechos_elegidos"]["items"]["enum"] == [4, 5, 6, 7, 8, 9]
+
+
+def test_si_el_modelo_no_elige_ejemplo_se_anade_el_primero():
+    h = ex.hechos(ficha(), "es")
+    texto, errores = ex.montar(resp(hechos_elegidos=[4, 5, 6]), h, "es")
+    assert errores == [] and h["frases"][6] in texto and h["frases"][5] not in texto
+    assert ex.verificar(texto, h, "es") == []

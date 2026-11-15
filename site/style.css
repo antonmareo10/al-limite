@@ -1,6 +1,6 @@
 :root {
-  --bg: #f6f3ec; --surface: #fffdf8; --ink: #1b1915; --ink2: #55504a; --ink3: #7a746b;
-  --line: #ddd7ca; --bar: #c4bdaf; --ref: #5b7fa3; --limit: #c9301c; --limit-soft: #fbe7e2;
+  --bg: #f6f3ec; --surface: #fffdf8; --ink: #1b1915; --ink2: #55504a; --ink3: #6a645b;
+  --line: #ddd7ca; --bar: #938c7e; --ref: #5b7fa3; --limit: #c9301c; --limit-soft: #fbe7e2;
   --ok: #2f6f4f; --warn: #8a5a00; --focus: #1a5fd0; --chip: #ece7dc;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -8,7 +8,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #14130f; --surface: #1d1b17; --ink: #f1ede4; --ink2: #c3bdb1; --ink3: #989185;
-    --line: #37332c; --bar: #5a554c; --ref: #7fa6cf; --limit: #ff6a52; --limit-soft: #3a1c16;
+    --line: #37332c; --bar: #746e63; --ref: #7fa6cf; --limit: #ff6a52; --limit-soft: #3a1c16;
     --ok: #7cc49d; --warn: #e3b25a; --focus: #8ab8ff; --chip: #2a2721;
   }
 }
@@ -149,3 +149,8 @@ td a { font-weight: 600; }
 .foot p { margin: 6px 0; max-width: 90ch; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print { .top nav, .search, #lang, .more { display: none; } }
+@media (max-width: 600px) {
+  th, td { padding: 8px 8px; }
+  td .sub { font-size: .75rem; }
+  .top { padding: 10px 12px; }
+}

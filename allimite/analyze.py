@@ -117,7 +117,15 @@ def nombre_entidad(rutas: list[str], nombres: list[str]) -> tuple[str, str]:
             else:
                 break
     ruta = " > ".join(comun)
+    if len(comun) < 3:
+        # Las rutas no coinciden (la Plataforma renombra niveles con el tiempo): se usa la más frecuente
+        # si la comparte al menos la mitad de los órganos y es la de un ayuntamiento.
+        moda, veces = Counter(tuple(x) for x in partes).most_common(1)[0] if partes else ((), 0)
+        if len(moda) >= 2 and moda[-2] == "Ayuntamientos" and veces * 2 >= len(partes):
+            comun, ruta = list(moda), " > ".join(moda)
     if len(comun) >= 2 and comun[-2] == "Ayuntamientos":
+        if "Entidad Local" in comun[-1]:
+            return comun[-1], ruta
         return f"Ayuntamiento de {_articulo(comun[-1])}", ruta
     if len(comun) >= 3 and comun[-1].upper() != comun[-1]:
         return comun[-1], ruta

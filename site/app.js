@@ -65,7 +65,7 @@
       ci_sub: (r, a, b) => `La razón es ${r}. Con los datos disponibles, el valor real está entre ${a} y ${b} con una confianza del 95 %.`,
       ci_sub_open: (a) => `Sin contratos en la franja de referencia no hay valor central; el intervalo empieza en ${a}.`,
       ai_h: "Explicación en lenguaje claro",
-      ai_prov: (m, o) => `Texto ${o === "modelo" ? `redactado por un modelo de IA abierto (${m}) ejecutado en un portátil, sin servicios de pago` : "de plantilla (el borrador del modelo no superó la verificación)"}. Un programa comprobó que cada cifra coincide con las calculadas; si no, el texto se descarta. Los números entre corchetes enlazan con el contrato en la Plataforma.`,
+      ai_prov: (m, o) => `${o === "modelo" ? `Un modelo de IA abierto (${m}), ejecutado en un portátil y sin servicios de pago, eligió qué datos destacar y escribió los dos últimos apartados` : "Texto de plantilla: el borrador del modelo de IA no superó la verificación"}. Las frases con cifras las redacta el programa y se comprueban una a una; si algo no cuadra, el texto se descarta. Los números entre corchetes enlazan con el contrato en la Plataforma.`,
       ai_none: "Solo generamos explicación para los organismos con señal de acumulación.",
       caveat_h: "Cómo leer esta ficha",
       caveat: "Que muchos importes queden junto al límite es una señal para mirar los expedientes, no una prueba. Puede deberse a precios de mercado, a presupuestos cerrados o a necesidades distintas. Esta página no nombra a personas ni a empresas: cada contrato enlaza con su publicación oficial.",
@@ -131,7 +131,7 @@
       ci_sub: (r, a, b) => `The ratio is ${r}. Given the data, the true value lies between ${a} and ${b} with 95% confidence.`,
       ci_sub_open: (a) => `With no contracts in the reference band there is no central value; the interval starts at ${a}.`,
       ai_h: "Plain-language explanation",
-      ai_prov: (m, o) => `Text ${o === "modelo" ? `written by an open AI model (${m}) run on a laptop, with no paid services` : "from a fixed template (the model's draft failed verification)"}. A program checked that every figure matches the computed ones; otherwise the text is discarded. Bracketed numbers link to the contract on the official platform.`,
+      ai_prov: (m, o) => `${o === "modelo" ? `An open AI model (${m}), run on a laptop with no paid services, chose which facts to highlight and wrote the last two sections` : "Template text: the AI model's draft failed verification"}. Sentences with figures are written by the program and checked one by one; if anything does not match, the text is discarded. Bracketed numbers link to the contract on the official platform.`,
       ai_none: "We only generate an explanation for bodies with a bunching signal.",
       caveat_h: "How to read this page",
       caveat: "Many amounts sitting just under the limit is a reason to look at the files, not proof of anything. It may reflect market prices, fixed budgets or separate needs. This page names no people or companies: each contract links to its official publication.",
@@ -165,6 +165,7 @@
     cache.set(url, j);
     return j;
   };
+  const shortPath = r => { const p = r.split(" > "); return p.length > 2 ? p[0] + " › … › " + p[p.length - 1] : p.join(" › "); };
   const badge = n => `<span class="badge ${n}">${esc(t().nivel[n])}</span>`;
   const ratioTxt = (r, a, b) => r == null ? `– (≥ ${fmt(a, 1)})` : `${fmt(r, 1)} <span class="sub">${fmt(a, 1)}–${b == null ? "∞" : fmt(b, 1)}</span>`;
 
@@ -360,7 +361,7 @@
     const rows = rankRows(rankState.rule, rankState.cls);
     const o = rankState.rule === "ss" ? 5 : 10;
     const evalN = IDX.filas.filter(f => f[1] === rankState.cls && f[o] && f[o] !== "insuficiente").length;
-    const body = rows.slice(0, limit).map(({ f }, i) => `<tr><td class="n">${i + 1}</td><td><a href="#/u/${esc(f[0])}">${esc(f[2])}</a><span class="sub">${esc(f[3])}</span></td>
+    const body = rows.slice(0, limit).map(({ f }, i) => `<tr><td class="n">${i + 1}</td><td><a href="#/u/${esc(f[0])}">${esc(f[2])}</a><span class="sub">${esc(shortPath(f[3]))}</span></td>
       <td class="n">${fmt(f[o + 4])}</td><td class="n">${ratioTxt(f[o + 1], f[o + 2], f[o + 3])}</td></tr>`).join("");
     const seg = (key, val, label) => `<button type="button" data-k="${key}" data-v="${val}" aria-pressed="${String(rankState[key]) === String(val)}">${esc(label)}</button>`;
     return `<div><div class="seg" role="group" aria-label="${esc(t().th_level)}">${seg("rule", "ss", t().regla.ss)}${seg("rule", "obras", t().regla.obras)}</div>

@@ -6,9 +6,10 @@ Uso:  python -m allimite.explain [N]        (genera lo que falte; necesita llama
 Reparto del trabajo:
   * El código calcula las cifras y redacta cada hecho como una frase suelta y exacta.
   * El modelo (Qwen3-4B, licencia Apache 2.0, ejecutado con llama.cpp en este portátil)
-    decide qué hechos destacan en cada caso, los ordena y escribe con sus palabras las
-    cautelas y las comprobaciones que sugiere. Trabaja con una plantilla de tres apartados.
-  * `verificar()` rechaza el borrador si alguna frase con cifras no coincide con un hecho
+    decide qué hechos destacan en cada caso y escribe con sus palabras las cautelas y las
+    comprobaciones que sugiere. No reescribe cifras: indica el número de los hechos que
+    elige y `montar()` compone el texto con una plantilla de tres apartados.
+  * `verificar()` rechaza el texto si alguna frase con cifras no coincide con un hecho
     (mismas cifras y casi el mismo texto), si faltan los tres hechos centrales, si hay
     cifras fuera del primer apartado, si cita un contrato inexistente, si usa lenguaje
     acusatorio o si omite la cautela. Tras tres rechazos se usa un texto fijo, marcado.
@@ -242,38 +243,53 @@ SISTEMA = {
     "es": (
         "Eres redactor de un proyecto cívico sobre contratación pública en España. Explicas a cualquier vecino, con frases "
         "cortas y tono neutro, lo que dicen unos datos y lo que no dicen.\n"
-        "Recibirás una lista de HECHOS. Cada hecho es una frase ya comprobada.\n"
-        "Escribe exactamente tres apartados, cada uno en un párrafo que empiece por su rótulo:\n"
-        "Qué muestran los datos: copia literalmente los hechos 1, 2 y 3, en ese orden. Después copia literalmente entre uno y "
-        "tres hechos más: los que mejor ayuden a entender este caso concreto, incluido al menos un contrato de ejemplo. "
-        "No cambies ninguna cifra ni la redacción de los hechos, no los mezcles en una misma frase y no añadas cifras nuevas.\n"
-        "Qué no pueden demostrar: con tus palabras y sin cifras, explica que amontonar importes junto al límite es un "
-        "indicador estadístico y que no demuestra que se haya partido ningún contrato ni que alguien haya actuado mal; "
-        "puede haber razones legítimas, como precios de mercado, presupuestos cerrados o necesidades distintas.\n"
-        "Qué se puede revisar: con tus palabras y sin cifras, propón dos comprobaciones concretas para este caso en los "
-        "expedientes publicados (por ejemplo, qué se contrató, en qué fechas, si varios contratos atienden una misma "
-        "necesidad o, si los hechos lo indican, qué pasó a final de año o con el adjudicatario que más repite). "
-        "Puedes señalar un contrato de ejemplo con su referencia, como [1].\n"
-        "No nombres a personas ni a empresas. No acuses ni insinúes. No uses listas, negritas ni enlaces. /no_think"
+        "Recibirás una lista numerada de HECHOS ya comprobados sobre un organismo. Los hechos 1, 2 y 3 se publicarán siempre. "
+        "Responde con un objeto JSON con tres claves:\n"
+        "\"hechos_elegidos\": los números de entre uno y tres hechos más (del 4 en adelante) que mejor ayuden a entender "
+        "este caso concreto. Incluye al menos un contrato de ejemplo.\n"
+        "\"no_demuestran\": dos o tres frases con tus palabras y sin ninguna cifra. Explica que amontonar importes junto al "
+        "límite es un indicador estadístico y que no demuestra que se haya partido ningún contrato ni que alguien haya "
+        "actuado mal; puede haber razones legítimas, como precios de mercado, presupuestos cerrados o necesidades distintas.\n"
+        "\"revisar\": dos o tres frases con tus palabras y sin ninguna cifra. Propón dos comprobaciones concretas para este "
+        "caso en los expedientes publicados, apoyándote en los hechos que has elegido (por ejemplo, qué se contrató, en qué "
+        "fechas, si varios contratos atienden una misma necesidad, qué pasó a final de año o qué se encargó al adjudicatario "
+        "que más repite). Puedes señalar un contrato de ejemplo con su referencia, como [1].\n"
+        "No nombres a personas ni a empresas. No acuses ni insinúes. No uses listas, negritas ni enlaces. "
+        "No te refieras a los hechos por su número ni escribas ningún número en tus frases. /no_think"
     ),
     "en": (
         "You write for a civic project on public procurement in Spain. You explain to a general reader, in short sentences "
         "and a neutral tone, what some data says and what it does not say.\n"
-        "You will receive a list of FACTS. Each fact is a sentence that has already been checked.\n"
-        "Write exactly three sections, each one a paragraph starting with its label:\n"
-        "What the data shows: copy facts 1, 2 and 3 word for word, in that order. Then copy word for word between one and "
-        "three more facts: the ones that best help to understand this particular case, including at least one example "
-        "contract. Do not change any figure or the wording of the facts, do not merge them into one sentence and do not add new figures.\n"
-        "What it cannot show: in your own words and with no figures, explain that amounts piling up just under the limit is a "
-        "statistical indicator and does not prove that any contract was broken up or that anyone acted improperly; there "
-        "can be legitimate reasons, such as market prices, fixed budgets or separate needs.\n"
-        "What can be checked: in your own words and with no figures, suggest two concrete checks for this case in the "
-        "published contract files (for example what was bought, on which dates, whether several contracts meet a single "
-        "need or, if the facts point that way, what happened at year end or with the awardee that repeats most). "
-        "You may point to an example contract by its reference, such as [1].\n"
-        "Do not name people or companies. Do not accuse or insinuate. No lists, bold text or links. /no_think"
+        "You will receive a numbered list of checked FACTS about a public body. Facts 1, 2 and 3 are always published. "
+        "Reply with a JSON object with three keys:\n"
+        "\"hechos_elegidos\": the numbers of between one and three more facts (from 4 onwards) that best help to understand "
+        "this particular case. Include at least one example contract.\n"
+        "\"no_demuestran\": two or three sentences in English, in your own words, with no figures at all. Explain that amounts "
+        "piling up just under the limit is a statistical indicator and does not prove that any contract was broken up or "
+        "that anyone acted improperly; there can be legitimate reasons, such as market prices, fixed budgets or separate needs.\n"
+        "\"revisar\": two or three sentences in English, in your own words, with no figures at all. Suggest two concrete checks "
+        "for this case in the published contract files, building on the facts you chose (for example what was bought, on "
+        "which dates, whether several contracts meet a single need, what happened at year end, or what was ordered from the "
+        "awardee that repeats most). You may point to an example contract by its reference, such as [1].\n"
+        "Do not name people or companies. Do not accuse or insinuate. No lists, bold text or links. "
+        "Do not refer to facts by their number and do not write any number in your sentences. /no_think"
     ),
 }
+
+
+def esquema(h: dict) -> dict:
+    """Esquema JSON que llama.cpp impone al modelo (decodificación restringida por gramática)."""
+    return {
+        "type": "object",
+        "properties": {
+            "hechos_elegidos": {"type": "array", "minItems": 1, "maxItems": 3,
+                                "items": {"type": "integer", "enum": list(range(h["n_obligatorias"] + 1, len(h["frases"]) + 1))}},
+            "no_demuestran": {"type": "string", "minLength": 80, "maxLength": 600},
+            "revisar": {"type": "string", "minLength": 80, "maxLength": 600},
+        },
+        "required": ["hechos_elegidos", "no_demuestran", "revisar"],
+        "additionalProperties": False,
+    }
 
 
 def pedir(h: dict, lang: str, intento: int, errores_previos: list[str]) -> str:
@@ -285,12 +301,43 @@ def pedir(h: dict, lang: str, intento: int, errores_previos: list[str]) -> str:
         user += aviso + "; ".join(errores_previos[:4]) + "."
     r = requests.post(SERVIDOR, json={
         "messages": [{"role": "system", "content": SISTEMA[lang]}, {"role": "user", "content": user}],
-        "temperature": 0.3 + 0.2 * intento, "top_p": 0.9, "max_tokens": 480, "seed": 1234 + intento,
+        "temperature": 0.3 + 0.2 * intento, "top_p": 0.9, "max_tokens": 400, "seed": 1234 + intento,
+        "response_format": {"type": "json_schema", "json_schema": {"name": "explicacion", "strict": True,
+                                                                  "schema": esquema(h)}},
     }, timeout=600)
     r.raise_for_status()
     txt = r.json()["choices"][0]["message"]["content"]
-    txt = re.sub(r"<think>.*?</think>", "", txt, flags=re.S).strip()
-    return re.sub(r"[ \t]*\n\s*", "\n", txt)
+    return re.sub(r"<think>.*?</think>", "", txt, flags=re.S).strip()
+
+
+def montar(respuesta: str, h: dict, lang: str) -> tuple[str | None, list[str]]:
+    """Compone el texto final: los hechos 1-3, los que eligió el modelo y sus dos apartados.
+
+    El modelo no reescribe ninguna cifra: solo indica qué hechos quiere. Devuelve
+    (texto, []) o (None, motivos) si la respuesta no tiene la forma pedida.
+    """
+    try:
+        d = json.loads(respuesta)
+        nums = [int(x) for x in d["hechos_elegidos"]]
+        no_dem, rev = str(d["no_demuestran"]), str(d["revisar"])
+    except (ValueError, KeyError, TypeError):
+        return None, ["estructura: la respuesta no es el objeto JSON pedido"]
+    n_total, n_obl = len(h["frases"]), h["n_obligatorias"]
+    if any(x < 1 or x > n_total for x in nums):
+        return None, ["elección: elige un hecho que no existe"]
+    elegidos = sorted(set(x for x in nums if x > n_obl))
+    if not 1 <= len(elegidos) <= 3:
+        return None, ["elección: hay que elegir entre uno y tres hechos del 4 en adelante"]
+    primero_ej = n_total - h["n_ejemplos"] + 1
+    if h["n_ejemplos"] and not any(x >= primero_ej for x in elegidos):
+        # Regla fija: siempre se enseña al menos un contrato; si el modelo no eligió ninguno, el [1].
+        elegidos = elegidos[:2] + [primero_ej]
+    t1, t2, t3 = TITULOS[lang]
+    plano = lambda s: " ".join(s.replace("**", "").split())
+    if any(t in no_dem + rev for t in TITULOS[lang]):
+        return None, ["estructura: los rótulos no deben repetirse dentro del texto"]
+    datos = " ".join(h["frases"][i - 1] for i in list(range(1, n_obl + 1)) + elegidos)
+    return f"{t1} {datos}\n{t2} {plano(no_dem)}\n{t3} {plano(rev)}", []
 
 
 def plantilla(h: dict, lang: str) -> str:
@@ -325,12 +372,14 @@ def explicar(ficha: dict) -> dict:
         out["citas"] = [c["u"] for c in h["ejemplos"]]
         errores, texto, origen = [], None, "plantilla"
         for intento in range(MAX_INTENTOS):
-            cand = pedir(h, lang, intento, errores)
-            errores = verificar(cand, h, lang)
+            bruto = pedir(h, lang, intento, errores)
+            cand, errores = montar(bruto, h, lang)
+            if cand is not None:
+                errores = verificar(cand, h, lang)
             if not errores:
                 texto, origen = cand, "modelo"
                 break
-            out["rechazos"].append({"lang": lang, "intento": intento + 1, "motivos": errores, "texto": cand})
+            out["rechazos"].append({"lang": lang, "intento": intento + 1, "motivos": errores, "texto": bruto})
         if texto is None:
             texto = plantilla(h, lang)
             assert not verificar(texto, h, lang), verificar(texto, h, lang)
@@ -356,7 +405,9 @@ def generar(limite: int | None = None) -> None:
     for i, uid in enumerate(pend, 1):
         t = time.time()
         cache[uid] = explicar(fichas[uid])
-        CACHE.write_text(json.dumps(cache, ensure_ascii=False, indent=1, sort_keys=True), "utf-8")
+        tmp = CACHE.with_suffix(".tmp")  # escritura atómica: se puede leer mientras se genera
+        tmp.write_text(json.dumps(cache, ensure_ascii=False, indent=1, sort_keys=True), "utf-8")
+        tmp.replace(CACHE)
         e = cache[uid]
         print(f"[{datetime.now():%H:%M:%S}] {i}/{len(pend)} {uid} es={e['origen_es']} en={e['origen_en']} "
               f"rechazos={len(e['rechazos'])} {time.time() - t:.0f}s", flush=True)
