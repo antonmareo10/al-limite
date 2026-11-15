@@ -202,6 +202,18 @@
     const p = Math.pow(10, Math.floor(Math.log10(v))); const f = v / p;
     return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * p;
   }
+  // Eje con 4 divisiones de paso «redondo», para que ninguna etiqueta salga redondeada (1,25 → «1,3»).
+  // integer: el eje cuenta cosas enteras (contratos, %), así que el paso nunca baja de 1.
+  function axis4(v, integer) {
+    const raw = Math.max(v, integer ? 4 : 1e-9) / 4;
+    const p = Math.pow(10, Math.floor(Math.log10(raw))), f = raw / p;
+    let step = (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 && !(integer && p < 10) ? 2.5 : f <= 5 ? 5 : 10) * p;
+    if (integer) step = Math.max(1, Math.round(step));
+    const dec = step >= 1 ? (step % 1 ? 1 : 0) : (Math.round(step * 10) === step * 10 ? 1 : 2);
+    return { max: step * 4, dec };
+  }
+  const eur = s => (lang === "en" ? `€${s}` : `${s} €`);
+  const flatModel = m => String(m || "").replace(/\s*\(([^()]*)\)\s*$/, ", $1");
 
   function wallChart(d, rule) {
     // El gráfico empieza en MIN_X: por debajo hay muchísimos contratos pequeños que aplastarían la escala.
@@ -210,12 +222,12 @@
     const iw = W - m.l - m.r, ih = H - m.t - m.b, bw = iw / n;
     const iRef = Math.round(R.ref_desde / w) - i0, iNear = Math.round(R.cerca_desde / w) - i0, iLim = Math.round(R.umbral / w) - i0;
     const expBin = d.n_ref / (iNear - iRef);
-    const ymax = niceMax(Math.max(...h, expBin, 1));
+    const ax = axis4(Math.max(...h, expBin, 1), true), ymax = ax.max;
     const y = v => m.t + ih - (v / ymax) * ih;
     let s = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t().wall_title(fmt(R.umbral)))}. ${esc(`${fmt(d.n_cerca)} ${t().u_obs}; ${fmt(d.esperado, 1)} ${t().u_exp}.`)}">`;
     for (let k = 0; k <= 4; k++) {
       const v = (ymax * k) / 4, yy = y(v);
-      s += `<line class="${k ? "grid" : "axis"}" x1="${m.l}" x2="${W - m.r}" y1="${yy}" y2="${yy}"/><text x="${m.l - 6}" y="${yy + 4}" text-anchor="end">${fmt(v, v < 10 && v % 1 ? 1 : 0)}</text>`;
+      s += `<line class="${k ? "grid" : "axis"}" x1="${m.l}" x2="${W - m.r}" y1="${yy}" y2="${yy}"/><text x="${m.l - 6}" y="${yy + 4}" text-anchor="end">${fmt(v, ax.dec)}</text>`;
     }
     const gap = bw > 4 ? 1 : 0.4;
     h.forEach((c, i) => {
@@ -250,12 +262,12 @@
 
   function ciChart(d) {
     const hi = d.ic_sup ?? Math.max(d.ic_inf * 2, 4);
-    const xmax = niceMax(Math.max(hi, 2) * 1.05);
+    const ax = axis4(Math.max(hi, 2) * 1.05, false), xmax = ax.max;
     const W = NARROW() ? 380 : 520, H = 78, m = { l: 12, r: 18, t: 26, b: 24 }, iw = W - m.l - m.r;
     const x = v => m.l + (Math.min(v, xmax) / xmax) * iw, yy = m.t + 12;
     let s = `<svg class="chart ci" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(d.razon == null ? t().ci_sub_open(fmt(d.ic_inf, 1)) : t().ci_sub(fmt(d.razon, 1), fmt(d.ic_inf, 1), fmt(d.ic_sup, 1)))}">`;
     s += `<line class="axis" x1="${m.l}" x2="${W - m.r}" y1="${H - m.b}" y2="${H - m.b}"/>`;
-    for (let k = 0; k <= 4; k++) { const v = (xmax * k) / 4; s += `<text x="${x(v)}" y="${H - 6}" text-anchor="middle">${fmt(v, v % 1 ? 1 : 0)}</text>`; }
+    for (let k = 0; k <= 4; k++) { const v = (xmax * k) / 4; s += `<text x="${x(v)}" y="${H - 6}" text-anchor="middle">${fmt(v, ax.dec)}</text>`; }
     s += `<line class="exp" x1="${x(1)}" x2="${x(1)}" y1="${m.t - 6}" y2="${H - m.b}"/><text class="lbl" x="${x(1) + 5}" y="${m.t - 10}">${esc(t().ci_one)}</text>`;
     s += `<line x1="${x(d.ic_inf)}" x2="${x(hi)}" y1="${yy}" y2="${yy}" stroke="var(--limit)" stroke-width="4" stroke-linecap="round"${d.ic_sup == null ? ' stroke-dasharray="1 7"' : ""}/>`;
     if (d.razon != null) s += `<circle class="dot hot" cx="${x(d.razon)}" cy="${yy}" r="6"/>`;
@@ -267,10 +279,10 @@
     if (!tn) return "";
     const pn = d.meses_cerca.map(v => (100 * v) / tn), pa = d.meses_todos.map(v => (100 * v) / ta);
     const W = NARROW() ? 400 : 520, H = 210, m = { l: 34, r: 8, t: 10, b: 26 }, iw = W - m.l - m.r, ih = H - m.t - m.b, bw = iw / 12;
-    const ymax = niceMax(Math.max(...pn, ...pa, 10));
+    const ax = axis4(Math.max(...pn, ...pa, 10), true), ymax = ax.max;
     const y = v => m.t + ih - (v / ymax) * ih;
     let s = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t().mon_title)}">`;
-    for (let k = 0; k <= 4; k++) { const v = (ymax * k) / 4; s += `<line class="${k ? "grid" : "axis"}" x1="${m.l}" x2="${W - m.r}" y1="${y(v)}" y2="${y(v)}"/><text x="${m.l - 5}" y="${y(v) + 4}" text-anchor="end">${fmt(v)}${k === 4 ? " %" : ""}</text>`; }
+    for (let k = 0; k <= 4; k++) { const v = (ymax * k) / 4; s += `<line class="${k ? "grid" : "axis"}" x1="${m.l}" x2="${W - m.r}" y1="${y(v)}" y2="${y(v)}"/><text x="${m.l - 5}" y="${y(v) + 4}" text-anchor="end">${fmt(v, ax.dec)}${k === 4 ? " %" : ""}</text>`; }
     pn.forEach((v, i) => {
       const x = m.l + i * bw;
       s += `<rect class="bar near" x="${x + bw * 0.2}" y="${y(v)}" width="${bw * 0.6}" height="${m.t + ih - y(v)}" rx="2"/>`;
@@ -286,11 +298,11 @@
   function lineChart(pts, o) {
     // pts: [{x, y, lo, hi, label, tip, hot}]
     const W = NARROW() ? 400 : 720, H = 260, m = { l: 44, r: 16, t: 16, b: 40 }, iw = W - m.l - m.r, ih = H - m.t - m.b;
-    const ymax = niceMax(Math.max(...pts.map(p => p.hi ?? p.y)) * 1.02);
+    const ax = axis4(Math.max(...pts.map(p => p.hi ?? p.y)) * 1.02, false), ymax = ax.max;
     const xs = pts.map(p => p.x), x0 = Math.min(...xs), x1 = Math.max(...xs);
     const x = v => m.l + ((v - x0) / (x1 - x0)) * iw, y = v => m.t + ih - (v / ymax) * ih;
     let s = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(o.title)}">`;
-    for (let k = 0; k <= 4; k++) { const v = (ymax * k) / 4; s += `<line class="${k ? "grid" : "axis"}" x1="${m.l}" x2="${W - m.r}" y1="${y(v)}" y2="${y(v)}"/><text x="${m.l - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(v, v % 1 ? 1 : 0)}</text>`; }
+    for (let k = 0; k <= 4; k++) { const v = (ymax * k) / 4; s += `<line class="${k ? "grid" : "axis"}" x1="${m.l}" x2="${W - m.r}" y1="${y(v)}" y2="${y(v)}"/><text x="${m.l - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(v, ax.dec)}</text>`; }
     s += `<line class="exp" x1="${m.l}" x2="${W - m.r}" y1="${y(1)}" y2="${y(1)}"/><text class="lbl" x="${W - m.r}" y="${y(1) - 6}" text-anchor="end">${esc(t().ci_one)}</text>`;
     s += `<path class="band" d="M${pts.map(p => `${x(p.x)},${y(p.hi)}`).join("L")}L${pts.slice().reverse().map(p => `${x(p.x)},${y(p.lo)}`).join("L")}Z"/>`;
     s += `<path class="line" d="M${pts.map(p => `${x(p.x)},${y(p.y)}`).join("L")}"/>`;
@@ -326,6 +338,8 @@
       if (!ok) continue;
       const f = IDX.filas[s.i];
       score += Math.min(3, Math.log10(1 + f[4]) / 1.5) + (f[1] === 1 ? 1.5 : 0) - s.name.length / 400;
+      // Quien escribe el nombre de un municipio suele buscar su ayuntamiento, no la diputación de la provincia.
+      if (/(^| )(ayuntamiento|ajuntament|concello|udala|ayto) /.test(s.name) && toks.some(k => s.name.includes(" de " + k) || s.name.endsWith(" " + k))) score += 1.5;
       out.push([score, s.i]);
     }
     out.sort((a, b) => b[0] - a[0]);
@@ -406,7 +420,7 @@
         <button type="button" data-r="ss" aria-pressed="true">${esc(t().regla.ss)}</button><button type="button" data-r="obras" aria-pressed="false">${esc(t().regla.obras)}</button></div>
         <div id="nat">${natBlock("ss")}</div>
         <div class="note limit"><p>${esc(t().foot_2)}</p></div></section>
-      <section>${lineChart(NAC.placebo_ss.map(p => ({ x: p.umbral, y: p.razon, lo: p.ic_inf, hi: p.ic_sup, hot: p.umbral === 15000, label: `${fmt(15000)} €: × ${fmt(p.razon, 1)}`,
+      <section>${lineChart(NAC.placebo_ss.map(p => ({ x: p.umbral, y: p.razon, lo: p.ic_inf, hi: p.ic_sup, hot: p.umbral === 15000, label: `${eur(fmt(15000))}: × ${fmt(p.razon, 1)}`,
         tick: p.umbral % (NARROW() ? 4000 : 2000) === (NARROW() ? 3000 : 1000) ? fmt(p.umbral) : "", tip: t().plc_tip(fmt(p.umbral), fmt(p.razon, 2), fmt(p.ic_inf, 2), fmt(p.ic_sup, 2)) })), { title: t().plc_title, sub: t().plc_sub, xlabel: t().plc_x })}</section>
       <section>${lineChart(NAC.reglas.ss.meses.map(p => ({ x: p.mes, y: p.razon, lo: p.ic_inf, hi: p.ic_sup, tick: t().months[p.mes - 1], tip: `${t().months[p.mes - 1]}: × ${fmt(p.razon, 2)} (${fmt(p.ic_inf, 2)}–${fmt(p.ic_sup, 2)})` })), { title: t().mon_title_nat, sub: t().mon_sub_nat, xlabel: "" })}</section>
       <section><h2>${esc(t().rank_h2)}</h2><p>${esc(t().rank_p(NAC.criterios))}</p><div id="rank"></div></section>
@@ -443,7 +457,7 @@
       return `<p class="ai-p">${h}</p>`;
     }).join("");
     return `<section class="ai" aria-labelledby="aih"><h3 id="aih">${esc(t().ai_h)} <span class="chip">${esc(t().regla[u.ia.regla])}</span></h3>${paras}
-      <p class="prov">${esc(t().ai_prov(u.ia.modelo, u.ia["origen_" + lang]))}</p></section>`;
+      <p class="prov">${esc(t().ai_prov(flatModel(u.ia.modelo), u.ia["origen_" + lang]))}</p></section>`;
   }
 
   function ruleBlock(u, rule) {
@@ -452,7 +466,7 @@
     const win = d.n_cerca + d.n_ref;
     let h = `<div class="meta">${badge(d.nivel)}<span class="chip num">${fmt(d.n)} ${esc(t().contracts)}</span></div>`;
     if (d.nivel === "insuficiente") h += `<div class="note warn"><p>${esc(t().u_small(fmt(win), C.min_ventana))}</p></div>`;
-    h += `<div class="tiles"><div class="tile ${d.nivel === "senal" ? "hot" : ""}"><div class="v num">${fmt(d.n_cerca)}</div><div class="l">${esc(t().u_obs)} (${fmt(R.cerca_desde)}–${fmt(R.umbral)} €)</div></div>
+    h += `<div class="tiles"><div class="tile ${d.nivel === "senal" ? "hot" : ""}"><div class="v num">${fmt(d.n_cerca)}</div><div class="l">${esc(t().u_obs)} (${eur(`${fmt(R.cerca_desde)}–${fmt(R.umbral)}`)})</div></div>
       <div class="tile"><div class="v num">${fmt(d.esperado, 1)}</div><div class="l">${esc(t().u_exp)}</div></div>
       <div class="tile"><div class="v num">${d.razon == null ? "–" : "× " + fmt(d.razon, 1)}</div><div class="l">${esc(t().u_ratio)} · ${esc(t().ic(fmt(d.ic_inf, 1), d.ic_sup == null ? "∞" : fmt(d.ic_sup, 1)))}</div></div></div>`;
     if (win > 0) {
@@ -489,7 +503,7 @@
     const draw = () => {
       main.innerHTML = `<article class="unit"><p class="crumb"><a href="#/">${esc(t().u_back)}</a> › ${esc(u.ruta)}</p>
         <p class="kicker">${esc(u.clase === "entidad" ? t().entidad : t().organo)}${u.nif ? ` · NIF ${esc(u.nif)}` : ""}</p><h1>${esc(u.nombre)}</h1>
-        <p class="lead num">${fmt(u.n)} ${esc(t().u_n)} · ${fmt(Math.round(u.importe_total))} € ${esc(t().u_total)}</p>
+        <p class="lead num">${fmt(u.n)} ${esc(t().u_n)} · ${eur(fmt(Math.round(u.importe_total)))} ${esc(t().u_total)}</p>
         ${u.entidad ? `<p>${esc(t().u_part_of)}: <a href="#/u/${esc(u.entidad.id)}">${esc(u.entidad.nombre)}</a></p>` : ""}
         ${rules.length > 1 ? `<div class="seg" role="group" id="useg">${rules.map(r => `<button type="button" data-r="${r}" aria-pressed="${r === cur}">${esc(t().regla[r])}</button>`).join("")}</div>` : `<p><span class="chip">${esc(t().regla[cur] || "")}</span></p>`}
         <div id="rule">${cur ? ruleBlock(u, cur) : ""}</div>
@@ -561,7 +575,7 @@
     try { localStorage.setItem("lang", lang); } catch {}
     applyLang(); route();
   });
-  addEventListener("hashchange", () => { route().then(() => { scrollTo(0, 0); main.focus({ preventScroll: true }); }); });
+  addEventListener("hashchange", () => { route().then(() => { scrollTo({ top: 0, left: 0, behavior: "instant" }); main.focus({ preventScroll: true }); }); });
   let wasNarrow = NARROW();
   addEventListener("resize", () => { if (NARROW() !== wasNarrow) { wasNarrow = NARROW(); route(); } });
   start();
