@@ -1767,9 +1767,9 @@
  "ia": {
   "modelo": "Qwen3-4B (Q4_K_M, llama.cpp)",
   "fichas_con_senal": 893,
-  "fichas_con_explicacion": 16,
-  "textos_del_modelo": 29,
-  "textos_de_plantilla": 3,
-  "borradores_rechazados": 22
+  "fichas_con_explicacion": 893,
+  "textos_del_modelo": 1620,
+  "textos_de_plantilla": 166,
+  "borradores_rechazados": 1208
  }
 }
