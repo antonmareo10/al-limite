@@ -36,6 +36,11 @@ FROM d WHERE tipo IN ('1', '2', '3') GROUP BY 1
 
 def comprobar() -> bool:
     cifras = json.loads((config.OUT / "cifras.json").read_text("utf-8"))["reglas"]
+    if not config.DB.exists():
+        sys.exit(f"No encuentro la base de datos ({config.DB}). Esta comprobación recuenta los datos brutos: "
+                 "ejecuta antes `python -m allimite todo` (o `descargar` y `leer`).\n"
+                 f"Database not found ({config.DB}). This check recounts the raw data: "
+                 "run `python -m allimite todo` first (or `descargar` and `leer`).")
     con = sqlite3.connect(f"file:{config.DB}?mode=ro", uri=True)
     ok = True
     for regla, cerca, ref in con.execute(SQL, (config.FECHA_MIN, config.FECHA_MAX)):

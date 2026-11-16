@@ -19,7 +19,8 @@
       skip: "Saltar al contenido", nav_home: "Inicio", nav_rank: "Ranking", nav_method: "Método", loading: "Cargando datos…",
       foot_1: "Fuente: Plataforma de Contratación del Sector Público (Ministerio de Hacienda), conjunto de datos abiertos «Contratos menores de perfiles del contratante». Elaboración propia.",
       foot_2: "La acumulación de importes junto al límite es un indicador estadístico. No prueba que un contrato se haya fraccionado ni que nadie haya actuado mal.",
-      foot_3: "Proyecto de Antonio González Fernández para SLAY HACKS 2026. Código con licencia MIT.",
+      foot_3: "Proyecto de estudiante de Antonio González Fernández, hecho el 15 y 16 de noviembre de 2026 para hackatones. Código con licencia MIT:",
+      foot_code: "código y método en GitHub", ex_label: "O abre un ejemplo:",
       gen: d => `Datos generados el ${d}.`,
       kicker: p => `Contratos menores en España · ${p}`,
       h1: "¿Cuántos contratos públicos se quedan <em>justo debajo</em> del límite?",
@@ -86,7 +87,8 @@
       skip: "Skip to content", nav_home: "Home", nav_rank: "Ranking", nav_method: "Method", loading: "Loading data…",
       foot_1: "Source: Plataforma de Contratación del Sector Público (Spanish Ministry of Finance), open dataset “Contratos menores de perfiles del contratante”. Own analysis.",
       foot_2: "A pile-up of amounts just under the limit is a statistical indicator. It does not prove that a contract was split or that anyone acted improperly.",
-      foot_3: "A project by Antonio González Fernández for SLAY HACKS 2026. MIT-licensed code.",
+      foot_3: "A student project by Antonio González Fernández, built on 15–16 November 2026 for hackathons. MIT-licensed code:",
+      foot_code: "code and method on GitHub", ex_label: "Or open an example:",
       gen: d => `Data generated on ${d}.`,
       kicker: p => `Minor contracts in Spain · ${p}`,
       h1: "How many public contracts land <em>just under</em> the legal limit?",
@@ -346,11 +348,20 @@
     return out.slice(0, 12).map(x => IDX.filas[x[1]]);
   }
   const bestLevel = f => { const o = ["insuficiente", "sin_senal", "indicio", "senal"]; const a = f[5] || "insuficiente", b = f[10] || "insuficiente"; return o.indexOf(a) >= o.indexOf(b) ? a : b; };
+  // Ejemplos de la portada, elegidos por regla y no a dedo: el organismo del vídeo de demostración (con señal)
+  // y los órganos con más contratos analizados entre los de «indicio débil» y «sin señal» en servicios y suministros.
+  // Así quien no conoce nombres de organismos españoles ve los tres tipos de resultado con un clic.
+  const EXAMPLES = ["30985210142281", "51362990180059", "40000370000093"];
+  function examples() {
+    const rows = EXAMPLES.map(id => IDX.filas.find(f => f[0] === id)).filter(Boolean);
+    if (!rows.length) return "";
+    return `<p class="examples"><span>${esc(t().ex_label)}</span> ${rows.map(f => `<a href="#/u/${esc(f[0])}">${esc(f[2])} ${badge(f[5] || "insuficiente")}</a>`).join(" ")}</p>`;
+  }
   function searchBox() {
     return `<div class="search" role="search"><label for="q">${esc(t().s_label)}</label>
       <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="${esc(t().s_ph)}" aria-controls="res" aria-describedby="qh">
       <p class="hint" id="qh">${esc(t().s_hint(fmt(IDX.filas.length)))}</p>
-      <ul class="results" id="res" aria-live="polite"></ul></div>`;
+      <ul class="results" id="res" aria-live="polite"></ul>${examples()}</div>`;
   }
   function bindSearch() {
     const q = document.getElementById("q"), res = document.getElementById("res");

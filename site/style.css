@@ -63,6 +63,11 @@ p { margin: 12px 0; max-width: 68ch; }
   background: var(--surface); color: var(--ink); }
 .search input::placeholder { color: var(--ink3); opacity: 1; }
 .search .hint { font-size: .85rem; color: var(--ink3); margin: 6px 0 0; }
+.examples { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0 0; font-size: .9rem; color: var(--ink2); }
+.examples a { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; padding: 5px 10px; border: 1px solid var(--edge); border-radius: 2px;
+  background: var(--surface); text-decoration: none; }
+.examples a:hover, .examples a:focus-visible { background: var(--chip); color: inherit; }
+.results:not(:empty) + .examples { display: none; }
 .results { list-style: none; margin: 8px 0 0; padding: 0; border: 1px solid var(--edge); border-radius: 2px; background: var(--surface);
   overflow: hidden; }
 .results:empty { display: none; }
