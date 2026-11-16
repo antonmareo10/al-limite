@@ -10,7 +10,17 @@ quedan justo por debajo del límite legal (15.000 € en servicios y suministros
 esperar, con qué incertidumbre, y una explicación en lenguaje claro generada con un modelo abierto en local y
 verificada automáticamente. Es un indicador estadístico, no una acusación.
 
-Built from scratch for SLAY HACKS 2026 (development period from 7 November 2026).
+**[Live demo](https://al-limite-two.vercel.app)** (opens in English or Spanish to match your browser; nothing to
+install) · **[2½-minute video](https://youtu.be/kv5HzLWF5oY)** ·
+**[Devpost page](https://devpost.com/software/al-limite-who-keeps-landing-just-under-the-legal-limit)**
+
+[![Home page: search box and three one-click examples](docs/home.png)](https://al-limite-two.vercel.app)
+[![A body's page: observed, expected and the 95% interval](docs/body.png)](https://al-limite-two.vercel.app/#/u/30985210142281)
+
+Built from scratch on 15–16 November 2026 as a solo student hackathon project. It is one project, entered in
+SLAY HACKS, Code for Change, LaunchPad Hacks, AI OpenBuild, Silicon Valley Buildathon and GenHacks (all on
+Devpost; the build dates fall inside the submission period of each). See
+[How and when this was built](#how-and-when-this-was-built).
 
 ## The problem
 
@@ -78,6 +88,29 @@ explanation a neighbour can read.
 - **Limits.** The verifier checks figures, structure and tone, not whether each suggestion is the most useful
   one. The texts are labelled as AI-generated and always sit next to the data they describe.
 
+## What was tested, what failed and what changed
+
+All counts below come from `resultados/cifras.json` and `resultados/explicaciones.json` in this repository.
+
+- **First design, dropped after testing.** The model wrote the data paragraph and a checker confirmed that every
+  number in it was one of the computed ones. Reading the outputs showed texts that passed the checker and were
+  still wrong (a ratio of 34.2 presented as "34.2% of contracts", the wrong price band). The fix was to change
+  the design, so the model never restates a figure.
+- **What the verifier caught in the final run.** It rejected 1,208 drafts (833 in English, 375 in Spanish):
+  1,077 put figures in the model's own sections, 99 lacked the caveat, 55 cited a contract that does not exist,
+  36 used accusatory wording or spoke of contract splitting outside the caveat, and 11 were too long (a draft can
+  fail for more than one reason). 314 of the 893 flagged pages passed first time in both languages.
+- **Where the model still fails.** After three failed drafts the page gets a fixed template, labelled as such:
+  166 of the 1,786 texts (37 in Spanish, 129 in English). The 4B model is clearly weaker in English.
+- **Statistics.** 52 automated tests, including simulations of the interval's coverage and of the false-positive
+  rate; an independent recount in plain SQL (`python -m allimite.check`) that must match the published figures;
+  the fake-limit sweep and the by-year and by-month checks described above.
+- **Website.** Checked in a headless browser (Playwright) in Spanish and English, at desktop width and at 390 px,
+  light and dark: no console errors and no horizontal scrolling. That review led to round axis steps, the town
+  council ranked above the provincial body when you search a town's name, and the one-click examples on the home
+  page for visitors who do not know Spanish body names.
+- **Not done.** No one outside the project has tested it yet, and no audit institution has reviewed the list.
+
 ## Method in short
 
 For services and supplies: *near* = (€14,000, €15,000], *reference* = (€9,000, €14,000], five times as wide.
@@ -101,7 +134,7 @@ the data are entered by each body and contain errors; only bodies hosted on the 
 ```bash
 pip install -r requirements.txt
 python -m allimite todo      # download (1.1 GB) → SQLite → analysis → explanations → site data
-python -m pytest             # 50 tests: parser, bin edges, interval coverage, false-positive rate, verifier
+python -m pytest             # 52 tests: parser, bin edges, interval coverage, false-positive rate, verifier
 python -m allimite.check     # recounts the national figures with independent SQL and compares
 python -m allimite servir    # http://127.0.0.1:8000
 ```
@@ -126,7 +159,7 @@ allimite/   fetch.py (polite download + manifest)   parse.py (ATOM/CODICE → SQ
             stats.py (indicator, interval, FDR)     analyze.py (everything the site shows)
             explain.py (facts, model call, verifier) check.py (independent recount)
             cpv.py, config.py, __main__.py
-tests/      test_stats.py, test_explain.py, test_parse.py
+tests/      test_stats.py, test_explain.py, test_parse.py, test_site.py
 site/       index.html, app.js, style.css, metodo.*.html, data/ (precomputed JSON)
 resultados/ cifras.json, ranking_*.csv, explicaciones.json (texts and rejected drafts)
 ```
@@ -147,14 +180,16 @@ No JavaScript dependencies and no build step. Python: numpy, pandas, scipy, lxml
 ## How and when this was built
 
 - **Built from scratch on 15–16 November 2026** (see the git history; first commit 15 Nov 2026, 17:28 CET) for
-  the SLAY HACKS hackathon on Devpost. All code in this repository was written during that window.
+  SLAY HACKS on Devpost, and entered as the same project in Code for Change, LaunchPad Hacks, AI OpenBuild,
+  Silicon Valley Buildathon and GenHacks. All code in this repository was written from 15 November 2026 on;
+  later commits are small fixes.
 - **Prior work it builds on (ideas, not code):** the question comes from my earlier data-journalism pieces for
   the Open Data Bizkaia data-journalism challenge (November 2026), one of which looked at minor contracts in
   Bizkaia. That pipeline was not reused: this is a new national analysis, written from scratch, with the
   confidence intervals, the fake-threshold check and the verified AI explanations added here.
 - **AI assistance:** the code was written with the help of an AI coding assistant (Claude, Anthropic); every
   figure on the site is computed by the code and re-checked by an independent recount (`check.py`).
-- If this project is entered in more than one hackathon, each entry says so.
+- The six entries share one Devpost page, which lists all six events.
 
 ## Responsible use
 
