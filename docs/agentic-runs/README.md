@@ -14,7 +14,8 @@ call the runtime traced. Nothing was edited. `turn1.png` is the page at the end 
 | `qwen3-8b-site-2` | Qwen3-8B | site, a new page per question | 4 | 0 | 4 pass |
 | `qwen3-8b-site-3` | Qwen3-8B | site | 1 | 1 | 1 pass |
 | `qwen3-4b-second-site` | Qwen3-4B | Pide el expediente (local copy) calling the live Al límite network | 1 | — | The cross-site call ran; the model passed a poor request and filled no letter |
-| `qwen3-8b-second-site` | Qwen3-8B | same | 1 | — | Full flow: consent card, Al límite's network from its live origin, two reads through its bridge, the letter filled with 5 real contracts |
+| `qwen3-8b-second-site` | Qwen3-8B | same | 1 | — | Full flow: consent card, Al límite's network from its live origin, two reads through its bridge, the letter filled with 5 real contracts (212 s) |
+| `qwen3-8b-second-site-2` | Qwen3-8B | same, another body | 1 | — | Full flow again, for the Diputación Provincial de Ourense (256 s); `turn1_full.png` is in `docs/agentic/` |
 
 Totals on the site: Qwen3-4B, 7 questions, `caution_check` 0 times, 4 answers passed the page check and 3 were
 flagged. Qwen3-8B, 7 questions, `caution_check` 2 times, 7 answers passed.

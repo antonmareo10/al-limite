@@ -129,3 +129,21 @@ test("list_contracts_near_limit also takes the body's name, so one call is enoug
   assert.equal((await tools.listContracts({ query: "zzzz qqqq" })).ok, false);
   assert.equal((await tools.listContracts({})).ok, false);
 });
+
+test("the Agents page exists in both languages and its recorded runs come from docs/agentic-runs", async () => {
+  const pages = await Promise.all(["en", "es"].map(l => readFile(new URL(`agentes.${l}.html`, SITE), "utf8")));
+  const h2 = s => (s.match(/<h2>/g) || []).length;
+  assert.equal(h2(pages[0]), h2(pages[1]));
+  for (const p of pages) assert.ok(p.includes('<div id="runs">'));
+  const rec = await raw("runs/recorded.json");
+  assert.ok(rec.runs.length >= 3);
+  const runs = [];
+  for (const dir of ["qwen3-8b-site", "qwen3-8b-site-2", "qwen3-8b-second-site", "qwen3-4b-site-same-chat"]) {
+    const r = JSON.parse(await readFile(new URL(`../../docs/agentic-runs/2026-11-22/${dir}/run.json`, import.meta.url), "utf8"));
+    runs.push(...r.turns);
+  }
+  for (const shown of rec.runs) {
+    const source = runs.find(t => t.question === shown.question && t.answer === shown.answer);
+    assert.ok(source, `"${shown.question}" is not a recorded answer, word for word`);
+  }
+});
