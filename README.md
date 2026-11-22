@@ -17,6 +17,11 @@ install) · **[2½-minute video](https://youtu.be/kv5HzLWF5oY)** ·
 [![Home page: search box and three one-click examples](docs/home.png)](https://al-limite-two.vercel.app)
 [![A body's page: observed, expected and the 95% interval](docs/body.png)](https://al-limite-two.vercel.app/#/u/30985210142281)
 
+**New on the `agentic-web` branch (from 22 November 2026):** Al límite is also an *open agentic website*
+([live](https://al-limite-agent.vercel.app/?ask)). Two AI agents answer questions from the site's own data in your
+browser, on your own model and key, and code checks every answer before you read it; other agent sites can run
+the same network and read the same data. See [Agents on the open agentic web](#agents-on-the-open-agentic-web).
+
 Built from scratch on 15–16 November 2026 as a solo student hackathon project. It is one project, entered in
 SLAY HACKS, Code for Change, LaunchPad Hacks, AI OpenBuild, Silicon Valley Buildathon and GenHacks (all on
 Devpost; the build dates fall inside the submission period of each). See
@@ -196,3 +201,102 @@ No JavaScript dependencies and no build step. Python: numpy, pandas, scipy, lxml
 The ranking is a list of where to look, not a list of offenders. A high ratio can come from market prices, fixed
 budgets or separate needs. Please do not present these figures as evidence that a body, a person or a company
 broke the law.
+
+## Agents on the open agentic web
+
+Added from 22 November 2026, on the `agentic-web` branch, for the
+[Open Agentic Web Challenge](https://cognizant-agenticweb.devpost.com/). It follows Cognizant AI Lab's
+[Worldwide Agentic Web MVP specification](https://github.com/cognizant-ai-labs/agentic-web/blob/main/docs/worldwide_agentic_web_mvp_spec.md)
+and was built with that repository's `agentify-website` skill. Everything above (data, statistics, site) predates it;
+what is new is listed here.
+
+- **Site:** <https://al-limite-agent.vercel.app/> (press *Ask the agents*, or open `/?ask`). The original site,
+  without agents, stays at <https://al-limite-two.vercel.app/>.
+- **Network URL** (for other agent sites): `https://al-limite-agent.vercel.app/al_limite_guide`
+- **Second site, on another origin:** <https://pide-el-expediente.vercel.app/> drafts a request under Spain's
+  transparency law to see the files of a body's contracts, and asks Al límite's network for them after the
+  visitor agrees on a consent card (`companion/pide-el-expediente/`).
+
+### What runs where
+
+| Piece | File | What it does |
+|---|---|---|
+| Network | `site/al_limite_guide.hocon` → `al_limite_guide.network.json` | Two agents: **al_limite_guide** reads the data and drafts the answer; **caution_check** runs the honesty check on the draft and fixes it (Neuro SAN HOCON, built and validated with the skill's `build_network.mjs`) |
+| Site actions | `site/agent-tools.js`, `site/site-actions.js` | `look_up_body`, `list_contracts_near_limit`, `get_ranking`, `get_national_overview`, `get_method`, `check_answer` (reads) and `open_body_page` (opens a body's page behind the chat) |
+| Shared reads | `site/bridge/bridge-actions.js` | The six reads, shared with every agent site (`"*"`): it is public data the site already shows |
+| Honesty check | `site/honesty.js` | Deterministic code, no model (see below) |
+| Data and rules | `site/core.js` | The page and the agents use the same search, ranking and method code |
+| Runtime | `site/runtime/` | nsdeploy's browser runtime as shipped by the skill, byte for byte (`tools/agentify/runtime.sha256`) |
+| Publication | `agent-manifest.json`, `links.json`, `agent-mcp.json`, `.well-known/nsdeploy*.json`, `vercel.json` | Manifest with the default router (hosted Otari) and a closed peer policy; CORS on the public files; CSP on the page and the sandbox worker |
+
+The agents run in the visitor's browser. Their model calls go to the provider the visitor picks in
+*AI model settings*, with the visitor's key, which stays in that browser; the page data they read goes there too.
+No server of this project sees the conversation.
+
+### The honesty check
+
+The original site's rule (no AI writes a number) cannot hold in a chat, so the rule moves to the boundary: code
+checks every answer.
+
+- Every figure in the answer must be found in what Al límite's tools returned for that answer (rounding a decimal
+  is fine; a count must match exactly). A percentage the model computed, or a figure from an earlier answer
+  repeated from memory, is flagged.
+- Each ratio must come with its 95% interval; an answer about a body's indicator must say it is not proof; no
+  accusatory wording outside a negation; no company names (awardees are letters, as on the site).
+- It runs twice: **in the network**, where `caution_check` calls `website_check_answer` on the draft (this travels
+  with the network to other sites, through the bridge), and **in the page**, under every answer, whatever the model
+  did. The page check uses only what the tools returned for that answer, so a model cannot talk its way past it.
+- Limits: it checks figures, structure and tone, not meaning. A real number used for the wrong thing (a body's
+  figure presented as the national one) passes if the tools returned it for that answer. A made-up figure that
+  happens to equal a real one passes too.
+
+### Interoperability checks (spec section 6)
+
+`npm test` (Node 22+, no dependencies) runs the agent tests with the real runtime and a scripted model, with no
+network: the tools against the data files, the honesty check, the network and actions, and every check in section 6
+between Al límite and the second site, served under their public URLs: a published multi-agent network and
+manifest; the site's default router and model and the visitor's own (BYOK); an internal agent and site actions;
+loading the exact network from a second origin after consent and running it in the caller's page with Al límite's
+shared reads; the key never reaching the second site, which cannot change the caller's router or model; `sly_data`
+absent unless a named field is allowed; and visible errors for a declined card, a denied origin, an invalid network,
+a composition cycle and an over-budget request. `python -m pytest` still runs the original 52 tests.
+
+`tests/agentic/browser_run.py` drives the real page in headless Chromium against any OpenAI-compatible endpoint
+and records every agent and tool call. It is how the site was tried with a local open model (Qwen3 through
+llama.cpp), with no paid API.
+
+### Try it
+
+1. Open <https://al-limite-agent.vercel.app/?ask>.
+2. In *AI model settings*, pick a provider and paste a key (or *Connect with OpenRouter*). The default is hosted
+   Otari with the model `alibaba/qwen3.8-flash`. Use a key with a low spending limit.
+3. Ask, for example: *Does the Ayuntamiento de Ourense have many contracts just under the limit?*
+4. Afterwards, delete the setup under *Advanced settings* and close the tab.
+
+A local model works from a local copy of the site (`npm run serve`, then <http://127.0.0.1:8080/?ask>), with
+*Provider URL* `http://127.0.0.1:8089/v1`, *Model* `qwen3-4b` and any key text, against a llama.cpp server started
+as `llama-server -m Qwen3-4B-Q4_K_M.gguf --port 8089 --jinja --alias qwen3-4b -c 16384` with the environment
+variable `LLAMA_ARG_CHAT_TEMPLATE_KWARGS={"enable_thinking":false}`. Browsers block a public HTTPS page from
+calling a local address, so the hosted site needs a hosted provider.
+
+### Build and check
+
+```bash
+npm run build:agents   # HOCON → network JSON for both sites, with the skill's checks
+npm test               # Node tests for the agents
+node tools/agentify/scripts/check_partner.mjs https://al-limite-agent.vercel.app/al_limite_guide
+```
+
+`tools/agentify/` holds the skill's build, serve and partner-check scripts (Apache-2.0, `tools/agentify/LICENSE`),
+copied from `cognizant-ai-labs/agentic-web` at commit `e342997`; `tests/agentic/support/` adapts its scripted
+router and fake web for the section 6 tests.
+
+### Known limits
+
+- Static hosting with the skill's patched copy of nsdeploy's runtime. The runtime offers every `website_*` tool to
+  every agent, so `caution_check` is scoped by its instructions only.
+- Small models skip steps. In local runs Qwen3-4B read the right data and wrote honest answers but did not call
+  `caution_check`; the page check still ran under every answer. Hosted models were not tried (no paid keys).
+- The chat interface comes from the runtime and is in English; the site and the agents' answers are in Spanish or
+  English.
+- The network file, including the instructions, is public, as the spec intends.
