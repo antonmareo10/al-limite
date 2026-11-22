@@ -210,8 +210,10 @@ Added from 22 November 2026, on the `agentic-web` branch, for the
 and was built with that repository's `agentify-website` skill. Everything above (data, statistics, site) predates it;
 what is new is listed here.
 
-- **Site:** <https://al-limite-agent.vercel.app/> (press *Ask the agents*, or open `/?ask`). The original site,
-  without agents, stays at <https://al-limite-two.vercel.app/>.
+- **Site:** <https://al-limite-agent.vercel.app/> (press *Ask the agents*, or open `/?ask`). The
+  [Agents page](https://al-limite-agent.vercel.app/#/agentes) explains them and shows recorded runs for visitors
+  without a key. The original site, without agents, stays at <https://al-limite-two.vercel.app/>.
+- **MCP server** (read-only, same six reads): `https://al-limite-agent.vercel.app/api/mcp`
 - **Network URL** (for other agent sites): `https://al-limite-agent.vercel.app/al_limite_guide`
 - **Second site, on another origin:** <https://pide-el-expediente.vercel.app/> drafts a request under Spain's
   transparency law to see the files of a body's contracts, and asks Al límite's network for them after the
@@ -226,6 +228,8 @@ what is new is listed here.
 | Shared reads | `site/bridge/bridge-actions.js` | The six reads, shared with every agent site (`"*"`): it is public data the site already shows |
 | Honesty check | `site/honesty.js` | Deterministic code, no model (see below) |
 | Data and rules | `site/core.js` | The page and the agents use the same search, ranking and method code |
+| MCP server | `site/mcp-server.js`, `site/api/mcp.js` | The six reads over MCP (Streamable HTTP, 2025-06-18), validated with the runtime's own validator |
+| Agents page | `site/agentes.*.html`, `site/runs/recorded.json` | How the agents work, and recorded runs built from `docs/agentic-runs/` by `tests/agentic/make_recorded.ps1` |
 | Runtime | `site/runtime/` | nsdeploy's browser runtime as shipped by the skill, byte for byte (`tools/agentify/runtime.sha256`) |
 | Publication | `agent-manifest.json`, `links.json`, `agent-mcp.json`, `.well-known/nsdeploy*.json`, `vercel.json` | Manifest with the default router (hosted Otari) and a closed peer policy; CORS on the public files; CSP on the page and the sandbox worker |
 
@@ -295,8 +299,9 @@ router and fake web for the section 6 tests.
 
 - Static hosting with the skill's patched copy of nsdeploy's runtime. The runtime offers every `website_*` tool to
   every agent, so `caution_check` is scoped by its instructions only.
-- Small models skip steps. In local runs Qwen3-4B read the right data and wrote honest answers but did not call
-  `caution_check`; the page check still ran under every answer. Hosted models were not tried (no paid keys).
+- Small models skip steps. In local runs Qwen3-4B read the right data but never called `caution_check` (0 of 7
+  questions); Qwen3-8B called it in 2 of 7. The page check still ran under every answer. Hosted models were not
+  tried (no paid keys). The runs are in `docs/agentic-runs/`, and five of them are on the site's Agents page.
 - The chat interface comes from the runtime and is in English; the site and the agents' answers are in Spanish or
   English.
 - The network file, including the instructions, is public, as the spec intends.

@@ -27,6 +27,8 @@ ap.add_argument("--lang", default="en-GB")
 ap.add_argument("--timeout", type=int, default=900)
 ap.add_argument("--consent", default="allow", choices=["allow", "decline"])
 ap.add_argument("--fresh", action="store_true", help="a new page for each question, as a first message")
+ap.add_argument("--open-traces", action="store_true", help="also screenshot with the agents panel open")
+ap.add_argument("--full-page", action="store_true", help="also take a full-page screenshot")
 ap.add_argument("questions", nargs="+")
 a = ap.parse_args()
 sys.stdout.reconfigure(encoding="utf-8")
@@ -119,6 +121,12 @@ with sync_playwright() as p:
         got = page.evaluate(ANSWER)
         trace = page.evaluate(f"({TRACE})({n_before})")
         page.screenshot(path=str(out / f"turn{i}.png"))
+        if a.open_traces:
+            page.evaluate("() => document.querySelectorAll('.assistant-agents').forEach(d => { d.open = true; })")
+            page.wait_for_timeout(500)
+            page.screenshot(path=str(out / f"turn{i}_traces.png"))
+        if a.full_page:
+            page.screenshot(path=str(out / f"turn{i}_full.png"), full_page=True)
         turn = {"question": q, "seconds": secs, "answer": got["answer"], "honesty_badge": got["badge"], "trace": trace}
         record["turns"].append(turn)
         (out / "run.json").write_text(json.dumps(record, indent=1, ensure_ascii=False), encoding="utf-8")
