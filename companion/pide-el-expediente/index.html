@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pide el expediente · solicitud de acceso a contratos menores</title>
+<meta name="description" content="Redacta una solicitud de acceso a la información pública (Ley 19/2013) para ver los expedientes de contratos menores. Su asistente pregunta a Al límite, con tu permiso, qué contratos se quedan junto al límite legal.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%231f4d3a'/%3E%3Cpath d='M8 7h12l4 4v14H8z' fill='none' stroke='%23f6f3ea' stroke-width='2'/%3E%3Cpath d='M11 15h10M11 19h10M11 23h6' stroke='%23f6f3ea' stroke-width='1.6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&amp;family=Archivo:wdth,wght@62..125,400..800&amp;display=swap">
+<link rel="stylesheet" href="styles.css">
+<script type="module" src="request.js"></script>
+<script type="module" src="site.js"></script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="./"><span aria-hidden="true">§</span> Pide el expediente</a>
+  <button id="lang" type="button" aria-label="Switch to English">EN</button>
+</header>
+<main>
+  <section class="intro">
+    <p class="kicker" data-es="Ley 19/2013 de transparencia · contratos menores" data-en="Spain's transparency law (Ley 19/2013) · minor contracts">Ley 19/2013 de transparencia · contratos menores</p>
+    <h1 data-es="Pide ver los papeles de un contrato público." data-en="Ask to see the papers behind a public contract.">Pide ver los papeles de un contrato público.</h1>
+    <p class="lead" data-es="Un indicador como el de Al límite solo dice dónde mirar. Mirar es leer los expedientes, y la ley de transparencia te deja pedirlos. Esta página redacta la solicitud; su asistente puede preguntar a Al límite, si le das permiso, qué contratos de ese organismo se quedan junto al límite legal." data-en="An indicator like Al límite's only says where to look. Looking means reading the files, and Spain's transparency law lets you ask for them. This page drafts the request; its assistant can ask Al límite, if you allow it, which of that body's contracts sit just under the legal limit.">Un indicador como el de Al límite solo dice dónde mirar. Mirar es leer los expedientes, y la ley de transparencia te deja pedirlos. Esta página redacta la solicitud; su asistente puede preguntar a Al límite, si le das permiso, qué contratos de ese organismo se quedan junto al límite legal.</p>
+  </section>
+
+  <div class="cols">
+    <section aria-labelledby="form-h">
+      <h2 id="form-h" data-es="1. Qué pides" data-en="1. What you ask for">1. Qué pides</h2>
+      <form id="request-form" novalidate>
+        <label for="f-body" data-es="Organismo" data-en="Public body">Organismo</label>
+        <input id="f-body" type="text" maxlength="200" autocomplete="off" placeholder="Ayuntamiento de…">
+        <label for="f-files" data-es="Números de expediente (uno por línea)" data-en="File numbers (one per line)">Números de expediente (uno por línea)</label>
+        <textarea id="f-files" rows="5" spellcheck="false"></textarea>
+        <fieldset>
+          <legend data-es="De cada contrato, pide" data-en="For each contract, ask for">De cada contrato, pide</legend>
+          <label class="check"><input id="f-necesidad" type="checkbox"> <span id="l-necesidad"></span></label>
+          <label class="check"><input id="f-gasto" type="checkbox"> <span id="l-gasto"></span></label>
+          <label class="check"><input id="f-factura" type="checkbox"> <span id="l-factura"></span></label>
+          <label class="check"><input id="f-completo" type="checkbox"> <span id="l-completo"></span></label>
+        </fieldset>
+        <button type="submit" data-es="Redactar la solicitud" data-en="Draft the request">Redactar la solicitud</button>
+        <p id="form-msg" class="msg" role="status"></p>
+      </form>
+    </section>
+
+    <section aria-labelledby="draft-h">
+      <h2 id="draft-h" data-es="2. El escrito" data-en="2. The letter">2. El escrito</h2>
+      <p class="hint" data-es="Va en español, como lo leerá el organismo. Completa tus datos entre corchetes antes de presentarlo." data-en="It is in Spanish, as the body will read it. Fill in your own details in brackets before you file it.">Va en español, como lo leerá el organismo. Completa tus datos entre corchetes antes de presentarlo.</p>
+      <textarea id="draft" rows="18" spellcheck="false" aria-labelledby="draft-h"></textarea>
+      <p><button id="copy" type="button" data-es="Copiar el escrito" data-en="Copy the letter">Copiar el escrito</button> <span id="copy-msg" role="status"></span></p>
+    </section>
+  </div>
+
+  <section aria-labelledby="facts-h">
+    <h2 id="facts-h" data-es="3. Dónde y cuándo" data-en="3. Where and when">3. Dónde y cuándo</h2>
+    <ul id="facts" class="facts"></ul>
+  </section>
+
+  <section id="assistant" class="assistant" aria-labelledby="assistant-heading">
+    <h2 id="assistant-heading" data-es="Pregunta al asistente" data-en="Ask the assistant">Pregunta al asistente</h2>
+    <p data-es="Dile el organismo. Te pedirá permiso para preguntar a Al límite, otro sitio con agentes, qué contratos de ese organismo se quedan junto al límite, y rellenará la solicitud con sus números de expediente y enlaces oficiales." data-en="Tell it the body. It will ask your permission to ask Al límite, another agent site, which of that body's contracts sit just under the limit, and fill in the request with their file numbers and official links.">Dile el organismo. Te pedirá permiso para preguntar a Al límite, otro sitio con agentes, qué contratos de ese organismo se quedan junto al límite, y rellenará la solicitud con sus números de expediente y enlaces oficiales.</p>
+    <p class="assistant-note" data-es="Tus mensajes van al proveedor de IA que elijas, con tu clave, que se queda en este navegador. Al límite no recibe tu clave: su red de agentes se ejecuta aquí, en tu navegador. No escribas tu nombre ni tu DNI en el chat: se añaden en el escrito." data-en="Your messages go to the AI provider you choose, with your key, which stays in this browser. Al límite never gets your key: its agent network runs here, in your browser. Do not type your name or ID in the chat: they go in the letter.">Tus mensajes van al proveedor de IA que elijas, con tu clave, que se queda en este navegador. Al límite no recibe tu clave: su red de agentes se ejecuta aquí, en tu navegador. No escribas tu nombre ni tu DNI en el chat: se añaden en el escrito.</p>
+    <p id="assistant-status" role="status">…</p>
+    <div id="agent-app">
+      <div data-ns-slot="header"></div>
+      <div class="assistant-panels">
+        <div data-ns-slot="chat"></div>
+        <div data-ns-slot="agents"></div>
+      </div>
+      <div data-ns-slot="settings"></div>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <p data-es="Un sitio de demostración hecho para el Open Agentic Web Challenge junto a Al límite (mismo autor, otro origen). Código con licencia MIT." data-en="A demonstration site built for the Open Agentic Web Challenge alongside Al límite (same author, separate origin). MIT-licensed code.">Un sitio de demostración hecho para el Open Agentic Web Challenge junto a Al límite (mismo autor, otro origen). Código con licencia MIT.</p>
+  <p><a href="https://github.com/antonmareo10/al-limite/tree/agentic-web/companion/pide-el-expediente">GitHub</a></p>
+</footer>
+</body>
+</html>

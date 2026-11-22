@@ -1,4 +1,6 @@
 // A scripted model router for the linking checks. It makes no model call.
+// Copied unchanged from cognizant-ai-labs/agentic-web (tests/linking/chrome/mock_router.mjs,
+// commit e342997, Apache-2.0, see tools/agentify/LICENSE).
 //
 // The Node tests call respond() from their stub fetch. The Chrome check calls listen(), and
 // the visitor's settings point at http://127.0.0.1:<port>/v1.

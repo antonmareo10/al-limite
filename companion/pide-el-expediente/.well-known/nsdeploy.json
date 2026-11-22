@@ -1,0 +1,18 @@
+{
+  "protocol": "nsdeploy-link/v1",
+  "exports": [
+    {
+      "network": "pide_el_expediente",
+      "front_man": "request_helper",
+      "aliases": [
+        "pide_el_expediente",
+        "request_helper"
+      ],
+      "url": "pide_el_expediente"
+    }
+  ],
+  "imports": [],
+  "link_updates": {
+    "mode": "browser-local"
+  }
+}

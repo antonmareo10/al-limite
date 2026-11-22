@@ -1,0 +1,56 @@
+/* Pide el expediente — papel de carta, tinta verde de registro. */
+:root { --bg: #f6f3ea; --surface: #fffdf7; --ink: #1d2420; --ink2: #47524b; --ink3: #5d675f; --line: #d8d2c2; --accent: #1f4d3a; --focus: #7a4ee0;
+  --serif: "Source Serif 4", Georgia, serif; --sans: "Archivo", "Segoe UI", system-ui, sans-serif; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #151a17; --surface: #1c2320; --ink: #ecefe9; --ink2: #bcc6bf; --ink3: #9aa69d; --line: #36413b; --accent: #8fd1b1; --focus: #b9a0ff; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 var(--sans); }
+a { color: inherit; text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.top { max-width: 1080px; margin: 0 auto; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); }
+.brand { font: 700 1.3rem var(--serif); text-decoration: none; color: var(--accent); }
+#lang, button { font: inherit; cursor: pointer; }
+#lang { border: 1px solid var(--ink3); background: var(--surface); color: var(--ink); padding: 6px 10px; border-radius: 2px; font-weight: 700; font-size: .85rem; min-height: 36px; }
+main { max-width: 1080px; margin: 0 auto; padding: 8px 16px 48px; }
+h1 { font: 700 clamp(2rem, 6vw, 3.2rem)/1.08 var(--serif); margin: 8px 0 16px; max-width: 20ch; }
+h2 { font: 650 1.35rem/1.2 var(--serif); margin: 36px 0 12px; padding-top: 10px; border-top: 2px solid var(--ink); }
+.kicker { font-size: .85rem; font-weight: 600; color: var(--ink3); margin: 28px 0 0; }
+.lead { font-size: 1.1rem; color: var(--ink2); max-width: 64ch; }
+.cols { display: grid; gap: 0 32px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .cols { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); } }
+label { display: block; font-weight: 600; margin: 12px 0 4px; }
+input[type="text"], textarea { width: 100%; font: inherit; padding: 10px 12px; border: 1.5px solid var(--ink); border-radius: 2px; background: var(--surface); color: var(--ink); }
+textarea { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: .86rem; line-height: 1.5; }
+#draft { font-family: var(--serif); font-size: .98rem; }
+fieldset { border: 1px solid var(--line); border-radius: 2px; margin: 14px 0; padding: 8px 12px; background: var(--surface); }
+legend { font-weight: 600; padding: 0 4px; }
+label.check { font-weight: 400; display: flex; gap: 8px; align-items: baseline; margin: 6px 0; }
+button[type="submit"], #copy { border: 1.5px solid var(--accent); background: var(--accent); color: var(--surface); font-weight: 700; padding: 10px 16px; border-radius: 2px; min-height: 44px; }
+#copy { background: var(--surface); color: var(--accent); }
+.msg, #copy-msg { color: var(--accent); font-weight: 600; }
+.hint { font-size: .88rem; color: var(--ink3); }
+.facts { padding-left: 20px; max-width: 75ch; }
+.facts li { margin: 8px 0; }
+.foot { max-width: 1080px; margin: 0 auto; padding: 16px; border-top: 2px solid var(--ink); font-size: .82rem; color: var(--ink3); }
+
+/* the assistant */
+.assistant { margin-top: 44px; }
+.assistant-note { font-size: .85rem; color: var(--ink3); max-width: 75ch; }
+#assistant-status { font-size: .85rem; font-weight: 600; color: var(--accent); }
+#agent-app { --ns-font: var(--sans); --ns-bg: var(--surface); --ns-fg: var(--ink); --ns-primary: #1f4d3a; --ns-accent: #1f4d3a;
+  --ns-border: var(--line); --ns-panelbg: var(--surface); --ns-msgbg: var(--bg); --ns-muted: var(--ink3); --ns-radius: 2px; }
+.assistant-panels { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 16px; margin-top: 12px; }
+#agent-app.ns-composed-app [data-ns-slot="chat"] { height: 600px; }
+#agent-app .ns-chat { background: var(--surface); }
+#agent-app input[type="checkbox"], #agent-app input[type="radio"] { width: auto; }
+#agent-app label { margin: 4px 0; font-weight: 400; }
+#agent-app button { margin: 0; }
+#agent-app .ns-msg { overflow-wrap: break-word; }
+#agent-app .ns-consent { background: #fff4d6; color: #1d2420; }
+#agent-app .ns-msgs:has(.ns-consent-actions) > .ns-turn-status { display: none; }
+#agent-app .ns-consent-actions { flex-wrap: wrap; }
+#agent-app .ns-consent-actions button { white-space: nowrap; }
+body > dialog h2 { margin: 0 0 12px; border: 0; padding: 0; }
+body > dialog button { margin-right: 8px; }
+@media (max-width: 760px) { .assistant-panels { grid-template-columns: 1fr; } #agent-app.ns-composed-app [data-ns-slot="chat"] { height: 520px; } }

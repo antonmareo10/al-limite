@@ -1,0 +1,81 @@
+{
+  "brand": "Pide el expediente assistant",
+  "networks": [
+    {
+      "name": "pide_el_expediente",
+      "front_man": "request_helper",
+      "hocon": "./pide_el_expediente.network.json",
+      "description": "Drafts a request under Spain's transparency law to see the files of public contracts. For a body's contracts just under the legal limit, it asks Al límite's agents, after you agree.",
+      "tags": [
+        "agentified-website",
+        "transparency",
+        "public-procurement",
+        "spain"
+      ],
+      "sample_queries": [
+        "Draft a request for the files of the Ayuntamiento de Ourense's contracts just under the limit.",
+        "Put the 3 newest contracts of the Diputación Provincial de Ourense just under the limit in the request.",
+        "Where do I file the request, and how long do they have to answer?",
+        "Can you file the request for me?"
+      ]
+    }
+  ],
+  "llm_router": {
+    "base_url": "https://api.otari.ai/api/v1",
+    "mock": false,
+    "byok_router": "https://api.otari.ai/api/v1"
+  },
+  "allowed_peers": [
+    "https://al-limite-agent.vercel.app"
+  ],
+  "peer_policy": {
+    "mode": "closed",
+    "deny_origins": [],
+    "note": "Calls only the partner sites in allowed_peers (Al límite), after the visitor agrees."
+  },
+  "agent_mcp": {
+    "protocol": "nsdeploy-agent-mcp/v1",
+    "network": "pide_el_expediente",
+    "front_man": "request_helper",
+    "available": false,
+    "reason": "This is a static bundle; a public MCP facade requires an application host."
+  },
+  "theme": {
+    "primary": "#1f4d3a"
+  },
+  "linking": {
+    "protocol": "nsdeploy-link/v1",
+    "exports": [
+      {
+        "network": "pide_el_expediente",
+        "front_man": "request_helper",
+        "aliases": [
+          "pide_el_expediente",
+          "request_helper"
+        ],
+        "url": "pide_el_expediente"
+      }
+    ],
+    "imports": [],
+    "link_updates": {
+      "mode": "browser-local"
+    }
+  },
+  "deployment": {
+    "mode": "static",
+    "self_contained_runtime": true,
+    "browser_mock": false,
+    "direct_byok": true,
+    "direct_mcp_requires_cors": true,
+    "public_mcp_facade": false
+  },
+  "actions": {
+    "version": 1,
+    "module": "./site-actions.js",
+    "bridge": "./bridge/action-bridge.html",
+    "agentTools": [
+      "get_request",
+      "fill_request"
+    ]
+  }
+}

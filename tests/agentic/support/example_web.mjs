@@ -1,9 +1,16 @@
 // A fake web for the linking tests: site folders served from disk under their local URLs,
 // the scripted router, and a fake bridge frame. Nothing leaves the process.
+//
+// Copied from cognizant-ai-labs/agentic-web (tests/linking/example_web.mjs, commit e342997,
+// Apache-2.0, see tools/agentify/LICENSE) with two changes for Al límite: the runtime import
+// path, and fetch() reads file:// URLs from disk. The fake bridge frame imports a site's
+// bridge module from disk, so that module's own data requests (site/core.js) come as file://
+// URLs; a real frame makes them to the partner's own origin.
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { ActionRegistry } from "../../skills/agentify-website/runtime/actions.js";
+import { ActionRegistry } from "../../../site/runtime/actions.js";
+import { diskFetch } from "./fake_browser.mjs";
 
 /**
  * Serves site folders under local URLs through a stub fetch, and stands in for the few
@@ -163,7 +170,11 @@ export class ExampleWeb {
    * :return: The response.
    */
   fetch(input, init) {
-    return this.load(new URL(String(input)), "runtime", init || {});
+    const url = new URL(String(input));
+    if (url.protocol === "file:") {
+      return diskFetch()(url, init);
+    }
+    return this.load(url, "runtime", init || {});
   }
 
   /**

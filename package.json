@@ -1,0 +1,15 @@
+{
+  "name": "al-limite",
+  "private": true,
+  "description": "Al límite: Spanish minor public contracts just under the legal limit, with an open agentic web layer.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"tests/agentic/*.test.mjs\"",
+    "build:agents": "node tools/agentify/scripts/build_network.mjs site/al_limite_guide.hocon --manifest site/agent-manifest.json && node tools/agentify/scripts/build_network.mjs companion/pide-el-expediente/pide_el_expediente.hocon --manifest companion/pide-el-expediente/agent-manifest.json",
+    "serve": "node tools/agentify/scripts/serve_site.mjs site --port 8080",
+    "serve:companion": "node tools/agentify/scripts/serve_site.mjs companion/pide-el-expediente --port 8082 --open-as localhost"
+  }
+}

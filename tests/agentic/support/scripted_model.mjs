@@ -1,3 +1,5 @@
+// Copied unchanged from cognizant-ai-labs/agentic-web (skills/agentify-website/templates/tests,
+// commit e342997, Apache-2.0, see tools/agentify/LICENSE).
 /**
  * A fake LLM client that replays a fixed script of tool calls and answers.
  *
