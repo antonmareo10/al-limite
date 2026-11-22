@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The {{price_hook}} wall · Al límite</title>
+<meta name="description" content="Below {{lim_ss}}, a Spanish public body can hire a company without a tender. Across {{n_total_m}} small contracts, prices don't fade out near that line. They pile up against it.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The {{price_hook}} wall">
+<meta property="og:description" content="{{n_cerca}} Spanish public contracts sit in the last {{near_w_ss}} before the no-tender limit, where {{esperado}} would be expected. A visual essay with the uncertainty, and no accusations.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%2317212b'/%3E%3Cpath d='M5 25h4v-4H5zm6 0h4v-7h-4zm6 0h4V7h-4z' fill='%23fcfdfc'/%3E%3Cpath d='M24 4v24' stroke='%23ff5a68' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="story.css">
+<script>document.documentElement.className = "js";</script>
+</head>
+<body class="story">
+<a class="skip" href="#main">Skip to the story</a>
+<header class="top">
+  <a class="brand" href="{{tool}}" aria-label="Al límite, the search tool">
+    <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path d="M3 27h5v-5H3zm7 0h5v-9h-5zm7 0h5V5h-5z" fill="currentColor"/><path d="M26 2v28" stroke="var(--limit)" stroke-width="2.5"/></svg>
+    <span>Al límite</span>
+  </a>
+  <nav aria-label="Links">
+    <a href="{{tool}}">Search tool</a>
+    <a href="{{method}}">Method</a>
+    <a href="{{repo}}">Code</a>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<article class="essay">
+
+<header class="s-hero">
+  <p class="kicker">Spanish public contracts · {{y0}}–{{y1}}</p>
+  <h1 class="s-title"><span class="s-title-t">The {{price_hook}} wall</span><span class="limit-tag" aria-hidden="true">Legal limit: {{lim_ss}}</span></h1>
+  <p class="dek">Below {{lim_ss}}, a Spanish public body can hire a company directly, without a tender. We looked at {{n_total_m}} of those small contracts to see what that line does to prices.</p>
+  <p class="byline">By Antonio González Fernández · Data: Spain's Public Sector Contracting Platform · Figures generated {{generado}}</p>
+</header>
+
+<section class="hook" aria-labelledby="hook-h">
+  <h2 id="hook-h" class="hook-big"><span class="num">{{price_hook}}</span></h2>
+  <p class="hook-line">Not {{lim_ss_words}}. One euro less.</p>
+  <p>Between {{y0}} and {{y1}}, Spanish public bodies signed <strong class="num">{{n_hook}}</strong> contracts for exactly that amount. It isn't even the most popular price. These are the {{n_tags}} most common prices in the last {{near_w_ss}} before the limit:</p>
+  <ul class="tags" aria-label="The most common prices just under the limit">{{tags}}</ul>
+  <p>Any one of these prices is perfectly legal. Put together, they make a shape. This story is about that shape.</p>
+</section>
+
+<section aria-labelledby="rule-h">
+  <h2 id="rule-h">One signature</h2>
+  <p>Spanish law calls them <i lang="es">contratos menores</i>, minor contracts. If a service or a supply costs less than {{lim_ss}} before VAT, or building works less than {{lim_ob}}, a public body can choose a supplier and sign (Law 9/2017, article 118). Above the line, it normally has to advertise the job and let other companies compete for it.</p>
+  <div class="paths" role="img" aria-label="Under the limit: pick a supplier and sign. Over the limit: advertise the job, compare offers, award.">
+    <div class="path under"><span class="path-h">Under {{lim_ss}}</span><ol><li>Pick a supplier</li><li>Sign</li></ol></div>
+    <div class="path-line" aria-hidden="true"></div>
+    <div class="path over"><span class="path-h">{{lim_ss}} or more</span><ol><li>Advertise the job</li><li>Receive offers</li><li>Compare and award</li></ol></div>
+  </div>
+  <p>Splitting one job into smaller contracts to stay under the line is against the law (article 99.2). But you can't see a split by looking at one contract: each one looks fine on its own. If there's a pattern, it only shows up in the crowd.</p>
+  <p>So we gathered the crowd: the minor contracts for services, supplies and works published on Spain's national contracting platform and awarded between {{y0}} and {{y1}}. That's <span class="num">{{n_ss}}</span> for services and supplies and <span class="num">{{n_obras}}</span> for works, from <span class="num">{{n_org}}</span> contracting bodies: town councils, ministries, universities, public companies.</p>
+</section>
+
+<section aria-labelledby="guess-h">
+  <h2 id="guess-h">Guess the last bar</h2>
+  <p>Here are the services and supplies contracts from {{chart_from_ss}} up, counted in {{bin_ss}} price bands. As prices rise, the bars get shorter: expensive purchases are rarer than cheap ones. The little spikes sit on round prices, like {{spike1}} and {{spike2}}. People like round numbers.</p>
+  <p>One bar is missing: the last one before the limit, from {{last_bin_from}} to {{lim_ss}}. <strong>How tall do you think it is?</strong></p>
+  <figure class="s-fig wide" id="fig-guess">
+    <p class="ftitle">Services and supplies contracts per {{bin_ss}} band</p>
+    <p class="fsub">Award amount, before VAT, {{y0}}–{{y1}}. Drag the dashed bar or use the slider below, then press “Show me”.</p>
+    <div class="chart" data-chart="guess"></div>
+    <div class="guess" data-guess>
+      <label for="guess-in">Your guess: <output id="guess-out" for="guess-in" class="num">–</output> contracts</label>
+      <input id="guess-in" type="range" min="0" max="100" step="100" value="0">
+      <button type="button" id="guess-go" class="btn">Show me</button>
+    </div>
+    <noscript><p class="fsub">The interactive chart needs JavaScript. Every number is in the table below.</p></noscript>
+    <figcaption>Each band includes its upper edge, so a contract of exactly {{lim_ss}} counts as under the limit.</figcaption>
+    {{table_wall}}
+  </figure>
+  <div class="reveal" id="guess-reveal">
+    <p class="guess-result" id="guess-result" aria-live="polite"></p>
+    <p><strong class="num">{{last_bin}}</strong> contracts. That's {{last_vs_ref}} times the average {{bin_ss}} band between {{ref_from_ss}} and {{near_from_ss}}. And right after the line, from {{lim_ss}} to {{first_above_to}}, there are just <span class="num">{{first_above}}</span>.</p>
+    <p>That's the wall. Prices don't fade out as they approach the limit. They pile up against it.</p>
+  </div>
+</section>
+
+<section aria-labelledby="exp-h">
+  <h2 id="exp-h">How many is too many?</h2>
+  <p>A pile-up is easy to see. Measuring it takes a baseline: how many contracts would sit in the last {{near_w_ss}} if the limit had no pull at all?</p>
+  <div class="scrolly" data-scrolly="bands">
+    <figure class="s-fig scrolly-fig" id="fig-bands">
+      <p class="ftitle">Contracts per {{near_w_ss}} band, services and supplies</p>
+      <div class="chart" data-chart="bands"></div>
+      <noscript><p class="fsub">The chart needs JavaScript. The numbers are in the table below.</p></noscript>
+    </figure>
+    <div class="scrolly-steps">
+      <div class="step" data-step="0"><p>Take the {{k_ss}} {{near_w_ss}} bands before the last one, from {{ref_from_ss}} to {{near_from_ss}}. Together they hold <strong class="num">{{n_ref}}</strong> contracts.</p></div>
+      <div class="step" data-step="1"><p>If the limit didn't matter, the last band would hold about as many as an average band before it: <strong class="num">{{esperado}}</strong>. That's our expected number.</p><p class="step-note">It's a generous baseline. Expensive purchases are rarer than cheap ones, so the true expectation for the last band is probably lower.</p></div>
+      <div class="step" data-step="2"><p>The last band holds <strong class="num hot">{{n_cerca}}</strong>.</p></div>
+      <div class="step" data-step="3"><p>That's <strong class="num">{{razon}}</strong> times what we'd expect: <span class="num">{{excess}}</span> more contracts than the baseline, in {{n_years}} years.</p><p>Chance alone can't produce a gap like this with so many contracts. The 95% confidence interval for the ratio runs from <span class="num">{{ic_inf}}</span> to <span class="num">{{ic_sup}}</span>.</p></div>
+    </div>
+  </div>
+  {{table_bands}}
+  <p>Those <span class="num">{{n_cerca}}</span> contracts in the last {{near_w_ss}} add up to <span class="num">{{importe_cerca}}</span>.</p>
+</section>
+
+<section aria-labelledby="fake-h">
+  <h2 id="fake-h">Maybe people just like round numbers?</h2>
+  <p>Prices do cluster on round numbers. Could the wall be one more round-number spike, just a bigger one?</p>
+  <p>One way to check is to pretend the limit is somewhere else. We moved a fake limit every {{fake_step}} from {{fake_from}} to {{fake_to}} and ran the same calculation each time: the {{near_w_ss}} under the fake line against the {{k_ss}} {{near_w_ss}} bands before it.</p>
+  <figure class="s-fig wide" id="fig-fake">
+    <p class="ftitle">Only the real limit has a wall</p>
+    <p class="fsub">Observed ÷ expected for each fake limit. A value of 1 means “as many as the baseline”. The shaded band is the 95% interval, mostly thinner than the line.</p>
+    <div class="chart" data-chart="fake"></div>
+    <noscript><p class="fsub">The chart needs JavaScript. The numbers are in the table below.</p></noscript>
+    {{table_fake}}
+  </figure>
+  <p>At every fake line from {{fake_from}} to {{fake_low_to}}, the ratio stays below 1, between <span class="num">{{fake_low_min}}</span> and <span class="num">{{fake_low_max}}</span>: fewer contracts than the baseline, just as you'd expect when expensive purchases are rarer. Even at {{round_line}}, the roundest number in the range, it's <span class="num">{{r_round}}</span>.</p>
+  <p>The ratio only shoots up at the real limit: <strong class="num">{{razon}}</strong>. The fake lines {{fake_overlap}} either side share part of its window, so they rise too. From {{fake_high_from}} on, the ratio drops to <span class="num">{{fake_high_max}}</span> or less, because above the line a contract can no longer be a minor one.</p>
+</section>
+
+<section aria-labelledby="stable-h">
+  <h2 id="stable-h">Every year, every kind of body</h2>
+  <p>If the wall came from one chaotic year, or from one corner of the public sector, it would show up in some slices and not in others. It shows up in all of them.</p>
+  <figure class="s-fig" id="fig-forest" data-rule-fig>
+    <p class="ftitle">Observed ÷ expected, with its 95% interval</p>
+    <div class="seg" role="group" aria-label="Type of contract"><button type="button" data-rule="ss" aria-pressed="true">Services &amp; supplies</button><button type="button" data-rule="obras" aria-pressed="false">Works</button></div>
+    <div class="chart" data-chart="forest"></div>
+    <noscript><p class="fsub">The chart needs JavaScript. The numbers are in the table below.</p></noscript>
+    <figcaption>The dashed line at 1 is “as many as the baseline”. With this many contracts the intervals are narrow; for a single body they can be very wide.</figcaption>
+    {{table_forest}}
+  </figure>
+  <p>For services and supplies, the ratio was {{years_list}} in the {{n_years}} years. Local government, regional governments, central government and other public bodies such as universities all sit between <span class="num">{{amb_min}}</span> and <span class="num">{{amb_max}}</span>. For works, no type of body is below <span class="num">{{ob_amb_min}}</span>.</p>
+  <figure class="s-fig" id="fig-months" data-rule-fig>
+    <p class="ftitle">Not a year-end rush</p>
+    <div class="seg" role="group" aria-label="Type of contract"><button type="button" data-rule="ss" aria-pressed="true">Services &amp; supplies</button><button type="button" data-rule="obras" aria-pressed="false">Works</button></div>
+    <div class="chart" data-chart="months"></div>
+    <noscript><p class="fsub">The chart needs JavaScript. The numbers are in the table below.</p></noscript>
+    <figcaption>Observed ÷ expected by month of award, all years together, with the 95% interval.</figcaption>
+    {{table_months}}
+  </figure>
+  <p>Month by month, the services ratio never drops below <span class="num">{{mes_min}}</span> or climbs above <span class="num">{{mes_max}}</span>. December, when leftover budgets get spent, gets {{dic_todos}}% of all services and supplies contracts and {{dic_cerca}}% of those just under the limit. The wall is there all year round.</p>
+</section>
+
+<section aria-labelledby="works-h">
+  <h2 id="works-h">The same wall, at {{lim_ob}}</h2>
+  <p>Building works have a higher limit: {{lim_ob}}. The pattern doesn't care.</p>
+  <figure class="s-fig wide" id="fig-works">
+    <p class="ftitle">Works contracts per {{bin_ob}} band</p>
+    <p class="fsub">Award amount, before VAT, {{y0}}–{{y1}}, from {{chart_from_ob}} up. In red, the last {{near_w_ob}} before the limit; in blue, the reference band it is compared with.</p>
+    <div class="chart" data-chart="works"></div>
+    <noscript><p class="fsub">The chart needs JavaScript. Every number is in the table below.</p></noscript>
+    {{table_works}}
+  </figure>
+  <p>In the last {{near_w_ob}} before the limit there are <strong class="num">{{o_cerca}}</strong> works contracts, where <span class="num">{{o_esp}}</span> would be expected: <span class="num">{{o_razon}}</span> times as many (95% interval {{o_inf}}–{{o_sup}}). The final {{bin_ob}} band alone, from {{o_last_from}} to {{lim_ob}}, holds <span class="num">{{o_last_bin}}</span>.</p>
+  <p>The single most common price in that stretch is <strong class="num">{{o_top}}</strong>, with <span class="num">{{o_top_n}}</span> contracts. It looks random until you add Spain's {{iva}}% VAT. Then it comes to exactly <span class="num">{{o_top_iva}}</span>: a round budget that, before tax, fits just under the line.</p>
+</section>
+
+<section aria-labelledby="ex-h">
+  <h2 id="ex-h">Three bodies, three shapes</h2>
+  <p>A national total hides very different places. The search tool gives every contracting body its own chart. Here are three of them. We describe them by type and region rather than by name, because a statistical signal is no reason to single anyone out; every contract links to its official record.</p>
+  <figure class="s-fig wide" id="fig-examples">
+    <p class="ftitle">Services and supplies contracts per {{bin_ss}} band, near the limit</p>
+    <p class="fsub">Each panel has its own scale. Below each, the ratio and its 95% interval.</p>
+    <div class="chart ex-grid" data-chart="examples"></div>
+    <noscript><p class="fsub">The charts need JavaScript. The numbers are in the table below.</p></noscript>
+    {{table_examples}}
+  </figure>
+  <ul class="ex-notes">
+    <li><strong>{{e1_label}}.</strong> <span class="num">{{e1_cerca}}</span> contracts in the last {{near_w_ss}}, where <span class="num">{{e1_esp}}</span> were expected. Ratio <span class="num">{{e1_razon}}</span> (95% interval {{e1_inf}}–{{e1_sup}}). Label: {{e1_level}}.</li>
+    <li><strong>{{e2_label}}.</strong> Ratio <span class="num">{{e2_razon}}</span> ({{e2_inf}}–{{e2_sup}}). Label: {{e2_level}}. Universities partly play by other rules: some research contracts can be minor up to a higher limit, so a wall at {{lim_ss}} is less expected there.</li>
+    <li><strong>{{e3_label}}.</strong> <span class="num">{{e3_n}}</span> contracts, ratio <span class="num">{{e3_razon}}</span> ({{e3_inf}}–{{e3_sup}}). Label: {{e3_level}}. There's a bump in the very last {{bin_ss}} band, but across the last {{near_w_ss}} the count is within what chance allows: the interval includes 1. The wall is common, but it isn't inevitable.</li>
+  </ul>
+  <p>Notice how wide the intervals are compared with the national one. With fewer contracts, chance plays a bigger part. That's why the tool never ranks a body by its ratio alone, but by the cautious end of the interval.</p>
+
+  <h3>A closer look</h3>
+  <p>Zoom into the city council. Each dot below is one of {{e1_listed_note}} of its contracts in the last {{near_w_ss}}, placed by award date and price.</p>
+  <figure class="s-fig wide" id="fig-timeline">
+    <p class="ftitle">{{e1_label}}: contracts just under {{lim_ss}}, {{e1_first}} to {{e1_last}}</p>
+    <p class="fsub">Red dots went to companies that won {{min_rep}} or more contracts in this band. Companies are shown as letters, never by name.</p>
+    <ul class="legend"><li><i class="near"></i>Awardee with {{min_rep}} or more</li><li><i class="other"></i>Other awardees</li></ul>
+    <div class="chart" data-chart="timeline"></div>
+    <noscript><p class="fsub">The chart needs JavaScript. Every contract is in the table below, with a link to its official publication.</p></noscript>
+    {{table_timeline}}
+  </figure>
+  <p><span class="num">{{e1_adj}}</span> different companies won contracts in this band. <span class="num">{{e1_nrep}}</span> of them won {{min_rep}} or more, <span class="num">{{e1_rep_cerca}}</span> contracts between them. The two at the top, which we call A and B, won <span class="num">{{e1_ab}}</span> each, spread across every year from {{y0}} to {{y1}}.</p>
+  <p>That proves nothing by itself. Each contract may be a different job, needed at a different time. But it is the kind of pattern that deserves a question, and every one of these contracts has a public record anyone can open.</p>
+</section>
+
+<section aria-labelledby="common-h">
+  <h2 id="common-h">How common is it?</h2>
+  <p>Of the <span class="num">{{n_org_ss}}</span> contracting bodies with services and supplies contracts, <span class="num">{{n_insuf}}</span> have too few contracts in the two bands to judge. Of the <span class="num">{{n_eval}}</span> that remain, <strong class="num">{{n_senal}}</strong> ({{pct_senal}}%) show a clear signal: even on the most cautious reading of the interval, at least {{ic_inf_min_w}} as many contracts as expected sit in the last {{near_w_ss}}.</p>
+  <figure class="s-fig" id="fig-levels">
+    <p class="ftitle">The {{n_eval}} contracting bodies with enough contracts to judge</p>
+    <div class="levels">{{levels_bar}}</div>
+    <figcaption>Services and supplies. A further {{n_insuf}} bodies have too few contracts to judge. For works, {{o_senal}} of {{o_eval}} bodies show a signal.</figcaption>
+    {{table_levels}}
+  </figure>
+  <p>It isn't one kind of purchase either. Sorted by what they buy, all {{cpv_eval}} product families with enough contracts sit above 1, even at the low end of their intervals. IT services lead, at <span class="num">{{cpv_top_razon}}</span>.</p>
+  <figure class="s-fig" id="fig-cpv">
+    <p class="ftitle">What piles up: observed ÷ expected by what is bought</p>
+    <p class="fsub">Services and supplies, by CPV division. Only {{cpv_pct}}% of contracts say what they buy, so read this as a sample.</p>
+    <div class="chart" data-chart="cpv"></div>
+    <noscript><p class="fsub">The chart needs JavaScript. The numbers are in the table below.</p></noscript>
+    {{table_cpv}}
+  </figure>
+</section>
+
+<section aria-labelledby="not-h" class="caveats">
+  <h2 id="not-h">What this does not prove</h2>
+  <p>A wall is a signal, not a verdict. It tells you where to look, not what you'll find.</p>
+  <ul>
+    <li><strong>It doesn't identify split contracts.</strong> That takes reading the files: whether several contracts meet the same need, and whether they could have been planned together. Open data doesn't say.</li>
+    <li><strong>A price near the limit can be perfectly reasonable.</strong> A budget capped in advance, market prices, or a job sized to what a small office can handle quickly all push prices towards the line, legally.</li>
+    <li><strong>The legal limit applies to the estimated value.</strong> We use the award amount, the figure published most reliably.</li>
+    <li><strong>Not everyone has the same limit.</strong> Public research bodies, such as universities, can treat some contracts as minor up to a higher amount (Law 9/2017, 54th additional provision).</li>
+    <li><strong>The data is messy.</strong> Each body records its own contracts. There are VAT-inclusive amounts in the VAT-exclusive field, impossible dates, and <span class="num">{{ss_sobre}}</span> “minor” services and supplies contracts above {{lim_ss}}. Only {{cpv_pct}}% say what they buy.</li>
+    <li><strong>It doesn't cover all of Spain.</strong> Bodies that publish on their own regional platforms (in Catalonia, the Basque Country, Madrid, Andalusia or Galicia, for example) are not in this dataset.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="debate-h">
+  <h2 id="debate-h">So, is the wall a problem?</h2>
+  <p>There are two ways to read it, and the data can't choose between them.</p>
+  <div class="two">
+    <div class="reading"><p class="reading-h">It's efficiency</p><p>The limit exists so that small purchases are quick. A town hall with a small staff can't run a tender for every job, so it uses all the room the law gives it. A price just under the line may simply be the most that can be done the quick way.</p></div>
+    <div class="reading"><p class="reading-h">It's a leak</p><p>Every contract sized to fit under the line is one where no other company got the chance to offer a better price. Over {{n_years}} years that's <span class="num">{{excess}}</span> more contracts in the last {{near_w_ss}} than the baseline predicts.</p></div>
+  </div>
+  <p>Both can be true, in different places. A national chart can't tell them apart. People who know a town can.</p>
+</section>
+
+<section class="cta" aria-labelledby="cta-h">
+  <h2 id="cta-h">Look up your town</h2>
+  <p>The national wall is made of thousands of local decisions. The search tool has a page for each of the <span class="num">{{n_org}}</span> contracting bodies and <span class="num">{{n_ent}}</span> entities in the data: its own chart, its interval, a plain-language explanation, and every contract near the limit linked to the official record.</p>
+  <p><a class="btn big" href="{{tool}}">Search your town hall, university or ministry <span aria-hidden="true">→</span></a></p>
+  <p class="fine">The tool opens in English or Spanish to match your browser.</p>
+</section>
+
+<section aria-labelledby="how-h" id="how" class="how">
+  <h2 id="how-h">How this was made</h2>
+  <p><strong>The data.</strong> Spain's Public Sector Contracting Platform publishes minor contracts as open data, in yearly files of XML feeds. We downloaded the {{n_files}} files for {{file_from}}–{{file_to}} ({{gb}} GB, {{atom}} feed files), read <span class="num">{{leidas}}</span> entries, kept the latest version of each of <span class="num">{{distintos}}</span> distinct contracts, dropped cancelled ones, and analysed the <span class="num">{{n_total}}</span> services, supplies and works contracts awarded from {{y0}} to {{y1}}. The {{file_to}} file is used only to pick up late corrections.</p>
+  <p><strong>The statistics.</strong> Python, NumPy and SciPy. The near band is compared with a reference band {{k_ss}} times as wide just below it. Counts are treated as Poisson, which gives an exact (Clopper-Pearson) 95% interval for each ratio. Thousands of bodies are tested at once, so p-values are corrected for multiple comparisons (Benjamini-Hochberg). A body is labelled “bunching signal” only with at least {{min_ventana}} contracts in the two bands, {{min_cerca}} near the limit, a q-value below {{q_max}}, and a lower bound of {{ic_inf_min}} or more. A sweep of fake limits and checks by year and month guard against artefacts.</p>
+  <p><strong>The AI, and how it is kept honest.</strong> The search tool explains every flagged body in plain Spanish and English. Those explanations are written by a small AI model, {{ia_modelo}}, running locally on a laptop with {{ia_runtime}}: no paid service, nothing sent to anyone. The model never computes or rewrites a number. Code writes every figure as an exact sentence; the model chooses which facts matter and writes the caveats in its own words; then a verifier checks every sentence against the computed facts and rejects anything that doesn't match or that uses accusatory language. The model never sees a company's name, so it can't repeat one. Of the <span class="num">{{ia_textos}}</span> texts, <span class="num">{{ia_modelo_n}}</span> came from the model and passed; <span class="num">{{ia_plantilla}}</span> fell back to a fixed template, labelled as such. The verifier rejected <span class="num">{{ia_rech}}</span> drafts on the way.</p>
+  <p><strong>This page.</strong> Built by a student, with the help of an AI coding assistant (Claude). Every number on it is read from the project's result files by a script, and a test fails if any of them drifts. The charts are hand-written SVG, with no libraries; every chart has a data table behind it.</p>
+  <p><strong>Raw materials.</strong></p>
+  <ul class="links">
+    <li><a href="{{repo}}">Code, tests and results on GitHub</a> (MIT licence). One command rebuilds everything from the download.</li>
+    <li><a href="{{method}}">Method and limits</a>, in full.</li>
+    <li><a href="{{tool}}">The search tool</a>.</li>
+    <li>Source data from the Platform's open-data feed:<ul>{{sources}}</ul></li>
+  </ul>
+</section>
+
+</article>
+</main>
+
+<footer class="foot">
+  <p>Source: Plataforma de Contratación del Sector Público (Spain's Ministry of Finance), open dataset “Contratos menores de perfiles del contratante”. Own analysis.</p>
+  <p>Bunching near the limit is a statistical signal. It does not prove that any contract was split or that anyone acted wrongly.</p>
+  <p>A student project by Antonio González Fernández. <a href="{{repo}}">Code and method on GitHub</a>, MIT licence. Figures generated {{generado}}.</p>
+</footer>
+<div id="tip" role="status" aria-live="off" hidden></div>
+<script type="application/json" id="story-data">{{data_json}}</script>
+<script src="story.js" defer></script>
+</body>
+</html>

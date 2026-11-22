@@ -5,6 +5,7 @@
     python -m allimite leer        ZIP -> SQLite
     python -m allimite analizar    SQLite -> site/data y resultados/
     python -m allimite explicar    explicaciones con el modelo local (necesita llama-server)
+    python -m allimite historia    ensayo visual en inglés (site/story.html) a partir de resultados/
     python -m allimite servir      sirve la web en http://127.0.0.1:8000
 """
 from __future__ import annotations
@@ -31,6 +32,9 @@ def main(argv: list[str]) -> int:
             print("No hay servidor llama.cpp en 127.0.0.1:8089: se conservan las explicaciones guardadas "
                   "(ver README, apartado «IA»).")
             explain.fusionar()
+    if orden in ("analizar", "explicar", "todo", "historia"):
+        from . import historia
+        historia.escribir()
     if orden == "servir":
         import functools
         import http.server
@@ -38,7 +42,7 @@ def main(argv: list[str]) -> int:
         h = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(config.SITE))
         print("http://127.0.0.1:8000  (Ctrl+C para salir)")
         http.server.ThreadingHTTPServer(("127.0.0.1", 8000), h).serve_forever()
-    if orden not in ("descargar", "leer", "analizar", "explicar", "servir", "todo"):
+    if orden not in ("descargar", "leer", "analizar", "explicar", "historia", "servir", "todo"):
         print(__doc__)
         return 1
     return 0
