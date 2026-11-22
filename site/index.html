@@ -23,6 +23,7 @@
     <a href="#/" data-t="nav_home">Inicio</a>
     <a href="#/ranking" data-t="nav_rank">Ranking</a>
     <a href="#/metodo" data-t="nav_method">Método</a>
+    <a href="#/agentes" data-t="nav_agents">Agentes</a>
     <button class="ask" type="button" data-ask aria-controls="assistant" aria-expanded="false"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="4" cy="10" r="2.6"/><circle cx="16" cy="4.5" r="2.6"/><circle cx="16" cy="15.5" r="2.6"/><path d="M6.3 9 13.7 5.5M6.3 11l7.4 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span data-t="ask">Pregunta a los agentes</span></button>
     <button id="lang" type="button" aria-label="Switch to English">EN</button>
   </nav>
@@ -31,7 +32,7 @@
 <footer class="foot">
   <p data-t="foot_1">Fuente: Plataforma de Contratación del Sector Público (Ministerio de Hacienda), conjunto de datos abiertos «Contratos menores de perfiles del contratante». Elaboración propia.</p>
   <p data-t="foot_2">La acumulación de importes junto al límite es un indicador estadístico. No prueba que un contrato se haya fraccionado ni que nadie haya actuado mal.</p>
-  <p><span data-t="foot_3">Proyecto de estudiante de Antonio González Fernández, hecho el 15 y 16 de noviembre de 2026 para hackatones. Código con licencia MIT:</span> <a href="https://github.com/antonmareo10/al-limite" data-t="foot_code">código y método en GitHub</a>. <span id="gen"></span></p>
+  <p><span data-t="foot_3">Proyecto de estudiante de Antonio González Fernández, hecho el 15 y 16 de noviembre de 2026 para hackatones; los agentes se añadieron a partir del 22 de noviembre. Código con licencia MIT:</span> <a href="https://github.com/antonmareo10/al-limite" data-t="foot_code">código y método en GitHub</a>. <span id="gen"></span></p>
 </footer>
 <aside id="assistant" class="assistant" aria-labelledby="assistant-heading" hidden>
   <div class="assistant-head">
@@ -40,6 +41,7 @@
   </div>
   <p class="assistant-lead" data-t="as_p">Dos agentes trabajan juntos: uno busca en los datos de Al límite y te responde; el otro revisa cada borrador con un programa antes de que lo leas. No acusan a nadie ni nombran empresas.</p>
   <p class="assistant-note" data-t="as_note">Tus mensajes y los datos que leen los agentes van al proveedor de IA que elijas abajo, con tu propia clave, que se queda en este navegador.</p>
+  <p class="assistant-note"><a href="#/agentes" data-t="as_how">Cómo trabajan los agentes y ejecuciones grabadas</a></p>
   <p id="assistant-status" role="status"></p>
   <div id="agent-app">
     <div data-ns-slot="header"></div>

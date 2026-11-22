@@ -44,12 +44,17 @@ SETUP = """(([router, model]) => {
 })"""
 
 TRACE = """(from) => {
-  const ev = window.__nsweb.trace.events.slice(from);
+  const all = window.__nsweb.trace.events;
+  const ev = all.slice(from);
+  // Which agent made each call: walk up the span tree to the nearest agent span.
+  const spans = new Map();
+  for (const e of all) if (e.phase === "start") spans.set(e.id, e);
+  const agentOf = id => { let s = spans.get(id); while (s && s.kind !== "agent") s = spans.get(s.parent); return s ? s.agent : null; };
   const rows = [];
   for (const e of ev) {
     if (e.phase === "start" && e.kind === "agent") rows.push({ t: e.wall, kind: "agent", agent: e.agent, network: e.network, origin: e.origin });
-    if (e.phase === "end" && e.kind === "tool") rows.push({ t: e.wall, kind: "tool", tool: e.tool, args: e.args, ms: Math.round(e.durationMs), result: (e.resultPreview || "").slice(0, 240), status: e.status });
-    if (e.phase === "end" && e.kind === "model_call") rows.push({ t: e.wall, kind: "model_call", ms: Math.round(e.durationMs), status: e.status, error: e.error || null });
+    if (e.phase === "end" && e.kind === "tool") rows.push({ t: e.wall, kind: "tool", by: agentOf(e.parent), tool: e.tool, args: e.args, ms: Math.round(e.durationMs), result: (e.resultPreview || "").slice(0, 240), status: e.status });
+    if (e.phase === "end" && e.kind === "model_call") rows.push({ t: e.wall, kind: "model_call", by: agentOf(e.parent), ms: Math.round(e.durationMs), status: e.status, error: e.error || null });
     if (e.phase === "end" && e.kind === "remote_call") rows.push({ t: e.wall, kind: "remote_call", peer: e.peerOrigin, network: e.network, status: e.status, sly_data_keys: Object.keys((e.requestPayload || {}).sly_data || {}) });
     if (e.phase === "note" && ["consent", "composition_limit", "composition_skip", "honesty_check"].includes(e.kind)) rows.push({ t: e.wall, kind: e.kind, ...Object.fromEntries(Object.entries(e).filter(([k]) => !["phase", "seq", "t", "wall", "parent"].includes(k))) });
   }

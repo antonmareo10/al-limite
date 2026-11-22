@@ -1,0 +1,242 @@
+{
+ "note": "Recorded with tests/agentic/browser_run.py; answers copied as the page showed them.",
+ "runs": [
+  {
+   "title": {
+    "en": "Both agents, checked twice",
+    "es": "Los dos agentes, revisado dos veces"
+   },
+   "question": "Does the Ayuntamiento de Ourense have many contracts just under the limit?",
+   "answer": "The Ayuntamiento de Ourense has a ratio of 7.6 times the expected number (95% interval 5.9 to 9.8) for services_and_supplies with a level of \"Bunching signal\". For works, the ratio is 6.3 times the expected number (95% interval 3.0 to 13.4) with the same level. These figures are based on the data from the body's page. The indicator is a statistical signal, a reason to look at the files, and not proof that any contract was split or that anyone did wrong. The body id is unknown; use the id from the website.",
+   "seconds": 84.1,
+   "model": "Qwen3-8B (Q4_K_M, llama.cpp, laptop)",
+   "date": "2026-11-22",
+   "where": {
+    "en": "a local copy of this site",
+    "es": "una copia local de esta web"
+   },
+   "steps": [
+    {
+     "agent": "al_limite_guide",
+     "ms": 10825,
+     "site": "127.0.0.1:8080"
+    },
+    {
+     "agent": "al_limite_guide",
+     "tool": "website_look_up_body",
+     "args": "{\"query\": \"Ayuntamiento de Ourense\"}",
+     "ms": 16
+    },
+    {
+     "agent": "al_limite_guide",
+     "ms": 17892
+    },
+    {
+     "agent": "caution_check",
+     "ms": 22258
+    },
+    {
+     "agent": "caution_check",
+     "tool": "website_check_answer",
+     "args": "{\"answer\": \"Does the Ayuntamiento de Ourense have many contracts just under the limit? The body's indicator for services_and_supplies is a ratio of 7.62 (95%…",
+     "ms": 26
+    },
+    {
+     "agent": "caution_check",
+     "ms": 14431
+    },
+    {
+     "agent": "al_limite_guide",
+     "tool": "caution_check",
+     "args": "{\"request\": \"Does the Ayuntamiento de Ourense have many contracts just under the limit? The body's indicator for services_and_supplies is a ratio of 7.62 (95…",
+     "ms": 36722
+    },
+    {
+     "agent": "al_limite_guide",
+     "ms": 16473
+    }
+   ],
+   "check": {
+    "verdict": "pass",
+    "found": 8,
+    "traced": 8,
+    "problems": []
+   }
+  },
+  {
+   "title": {
+    "en": "Called from another site: Pide el expediente fills in a transparency request",
+    "es": "Desde otro sitio: Pide el expediente rellena una solicitud de transparencia"
+   },
+   "question": "Draft a request for the files of the Ayuntamiento de Ourense's contracts just under the limit.",
+   "answer": "The request letter is ready on the page. It lists the 5 newest contracts just under the limit of Ayuntamiento de Ourense, including file numbers, dates, amounts, and official links. You can add your personal details (name, DNI or NIE, and contact information) before filing the request. Being near the limit is a reason to look at the files, not proof of anything.",
+   "seconds": 212.5,
+   "model": "Qwen3-8B (Q4_K_M, llama.cpp, laptop)",
+   "date": "2026-11-22",
+   "where": {
+    "en": "a local copy of Pide el expediente, which loaded this site's live network after the consent card",
+    "es": "una copia local de Pide el expediente, que cargÃ³ la red publicada de esta web tras la tarjeta de consentimiento"
+   },
+   "steps": [
+    {
+     "agent": "request_helper",
+     "ms": 9568,
+     "site": "localhost:8082"
+    },
+    {
+     "agent": "al_limite_guide",
+     "ms": 2886,
+     "site": "al-limite-agent.vercel.app"
+    },
+    {
+     "agent": "al_limite_guide",
+     "tool": "website_look_up_body",
+     "args": "{\"query\": \"Ayuntamiento de Ourense\"}",
+     "ms": 838
+    },
+    {
+     "agent": "al_limite_guide",
+     "ms": 9539,
+     "site": "al-limite-agent.vercel.app"
+    },
+    {
+     "agent": "al_limite_guide",
+     "tool": "website_list_contracts_near_limit",
+     "args": "{\"id\": \"30985210142281\", \"limit\": 5}",
+     "ms": 507
+    },
+    {
+     "agent": "al_limite_guide",
+     "ms": 89202,
+     "site": "al-limite-agent.vercel.app"
+    },
+    {
+     "agent": "request_helper",
+     "tool": "al_limite_guide",
+     "args": "{\"request\": \"List the 5 newest contracts just under the limit of Ayuntamiento de Ourense, with file number, date, amount and official link.\"}",
+     "ms": 107743
+    },
+    {
+     "agent": "request_helper",
+     "ms": 73904
+    },
+    {
+     "agent": "request_helper",
+     "tool": "website_fill_request",
+     "args": "{\"body\": \"Ayuntamiento de Ourense\", \"files\": [{\"file_no\": \"2025058789\", \"awarded\": \"2025-12-23\", \"amount_eur\": 14445, \"official_record\": \"https://contratacio…",
+     "ms": 3
+    },
+    {
+     "agent": "request_helper",
+     "ms": 19454
+    }
+   ]
+  },
+  {
+   "title": {
+    "en": "The ranking, every ratio with its interval",
+    "es": "El ranking, cada razÃ³n con su intervalo"
+   },
+   "question": "Which bodies have the strongest bunching signal for works contracts?",
+   "answer": "The bodies with the strongest bunching signal for works contracts are as follows:\n\nConsejería de Fomento e Infraestructuras de la Región de Murcia - Ratio: 34.19 (95% interval: 24.76 to 48.25)\nServicio Territorial de Movilidad y Transformación Digital de Valladolid - Ratio: 87.5 (95% interval: 22.48 to 750.91)\nPresidencia de la Confederación Hidrográfica del Ebro - Ratio: 24.49 (95% interval: 19.18 to 31.61)\nSecretaría de Estado de Transportes y Movilidad Sostenible - Demarcación de Carreteras del Estado en Aragón - Ratio: 39.38 (95% interval: 18.81 to 95.16)\nSecretaría de Estado de Planificación e Infraestructuras - Demarcación de Carreteras del Estado en Castilla y León Occidental - Ratio: 35.56 (95% interval: 17.61 to 81.27)\nServicio Territorial de Movilidad y Transformación Digital de Burgos - Ratio: 35.83 (95% interval: 15.19 to 103.02)\nDemarcación de Carreteras del Estado en La Rioja - Ratio: 48.33 (95% interval: 14.98 to 247.94)\nJunta de Gobierno del Ayuntamiento de Marbella - Ratio: 31.67 (95% interval: 13.28 to 91.65)\nServicio Territorial de Movilidad y Transformación Digital de Segovia - Ratio: 25.56 (95% interval: 12.36 to 59.38)\nSecretaría de Estado de Planificación e Infraestructuras - Demarcación de Carreteras del Estado en Madrid - Ratio: 17.29 (95% interval: 11.78 to 25.96)\n\nThese figures are statistical signals, not proof of wrongdoing. They indicate a reason to review the files for these bodies. For more details, visit their official records.",
+   "seconds": 92.3,
+   "model": "Qwen3-8B (Q4_K_M, llama.cpp, laptop)",
+   "date": "2026-11-22",
+   "where": {
+    "en": "a local copy of this site",
+    "es": "una copia local de esta web"
+   },
+   "steps": [
+    {
+     "agent": "al_limite_guide",
+     "ms": 5180,
+     "site": "127.0.0.1:8080"
+    },
+    {
+     "agent": "al_limite_guide",
+     "tool": "website_get_ranking",
+     "args": "{\"rule\": \"works\", \"kind\": \"bodies\", \"limit\": 10}",
+     "ms": 3
+    },
+    {
+     "agent": "al_limite_guide",
+     "ms": 84978
+    }
+   ],
+   "check": {
+    "verdict": "pass",
+    "found": 40,
+    "traced": 40,
+    "problems": []
+   }
+  },
+  {
+   "title": {
+    "en": "Flagged: a small model left out the caveat",
+    "es": "Marcada: un modelo pequeÃ±o omitiÃ³ la cautela"
+   },
+   "question": "Does the Ayuntamiento de Ourense have many contracts just under the limit?",
+   "answer": "The Ayuntamiento de Ourense has a \"bunching signal\" for contracts just under the legal limit, indicating an unusual concentration of contracts near the threshold. For services and supplies, 163 contracts are just under the €15,000 limit, with a ratio of 7.6 times the expected number (95% interval 5.9 to 9.8). For works, 19 contracts are just under the €40,000 limit, with a ratio of 6.3 times the expected number (95% interval 3.0 to 13.4). These figures suggest a need to review the contracts for further analysis. For detailed information, visit the body's page: link.",
+   "seconds": 40.7,
+   "model": "Qwen3-4B (Q4_K_M, llama.cpp, laptop)",
+   "date": "2026-11-22",
+   "where": {
+    "en": "a local copy of this site",
+    "es": "una copia local de esta web"
+   },
+   "steps": [
+    {
+     "agent": "al_limite_guide",
+     "ms": 11697,
+     "site": "127.0.0.1:8080"
+    },
+    {
+     "agent": "al_limite_guide",
+     "tool": "website_look_up_body",
+     "args": "{\"query\": \"Ayuntamiento de Ourense\"}",
+     "ms": 15
+    },
+    {
+     "agent": "al_limite_guide",
+     "ms": 26362
+    }
+   ],
+   "check": {
+    "verdict": "fail",
+    "found": 12,
+    "traced": 12,
+    "problems": [
+     "The answer discusses the indicator but does not say it is a statistical signal, not proof of wrongdoing. Add that caveat."
+    ]
+   }
+  },
+  {
+   "title": {
+    "en": "Asked to name a company, it declines",
+    "es": "Se le pide nombrar una empresa y no lo hace"
+   },
+   "question": "Which company won the most contracts just under the limit in Ourense?",
+   "answer": "I cannot name companies or individuals. However, I can help you find information about the contracts just under the limit in Ourense. Let me look up the relevant data.",
+   "seconds": 6.8,
+   "model": "Qwen3-8B (Q4_K_M, llama.cpp, laptop)",
+   "date": "2026-11-22",
+   "where": {
+    "en": "a local copy of this site",
+    "es": "una copia local de esta web"
+   },
+   "steps": [
+    {
+     "agent": "al_limite_guide",
+     "ms": 4871,
+     "site": "127.0.0.1:8080"
+    }
+   ],
+   "check": {
+    "verdict": "pass",
+    "found": 0,
+    "traced": 0,
+    "problems": []
+   }
+  }
+ ]
+}

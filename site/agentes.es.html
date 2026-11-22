@@ -1,0 +1,53 @@
+<section class="hero"><p class="kicker">Web con agentes abiertos</p>
+<h1 style="font-size:clamp(1.6rem,4.6vw,2.4rem)">Cómo trabajan los agentes y cómo se revisan sus respuestas</h1>
+<p class="lead">Los agentes de Al límite se publican como datos, se ejecutan en tu navegador con el modelo de IA que elijas y otros sitios con agentes pueden usarlos. Responden solo con los datos de la web, y un programa revisa cada respuesta antes de que la leas.</p>
+<p><button type="button" class="ask more" data-ask aria-controls="assistant">Pregunta a los agentes →</button></p></section>
+
+<h2>Dos agentes, siete acciones de la web</h2>
+<figure class="agents-fig">
+<svg viewBox="0 0 720 250" role="img" aria-labelledby="ag-t ag-d" class="chart">
+<defs><marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L8 4L0 8z"/></marker></defs>
+<title id="ag-t">Cómo pasa una pregunta por los agentes</title>
+<desc id="ag-d">Tu pregunta llega al agente guía, que lee los datos de Al límite con las acciones de la web y escribe un borrador. El agente caution_check pasa el borrador por la revisión de honestidad, escrita en código, y lo devuelve aprobado o corregido. La página repite la misma revisión bajo la respuesta.</desc>
+<g class="ag-box"><rect x="8" y="96" width="104" height="58" rx="2"/><text x="60" y="121" text-anchor="middle">Tu</text><text x="60" y="138" text-anchor="middle">pregunta</text></g>
+<g class="ag-box ai"><rect x="150" y="96" width="150" height="58" rx="2"/><text x="225" y="121" text-anchor="middle">al_limite_guide</text><text x="225" y="138" text-anchor="middle" class="sm">lee y redacta</text></g>
+<g class="ag-box data"><rect x="150" y="8" width="150" height="58" rx="2"/><text x="225" y="31" text-anchor="middle" class="sm">7 acciones</text><text x="225" y="48" text-anchor="middle" class="sm">datos de Al límite</text></g>
+<g class="ag-box ai"><rect x="340" y="96" width="150" height="58" rx="2"/><text x="415" y="121" text-anchor="middle">caution_check</text><text x="415" y="138" text-anchor="middle" class="sm">PASS o FIX</text></g>
+<g class="ag-box code"><rect x="340" y="186" width="150" height="58" rx="2"/><text x="415" y="209" text-anchor="middle" class="sm">revisión</text><text x="415" y="226" text-anchor="middle" class="sm">código, sin modelo</text></g>
+<g class="ag-box code"><rect x="530" y="96" width="182" height="58" rx="2"/><text x="621" y="121" text-anchor="middle">Respuesta + sello</text><text x="621" y="138" text-anchor="middle" class="sm">revisada otra vez aquí</text></g>
+<g class="ag-arrows"><path d="M112 125H146" marker-end="url(#ah)"/><path d="M300 125H336" marker-end="url(#ah)"/><path d="M490 125H526" marker-end="url(#ah)"/><path d="M225 72V92" marker-start="url(#ah)" marker-end="url(#ah)"/><path d="M415 156V182" marker-start="url(#ah)" marker-end="url(#ah)"/></g>
+</svg>
+<figcaption>Todos los agentes se ejecutan en tu navegador. Las llamadas al modelo van al proveedor que elijas, con tu clave, que se queda en este navegador.</figcaption>
+</figure>
+<ul>
+<li><strong>al_limite_guide</strong> busca un organismo por su nombre, lee su indicador (contratos junto al límite, cuántos cabría esperar, la razón con su intervalo del 95 % y su nivel), lista sus contratos con el enlace a cada publicación oficial, lee las cifras nacionales, el ranking y el método, y puede abrir la ficha del organismo detrás del chat.</li>
+<li><strong>caution_check</strong> pasa el borrador por la revisión de honestidad y lo devuelve aprobado (PASS) o corregido (FIX). Es un agente aparte para que la revisión viaje con la red cuando la ejecuta otro sitio.</li>
+</ul>
+
+<h2>Qué revisa el programa en cada respuesta</h2>
+<ul>
+<li>Cada cifra aparece en lo que devolvieron las herramientas de Al límite para esa respuesta. Redondear un decimal vale; un recuento tiene que coincidir exacto. Un porcentaje calculado por el modelo, o una cifra repetida de memoria de una respuesta anterior, se marca.</li>
+<li>Cada razón va con su intervalo del 95 %.</li>
+<li>Una respuesta sobre el indicador de un organismo dice que es una señal estadística, no una prueba de que se haya fraccionado un contrato ni de que nadie haya actuado mal.</li>
+<li>Sin lenguaje acusatorio (fraude, corrupción, ilegal…) fuera de una negación, y sin nombres de empresas: los adjudicatarios son letras, como en el resto de la web.</li>
+</ul>
+<p>La revisión corre dos veces: dentro de la red, cuando caution_check la llama con el borrador, y en esta página, bajo cada respuesta, haga lo que haga el modelo. Revisa cifras, estructura y tono, no el significado: una cifra real usada para otra cosa dentro de la misma respuesta pasa. El código está en <code>site/honesty.js</code>.</p>
+
+<h2>Ejecuciones grabadas</h2>
+<p>Ejecuciones reales, grabadas en un navegador con un modelo abierto en un portátil (sin servicios de pago), con cada paso que registró el runtime. No son en directo: para hacer tu propia pregunta, abre el panel de los agentes.</p>
+<div id="runs"><p class="loading">Cargando…</p></div>
+
+<h2>Usa estos agentes desde tu web o tu agente</h2>
+<ul>
+<li><strong>Sitios con agentes</strong>: pueden ejecutar esta red en su propia página, después de que su visitante lo acepte en una tarjeta de consentimiento: basta añadir <code>https://al-limite-agent.vercel.app/al_limite_guide</code> a las herramientas de un agente y <code>https://al-limite-agent.vercel.app</code> a <code>allowed_peers</code>. Las seis lecturas se comparten con cualquier sitio a través de <code>bridge/</code>; la red usa el modelo y la clave de su visitante, nunca los nuestros.</li>
+<li><strong>Ejemplo</strong>: <a href="https://pide-el-expediente.vercel.app/">Pide el expediente</a>, un segundo sitio en otro origen, redacta una solicitud de acceso (Ley 19/2013) para ver los expedientes de un organismo y la rellena con los números de expediente y enlaces oficiales que le dan estos agentes.</li>
+<li><strong>MCP</strong>: las mismas seis lecturas, también <code>check_answer</code>, forman un servidor MCP de solo lectura en <code>https://al-limite-agent.vercel.app/api/mcp</code> (Streamable HTTP, protocolo 2025-06-18).</li>
+<li><strong>Ficheros</strong>: <a href="agent-manifest.json">agent-manifest.json</a>, <a href="al_limite_guide.network.json">al_limite_guide.network.json</a>, <a href="links.json">links.json</a>. Las instrucciones son públicas a propósito.</li>
+</ul>
+
+<h2>Lo que no pueden hacer</h2>
+<ul>
+<li>Nombrar adjudicatarios, decir si un contrato concreto se fraccionó o incumplió la ley, ni dar asesoramiento jurídico.</li>
+<li>Cubrir organismos que publican solo en plataformas autonómicas, ni contratos fuera de 2023–2025.</li>
+<li>Garantizar que un modelo pequeño siga cada paso: algunos se saltan caution_check. Por eso la página revisa también cada respuesta.</li>
+</ul>

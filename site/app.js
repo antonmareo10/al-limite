@@ -27,6 +27,9 @@ export const App = (() => {
       as_p: "Dos agentes trabajan juntos: uno busca en los datos de Al límite y te responde; el otro revisa cada borrador con un programa antes de que lo leas. No acusan a nadie ni nombran empresas.",
       as_note: "Tus mensajes y los datos que leen los agentes van al proveedor de IA que elijas abajo, con tu propia clave, que se queda en este navegador.",
       ask_cta: "¿Prefieres preguntar? Los agentes buscan el organismo, leen sus cifras y un programa revisa cada respuesta.",
+      nav_agents: "Agentes", as_how: "Cómo trabajan los agentes y ejecuciones grabadas",
+      rec: { q: "Pregunta:", model_call: "llamada al modelo", check: "Revisión por código", steps: n => `Los ${n} pasos que registró el runtime`,
+        meta: (m, d, s, w) => `Grabada el ${d} con ${m}, en ${w}. ${s} s de principio a fin. No es en directo.`, figs: (a, b) => `${a} de ${b} cifras encontradas en los datos leídos para esta respuesta` },
       foot_code: "código y método en GitHub", ex_label: "O abre un ejemplo:",
       gen: d => `Datos generados el ${d}.`,
       kicker: p => `Contratos menores en España · ${p}`,
@@ -99,6 +102,9 @@ export const App = (() => {
       as_p: "Two agents work together: one looks up Al límite's data and answers you; the other checks every draft with a program before you read it. They accuse no one and name no companies.",
       as_note: "Your messages and the data the agents read go to the AI provider you choose below, with your own key, which stays in this browser.",
       ask_cta: "Rather ask? The agents find the body, read its figures, and a program checks every answer.",
+      nav_agents: "Agents", as_how: "How the agents work, and recorded runs",
+      rec: { q: "Question:", model_call: "model call", check: "Checked by code", steps: n => `The ${n} steps the runtime traced`,
+        meta: (m, d, s, w) => `Recorded on ${d} with ${m}, on ${w}. ${s} s from start to end. Not live.`, figs: (a, b) => `${a} of ${b} figures found in the data read for this answer` },
       foot_code: "code and method on GitHub", ex_label: "Or open an example:",
       gen: d => `Data generated on ${d}.`,
       kicker: p => `Minor contracts in Spain · ${p}`,
@@ -505,6 +511,30 @@ export const App = (() => {
     main.innerHTML = `<article class="prose">${html.replace(/\{\{(\w+)\}\}/g, (m0, k) => vars[k] ?? m0)}</article>`;
   }
 
+  // Cómo trabajan los agentes, con ejecuciones reales grabadas (runs/recorded.json).
+  async function agentes() {
+    const html = await (await fetch(`agentes.${lang}.html`)).text();
+    main.innerHTML = `<article class="prose">${html}</article>`;
+    const box = document.getElementById("runs");
+    try {
+      const rec = await (await fetch("runs/recorded.json")).json();
+      box.innerHTML = rec.runs.map(recordedRun).join("");
+    } catch (e) { box.innerHTML = `<p class="loading">${esc(t().err)}</p>`; }
+  }
+  function recordedRun(r) {
+    const L = t().rec, tr = v => (v && typeof v === "object" ? v[lang] || v.en : v);
+    const steps = r.steps.map(s => `<li><span class="who">${esc(s.agent)}</span> ${s.tool ? `→ <code>${esc(s.tool)}</code>${s.args ? ` <span class="sub">${esc(s.args)}</span>` : ""}` : esc(L.model_call)}${s.site ? ` <span class="chip">${esc(s.site)}</span>` : ""} <span class="ms">${esc(fmt(s.ms / 1000, 1))} s</span></li>`).join("");
+    const answer = esc(r.answer).replace(/\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/g, (m0, txt, url) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${txt}</a>`);
+    const c = r.check;
+    return `<figure class="recorded"><p class="ftitle">${esc(tr(r.title))}</p>
+      <p class="fsub">${esc(L.meta(r.model, r.date, fmt(r.seconds, 0), tr(r.where)))}</p>
+      <p class="rq"><b>${esc(L.q)}</b> ${esc(r.question)}</p>
+      <details class="data"><summary>${esc(L.steps(r.steps.length))}</summary><ol class="rsteps">${steps}</ol></details>
+      <div class="ra">${answer}</div>
+      ${c ? `<p class="rstamp ${c.verdict}"><b>${c.verdict === "pass" ? "✓" : "⚠"} ${esc(L.check)}</b> ${esc(L.figs(c.traced, c.found))}${c.problems && c.problems.length ? ` · ${esc(c.problems.join(" "))}` : ""}</p>` : ""}
+      ${r.note ? `<figcaption>${esc(r.note)}</figcaption>` : ""}</figure>`;
+  }
+
   // ------------------------------------------------------------------ arranque
   function applyLang() {
     document.documentElement.lang = lang;
@@ -526,6 +556,7 @@ export const App = (() => {
       if (h.startsWith("u/")) await unit(decodeURIComponent(h.slice(2)));
       else if (h === "ranking") ranking();
       else if (h === "metodo") await metodo();
+      else if (h === "agentes") await agentes();
       else home();
     } catch (e) { console.error(e); main.innerHTML = `<p class="loading">${esc(t().err)}</p>`; }
     bindTips(main); if (!h.startsWith("u/")) bindFold(main);

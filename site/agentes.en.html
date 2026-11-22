@@ -1,0 +1,53 @@
+<section class="hero"><p class="kicker">Open agentic website</p>
+<h1 style="font-size:clamp(1.6rem,4.6vw,2.4rem)">How the agents work, and how their answers are checked</h1>
+<p class="lead">Al límite's agents are published as data, run in your browser on the AI model you choose, and can be used by other agent sites. They answer only from the site's data, and code checks every answer before you read it.</p>
+<p><button type="button" class="ask more" data-ask aria-controls="assistant">Ask the agents →</button></p></section>
+
+<h2>Two agents, seven site actions</h2>
+<figure class="agents-fig">
+<svg viewBox="0 0 720 250" role="img" aria-labelledby="ag-t ag-d" class="chart">
+<defs><marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L8 4L0 8z"/></marker></defs>
+<title id="ag-t">How a question flows through the agents</title>
+<desc id="ag-d">Your question goes to the guide agent, which reads Al límite's data through site actions and writes a draft. The caution_check agent runs the honesty check, written in code, on the draft and returns it approved or corrected. The page runs the same check again under the answer.</desc>
+<g class="ag-box"><rect x="8" y="96" width="104" height="58" rx="2"/><text x="60" y="121" text-anchor="middle">Your</text><text x="60" y="138" text-anchor="middle">question</text></g>
+<g class="ag-box ai"><rect x="150" y="96" width="150" height="58" rx="2"/><text x="225" y="121" text-anchor="middle">al_limite_guide</text><text x="225" y="138" text-anchor="middle" class="sm">reads, drafts</text></g>
+<g class="ag-box data"><rect x="150" y="8" width="150" height="58" rx="2"/><text x="225" y="31" text-anchor="middle" class="sm">7 site actions</text><text x="225" y="48" text-anchor="middle" class="sm">Al límite's data</text></g>
+<g class="ag-box ai"><rect x="340" y="96" width="150" height="58" rx="2"/><text x="415" y="121" text-anchor="middle">caution_check</text><text x="415" y="138" text-anchor="middle" class="sm">PASS or FIX</text></g>
+<g class="ag-box code"><rect x="340" y="186" width="150" height="58" rx="2"/><text x="415" y="209" text-anchor="middle" class="sm">honesty check</text><text x="415" y="226" text-anchor="middle" class="sm">code, no model</text></g>
+<g class="ag-box code"><rect x="530" y="96" width="182" height="58" rx="2"/><text x="621" y="121" text-anchor="middle">Answer + stamp</text><text x="621" y="138" text-anchor="middle" class="sm">checked again in the page</text></g>
+<g class="ag-arrows"><path d="M112 125H146" marker-end="url(#ah)"/><path d="M300 125H336" marker-end="url(#ah)"/><path d="M490 125H526" marker-end="url(#ah)"/><path d="M225 72V92" marker-start="url(#ah)" marker-end="url(#ah)"/><path d="M415 156V182" marker-start="url(#ah)" marker-end="url(#ah)"/></g>
+</svg>
+<figcaption>Every agent runs in your browser. The model calls go to the provider you choose, with your key, which stays in this browser.</figcaption>
+</figure>
+<ul>
+<li><strong>al_limite_guide</strong> finds a body by name, reads its indicator (contracts just under the limit, how many would be expected, the ratio with its 95% interval and its level), lists its contracts with the link to each official record, reads the national figures, the ranking and the method, and can open a body's page behind the chat.</li>
+<li><strong>caution_check</strong> sends the draft to the honesty check and returns it approved (PASS) or corrected (FIX). It is a separate agent so that the check travels with the network when another site runs it.</li>
+</ul>
+
+<h2>What code checks in every answer</h2>
+<ul>
+<li>Every figure appears in what Al límite's tools returned for that answer. Rounding a decimal is fine; a count must match exactly. A percentage the model computed, or a figure repeated from memory of an earlier answer, is flagged.</li>
+<li>Each ratio comes with its 95% interval.</li>
+<li>An answer about a body's indicator says it is a statistical signal, not proof that any contract was split or that anyone did wrong.</li>
+<li>No accusatory wording (fraud, corruption, illegal…) outside a negation, and no company names: awardees are letters, as on the rest of the site.</li>
+</ul>
+<p>The check runs twice: inside the network, where caution_check calls it on the draft, and in this page, under every answer, whatever the model did. It checks figures, structure and tone, not meaning: a real figure used for the wrong thing within the same answer passes. The code is in <code>site/honesty.js</code>.</p>
+
+<h2>Recorded runs</h2>
+<p>Real runs, recorded in a browser with an open model running on a laptop (no paid service), with every step the runtime traced. They are not live: to ask your own question, open the agents panel.</p>
+<div id="runs"><p class="loading">Loading…</p></div>
+
+<h2>Use these agents from your site or your agent</h2>
+<ul>
+<li><strong>Agent sites</strong> can run this network in their own page, after their visitor agrees on a consent card: add <code>https://al-limite-agent.vercel.app/al_limite_guide</code> to an agent's tools and <code>https://al-limite-agent.vercel.app</code> to <code>allowed_peers</code>. The six read actions are shared with every site through <code>bridge/</code>; the network runs on your visitor's model and key, never ours.</li>
+<li><strong>Example:</strong> <a href="https://pide-el-expediente.vercel.app/">Pide el expediente</a>, a second site on another origin, drafts a request under Spain's transparency law to see a body's contract files, and fills it with the file numbers and official links it gets from these agents.</li>
+<li><strong>MCP:</strong> the same six reads, including <code>check_answer</code>, are a read-only MCP server at <code>https://al-limite-agent.vercel.app/api/mcp</code> (Streamable HTTP, protocol 2025-06-18).</li>
+<li><strong>Files:</strong> <a href="agent-manifest.json">agent-manifest.json</a>, <a href="al_limite_guide.network.json">al_limite_guide.network.json</a>, <a href="links.json">links.json</a>. The instructions are public by design.</li>
+</ul>
+
+<h2>What they cannot do</h2>
+<ul>
+<li>Name awardees, say whether a given contract was split or broke the law, or give legal advice.</li>
+<li>Cover bodies that publish only on regional platforms, or contracts outside 2023–2025.</li>
+<li>Guarantee that a small model follows every step: some skip caution_check. That is why the page checks every answer too.</li>
+</ul>

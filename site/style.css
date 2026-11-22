@@ -266,3 +266,35 @@ td a { font-weight: 700; }
 #agent-app .honesty .honesty-how { color: var(--ink3); }
 body > dialog h2 { margin: 0 0 12px; padding: 0; border: 0; font-size: 1.2em; }
 body > dialog button { margin-right: 8px; }
+
+/* página «Agentes»: el esquema y las ejecuciones grabadas */
+.agents-fig svg .ag-box rect { fill: var(--surface); stroke: var(--ink); stroke-width: 1.5; }
+.agents-fig svg .ag-box.ai rect { stroke: var(--ai); stroke-width: 2.2; }
+.agents-fig svg .ag-box.code rect { stroke: var(--ok); stroke-width: 2; stroke-dasharray: 6 3; }
+.agents-fig svg .ag-box.data rect { stroke: var(--ref); stroke-width: 1.8; }
+.agents-fig svg text { fill: var(--ink); font-weight: 700; font-size: 13px; }
+.agents-fig svg text.sm { fill: var(--ink2); font-weight: 500; font-size: 12px; }
+.agents-fig svg .ag-arrows path { stroke: var(--ink); stroke-width: 1.6; fill: none; }
+.agents-fig svg marker path { fill: var(--ink); }
+.prose .ask.more { color: var(--ai); border-color: var(--ai); }
+.prose .ask.more:hover { background: var(--ai); color: var(--surface); }
+.recorded { max-width: 860px; }
+.recorded .rq { margin: 10px 0 4px; }
+.recorded .ra { white-space: pre-wrap; border-left: 3px solid var(--ai); background: var(--bg); padding: 10px 14px; margin: 10px 0; font-size: .92rem; max-width: 76ch; }
+.recorded .ra a { color: var(--ai); font-weight: 700; }
+.recorded .rstamp { display: inline-block; border: 1.5px dashed var(--ai); border-radius: 2px; padding: 4px 9px; font-size: .8rem; margin: 2px 0 6px; max-width: none; }
+.recorded .rstamp b { color: var(--ai); text-transform: uppercase; letter-spacing: .03em; font-size: .74rem; font-stretch: var(--semi); }
+.recorded .rstamp.fail { border-style: solid; border-color: var(--warn); }
+.recorded .rstamp.fail b { color: var(--warn); }
+.rsteps { font-size: .85rem; padding-left: 24px; margin: 6px 0; }
+.rsteps li { margin: 3px 0; max-width: none; }
+.rsteps .who { font-weight: 700; color: var(--ai); }
+.rsteps .ms { color: var(--ink3); font-variant-numeric: tabular-nums; }
+.rsteps .sub { color: var(--ink3); font-size: .8rem; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .top nav { gap: 0; flex-wrap: wrap; justify-content: flex-end; }
+  .top nav a { padding: 8px 6px; font-size: .9rem; }
+  .top nav .ask { margin-left: 4px; padding: 6px 9px; }
+  #lang { margin-left: 4px; }
+  .prose code { overflow-wrap: anywhere; }
+}
