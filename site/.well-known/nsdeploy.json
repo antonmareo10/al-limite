@@ -1,0 +1,18 @@
+{
+  "protocol": "nsdeploy-link/v1",
+  "exports": [
+    {
+      "network": "al_limite_guide",
+      "front_man": "al_limite_guide",
+      "aliases": [
+        "al_limite_guide",
+        "al_limite"
+      ],
+      "url": "al_limite_guide"
+    }
+  ],
+  "imports": [],
+  "link_updates": {
+    "mode": "browser-local"
+  }
+}

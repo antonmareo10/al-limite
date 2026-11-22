@@ -1,0 +1,11 @@
+{
+  "networks": [
+    {
+      "name": "al_limite_guide"
+    }
+  ],
+  "actions": {
+    "version": 1,
+    "module": "./bridge-actions.js"
+  }
+}

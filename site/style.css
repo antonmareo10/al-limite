@@ -191,3 +191,78 @@ td a { font-weight: 700; }
   .hero { padding-top: 22px; }
   .hero:has(.search) h1 { padding-top: 1.4rem; border-right-width: 5px; }
 }
+
+/* ------------------------------------------------------------------ agentes
+   El panel de los agentes: una hoja aparte, sujeta al borde derecho. Tinta violeta (la de la IA
+   y su verificación) para lo que escriben los agentes; el sello de «revisión por código» debajo
+   de cada respuesta. El runtime (runtime/ui.js) pinta el chat dentro de #agent-app. */
+.top nav .ask { display: inline-flex; align-items: center; gap: 7px; margin-left: 6px; padding: 6px 12px; min-height: 36px;
+  border: 1.5px solid var(--ai); border-radius: 2px; background: var(--surface); color: var(--ai); font-weight: 700; font-size: .88rem; }
+.top nav .ask svg { fill: currentColor; flex: none; }
+.top nav .ask:hover, .top nav .ask[aria-expanded="true"] { background: var(--ai); color: var(--surface); }
+.ask-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 18px 0 0; font-size: .9rem; color: var(--ink2); max-width: 720px; }
+.ask-cta .ask { border: 1.5px solid var(--ai); border-radius: 2px; background: var(--surface); color: var(--ai); font-weight: 700; padding: 8px 14px; min-height: 40px; }
+.ask-cta .ask:hover { background: var(--ai); color: var(--surface); }
+.ask-cta span { flex: 1 1 260px; }
+
+.assistant { position: fixed; z-index: 30; top: 0; right: 0; bottom: 0; width: min(480px, 100vw); display: flex; flex-direction: column;
+  background: var(--bg); border-left: 2px solid var(--ink); box-shadow: -12px 0 32px rgb(0 0 0 / .14); padding: 12px 16px 10px; overflow-y: auto; overscroll-behavior: contain; }
+.assistant[hidden] { display: none; }
+.assistant-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 2px solid var(--ink); padding-bottom: 8px; }
+.assistant-head h2 { margin: 0; padding: 0; border: 0; font-size: 1.3rem; font-stretch: var(--narrow); }
+#assistant-close { border: 1px solid var(--edge); background: var(--surface); border-radius: 2px; width: 40px; height: 40px; display: grid; place-items: center; }
+#assistant-close:hover { border-color: var(--ink); }
+.assistant-lead { font-size: .88rem; line-height: 1.45; margin: 10px 0 4px; color: var(--ink2); }
+.assistant-note { font-size: .78rem; line-height: 1.4; margin: 4px 0; color: var(--ink3); }
+#assistant-status { font-size: .8rem; margin: 4px 0 8px; color: var(--ai); font-weight: 600; min-height: 1.2em; }
+@media (min-width: 1180px) {
+  body.asking .top, body.asking main, body.asking .foot { margin-right: 496px; margin-left: max(16px, calc((100vw - 496px - 1080px) / 2)); }
+  .assistant { box-shadow: none; }
+}
+@media (max-width: 600px) {
+  .assistant { padding: 10px 12px 8px; border-left: 0; }
+  .top nav .ask span { display: none; }
+  body.asking { overflow: hidden; }
+}
+
+#agent-app { --ns-font: var(--sans); --ns-bg: var(--surface); --ns-fg: var(--ink); --ns-primary: var(--ai); --ns-accent: var(--ai);
+  --ns-border: var(--line); --ns-panelbg: var(--surface); --ns-msgbg: var(--bg); --ns-muted: var(--ink3); --ns-radius: 2px;
+  flex: none; display: flex; flex-direction: column; gap: 6px; font-size: .92rem; }
+#agent-app [data-ns-slot="header"] { flex: none; }
+#agent-app [data-ns-slot="chat"] { flex: none; height: clamp(320px, calc(100dvh - 290px), 820px); display: flex; }
+#agent-app.ns-composed-app [data-ns-slot="chat"] > .ns-chat { min-height: 0; }
+#agent-app [data-ns-slot="settings"] { flex: none; }
+#agent-app .ns-header { padding: 0 0 6px; gap: 8px; flex-wrap: wrap; border-bottom-width: 1px; }
+#agent-app .ns-title { font-weight: 800; font-stretch: var(--semi); font-size: .95rem; }
+#agent-app .ns-chat { background: var(--surface); border: 1px solid var(--edge); border-radius: 2px; }
+#agent-app .ns-msg { overflow-wrap: break-word; border-radius: 2px; max-width: 92%; font-size: .9rem; line-height: 1.45; }
+#agent-app .ns-msg.bot { border-left: 3px solid var(--ai); }
+#agent-app .ns-msg.bot a { color: var(--ai); font-weight: 700; }
+#agent-app .ns-msg table { font-size: .82rem; }
+#agent-app .ns-input { font: inherit; border: 1.5px solid var(--ink); border-radius: 2px; background: var(--surface); color: var(--ink); }
+#agent-app button { margin: 0; border-radius: 2px; }
+#agent-app input[type="checkbox"], #agent-app input[type="radio"] { width: auto; }
+#agent-app .ns-settings-body label { margin: 4px 0; font-weight: 400; }
+#agent-app .ns-settings { background: var(--surface); border: 1px solid var(--line); }
+#agent-app .ns-devtoggle:not(.on):hover, #agent-app .ns-modal-close:hover { background: transparent; }
+#agent-app .ns-consent { background: var(--limit-soft); }
+#agent-app .ns-msgs:has(.ns-consent-actions) > .ns-turn-status { display: none; }
+#agent-app .ns-consent-actions { flex-wrap: wrap; }
+#agent-app .ns-consent-actions button { white-space: nowrap; }
+.assistant-agents { flex: none; font-size: .82rem; border: 1px solid var(--line); background: var(--surface); border-radius: 2px; }
+.assistant-agents > summary { cursor: pointer; padding: 6px 10px; color: var(--ink2); font-weight: 600; }
+.assistant-agents [data-ns-slot="agents"] { max-height: 34vh; overflow: auto; padding: 0 8px 8px; }
+.assistant-agents .ns-agents { border: 0; padding: 4px 0; background: none; }
+
+/* el sello: lo que un programa comprobó en la respuesta */
+#agent-app .honesty { align-self: flex-start; max-width: 92%; margin: -4px 0 4px; font-size: .76rem; line-height: 1.4; color: var(--ink2);
+  border: 1.5px dashed var(--ai); border-radius: 2px; padding: 4px 8px; background: var(--surface); }
+#agent-app .honesty > summary { cursor: pointer; list-style: none; }
+#agent-app .honesty > summary::-webkit-details-marker { display: none; }
+#agent-app .honesty b { color: var(--ai); font-stretch: var(--semi); text-transform: uppercase; letter-spacing: .03em; font-size: .72rem; margin-right: 4px; }
+#agent-app .honesty.fail { border-color: var(--warn); border-style: solid; }
+#agent-app .honesty.fail b { color: var(--warn); }
+#agent-app .honesty p { margin: 6px 0 2px; max-width: none; }
+#agent-app .honesty .honesty-how { color: var(--ink3); }
+body > dialog h2 { margin: 0 0 12px; padding: 0; border: 0; font-size: 1.2em; }
+body > dialog button { margin-right: 8px; }

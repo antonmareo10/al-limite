@@ -1,8 +1,11 @@
-/* Al límite — web estática. Sin dependencias: datos JSON precalculados + SVG a mano. */
-(() => {
+/* Al límite — web estática. Sin dependencias: datos JSON precalculados + SVG a mano.
+   Es un módulo: los datos y las reglas están en core.js, que comparten la página y los agentes.
+   Exporta App.page, las operaciones de la página que el asistente puede usar (site-actions.js). */
+import { EVL, bestLevel, siteData } from "./core.js";
+
+export const App = (() => {
   "use strict";
 
-  const EVL = "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=";
   const MIN_X = { ss: 6000, obras: 15000 }; // primer importe que se dibuja en el histograma
   const NARROW = () => innerWidth < 600;
   const PAGE = 20; // filas visibles antes de «mostrar más»
@@ -10,8 +13,8 @@
   const tip = document.getElementById("tip");
   let lang = (() => { try { return localStorage.getItem("lang"); } catch { return null; } })()
     || ((navigator.language || "es").startsWith("es") ? "es" : "en");
+  const DATA = siteData();
   let NAC = null, IDX = null, CPV = null;
-  const cache = new Map();
 
   // ------------------------------------------------------------------ textos
   const T = {
@@ -19,7 +22,11 @@
       skip: "Saltar al contenido", nav_home: "Inicio", nav_rank: "Ranking", nav_method: "Método", loading: "Cargando datos…",
       foot_1: "Fuente: Plataforma de Contratación del Sector Público (Ministerio de Hacienda), conjunto de datos abiertos «Contratos menores de perfiles del contratante». Elaboración propia.",
       foot_2: "La acumulación de importes junto al límite es un indicador estadístico. No prueba que un contrato se haya fraccionado ni que nadie haya actuado mal.",
-      foot_3: "Proyecto de estudiante de Antonio González Fernández, hecho el 15 y 16 de noviembre de 2026 para hackatones. Código con licencia MIT:",
+      foot_3: "Proyecto de estudiante de Antonio González Fernández, hecho el 15 y 16 de noviembre de 2026 para hackatones; los agentes se añadieron a partir del 22 de noviembre. Código con licencia MIT:",
+      ask: "Pregunta a los agentes", as_h: "Pregunta a los agentes", as_agents: "Agentes trabajando y trazas",
+      as_p: "Tres agentes trabajan juntos: uno conversa contigo, otro lee los datos de Al límite y un tercero revisa cada respuesta con un programa antes de que la leas. No acusan a nadie ni nombran empresas.",
+      as_note: "Tus mensajes y los datos que leen los agentes van al proveedor de IA que elijas abajo, con tu propia clave, que se queda en este navegador.",
+      ask_cta: "¿Prefieres preguntar? Los agentes buscan el organismo, leen sus cifras y un programa revisa cada respuesta.",
       foot_code: "código y método en GitHub", ex_label: "O abre un ejemplo:",
       gen: d => `Datos generados el ${d}.`,
       kicker: p => `Contratos menores en España · ${p}`,
@@ -87,7 +94,11 @@
       skip: "Skip to content", nav_home: "Home", nav_rank: "Ranking", nav_method: "Method", loading: "Loading data…",
       foot_1: "Source: Plataforma de Contratación del Sector Público (Spanish Ministry of Finance), open dataset “Contratos menores de perfiles del contratante”. Own analysis.",
       foot_2: "A pile-up of amounts just under the limit is a statistical indicator. It does not prove that a contract was split or that anyone acted improperly.",
-      foot_3: "A student project by Antonio González Fernández, built on 15–16 November 2026 for hackathons. MIT-licensed code:",
+      foot_3: "A student project by Antonio González Fernández, built on 15–16 November 2026 for hackathons; the agents were added from 22 November on. MIT-licensed code:",
+      ask: "Ask the agents", as_h: "Ask the agents", as_agents: "Agents at work and traces",
+      as_p: "Three agents work together: one talks with you, one reads Al límite's data and a third checks every answer with a program before you read it. They accuse no one and name no companies.",
+      as_note: "Your messages and the data the agents read go to the AI provider you choose below, with your own key, which stays in this browser.",
+      ask_cta: "Rather ask? The agents find the body, read its figures, and a program checks every answer.",
       foot_code: "code and method on GitHub", ex_label: "Or open an example:",
       gen: d => `Data generated on ${d}.`,
       kicker: p => `Minor contracts in Spain · ${p}`,
@@ -160,15 +171,6 @@
   const fmt = (v, d = 0) => v == null ? "–" : new Intl.NumberFormat(loc(), { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: "always" }).format(v);
   const fmtEur = v => fmt(v, Number.isInteger(v) ? 0 : 2);
   const fmtDate = s => { const [y, m, d] = s.split("-"); return lang === "es" ? `${d}/${m}/${y}` : `${d} ${T.en.months[+m - 1]} ${y}`; };
-  const norm = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9ñ ]+/g, " ");
-  const getJSON = async url => {
-    if (cache.has(url)) return cache.get(url);
-    const r = await fetch(url);
-    if (!r.ok) throw new Error(url + " " + r.status);
-    const j = await r.json();
-    cache.set(url, j);
-    return j;
-  };
   const shortPath = r => { const p = r.split(" > "); return p.length > 2 ? p[0] + " › … › " + p[p.length - 1] : p.join(" › "); };
   const badge = n => `<span class="badge ${n}">${esc(t().nivel[n])}</span>`;
   const ratioTxt = (r, a, b) => r == null ? `– (≥ ${fmt(a, 1)})` : `${fmt(r, 1)} <span class="sub">${fmt(a, 1)}–${b == null ? "∞" : fmt(b, 1)}</span>`;
@@ -319,35 +321,7 @@
   }
 
   // ------------------------------------------------------------------ buscador
-  const SYN = { ayto: "ayuntamiento", aytos: "ayuntamiento", ajuntament: "ayuntamiento", dipu: "diputacion", uni: "universidad", univ: "universidad", council: "ayuntamiento", university: "universidad", ministry: "ministerio", hospital: "hospital" };
-  const STOP = new Set(["de", "del", "la", "el", "los", "las", "mi", "my", "the", "of", "y", "en"]);
-  let SEARCH = null;
-  function buildSearch() {
-    SEARCH = IDX.filas.map((f, i) => ({ i, name: norm(f[2]), all: norm(f[2] + " " + f[3]) }));
-  }
-  function search(q) {
-    const toks = norm(q).split(/\s+/).filter(x => x && !STOP.has(x)).map(x => SYN[x] || x);
-    if (!toks.length || toks.join("").length < 3) return null;
-    const out = [];
-    for (const s of SEARCH) {
-      let score = 0, ok = true;
-      for (const k of toks) {
-        const inName = s.name.includes(k);
-        if (!inName && !s.all.includes(k)) { ok = false; break; }
-        score += inName ? 3 : 1;
-        if (inName && (s.name.startsWith(k) || s.name.includes(" " + k))) score += 1;
-      }
-      if (!ok) continue;
-      const f = IDX.filas[s.i];
-      score += Math.min(3, Math.log10(1 + f[4]) / 1.5) + (f[1] === 1 ? 1.5 : 0) - s.name.length / 400;
-      // Quien escribe el nombre de un municipio suele buscar su ayuntamiento, no la diputación de la provincia.
-      if (/(^| )(ayuntamiento|ajuntament|concello|udala|ayto) /.test(s.name) && toks.some(k => s.name.includes(" de " + k) || s.name.endsWith(" " + k))) score += 1.5;
-      out.push([score, s.i]);
-    }
-    out.sort((a, b) => b[0] - a[0]);
-    return out.slice(0, 12).map(x => IDX.filas[x[1]]);
-  }
-  const bestLevel = f => { const o = ["insuficiente", "sin_senal", "indicio", "senal"]; const a = f[5] || "insuficiente", b = f[10] || "insuficiente"; return o.indexOf(a) >= o.indexOf(b) ? a : b; };
+  const search = q => DATA.search(q);
   // Ejemplos de la portada, elegidos por regla y no a dedo: el organismo del vídeo de demostración (con señal)
   // y los órganos con más contratos analizados entre los de «indicio débil» y «sin señal» en servicios y suministros.
   // Así quien no conoce nombres de organismos españoles ve los tres tipos de resultado con un clic.
@@ -380,14 +354,11 @@
 
   // ------------------------------------------------------------------ ranking
   const rankState = { rule: "ss", cls: 0, n: 15 };
-  function rankRows(rule, cls) {
-    const o = rule === "ss" ? 5 : 10;
-    return IDX.filas.filter(f => f[1] === cls && f[o] === "senal").sort((a, b) => b[o + 2] - a[o + 2]).map(f => ({ f, o }));
-  }
+  const rankRows = (rule, cls) => DATA.rankRows(rule, cls).map(f => ({ f }));
   function rankTable(limit) {
     const rows = rankRows(rankState.rule, rankState.cls);
     const o = rankState.rule === "ss" ? 5 : 10;
-    const evalN = IDX.filas.filter(f => f[1] === rankState.cls && f[o] && f[o] !== "insuficiente").length;
+    const evalN = DATA.assessable(rankState.rule, rankState.cls);
     const body = rows.slice(0, limit).map(({ f }, i) => `<tr><td class="n">${i + 1}</td><td><a href="#/u/${esc(f[0])}">${esc(f[2])}</a><span class="sub">${esc(shortPath(f[3]))}</span></td>
       <td class="n">${fmt(f[o + 4])}</td><td class="n">${ratioTxt(f[o + 1], f[o + 2], f[o + 3])}</td></tr>`).join("");
     const seg = (key, val, label) => `<button type="button" data-k="${key}" data-v="${val}" aria-pressed="${String(rankState[key]) === String(val)}">${esc(label)}</button>`;
@@ -426,7 +397,8 @@
     const total = NAC.embudo.servicios_suministros + NAC.embudo.obras;
     main.innerHTML = `<section class="hero"><p class="kicker">${esc(t().kicker(per))}</p><h1>${t().h1}</h1>
       <p class="lead">${esc(t().lead(fmt(total), fmt(NAC.n_organos)))}</p>${searchBox()}
-      <p class="hint" style="max-width:72ch;color:var(--ink3);font-size:.85rem">${esc(t().s_cover)}</p></section>
+      <p class="hint" style="max-width:72ch;color:var(--ink3);font-size:.85rem">${esc(t().s_cover)}</p>
+      <p class="ask-cta"><button type="button" class="ask" data-ask aria-controls="assistant">${esc(t().ask)} →</button> <span>${esc(t().ask_cta)}</span></p></section>
       <section><h2>${esc(t().nat_h2)}</h2><div class="seg" role="group" id="natseg">
         <button type="button" data-r="ss" aria-pressed="true">${esc(t().regla.ss)}</button><button type="button" data-r="obras" aria-pressed="false">${esc(t().regla.obras)}</button></div>
         <div id="nat">${natBlock("ss")}</div>
@@ -506,7 +478,7 @@
 
   async function unit(id) {
     let u;
-    try { u = await getJSON(`data/u/${encodeURIComponent(id)}.json`); } catch { main.innerHTML = `<p class="loading">${esc(t().notfound)}</p>`; return; }
+    try { u = await DATA.unit(id); } catch { main.innerHTML = `<p class="loading">${esc(t().notfound)}</p>`; return; }
     const rules = ["ss", "obras"].filter(r => u.reglas[r]);
     const order = ["insuficiente", "sin_senal", "indicio", "senal"];
     let cur = u.ia ? u.ia.regla : rules.slice().sort((a, b) => order.indexOf(u.reglas[b].nivel) - order.indexOf(u.reglas[a].nivel) || u.reglas[b].n - u.reglas[a].n)[0];
@@ -529,20 +501,7 @@
 
   async function metodo() {
     const html = await (await fetch(`metodo.${lang}.html`)).text();
-    const C = NAC.criterios, d = NAC.reglas.ss, o = NAC.reglas.obras, e = NAC.embudo, ia = NAC.ia || {};
-    const vars = {
-      n_ss: fmt(e.servicios_suministros), n_obras: fmt(e.obras), n_otros: fmt(e.otros_tipos_excluidos), n_org: fmt(NAC.n_organos), n_ent: fmt(NAC.n_entidades),
-      leidas: fmt(e.entradas_leidas), distintos: fmt(e.contratos_distintos), periodo: NAC.periodo.map(fmtDate).join(" – "),
-      min_ventana: C.min_ventana, min_cerca: C.min_cerca, q_max: fmt(C.q_max, 2), ic_inf_min: fmt(C.ic_inf_min),
-      ss_cerca: fmt(d.n_cerca), ss_esp: fmt(d.esperado), ss_razon: fmt(d.razon, 1), ss_ic: `${fmt(d.ic_inf, 2)}–${fmt(d.ic_sup, 2)}`,
-      ob_cerca: fmt(o.n_cerca), ob_esp: fmt(o.esperado), ob_razon: fmt(o.razon, 1), ob_ic: `${fmt(o.ic_inf, 2)}–${fmt(o.ic_sup, 2)}`,
-      cpv_pct: fmt(NAC.cpv_cobertura_pct), ss_sobre: fmt(d.sobre_umbral), dic_todos: fmt(d.pct_dic_todos, 1), dic_cerca: fmt(d.pct_dic_cerca, 1),
-      senal_org_ss: fmt((d.niveles_organo || {}).senal || 0), senal_ent_ss: fmt((d.niveles_entidad || {}).senal || 0),
-      senal_org_ob: fmt((o.niveles_organo || {}).senal || 0), senal_ent_ob: fmt((o.niveles_entidad || {}).senal || 0),
-      ia_modelo: ia.modelo || "–", ia_fichas: fmt(ia.fichas_con_explicacion || 0), ia_senal: fmt(ia.fichas_con_senal || 0), ia_modelo_n: fmt(ia.textos_del_modelo || 0),
-      ia_plantilla: fmt(ia.textos_de_plantilla || 0), ia_rech: fmt(ia.borradores_rechazados || 0), generado: NAC.generado,
-      fuentes: NAC.fuente.map(f => `<tr><td class="num">${esc(f.periodo)}</td><td class="n">${fmt(f.bytes)}</td><td class="num">${esc(f.sha256.slice(0, 16))}…</td><td class="num">${esc(f.descargado.slice(0, 10))}</td></tr>`).join(""),
-    };
+    const vars = DATA.methodVars({ fmt, fmtDate, esc });
     main.innerHTML = `<article class="prose">${html.replace(/\{\{(\w+)\}\}/g, (m0, k) => vars[k] ?? m0)}</article>`;
   }
 
@@ -574,10 +533,9 @@
   async function start() {
     applyLang();
     try {
-      [NAC, IDX] = await Promise.all([getJSON("data/nacional.json"), getJSON("data/indice.json")]);
+      await DATA.load();
     } catch (e) { main.innerHTML = `<p class="loading">${esc(t().err)}</p>`; return; }
-    CPV = Object.fromEntries(NAC.cpv_nombres.map(c => [c[0], { es: c[1], en: c[2] }]));
-    buildSearch();
+    ({ NAC, IDX, CPV } = DATA);
     applyLang();
     await route();
   }
@@ -590,4 +548,22 @@
   let wasNarrow = NARROW();
   addEventListener("resize", () => { if (NARROW() !== wasNarrow) { wasNarrow = NARROW(); route(); } });
   start();
+
+  // ------------------------------------------------------------------ para el asistente
+  // Las operaciones de la página que site-actions.js expone a los agentes. Solo navegan:
+  // la página no tiene nada que el visitante no pueda deshacer con «atrás».
+  const page = {
+    lang: () => lang,
+    route: () => location.hash.replace(/^#\/?/, "") || "",
+    /** Abre la ficha de un organismo en la página. Rechaza un id que no está en el índice. */
+    async openBody(id) {
+      await DATA.load();
+      const f = DATA.row(id);
+      if (!f) return { ok: false, reason: `No body has the id ${id}. Find it first with website_look_up_body.`, field: "id" };
+      const hash = `#/u/${encodeURIComponent(f[0])}`;
+      if (location.hash !== hash) location.hash = hash;
+      return { ok: true, opened: f[2], id: f[0], page: new URL(hash, location.href).href };
+    },
+  };
+  return { page };
 })();

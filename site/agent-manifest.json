@@ -1,0 +1,87 @@
+{
+  "brand": "Al límite agents",
+  "networks": [
+    {
+      "name": "al_limite_guide",
+      "front_man": "al_limite_guide",
+      "hocon": "./al_limite_guide.network.json",
+      "description": "Ask about any Spanish public body's minor contracts just under the legal limit: figures come only from Al límite's data, with their uncertainty, and code checks every answer.",
+      "tags": [
+        "agentified-website",
+        "public-procurement",
+        "open-data",
+        "spain",
+        "transparency"
+      ],
+      "sample_queries": [
+        "Does the Ayuntamiento de Ourense have many contracts just under the limit?",
+        "List the 5 most recent contracts of the Diputación Provincial de Ourense just under the limit, with their official links.",
+        "Which bodies have the strongest bunching signal for works contracts?",
+        "Is the wall at 15,000 euros just a taste for round numbers?",
+        "¿Qué significa «indicio débil» y cómo se calcula?",
+        "Which company won the most contracts just under the limit in Ourense?"
+      ]
+    }
+  ],
+  "llm_router": {
+    "base_url": "https://api.otari.ai/api/v1",
+    "mock": false,
+    "byok_router": "https://api.otari.ai/api/v1"
+  },
+  "allowed_peers": [],
+  "peer_policy": {
+    "mode": "closed",
+    "deny_origins": [],
+    "note": "Local agents and page-local actions only. Other agent sites may run this network; its reads are shared with them through bridge/bridge-actions.js."
+  },
+  "agent_mcp": {
+    "protocol": "nsdeploy-agent-mcp/v1",
+    "network": "al_limite_guide",
+    "front_man": "al_limite_guide",
+    "available": false,
+    "reason": "This is a static bundle; a public MCP facade requires an application host."
+  },
+  "theme": {
+    "primary": "#4b3bb3"
+  },
+  "linking": {
+    "protocol": "nsdeploy-link/v1",
+    "exports": [
+      {
+        "network": "al_limite_guide",
+        "front_man": "al_limite_guide",
+        "aliases": [
+          "al_limite_guide",
+          "al_limite"
+        ],
+        "url": "al_limite_guide"
+      }
+    ],
+    "imports": [],
+    "link_updates": {
+      "mode": "browser-local"
+    }
+  },
+  "deployment": {
+    "mode": "static",
+    "self_contained_runtime": true,
+    "browser_mock": false,
+    "direct_byok": true,
+    "direct_mcp_requires_cors": true,
+    "public_mcp_facade": false
+  },
+  "actions": {
+    "version": 1,
+    "module": "./site-actions.js",
+    "bridge": "./bridge/action-bridge.html",
+    "agentTools": [
+      "look_up_body",
+      "list_contracts_near_limit",
+      "get_ranking",
+      "get_national_overview",
+      "get_method",
+      "check_answer",
+      "open_body_page"
+    ]
+  }
+}
