@@ -119,3 +119,13 @@ test("every tool result stays under the runtime's 64 KB limit", async () => {
   ];
   for (const r of results) assert.ok(JSON.stringify(r).length < 64000);
 });
+
+test("list_contracts_near_limit also takes the body's name, so one call is enough", async () => {
+  const byName = await tools.listContracts({ query: "Ayuntamiento de Ourense", limit: 3 });
+  const byId = await tools.listContracts({ id: OURENSE, limit: 3 });
+  assert.equal(byName.body.id, OURENSE);
+  assert.deepEqual(byName.contracts, byId.contracts);
+  assert.ok(byName.other_matches.length >= 1);
+  assert.equal((await tools.listContracts({ query: "zzzz qqqq" })).ok, false);
+  assert.equal((await tools.listContracts({})).ok, false);
+});

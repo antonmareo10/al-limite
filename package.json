@@ -1,6 +1,7 @@
 {
   "name": "al-limite",
   "private": true,
+  "type": "module",
   "description": "Al límite: Spanish minor public contracts just under the legal limit, with an open agentic web layer.",
   "license": "MIT",
   "engines": {

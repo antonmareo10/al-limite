@@ -8,13 +8,15 @@
 // loads with the headers a browser needs, then prints what the partner's network can
 // reach and what to add to this site. It exits with code 1 when it finds errors.
 
+// Vendored from cognizant-ai-labs/agentic-web (commit e342997, Apache-2.0): the runtime imports
+// point at this repository's copy, site/runtime, instead of the skill's runtime/ folder.
 import { realpathSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { sameOriginAsset } from "../runtime/action-transport.js";
-import { parseHocon } from "../runtime/hocon.js";
-import { AgentNetwork, parseExternalAgent, validateNetwork } from "../runtime/kernel.js";
-import { resolveUrl } from "../runtime/remote.js";
-import { requiresThirdPartyApproval, safeName } from "../runtime/runner.js";
+import { sameOriginAsset } from "../../../site/runtime/action-transport.js";
+import { parseHocon } from "../../../site/runtime/hocon.js";
+import { AgentNetwork, parseExternalAgent, validateNetwork } from "../../../site/runtime/kernel.js";
+import { resolveUrl } from "../../../site/runtime/remote.js";
+import { requiresThirdPartyApproval, safeName } from "../../../site/runtime/runner.js";
 
 /**
  * Checks one partner network URL with the skill's own runtime.

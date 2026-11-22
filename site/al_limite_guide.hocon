@@ -3,12 +3,14 @@
 # Build and check from the repository root:
 #   node tools/agentify/scripts/build_network.mjs site/al_limite_guide.hocon --manifest site/agent-manifest.json
 #
-# Three agents with separate jobs:
-#   al_limite_guide  talks to the visitor and writes the answer. It never reads the data itself.
-#   data_desk        reads Al límite's published data through the website_* tools.
-#   caution_check    runs the site's honesty check (code, not a model) on the draft answer and
-#                    fixes what it finds: untraced figures, a missing interval or caveat,
-#                    accusatory wording, company names.
+# Two agents with separate jobs:
+#   al_limite_guide  talks to the visitor, reads Al límite's published data through the
+#                    website_* tools and writes a draft answer.
+#   caution_check    a separate workflow with its own rules: it runs the site's honesty check
+#                    (code, not a model) on the draft and fixes what it finds: untraced figures,
+#                    a missing interval or caveat, accusatory wording, company names.
+# A third "data desk" agent was tried and dropped: this runtime offers every website_* tool to
+# every agent, so it only added model calls, and a small local model skipped it anyway.
 # Generative UI (CRUSE) is off on purpose: the honesty check reads the answer's text, so every
 # figure the visitor sees goes through it.
 {
@@ -38,7 +40,7 @@
             "site_name": "Al límite",
 
             "grounding_rules": """
-Facts come only from website_* tool results, from the other agents' answers and from this conversation.
+Facts come only from website_* tool results, from caution_check's answers and from this conversation.
 If a result does not contain a fact, say you do not know. Do not guess.
 Never invent figures, body ids, links, dates or levels.
 Offer only what your tools can do.
@@ -84,44 +86,20 @@ Honesty rules. Code checks every answer against the data, after you:
 You are the assistant on the {site_name} website. You help journalists, councillors and residents read how Spanish public bodies use minor contracts, the ones awarded with no tender below a legal limit: a body's indicator, its contracts just under the limit with their official records, the national figures, the ranking of where to look, and the method.
 {grounding_rules}
 {honesty_rules}
-How to work:
-- For any figure, contract, link or method detail, ask data_desk. It cannot see this chat: pass the body's name or id and exactly what the visitor wants.
-- Write the answer only from data_desk's facts. Before you show an answer that has any figure, send caution_check the visitor's question, the body ids and your draft. If it answers PASS, show your draft. If it answers FIX, show its corrected text. If it answers UNCHECKED, show your draft and say it could not be checked.
-- When the visitor asks to see a body's page, open it if you have a tool for that; otherwise give its link.
-- Reply in the visitor's language, Spanish or English. Keep body names in Spanish. Be brief, about 120 words at most, and give the official links when you list contracts.
+How to work, in this order:
+1. Read what you need with the website_* tools: never answer a figure from memory. Look a body up first; never guess its id.
+2. Write a short draft from those results only.
+3. If the draft has any figure, send caution_check the visitor's question, the body ids and the draft. Do this before you answer, every time.
+4. If caution_check answers PASS, reply with your draft. If it answers FIX, reply with its corrected text. If it answers UNCHECKED, reply with your draft and say it could not be checked.
+When the visitor asks to see a body's page, open it if you have a tool for that; otherwise give its link.
+Reply in the visitor's language, Spanish or English. Keep body names in Spanish. Name the rules in words (services and supplies, works). Be brief, about 120 words at most, and give the official links when you list contracts.
 """,
-            "tools": ["data_desk", "caution_check"]
-        },
-        {
-            "name": "data_desk",
-            "function": {
-                "description": "Finds figures and links in Al límite's data: a body's indicator, its contracts just under the limit, the ranking, the national figures and the method.",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "request": {
-                            "type": "string",
-                            "description": "The body's name or id and what is needed, with any detail the visitor gave. data_desk cannot see the chat."
-                        }
-                    },
-                    "required": ["request"]
-                }
-            },
-            "instructions": """
-You find facts in {site_name}'s data for the site's assistant. Your answer goes to that assistant, not to the visitor.
-{grounding_rules}
-How to work:
-- Use the website_* tools for bodies, contracts, the ranking, the national figures and the method. Never guess a body id: look the body up first.
-- If several bodies could match, give the best match and list the others with their ids.
-- Return a short fact sheet: the body's name and id, each figure exactly as the tool gave it and what it counts, each ratio with its 95% interval and level, the notes the tool gave, and the page and official record links. Add nothing of your own.
-- Do not ask the visitor questions yourself: where the rules above say to tell or ask the visitor, say it in your answer.
-""",
-            "tools": []
+            "tools": ["caution_check"]
         },
         {
             "name": "caution_check",
             "function": {
-                "description": "Checks a draft answer with the site's own code before it is shown: every figure traced to the data, the interval and the caveat present, no accusations and no names. Returns PASS, a corrected draft, or UNCHECKED.",
+                "description": "Required before any answer with a figure. Checks the draft with the site's own code: every figure traced to the data, the interval and the caveat present, no accusations and no names. Returns PASS, a corrected draft (FIX), or UNCHECKED.",
                 "parameters": {
                     "type": "object",
                     "properties": {

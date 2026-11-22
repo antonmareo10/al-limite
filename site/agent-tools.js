@@ -158,14 +158,14 @@ export class AgentTools {
   listContractsAction() {
     return {
       name: "list_contracts_near_limit",
-      description: "List a body's contracts just under the legal limit, newest first, each with its date, amount, file number, awardee letter and the link to its official record; plus the awardees that repeat just under the limit (as letters). Needs a body id from website_look_up_body.",
+      description: "List a body's contracts just under the legal limit, newest first, each with its date, amount, file number, awardee letter and the link to its official record; plus the awardees that repeat just under the limit (as letters). Give the body id from website_look_up_body, or its name as query.",
       effect: "read",
       inputSchema: {
         type: "object",
         additionalProperties: false,
-        required: ["id"],
         properties: {
           id: { type: "string", minLength: 1, maxLength: 40, description: "The body id from website_look_up_body." },
+          query: { type: "string", minLength: 3, maxLength: 120, description: "The body's name, when you have no id. The best match is used, as in website_look_up_body." },
           rule: { type: "string", enum: ["services_and_supplies", "works"], description: "Which limit. Default: the rule with the strongest level." },
           limit: { type: "integer", minimum: 1, maximum: 25, description: "How many contracts to list. Default 10." },
         },
@@ -174,8 +174,16 @@ export class AgentTools {
     };
   }
 
-  async listContracts({ id, rule, limit = 10 }) {
+  async listContracts({ id, query, rule, limit = 10 }) {
     await this.data.load();
+    let others = [];
+    if (!id && query) {
+      const rows = this.data.search(query, 6);
+      if (!rows || !rows.length) return { ok: false, reason: `No body matches "${query}". Try fewer words, or the Spanish name.`, field: "query" };
+      id = rows[0][0];
+      others = rows.slice(1).map(f => this.matchSummary(f));
+    }
+    if (!id) return { ok: false, reason: "Give the body's id, or its name in query.", field: "id" };
     if (!this.data.row(id)) return { ok: false, reason: `No body has the id ${id}. Find it first with website_look_up_body.`, field: "id" };
     const u = await this.data.unit(id);
     const order = ["insuficiente", "sin_senal", "indicio", "senal"];
@@ -201,6 +209,7 @@ export class AgentTools {
       })),
       repeat_awardees: d.repetidos.slice(0, 5).map(a => ({ awardee: `Awardee ${a.alias}`, near_limit: a.n_cerca, amount_near_limit_eur: a.importe_cerca, years: a.anios, most_in_one_year: a.max_en_un_anio, contracts_with_this_body: a.n_total })),
       awardees_with_3_or_more_near_limit: d.repetidos.length,
+      ...(others.length ? { other_matches: others } : {}),
       note: `${NO_NAMES} Amounts exclude taxes. ${HOW_TO_READ}`,
     };
   }
@@ -250,7 +259,7 @@ export class AgentTools {
   nationalAction() {
     return {
       name: "get_national_overview",
-      description: "Read the national figures for Spain: contracts analysed, the wall just under each limit, observed vs expected with the 95% interval, bodies with a signal, the check with fake limits (is it just round numbers?), by year, and the December check. Also the data's coverage and source.",
+      description: "Read the national figures for Spain: contracts analysed, the wall just under each limit, observed vs expected with the 95% interval, bodies with a signal, by year, the December check, and the check with fake limits. Call it for questions about Spain as a whole, and about whether the wall is only a taste for round numbers. Also gives the data's coverage and source.",
       effect: "read",
       inputSchema: { type: "object", properties: {}, additionalProperties: false },
       execute: () => this.national(),
@@ -295,7 +304,7 @@ export class AgentTools {
   methodAction() {
     return {
       name: "get_method",
-      description: "Read one section of the site's method page: how the indicator is computed, the levels, the uncertainty, the checks, how AI is used, and what the indicator cannot tell you. Call it for questions about the method or the law, rather than answering from memory.",
+      description: "Read one section of the site's method page: how the indicator is computed, the levels, the uncertainty, the checks, how AI is used, and what the indicator cannot tell you. Call it for questions about the method or the law, rather than answering from memory. For figures, use the other tools.",
       effect: "read",
       inputSchema: {
         type: "object",

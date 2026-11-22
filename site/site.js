@@ -19,7 +19,7 @@ const TEXT = {
     loading: "Cargando los agentes…",
     idle: "Los agentes se cargan al abrir este panel.",
     check: "Revisión por código",
-    figures: (t, n) => n ? `${t} de ${n} cifras encontradas en los datos que ha leído esta conversación` : "Sin cifras",
+    figures: (t, n) => n ? `${t} de ${n} cifras encontradas en los datos leídos para esta respuesta` : "Sin cifras",
     interval: "intervalo de confianza indicado",
     no_interval: "falta el intervalo de confianza",
     caveat: "aclara que no es una prueba",
@@ -28,7 +28,7 @@ const TEXT = {
     untraced: list => `No encontradas en los datos: ${list}. Tómalas con cautela.`,
     accusatory: "Lenguaje acusatorio o nombres de empresas: no lo des por bueno.",
     how: "Cómo se revisa",
-    how_text: "El programa compara cada número de la respuesta con los que devolvieron las herramientas de Al límite en esta conversación (y con los de tu pregunta). Comprueba también que cada razón lleve su intervalo del 95 %, que se diga que el indicador no es una prueba y que no haya lenguaje acusatorio ni nombres de empresas. No juzga si la explicación es la mejor posible.",
+    how_text: "El programa compara cada número de la respuesta con los que devolvieron las herramientas de Al límite para esta respuesta (y con los de tu pregunta); una cifra repetida de memoria de una respuesta anterior no cuenta. Comprueba también que cada razón lleve su intervalo del 95 %, que se diga que el indicador no es una prueba y que no haya lenguaje acusatorio ni nombres de empresas. No juzga si la explicación es la mejor posible.",
   },
   en: {
     greeting: "I can look up any body in the data, give you its figures just under the limit with their confidence interval, list its contracts with the official link, explain the method and open its page. Figures always come from Al límite's data, and a program checks every answer before you read it.",
@@ -38,7 +38,7 @@ const TEXT = {
     loading: "Loading the agents…",
     idle: "The agents load when you open this panel.",
     check: "Checked by code",
-    figures: (t, n) => n ? `${t} of ${n} figures found in the data this chat read` : "No figures",
+    figures: (t, n) => n ? `${t} of ${n} figures found in the data read for this answer` : "No figures",
     interval: "confidence interval given",
     no_interval: "confidence interval missing",
     caveat: "says it is not proof",
@@ -47,7 +47,7 @@ const TEXT = {
     untraced: list => `Not found in the data: ${list}. Treat with care.`,
     accusatory: "Accusatory wording or company names: do not take it at face value.",
     how: "How it is checked",
-    how_text: "The program compares every number in the answer with those Al límite's tools returned in this chat (and those in your question). It also checks that each ratio comes with its 95% interval, that the answer says the indicator is not proof, and that there is no accusatory wording or company name. It does not judge whether the explanation is the best possible one.",
+    how_text: "The program compares every number in the answer with those Al límite's tools returned for this answer (and those in your question); a figure repeated from memory of an earlier answer does not count. It also checks that each ratio comes with its 95% interval, that the answer says the indicator is not proof, and that there is no accusatory wording or company name. It does not judge whether the explanation is the best possible one.",
   },
 };
 const tx = () => TEXT[App.page.lang()] || TEXT.en;
@@ -143,9 +143,12 @@ export class AssistantMount {
   static checkEveryAnswer(engine, trace) {
     const run = engine.runTurn.bind(engine);
     engine.runTurn = async (userText, options) => {
+      // Only what the tools return for this answer counts: an earlier turn's figures, repeated
+      // from memory, are not checked against this question's data.
+      const from = SESSION.results.length;
       const result = await run(userText, options);
       try {
-        const report = AssistantMount.report(result?.text || "", userText);
+        const report = AssistantMount.report(result?.text || "", userText, SESSION.results.slice(from));
         if (report) {
           trace?.note("honesty_check", { verdict: report.verdict, figures: report.figures, problems: report.problems });
           AssistantMount.attach(report);
@@ -157,11 +160,11 @@ export class AssistantMount {
     };
   }
 
-  /** The honesty check of one answer against this page's session ledger. */
-  static report(answer, question) {
+  /** The honesty check of one answer against what the tools returned for it (by default, in this page). */
+  static report(answer, question, results = SESSION.results) {
     if (!answer.trim()) return null;
     const tools = new AgentTools(siteData());
-    const ledger = HonestyCheck.ledger([...tools.baseResults(), ...SESSION.results], [question]);
+    const ledger = HonestyCheck.ledger([...tools.baseResults(), ...results], [question]);
     return HonestyCheck.check(answer, ledger);
   }
 

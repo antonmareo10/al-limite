@@ -20,7 +20,7 @@ const NEGATION = /\b(?:no|not|ni|nor|never|nunca|sin|without|cannot|can't|can no
 // Stating the law is not an accusation: "the Act forbids splitting a contract (art. 99.2)".
 const LEGAL = /proh[ií]b|forbid|\bley\b|\blaw\b|\bact\b|art[íi]culo|\barticle|\bart\./i;
 // Phrases that state the caveat: a statistical indicator, not proof.
-const CAVEAT = /not (?:a |any )?(?:proof|evidence)|(?:does|do|did)(?: not|n't) (?:prove|show|mean|imply|establish)|cannot (?:prove|tell|show)|no (?:es |son |constituye |constituyen )?(?:una |ninguna )?prueba|no (?:demuestra|demuestran|prueba|prueban|implica|implican|significa|significan|acredita)|statistical (?:indicator|signal)|indicador estad[ií]stico|se[ñn]al estad[ií]stica|not an accusation|no es una acusaci[óo]n|reason to (?:look|check|review)|motivo para (?:mirar|revisar)|raz[óo]n para (?:mirar|revisar)/i;
+const CAVEAT = /not (?:[\p{L}-]+ ){0,2}(?:proof|evidence)|(?:does|do|did)(?: not|n't) (?:prove|show|mean|imply|establish)|cannot (?:prove|tell|show)|no (?:es |son |constituye |constituyen )?(?:una |ninguna )?(?:[\p{L}-]+ )?prueba|no (?:demuestra|demuestran|prueba|prueban|implica|implican|significa|significan|acredita)|statistical (?:indicator|signal)|indicador estad[ií]stico|se[ñn]al estad[ií]stica|not an accusation|no es una acusaci[óo]n|reason to (?:look|check|review)|motivo para (?:mirar|revisar)|raz[óo]n para (?:mirar|revisar)/iu;
 const INTERVAL_WORDS = /interval|intervalo|\bIC\b|\bCI\b|confidence|confianza|uncertain|incertidumbre/i;
 const LEVEL_WORDS = /bunching signal|weak hint|se[ñn]al de acumulaci[óo]n|indicio d[ée]bil/i;
 // Company forms: "Construcciones Pérez, S.L.", "Acme Ltd".
