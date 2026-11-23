@@ -5,6 +5,7 @@
     { "source": "/al_limite_guide.network.json", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] },
     { "source": "/links.json", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] },
     { "source": "/agent-mcp.json", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] },
+    { "source": "/skills/(.*)", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] },
     { "source": "/.well-known/nsdeploy.json", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] },
     { "source": "/.well-known/nsdeploy-agent.json", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] },
     {
