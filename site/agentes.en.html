@@ -41,7 +41,7 @@
 <ul>
 <li><strong>Agent sites</strong> can run this network in their own page, after their visitor agrees on a consent card: add <code>https://al-limite-agent.vercel.app/al_limite_guide</code> to an agent's tools and <code>https://al-limite-agent.vercel.app</code> to <code>allowed_peers</code>. The six read actions are shared with every site through <code>bridge/</code>; the network runs on your visitor's model and key, never ours.</li>
 <li><strong>Example:</strong> <a href="https://pide-el-expediente.vercel.app/">Pide el expediente</a>, a second site on another origin, drafts a request under Spain's transparency law to see a body's contract files, and fills it with the file numbers and official links it gets from these agents.</li>
-<li><strong>MCP:</strong> the same six reads, including <code>check_answer</code>, are a read-only MCP server at <code>https://al-limite-agent.vercel.app/api/mcp</code> (Streamable HTTP, protocol 2025-06-18).</li>
+<li><strong>MCP:</strong> the same six reads, including <code>check_answer</code>, are a read-only MCP server at <code>https://al-limite-agent.vercel.app/api/mcp</code> (Streamable HTTP, protocol 2025-06-18). Its <a href="skills/al-limite-mcp/SKILL.md">SKILL.md</a> (Agent Skills format) tells any agent how to use it: the tools, tested examples and the limits.</li>
 <li><strong>Files:</strong> <a href="agent-manifest.json">agent-manifest.json</a>, <a href="al_limite_guide.network.json">al_limite_guide.network.json</a>, <a href="links.json">links.json</a>. The instructions are public by design.</li>
 </ul>
 

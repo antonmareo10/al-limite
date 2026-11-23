@@ -213,7 +213,9 @@ what is new is listed here.
 - **Site:** <https://al-limite-agent.vercel.app/> (press *Ask the agents*, or open `/?ask`). The
   [Agents page](https://al-limite-agent.vercel.app/#/agentes) explains them and shows recorded runs for visitors
   without a key. The original site, without agents, stays at <https://al-limite-two.vercel.app/>.
-- **MCP server** (read-only, same six reads): `https://al-limite-agent.vercel.app/api/mcp`
+- **MCP server** (read-only, same six reads): `https://al-limite-agent.vercel.app/api/mcp`. Agents learn to use it
+  from its [SKILL.md](https://al-limite-agent.vercel.app/skills/al-limite-mcp/SKILL.md)
+  ([Agent Skills](https://agentskills.io/specification) format, `site/skills/al-limite-mcp/`).
 - **Network URL** (for other agent sites): `https://al-limite-agent.vercel.app/al_limite_guide`
 - **Second site, on another origin:** <https://pide-el-expediente.vercel.app/> drafts a request under Spain's
   transparency law to see the files of a body's contracts, and asks Al límite's network for them after the
@@ -229,6 +231,7 @@ what is new is listed here.
 | Honesty check | `site/honesty.js` | Deterministic code, no model (see below) |
 | Data and rules | `site/core.js` | The page and the agents use the same search, ranking and method code |
 | MCP server | `site/mcp-server.js`, `site/api/mcp.js` | The six reads over MCP (Streamable HTTP, 2025-06-18), validated with the runtime's own validator |
+| MCP skill | `site/skills/al-limite-mcp/SKILL.md` | What the server does, its tools, examples and limits, for any agent; `tests/agentic/skill.test.mjs` runs every example against the data |
 | Agents page | `site/agentes.*.html`, `site/runs/recorded.json` | How the agents work, and recorded runs built from `docs/agentic-runs/` by `tests/agentic/make_recorded.ps1` |
 | Runtime | `site/runtime/` | nsdeploy's browser runtime as shipped by the skill, byte for byte (`tools/agentify/runtime.sha256`) |
 | Publication | `agent-manifest.json`, `links.json`, `agent-mcp.json`, `.well-known/nsdeploy*.json`, `vercel.json` | Manifest with the default router (hosted Otari) and a closed peer policy; CORS on the public files; CSP on the page and the sandbox worker |
@@ -257,7 +260,8 @@ checks every answer.
 ### Interoperability checks (spec section 6)
 
 `npm test` (Node 22+, no dependencies) runs the agent tests with the real runtime and a scripted model, with no
-network: the tools against the data files, the honesty check, the network and actions, and every check in section 6
+network: the tools against the data files, the honesty check, the network and actions, the MCP server and the
+examples in its SKILL.md, and every check in section 6
 between Al límite and the second site, served under their public URLs: a published multi-agent network and
 manifest; the site's default router and model and the visitor's own (BYOK); an internal agent and site actions;
 loading the exact network from a second origin after consent and running it in the caller's page with Al límite's
