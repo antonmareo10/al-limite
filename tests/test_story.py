@@ -106,6 +106,44 @@ def test_ejemplos_anonimos_y_enlazados_a_la_fuente_oficial():
     assert all(u.startswith(historia.EVL.replace("&", "&amp;")) for u in enlaces)
 
 
+def test_fallos_de_la_ia_salen_de_explicaciones():
+    # «How I made this»: recuento independiente de resultados/explicaciones.json (borradores, no motivos)
+    expl = json.loads((REPO / "resultados" / "explicaciones.json").read_text("utf-8"))
+    rech = [r for e in expl.values() for r in e["rechazos"]]
+    en = sum(r["lang"] == "en" for r in rech)
+    es = sum(r["lang"] == "es" for r in rech)
+    cifras = sum(any(m.startswith("cifras: hay cifras en el apartado") for m in r["motivos"]) for r in rech)
+    cita = sum(any("contrato que no existe" in m for m in r["motivos"]) for r in rech)
+    tpl_en = sum(e["origen_en"] == "plantilla" for e in expl.values())
+    primera = sum(not e["rechazos"] for e in expl.values())
+    assert len(rech) == en + es == CIFRAS["ia"]["borradores_rechazados"]
+    t = re.sub(r"\s+([,.;:])", r"\1", texto(STORY.read_text("utf-8")))
+    for frase in (f"it failed {len(rech):,} times", f"threw out {en:,} in English and {es:,} in Spanish",
+                  f"Most of them, {cifras:,}, had slipped a number", f"{cita:,} cited a contract that doesn't exist",
+                  f"{tpl_en:,} of them in English", f"Only {primera:,} of the {len(expl):,} flagged bodies"):
+        assert frase in t, frase
+
+
+def test_enlaces_a_los_datos_en_bruto():
+    hrefs = set(re.findall(r'href="([^"]+)"', STORY.read_text("utf-8")))
+    for f in ("resultados/cifras.json", "resultados/explicaciones.json"):
+        assert any(h.endswith(f) for h in hrefs), f
+    assert historia.REPO_RAMA in hrefs
+    # todo enlace al repo apunta a la rama del ensayo y a una ruta que existe en ella
+    for h in hrefs:
+        if h.startswith(historia.REPO):
+            assert h == historia.REPO_RAMA or h.startswith(historia.REPO_RAMA + "/") or h.startswith(historia.FICHERO), h
+        for pref in (historia.FICHERO, historia.CRUDO, historia.REPO_RAMA + "/"):
+            if h.startswith(pref):
+                assert (REPO / h[len(pref):]).exists(), h
+
+
+def test_voz_del_autor_en_singular():
+    # entrada individual: el autor dice «I»; ni «we» ni «our» en el texto visible
+    t = texto(historia.PLANTILLA.read_text("utf-8"))
+    assert not re.findall(r"\b(?:we|we'd|we're|we've|our|ours)\b", t, re.I)
+
+
 def test_pagina_ligera_sin_cargar_data():
     for f in ("story.html", "story.js"):
         s = (REPO / "site" / f).read_text("utf-8")

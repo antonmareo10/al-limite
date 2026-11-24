@@ -182,6 +182,9 @@ details.data { max-width: none !important; }
 .cta a:focus-visible { outline-color: var(--bg); }
 @media (prefers-color-scheme: dark) { .cta .btn.big { color: #1a0d10; } }
 .how p, .how li { font-size: 1rem; }
+.went-wrong { padding-left: 20px; }
+.went-wrong li { margin: 12px 0; }
+.went-wrong li::marker { color: var(--limit); }
 .links li { margin: 6px 0; }
 .links ul { padding-left: 18px; }
 .links ul li { font-size: .9rem; }

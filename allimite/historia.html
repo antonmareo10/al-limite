@@ -37,7 +37,7 @@
 <header class="s-hero">
   <p class="kicker">Spanish public contracts · {{y0}}–{{y1}}</p>
   <h1 class="s-title"><span class="s-title-t">The {{price_hook}} wall</span><span class="limit-tag" aria-hidden="true">Legal limit: {{lim_ss}}</span></h1>
-  <p class="dek">Below {{lim_ss}}, a Spanish public body can hire a company directly, without a tender. We looked at {{n_total_m}} of those small contracts to see what that line does to prices.</p>
+  <p class="dek">Below {{lim_ss}}, a Spanish public body can hire a company directly, without a tender. I looked at {{n_total_m}} of those small contracts to see what that line does to prices.</p>
   <p class="byline">By Antonio González Fernández · Data: Spain's Public Sector Contracting Platform · Figures generated {{generado}}</p>
 </header>
 
@@ -58,7 +58,7 @@
     <div class="path over"><span class="path-h">{{lim_ss}} or more</span><ol><li>Advertise the job</li><li>Receive offers</li><li>Compare and award</li></ol></div>
   </div>
   <p>Splitting one job into smaller contracts to stay under the line is against the law (article 99.2). But you can't see a split by looking at one contract: each one looks fine on its own. If there's a pattern, it only shows up in the crowd.</p>
-  <p>So we gathered the crowd: the minor contracts for services, supplies and works published on Spain's national contracting platform and awarded between {{y0}} and {{y1}}. That's <span class="num">{{n_ss}}</span> for services and supplies and <span class="num">{{n_obras}}</span> for works, from <span class="num">{{n_org}}</span> contracting bodies: town councils, ministries, universities, public companies.</p>
+  <p>So I gathered the crowd: the minor contracts for services, supplies and works published on Spain's national contracting platform and awarded between {{y0}} and {{y1}}. That's <span class="num">{{n_ss}}</span> for services and supplies and <span class="num">{{n_obras}}</span> for works, from <span class="num">{{n_org}}</span> contracting bodies: town councils, ministries, universities, public companies.</p>
 </section>
 
 <section aria-labelledby="guess-h">
@@ -96,9 +96,9 @@
     </figure>
     <div class="scrolly-steps">
       <div class="step" data-step="0"><p>Take the {{k_ss}} {{near_w_ss}} bands before the last one, from {{ref_from_ss}} to {{near_from_ss}}. Together they hold <strong class="num">{{n_ref}}</strong> contracts.</p></div>
-      <div class="step" data-step="1"><p>If the limit didn't matter, the last band would hold about as many as an average band before it: <strong class="num">{{esperado}}</strong>. That's our expected number.</p><p class="step-note">It's a generous baseline. Expensive purchases are rarer than cheap ones, so the true expectation for the last band is probably lower.</p></div>
+      <div class="step" data-step="1"><p>If the limit didn't matter, the last band would hold about as many as an average band before it: <strong class="num">{{esperado}}</strong>. That's the expected number.</p><p class="step-note">It's a generous baseline. Expensive purchases are rarer than cheap ones, so the true expectation for the last band is probably lower.</p></div>
       <div class="step" data-step="2"><p>The last band holds <strong class="num hot">{{n_cerca}}</strong>.</p></div>
-      <div class="step" data-step="3"><p>That's <strong class="num">{{razon}}</strong> times what we'd expect: <span class="num">{{excess}}</span> more contracts than the baseline, in {{n_years}} years.</p><p>Chance alone can't produce a gap like this with so many contracts. The 95% confidence interval for the ratio runs from <span class="num">{{ic_inf}}</span> to <span class="num">{{ic_sup}}</span>.</p></div>
+      <div class="step" data-step="3"><p>That's <strong class="num">{{razon}}</strong> times what you'd expect: <span class="num">{{excess}}</span> more contracts than the baseline, in {{n_years}} years.</p><p>Chance alone can't produce a gap like this with so many contracts. The 95% confidence interval for the ratio runs from <span class="num">{{ic_inf}}</span> to <span class="num">{{ic_sup}}</span>.</p></div>
     </div>
   </div>
   {{table_bands}}
@@ -108,7 +108,7 @@
 <section aria-labelledby="fake-h">
   <h2 id="fake-h">Maybe people just like round numbers?</h2>
   <p>Prices do cluster on round numbers. Could the wall be one more round-number spike, just a bigger one?</p>
-  <p>One way to check is to pretend the limit is somewhere else. We moved a fake limit every {{fake_step}} from {{fake_from}} to {{fake_to}} and ran the same calculation each time: the {{near_w_ss}} under the fake line against the {{k_ss}} {{near_w_ss}} bands before it.</p>
+  <p>One way to check is to pretend the limit is somewhere else. I moved a fake limit every {{fake_step}} from {{fake_from}} to {{fake_to}} and ran the same calculation each time: the {{near_w_ss}} under the fake line against the {{k_ss}} {{near_w_ss}} bands before it.</p>
   <figure class="s-fig wide" id="fig-fake">
     <p class="ftitle">Only the real limit has a wall</p>
     <p class="fsub">Observed ÷ expected for each fake limit. A value of 1 means “as many as the baseline”. The shaded band is the 95% interval, mostly thinner than the line.</p>
@@ -159,7 +159,7 @@
 
 <section aria-labelledby="ex-h">
   <h2 id="ex-h">Three bodies, three shapes</h2>
-  <p>A national total hides very different places. The search tool gives every contracting body its own chart. Here are three of them. We describe them by type and region rather than by name, because a statistical signal is no reason to single anyone out; every contract links to its official record.</p>
+  <p>A national total hides very different places. The search tool gives every contracting body its own chart. Here are three of them. I describe them by type and region rather than by name, because a statistical signal is no reason to single anyone out; every contract links to its official record.</p>
   <figure class="s-fig wide" id="fig-examples">
     <p class="ftitle">Services and supplies contracts per {{bin_ss}} band, near the limit</p>
     <p class="fsub">Each panel has its own scale. Below each, the ratio and its 95% interval.</p>
@@ -184,7 +184,7 @@
     <noscript><p class="fsub">The chart needs JavaScript. Every contract is in the table below, with a link to its official publication.</p></noscript>
     {{table_timeline}}
   </figure>
-  <p><span class="num">{{e1_adj}}</span> different companies won contracts in this band. <span class="num">{{e1_nrep}}</span> of them won {{min_rep}} or more, <span class="num">{{e1_rep_cerca}}</span> contracts between them. The two at the top, which we call A and B, won <span class="num">{{e1_ab}}</span> each, spread across every year from {{y0}} to {{y1}}.</p>
+  <p><span class="num">{{e1_adj}}</span> different companies won contracts in this band. <span class="num">{{e1_nrep}}</span> of them won {{min_rep}} or more, <span class="num">{{e1_rep_cerca}}</span> contracts between them. The two at the top, labelled A and B, won <span class="num">{{e1_ab}}</span> each, spread across every year from {{y0}} to {{y1}}.</p>
   <p>That proves nothing by itself. Each contract may be a different job, needed at a different time. But it is the kind of pattern that deserves a question, and every one of these contracts has a public record anyone can open.</p>
 </section>
 
@@ -197,7 +197,7 @@
     <figcaption>Services and supplies. A further {{n_insuf}} bodies have too few contracts to judge. For works, {{o_senal}} of {{o_eval}} bodies show a signal.</figcaption>
     {{table_levels}}
   </figure>
-  <p>It isn't one kind of purchase either. Sorted by what they buy, all {{cpv_eval}} product families with enough contracts sit above 1, even at the low end of their intervals. IT services lead, at <span class="num">{{cpv_top_razon}}</span>.</p>
+  <p>It isn't one kind of purchase either. Sorted by what they buy, all {{cpv_eval}} product families with enough contracts sit above 1, even at the low end of their intervals. {{cpv_top}} lead, at <span class="num">{{cpv_top_razon}}</span>.</p>
   <figure class="s-fig" id="fig-cpv">
     <p class="ftitle">What piles up: observed ÷ expected by what is bought</p>
     <p class="fsub">Services and supplies, by CPV division. Only {{cpv_pct}}% of contracts say what they buy, so read this as a sample.</p>
@@ -213,7 +213,7 @@
   <ul>
     <li><strong>It doesn't identify split contracts.</strong> That takes reading the files: whether several contracts meet the same need, and whether they could have been planned together. Open data doesn't say.</li>
     <li><strong>A price near the limit can be perfectly reasonable.</strong> A budget capped in advance, market prices, or a job sized to what a small office can handle quickly all push prices towards the line, legally.</li>
-    <li><strong>The legal limit applies to the estimated value.</strong> We use the award amount, the figure published most reliably.</li>
+    <li><strong>The legal limit applies to the estimated value.</strong> I use the award amount, the figure published most reliably.</li>
     <li><strong>Not everyone has the same limit.</strong> Public research bodies, such as universities, can treat some contracts as minor up to a higher amount (Law 9/2017, 54th additional provision).</li>
     <li><strong>The data is messy.</strong> Each body records its own contracts. There are VAT-inclusive amounts in the VAT-exclusive field, impossible dates, and <span class="num">{{ss_sobre}}</span> “minor” services and supplies contracts above {{lim_ss}}. Only {{cpv_pct}}% say what they buy.</li>
     <li><strong>It doesn't cover all of Spain.</strong> Bodies that publish on their own regional platforms (in Catalonia, the Basque Country, Madrid, Andalusia or Galicia, for example) are not in this dataset.</li>
@@ -238,16 +238,22 @@
 </section>
 
 <section aria-labelledby="how-h" id="how" class="how">
-  <h2 id="how-h">How this was made</h2>
-  <p><strong>The data.</strong> Spain's Public Sector Contracting Platform publishes minor contracts as open data, in yearly files of XML feeds. We downloaded the {{n_files}} files for {{file_from}}–{{file_to}} ({{gb}} GB, {{atom}} feed files), read <span class="num">{{leidas}}</span> entries, kept the latest version of each of <span class="num">{{distintos}}</span> distinct contracts, dropped cancelled ones, and analysed the <span class="num">{{n_total}}</span> services, supplies and works contracts awarded from {{y0}} to {{y1}}. The {{file_to}} file is used only to pick up late corrections.</p>
+  <h2 id="how-h">How I made this</h2>
+  <p>Three things went wrong or were hard along the way.</p>
+  <ul class="went-wrong">
+    <li><strong>The AI got the numbers right and the meaning wrong.</strong> The search tool explains each flagged body in plain Spanish and English. I used {{ia_modelo}} for that, a small open model that runs on my laptop with {{ia_runtime}}, so nothing's sent to anyone. In my first version I let the model write the paragraph about the data, and a check made sure every number in it was one the code had computed. Drafts passed that check and were still wrong. A ratio turned into a share of contracts. A price band was the wrong one. So I took the numbers away from it: code now writes every figure as a fixed sentence, and the model only picks which ones to show, then says in its own words what the data can't prove and what to check. It never sees a company's name.</li>
+    <li><strong>Even boxed in, it failed <span class="num">{{ia_rech}}</span> times.</strong> A script checks every draft before it's published, and it threw out <span class="num">{{rech_en}}</span> in English and <span class="num">{{rech_es}}</span> in Spanish. Most of them, <span class="num">{{rech_cifras}}</span>, had slipped a number into a part meant to have none. Some made things up: <span class="num">{{rech_cita}}</span> cited a contract that doesn't exist. After {{max_intentos}} failed drafts a body gets a fixed template instead, and the page says so. That happened to <span class="num">{{ia_plantilla}}</span> of the <span class="num">{{ia_textos}}</span> texts, <span class="num">{{tpl_en}}</span> of them in English; the other <span class="num">{{ia_modelo_n}}</span> came from the model and passed. Only <span class="num">{{first_try}}</span> of the <span class="num">{{ia_fichas}}</span> flagged bodies got through first time in both languages. I've kept every rejected draft, with the reason it failed, in <a href="{{f_expl}}">explicaciones.json</a>.</li>
+    <li><strong>The data is a feed, not a table.</strong> The platform publishes a contract again every time it changes, and cancellations come as separate notices. I downloaded the {{n_files}} yearly files for {{file_from}}–{{file_to}} ({{gb}} GB, {{atom}} feed files) and read <span class="num">{{leidas}}</span> entries. Keep only the latest version of each and you get <span class="num">{{distintos}}</span> distinct contracts. Then I dropped the cancelled ones. The {{file_to}} file's only there to catch late corrections. This story counts the <span class="num">{{n_total}}</span> services, supplies and works contracts among them that were awarded from {{y0}} to {{y1}}. Some records are still plainly wrong. The caveats above say how.</li>
+  </ul>
   <p><strong>The statistics.</strong> Python, NumPy and SciPy. The near band is compared with a reference band {{k_ss}} times as wide just below it. Counts are treated as Poisson, which gives an exact (Clopper-Pearson) 95% interval for each ratio. Thousands of bodies are tested at once, so p-values are corrected for multiple comparisons (Benjamini-Hochberg). A body is labelled “bunching signal” only with at least {{min_ventana}} contracts in the two bands, {{min_cerca}} near the limit, a q-value below {{q_max}}, and a lower bound of {{ic_inf_min}} or more. A sweep of fake limits and checks by year and month guard against artefacts.</p>
-  <p><strong>The AI, and how it is kept honest.</strong> The search tool explains every flagged body in plain Spanish and English. Those explanations are written by a small AI model, {{ia_modelo}}, running locally on a laptop with {{ia_runtime}}: no paid service, nothing sent to anyone. The model never computes or rewrites a number. Code writes every figure as an exact sentence; the model chooses which facts matter and writes the caveats in its own words; then a verifier checks every sentence against the computed facts and rejects anything that doesn't match or that uses accusatory language. The model never sees a company's name, so it can't repeat one. Of the <span class="num">{{ia_textos}}</span> texts, <span class="num">{{ia_modelo_n}}</span> came from the model and passed; <span class="num">{{ia_plantilla}}</span> fell back to a fixed template, labelled as such. The verifier rejected <span class="num">{{ia_rech}}</span> drafts on the way.</p>
-  <p><strong>This page.</strong> Built by a student, with the help of an AI coding assistant (Claude). Every number on it is read from the project's result files by a script, and a test fails if any of them drifts. The charts are hand-written SVG, with no libraries; every chart has a data table behind it.</p>
+  <p><strong>Who did what.</strong> This is a one-person student project. I directed it, and Claude Code, an AI coding tool, wrote much of the code behind the search tool and this page. It drafted much of this text too. Every number on the page is read from the project's result files by a script, and a test fails if any of them drifts. The charts are hand-written SVG with no libraries. Each one has a data table behind it.</p>
   <p><strong>Raw materials.</strong></p>
   <ul class="links">
     <li><a href="{{repo}}">Code, tests and results on GitHub</a> (MIT licence). One command rebuilds everything from the download.</li>
-    <li><a href="{{method}}">Method and limits</a>, in full.</li>
-    <li><a href="{{tool}}">The search tool</a>.</li>
+    <li><a href="{{f_cifras}}">cifras.json</a>: every national figure on this page, and the size and checksum of each source file.</li>
+    <li><a href="{{f_expl}}">explicaciones.json</a> ({{expl_mb}} MB): every plain-language explanation and every rejected draft.</li>
+    <li><a href="{{f_res}}">The resultados folder</a>: those two files, plus rankings of every contracting body and entity as CSV.</li>
+    <li><a href="{{method}}">Method and limits</a>, in full, and <a href="{{tool}}">the search tool</a>.</li>
     <li>Source data from the Platform's open-data feed:<ul>{{sources}}</ul></li>
   </ul>
 </section>

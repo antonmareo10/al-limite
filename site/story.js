@@ -270,7 +270,9 @@
     }
     const xl = m.l + (iLim - i0) * bw, xn = m.l + (iNear - i0) * bw, xr = m.l + (iRef - i0) * bw;
     s += hline("exp", xn - 4, xl + 4, y(expBin));
-    s += vline("limitline", xl, m.t - 14, base) + text(xl + 6, m.t - 6, `Legal limit: ${eur(R.lim)}`, { cls: "lbl" });
+    // en móvil el rótulo va a la izquierda de la línea: a la derecha no cabe y se cortaba
+    s += vline("limitline", xl, m.t - 14, base)
+      + text(narrow ? xl - 6 : xl + 6, m.t - 6, `Legal limit: ${eur(R.lim)}`, { cls: "lbl", anchor: narrow ? "end" : "" });
     const last = R.hist[iLim - 1];
     s += text(xl - bw - 6, y(last) + 10, fmt(last), { anchor: "end", cls: "lbl" });
     const step = narrow ? 10000 : 5000;

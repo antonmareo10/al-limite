@@ -30,6 +30,10 @@ SALIDA = config.SITE / "story.html"
 TOOL = "https://al-limite-two.vercel.app/"
 METHOD = TOOL + "#/metodo"
 REPO = "https://github.com/antonmareo10/al-limite"
+RAMA = "story"  # rama pública con el ensayo, historia.py y los mismos resultados/
+REPO_RAMA = f"{REPO}/tree/{RAMA}"
+FICHERO = f"{REPO}/blob/{RAMA}/"  # + ruta dentro del repo (vista de GitHub)
+CRUDO = f"https://raw.githubusercontent.com/antonmareo10/al-limite/{RAMA}/"  # + ruta (el fichero tal cual)
 EVL = "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl="
 
 IVA = 21  # tipo general del IVA en España, en %
@@ -134,10 +138,45 @@ def ic(x: dict) -> str:
 
 # ------------------------------------------------------------------ hechos
 
-def leer() -> tuple[dict, dict]:
+def leer() -> tuple[dict, dict, dict]:
     cifras = json.loads((config.OUT / "cifras.json").read_text("utf-8"))
     fichas = {i: json.loads((config.SITE_DATA / "u" / f"{i}.json").read_text("utf-8")) for i, *_ in EJEMPLOS}
-    return cifras, fichas
+    expl = json.loads((config.OUT / "explicaciones.json").read_text("utf-8"))
+    return cifras, fichas, expl
+
+
+def borradores(expl: dict, ia: dict) -> dict:
+    """Recuento de borradores rechazados y plantillas a partir de resultados/explicaciones.json.
+
+    Cuenta borradores, no motivos: un borrador con cifras en dos apartados cuenta una vez.
+    """
+    from .explain import MAX_INTENTOS
+    rech = [r for e in expl.values() for r in e["rechazos"]]
+    out = {
+        "total": len(rech),
+        "en": sum(r["lang"] == "en" for r in rech), "es": sum(r["lang"] == "es" for r in rech),
+        "cifras": sum(any(m.startswith("cifras: hay cifras en el apartado") for m in r["motivos"]) for r in rech),
+        "cita_falsa": sum("cita: referencia a un contrato que no existe" in r["motivos"] for r in rech),
+        "tpl_en": sum(e["origen_en"] == "plantilla" for e in expl.values()),
+        "tpl_es": sum(e["origen_es"] == "plantilla" for e in expl.values()),
+        "modelo": sum((e["origen_en"] == "modelo") + (e["origen_es"] == "modelo") for e in expl.values()),
+        "a_la_primera": sum(not e["rechazos"] for e in expl.values()),
+        "intentos": MAX_INTENTOS,
+    }
+    exige(out["total"] == ia["borradores_rechazados"], "explicaciones.json no cuadra con los rechazos de cifras.json")
+    exige(out["tpl_en"] + out["tpl_es"] == ia["textos_de_plantilla"], "las plantillas no cuadran con cifras.json")
+    exige(out["modelo"] == ia["textos_del_modelo"], "los textos del modelo no cuadran con cifras.json")
+    exige(len(expl) == ia["fichas_con_explicacion"], "fichas con explicación ≠ cifras.json")
+    # «tras N borradores fallidos, plantilla»: una plantilla lleva exactamente N rechazos en su idioma
+    for e in expl.values():
+        for lang in ("es", "en"):
+            k = sum(r["lang"] == lang for r in e["rechazos"])
+            exige(k <= MAX_INTENTOS and (k == MAX_INTENTOS) == (e[f"origen_{lang}"] == "plantilla"),
+                  "una plantilla no viene de agotar los intentos")
+    exige(out["cifras"] > out["total"] / 2, "las cifras fuera de su apartado ya no son el fallo más común")
+    exige(out["en"] > out["es"] and out["tpl_en"] > out["tpl_es"], "el inglés ya no es el idioma que más falla")
+    exige(out["intentos"] in PALABRAS, "intentos sin palabra")
+    return out
 
 
 def bandas(R: dict, C: dict) -> list[dict]:
@@ -153,7 +192,7 @@ def bandas(R: dict, C: dict) -> list[dict]:
     return out
 
 
-def construir(cifras: dict, fichas: dict) -> tuple[dict, dict]:
+def construir(cifras: dict, fichas: dict, expl: dict) -> tuple[dict, dict]:
     """Devuelve (hechos para la plantilla, datos para los gráficos)."""
     H: dict[str, str] = {}
     C = cifras["criterios"]
@@ -372,7 +411,13 @@ def construir(cifras: dict, fichas: dict) -> tuple[dict, dict]:
              ia_fichas=n(ia["fichas_con_explicacion"]), ia_textos=n(ia["textos_del_modelo"] + ia["textos_de_plantilla"]),
              ia_modelo_n=n(ia["textos_del_modelo"]), ia_plantilla=n(ia["textos_de_plantilla"]),
              ia_rech=n(ia["borradores_rechazados"]))
-    H.update(tool=TOOL, method=METHOD, repo=REPO)
+    b = borradores(expl, ia)
+    H.update(rech_en=n(b["en"]), rech_es=n(b["es"]), rech_cifras=n(b["cifras"]), rech_cita=n(b["cita_falsa"]),
+             tpl_en=n(b["tpl_en"]), first_try=n(b["a_la_primera"]), max_intentos=PALABRAS[b["intentos"]])
+    H.update(tool=TOOL, method=METHOD, repo=REPO_RAMA,
+             f_cifras=FICHERO + "resultados/cifras.json", f_expl=CRUDO + "resultados/explicaciones.json",
+             f_res=f"{REPO_RAMA}/resultados",
+             expl_mb=d((config.OUT / "explicaciones.json").stat().st_size / 1e6, 1))
 
     # tablas de los gráficos
     H["table_wall"] = tabla_hist(ss, Css, DESDE["ss"], f"Services and supplies contracts per {H['bin_ss']} band")
@@ -430,8 +475,8 @@ def rellenar(plantilla: str, H: dict) -> str:
 
 
 def pagina() -> str:
-    cifras, fichas = leer()
-    H, _ = construir(cifras, fichas)
+    cifras, fichas, expl = leer()
+    H, _ = construir(cifras, fichas, expl)
     return rellenar(PLANTILLA.read_text("utf-8"), H)
 
 

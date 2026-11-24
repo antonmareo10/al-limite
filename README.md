@@ -134,7 +134,7 @@ the data are entered by each body and contain errors; only bodies hosted on the 
 ```bash
 pip install -r requirements.txt
 python -m allimite todo      # download (1.1 GB) → SQLite → analysis → explanations → site data
-python -m pytest             # 58 tests: parser, bin edges, interval coverage, false-positive rate, verifier, essay figures
+python -m pytest             # 61 tests: parser, bin edges, interval coverage, false-positive rate, verifier, essay figures and links
 python -m allimite.check     # recounts the national figures with independent SQL and compares
 python -m allimite servir    # http://127.0.0.1:8000
 ```
